@@ -2469,14 +2469,17 @@ body {
 }
 
 .frameworks-panel--snada {
+  justify-self: stretch;
   border-radius: 340px;
-  padding: 56px 68px 48px
+  width: calc(100% + 170px);
+  margin-left: -170px;
+  padding: 56px 72px 48px 86px
 }
 
 .frameworks-panel--saos {
   border-radius: 340px;
-  width: min(100%, 830px);
-  padding: 56px 58px 42px
+  width: min(calc(100% + 140px), 940px);
+  padding: 56px 64px 42px 58px
 }
 
 .frameworks-panel h3 {
@@ -2515,6 +2518,24 @@ body {
   grid-template-columns: repeat(3, minmax(0, max-content))
 }
 
+.frameworks-panel--snada h3,
+.frameworks-panel--snada p,
+.frameworks-panel--snada h4,
+.frameworks-panel--snada .frameworks-chip-grid {
+  width: min(100%, 720px);
+  margin-left: auto;
+  margin-right: auto
+}
+
+.frameworks-panel--saos h3,
+.frameworks-panel--saos p,
+.frameworks-panel--saos h4,
+.frameworks-panel--saos .frameworks-chip-grid {
+  width: min(100%, 680px);
+  margin-left: auto;
+  margin-right: auto
+}
+
 .frameworks-chip {
   color: #fff;
   background: indigo;
@@ -2531,7 +2552,7 @@ body {
 
 .frameworks-saos-row {
   z-index: 6;
-  margin-top: 90px;
+  margin-top: 188px;
   position: relative
 }
 
@@ -2579,12 +2600,14 @@ body {
   }
 
   .frameworks-panel--snada {
-    padding: 42px 48px 40px
+    width: calc(100% + 116px);
+    margin-left: -116px;
+    padding: 42px 52px 40px 64px
   }
 
   .frameworks-panel--saos {
-    width: min(100%, 760px);
-    padding: 42px 44px 34px
+    width: min(calc(100% + 92px), 820px);
+    padding: 42px 48px 34px 42px
   }
 
   .frameworks-chip-grid {
@@ -2655,12 +2678,17 @@ body {
     padding: 30px 26px 28px
   }
 
+  .frameworks-panel--snada,
   .frameworks-panel--saos {
     width: 100%
   }
 
+  .frameworks-panel--snada {
+    margin-left: 0
+  }
+
   .frameworks-saos-row {
-    margin-top: 20px;
+    margin-top: 82px;
     padding-bottom: 310px
   }
 
@@ -2724,6 +2752,17 @@ body {
     line-height: 1.3
   }
 
+  .frameworks-panel--snada h3,
+  .frameworks-panel--snada p,
+  .frameworks-panel--snada h4,
+  .frameworks-panel--snada .frameworks-chip-grid,
+  .frameworks-panel--saos h3,
+  .frameworks-panel--saos p,
+  .frameworks-panel--saos h4,
+  .frameworks-panel--saos .frameworks-chip-grid {
+    width: 100%
+  }
+
   .frameworks-panel h4 {
     margin-top: 16px;
     font-size: 18px
@@ -2743,7 +2782,7 @@ body {
   }
 
   .frameworks-saos-row {
-    margin-top: 16px;
+    margin-top: 46px;
     padding-bottom: 238px
   }
 
@@ -2871,4 +2910,3 @@ body {
 .frameworks-saos-logo {
   transform: translate(10%, 10%) !important;
 }
-
