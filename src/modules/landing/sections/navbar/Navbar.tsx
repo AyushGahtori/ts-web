@@ -14,7 +14,14 @@ export function Navbar() {
   return (
     <header className="premium-nav">
       <div className="premium-nav__logo-wrap">
-        <Image src="/techsnitch%20logo.png" alt="TechSnitch logo" width={86} height={52} priority />
+        <Image
+          src="/techsnitch%20logo.png"
+          alt="TechSnitch logo"
+          width={86}
+          height={52}
+          preload
+          style={{ width: "auto", height: "auto" }}
+        />
       </div>
       <nav className="premium-nav__center" aria-label="Primary">
         <ul className="premium-nav__list">
