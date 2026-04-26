@@ -1,0 +1,328 @@
+.section {
+  position: relative;
+  z-index: 3;
+  margin-top: -24px;
+  padding: 0 24px 92px;
+  background:
+    radial-gradient(80% 55% at 50% -4%, rgba(180, 83, 255, 0.32) 0%, rgba(180, 83, 255, 0) 58%),
+    linear-gradient(180deg, #6107ad 0%, #57039c 56%, #46006f 100%);
+}
+
+.frame {
+  width: min(100%, 1398px);
+  margin: 0 auto;
+  padding: 30px 18px 18px;
+  border-radius: 42px;
+  background:
+    linear-gradient(180deg, rgba(118, 11, 204, 0.92) 0%, rgba(82, 0, 136, 0.94) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 30px 70px rgba(19, 0, 31, 0.4);
+}
+
+.frameGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(40% 55% at 12% 12%, rgba(255, 52, 181, 0.16) 0%, rgba(255, 52, 181, 0) 100%),
+    radial-gradient(32% 48% at 90% 100%, rgba(86, 152, 255, 0.18) 0%, rgba(86, 152, 255, 0) 100%);
+}
+
+.accordionStack {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.item {
+  border-radius: 27px;
+  background: linear-gradient(180deg, #0d0d0d 0%, #090909 100%);
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  overflow: clip;
+}
+
+.itemOpen {
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.itemButton {
+  position: relative;
+  z-index: 2;
+  min-height: 127px;
+  background: transparent;
+  padding: 34px 30px !important;
+}
+
+.itemButton > span:first-child {
+  padding-left: 4px;
+}
+
+.panelViewport {
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    height 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 280ms ease;
+  will-change: height;
+}
+
+.panelViewport[data-open="true"] {
+  opacity: 1;
+}
+
+.panelInner {
+  padding: 0 20px 20px;
+  transform: translateY(-10px);
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.panelViewport[data-open="true"] .panelInner {
+  transform: translateY(0);
+}
+
+.description {
+  border-top: 1px solid rgba(168, 168, 168, 0.7);
+  padding: 16px 12px 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: var(--font-monda), sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.panelSurface {
+  position: relative;
+  margin-top: 20px;
+  border-radius: 24px;
+  min-height: 168px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(9, 9, 9, 0.94) 0%, rgba(13, 13, 13, 0.98) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.panelContent {
+  position: relative;
+  z-index: 1;
+  padding: 18px;
+}
+
+.spiralWrap {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: min(39%, 390px);
+  pointer-events: none;
+  opacity: 0.94;
+  overflow: hidden;
+}
+
+.spiralImage {
+  object-fit: cover;
+  object-position: 78% center;
+  mix-blend-mode: screen;
+  transform: scale(1.14);
+}
+
+.emptyPanel {
+  min-height: 132px;
+}
+
+.tableScroller {
+  position: relative;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.tableScroller::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tableScroller::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.table {
+  width: 100%;
+  min-width: 940px;
+  border: 1px solid rgba(216, 216, 216, 0.25);
+  border-radius: 18px;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(7, 7, 7, 0.68);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
+}
+
+.table thead th {
+  padding: 16px 22px;
+  border-right: 1px solid rgba(216, 216, 216, 0.2);
+  border-bottom: 1px solid rgba(216, 216, 216, 0.2);
+  color: rgba(255, 255, 255, 0.86);
+  font-family: var(--font-monda), sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: left;
+  background: rgba(10, 10, 10, 0.72);
+}
+
+.table thead th:last-child,
+.table tbody td:last-child {
+  border-right: 0;
+}
+
+.table tbody td {
+  padding: 16px 22px;
+  border-right: 1px solid rgba(216, 216, 216, 0.16);
+  border-bottom: 1px solid rgba(216, 216, 216, 0.16);
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-monda), sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  vertical-align: top;
+  background: rgba(6, 6, 6, 0.52);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.tableLead {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.tableIcon {
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+@media (max-width: 1120px) {
+  .section {
+    margin-top: -18px;
+    padding: 0 12px 72px;
+  }
+
+  .frame {
+    padding: 18px 12px 12px;
+    border-radius: 34px;
+  }
+
+  .accordionStack {
+    gap: 14px;
+  }
+
+  .item,
+  .itemButton {
+    border-radius: 24px;
+  }
+
+  .itemButton {
+    min-height: 102px;
+    padding: 26px 22px !important;
+  }
+
+  .description {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .panelContent {
+    padding: 16px;
+  }
+
+  .spiralWrap {
+    width: min(41%, 300px);
+  }
+
+  .table thead th {
+    font-size: 1.16rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    margin-top: -10px;
+    padding: 0 8px 54px;
+  }
+
+  .frame {
+    border-radius: 28px;
+    padding: 12px 8px 8px;
+  }
+
+  .accordionStack {
+    gap: 12px;
+  }
+
+  .item {
+    border-radius: 22px;
+  }
+
+  .itemButton {
+    min-height: 78px;
+    gap: 12px;
+    padding: 20px 16px !important;
+  }
+
+  .description {
+    padding: 14px 8px 0;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .panelInner {
+    padding: 0 10px 10px;
+  }
+
+  .panelSurface {
+    margin-top: 14px;
+    border-radius: 18px;
+  }
+
+  .panelContent {
+    padding: 12px;
+  }
+
+  .spiralWrap {
+    width: 52%;
+    opacity: 0.62;
+  }
+
+  .emptyPanel {
+    min-height: 108px;
+  }
+
+  .table {
+    min-width: 690px;
+    border-radius: 14px;
+  }
+
+  .table thead th,
+  .table tbody td {
+    padding: 12px 14px;
+    font-size: 0.82rem;
+  }
+
+  .table thead th {
+    font-size: 1rem;
+  }
+
+  .tableIcon {
+    width: 28px;
+    min-width: 28px;
+    height: 28px;
+  }
+}
