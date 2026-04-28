@@ -2,6 +2,7 @@ import { AboutSection } from "@/modules/landing/sections/about/AboutSection";
 import { AboutSection as AboutVisualSection } from "@/modules/landing/sections/about-visual/AboutSection";
 import { AcceleratorsSection } from "@/modules/landing/sections/accelerators/AcceleratorsSection";
 import { CareerSection } from "@/modules/landing/sections/career/CareerSection";
+import { CareersInfoSection } from "@/modules/landing/sections/careers-info/CareersInfoSection";
 import { Hero } from "@/modules/landing/sections/hero/Hero";
 import { FrameworksSection } from "@/modules/landing/sections/frameworks/FrameworksSection";
 import { IndustryExcellence } from "@/modules/landing/sections/industry-excellence/IndustryExcellence";
@@ -21,6 +22,7 @@ export default function Home() {
         <IndustryExcellence />
         <AboutVisualSection />
         <CareerSection />
+        <CareersInfoSection />
       </section>
     </main>
   );
