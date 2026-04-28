@@ -1,6 +1,7 @@
 import { AboutSection } from "@/modules/landing/sections/about/AboutSection";
 import { AboutSection as AboutVisualSection } from "@/modules/landing/sections/about-visual/AboutSection";
 import { AcceleratorsSection } from "@/modules/landing/sections/accelerators/AcceleratorsSection";
+import { BrandFooterSection } from "@/modules/landing/sections/brand-footer/BrandFooterSection";
 import { CareerSection } from "@/modules/landing/sections/career/CareerSection";
 import { CareersInfoSection } from "@/modules/landing/sections/careers-info/CareersInfoSection";
 import { Hero } from "@/modules/landing/sections/hero/Hero";
@@ -25,6 +26,7 @@ export default function Home() {
         <CareerSection />
         <CareersInfoSection />
         <LeadershipSection />
+        <BrandFooterSection />
       </section>
     </main>
   );
