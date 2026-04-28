@@ -1,4 +1,5 @@
 import { AboutSection } from "@/modules/landing/sections/about/AboutSection";
+import { AboutSection as AboutVisualSection } from "@/modules/landing/sections/about-visual/AboutSection";
 import { AcceleratorsSection } from "@/modules/landing/sections/accelerators/AcceleratorsSection";
 import { Hero } from "@/modules/landing/sections/hero/Hero";
 import { FrameworksSection } from "@/modules/landing/sections/frameworks/FrameworksSection";
@@ -17,6 +18,7 @@ export default function Home() {
         <PortfolioSection />
         <FrameworksSection />
         <IndustryExcellence />
+        <AboutVisualSection />
       </section>
     </main>
   );

@@ -1,0 +1,485 @@
+.section {
+  position: relative;
+  z-index: 2;
+  padding: 0 24px 88px;
+  margin-top: -14px;
+  background: linear-gradient(180deg, #57039c 0%, #4f038f 26%, #47007a 100%);
+}
+
+.shell {
+  width: min(100%, 1490px);
+  min-height: 1048px;
+  margin: 0 auto;
+  padding: 92px 66px 86px 92px;
+  border-radius: 59px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(5, 5, 5, 0.98) 0%, rgba(9, 9, 9, 0.98) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 34px 90px rgba(0, 0, 0, 0.38);
+}
+
+.backgroundCurve {
+  position: absolute;
+  top: -110px;
+  right: -90px;
+  width: 640px;
+  height: 1140px;
+  border-radius: 320px;
+  background:
+    radial-gradient(48% 48% at 28% 30%, rgba(117, 176, 255, 0.85) 0%, rgba(112, 140, 255, 0.56) 36%, rgba(77, 0, 181, 0.88) 72%, rgba(77, 0, 181, 0) 100%);
+  filter: blur(1px);
+  opacity: 0.95;
+}
+
+.backgroundCurveSecondary {
+  position: absolute;
+  right: -120px;
+  bottom: -240px;
+  width: 720px;
+  height: 720px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 28% 30%, rgba(134, 186, 255, 0.85) 0%, rgba(81, 112, 255, 0.68) 32%, rgba(78, 0, 188, 0.88) 62%, rgba(78, 0, 188, 0) 100%);
+  opacity: 0.92;
+}
+
+.verticalRail {
+  position: absolute;
+  left: 18px;
+  top: 80px;
+  bottom: 82px;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.railText {
+  position: relative;
+  z-index: 2;
+  color: rgba(231, 224, 224, 0.98);
+  font-size: clamp(5rem, 8vw, 8rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+}
+
+.railBarLongTop,
+.railBarShortTop,
+.railBarLongBottom,
+.railBarShortBottom {
+  position: absolute;
+  z-index: 1;
+  width: 45px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ff099d 0%, #730633 100%);
+  box-shadow: 0 0 30px rgba(255, 9, 157, 0.28);
+}
+
+.railBarLongTop {
+  top: 84px;
+  left: 60px;
+  height: 346px;
+}
+
+.railBarShortTop {
+  top: 382px;
+  left: 38px;
+  height: 123px;
+}
+
+.railBarLongBottom {
+  bottom: 74px;
+  left: 18px;
+  height: 346px;
+}
+
+.railBarShortBottom {
+  bottom: 224px;
+  left: 136px;
+  height: 105px;
+}
+
+.layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(360px, 504px) minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  min-height: 870px;
+  padding-left: 120px;
+}
+
+.phoneStage {
+  position: relative;
+  width: min(100%, 504px);
+  height: 755px;
+  justify-self: center;
+  filter: drop-shadow(-18px 20px 7.4px rgba(0, 0, 0, 0.75));
+}
+
+.phoneGlowBarPrimary,
+.phoneGlowBarSecondary,
+.phoneGlowBarTertiary {
+  position: absolute;
+  left: -44px;
+  width: 30px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ff099d 0%, #730633 100%);
+  box-shadow: 0 0 22px rgba(255, 9, 157, 0.36);
+}
+
+.phoneGlowBarPrimary {
+  top: 80px;
+  height: 210px;
+}
+
+.phoneGlowBarSecondary {
+  top: 300px;
+  left: -58px;
+  height: 78px;
+}
+
+.phoneGlowBarTertiary {
+  bottom: 76px;
+  left: -84px;
+  height: 268px;
+}
+
+.phoneShell {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-8deg) translateX(-10px);
+  z-index: 2;
+}
+
+.phoneImage {
+  object-fit: contain;
+  object-position: center;
+}
+
+.aboutCard {
+  position: relative;
+  z-index: 3;
+  min-height: 806px;
+  margin-left: -58px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.12) 0%, rgba(118, 147, 255, 0.12) 24%, rgba(111, 83, 255, 0.18) 54%, rgba(55, 27, 120, 0.22) 100%);
+  backdrop-filter: blur(13.65px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 26px 70px rgba(12, 6, 39, 0.44);
+}
+
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(42% 58% at 70% 50%, rgba(160, 98, 255, 0.28) 0%, rgba(160, 98, 255, 0) 72%),
+    linear-gradient(90deg, rgba(25, 25, 25, 0.78) 0%, rgba(44, 44, 44, 0.28) 22%, rgba(89, 83, 255, 0.18) 100%);
+  pointer-events: none;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+  padding: 86px 56px 58px;
+}
+
+.cardTitle {
+  max-width: 600px;
+  color: #fff;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.22;
+}
+
+.cardCopy {
+  max-width: 598px;
+  margin: 28px 0 0;
+  color: #d1cbcb;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.splitSection {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 3px minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  margin-top: 36px;
+}
+
+.splitBlock {
+  padding-right: 16px;
+}
+
+.splitTitle {
+  margin: 0;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.splitCopy {
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.splitDivider {
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, rgba(217, 217, 217, 0.85) 14%, rgba(217, 217, 217, 0.85) 86%, rgba(217, 217, 217, 0) 100%);
+}
+
+.valuesSection {
+  margin-top: 38px;
+}
+
+.valuesTitle {
+  margin: 0;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.valuesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 16px;
+  margin-top: 18px;
+}
+
+.valuePill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 169px;
+  min-height: 51px;
+  padding: 14px 26px;
+  border-radius: 45px;
+  border: 1px solid rgba(138, 194, 255, 0.62);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(105, 132, 255, 0.14) 46%, rgba(99, 71, 255, 0.22) 100%);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.2;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 10px 24px rgba(43, 31, 102, 0.22);
+}
+
+@media (max-width: 1280px) {
+  .section {
+    padding: 0 12px 72px;
+  }
+
+  .shell {
+    min-height: 920px;
+    padding: 76px 40px 70px 72px;
+  }
+
+  .layout {
+    grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+    gap: 8px;
+    padding-left: 92px;
+  }
+
+  .phoneStage {
+    height: 660px;
+  }
+
+  .aboutCard {
+    min-height: 720px;
+    margin-left: -24px;
+  }
+
+  .cardContent {
+    padding: 66px 36px 46px;
+  }
+
+  .cardTitle,
+  .splitTitle,
+  .valuesTitle {
+    font-size: 1.7rem;
+  }
+
+  .cardCopy {
+    font-size: 1.02rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .shell {
+    padding: 44px 26px 52px;
+    border-radius: 44px;
+  }
+
+  .verticalRail {
+    left: 6px;
+    width: 110px;
+  }
+
+  .railText {
+    font-size: 5.5rem;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    min-height: auto;
+    padding-left: 84px;
+  }
+
+  .phoneStage {
+    width: min(100%, 420px);
+    height: 628px;
+    justify-self: start;
+  }
+
+  .aboutCard {
+    width: 100%;
+    min-height: auto;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 0 8px 54px;
+  }
+
+  .shell {
+    min-height: auto;
+    padding: 30px 16px 34px;
+    border-radius: 34px;
+  }
+
+  .backgroundCurve {
+    top: -80px;
+    right: -210px;
+    width: 520px;
+    height: 820px;
+    opacity: 0.88;
+  }
+
+  .backgroundCurveSecondary {
+    right: -240px;
+    bottom: -200px;
+    width: 520px;
+    height: 520px;
+  }
+
+  .verticalRail {
+    display: none;
+  }
+
+  .layout {
+    gap: 24px;
+    padding-left: 0;
+  }
+
+  .phoneStage {
+    width: min(100%, 320px);
+    height: 478px;
+    margin: 0 auto;
+  }
+
+  .phoneGlowBarPrimary,
+  .phoneGlowBarSecondary,
+  .phoneGlowBarTertiary {
+    width: 24px;
+  }
+
+  .phoneGlowBarPrimary {
+    top: 56px;
+    left: -28px;
+    height: 140px;
+  }
+
+  .phoneGlowBarSecondary {
+    top: 220px;
+    left: -44px;
+    height: 54px;
+  }
+
+  .phoneGlowBarTertiary {
+    left: -58px;
+    bottom: 42px;
+    height: 168px;
+  }
+
+  .phoneShell {
+    transform: rotate(-6deg) translateX(-6px);
+  }
+
+  .aboutCard {
+    border-radius: 28px;
+  }
+
+  .cardContent {
+    padding: 26px 18px 22px;
+  }
+
+  .cardTitle {
+    font-size: 1.8rem;
+  }
+
+  .cardCopy {
+    margin-top: 18px;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .splitSection {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 26px;
+  }
+
+  .splitBlock {
+    padding-right: 0;
+  }
+
+  .splitTitle,
+  .valuesTitle {
+    font-size: 1.5rem;
+  }
+
+  .splitDivider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(217, 217, 217, 0) 0%, rgba(217, 217, 217, 0.85) 14%, rgba(217, 217, 217, 0.85) 86%, rgba(217, 217, 217, 0) 100%);
+  }
+
+  .valuesSection {
+    margin-top: 26px;
+  }
+
+  .valuesGrid {
+    gap: 12px;
+  }
+
+  .valuePill {
+    min-width: calc(50% - 6px);
+    min-height: 46px;
+    padding: 12px 16px;
+  }
+}
