@@ -1,0 +1,371 @@
+.section {
+  position: relative;
+  z-index: 2;
+  margin-top: -4px;
+  padding: 0 0 96px;
+  background: linear-gradient(180deg, #42006d 0%, #0c0d0d 24%, #0c0d0d 100%);
+}
+
+.container {
+  position: relative;
+  width: min(100%, 1440px);
+  min-height: 1523px;
+  margin: 0 auto;
+  padding: 34px 18px 28px;
+  border-radius: 54px;
+  overflow: hidden;
+  background: #0c0d0d;
+  box-shadow: 0 34px 84px rgba(0, 0, 0, 0.34);
+}
+
+.backdropImage {
+  position: absolute;
+  top: -135px;
+  left: 2px;
+  right: 0;
+  height: 1029px;
+  border-radius: 75px;
+  background:
+    radial-gradient(50% 70% at 50% 0%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 52%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+
+.backdropFade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 825px;
+  background: linear-gradient(180deg, rgba(103, 13, 186, 0.8) 0%, #000000 69.11%);
+  opacity: 0.6;
+}
+
+.heroCard {
+  position: relative;
+  z-index: 2;
+  min-height: 825px;
+  border-radius: 54px;
+  overflow: hidden;
+  background: #000;
+}
+
+.heroGradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(40% 40% at 60% 22%, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 60%),
+    linear-gradient(180deg, rgba(103, 13, 186, 0.12) 0%, rgba(0, 0, 0, 0) 34%);
+}
+
+.nameBlock {
+  position: absolute;
+  left: 55px;
+  top: 356px;
+  z-index: 3;
+}
+
+.accentBarLong,
+.accentBarShort {
+  display: block;
+  border-radius: 72px;
+  background: linear-gradient(92.02deg, #ff099d -9.24%, #730633 98.29%);
+  box-shadow: 0 0 18px rgba(255, 9, 157, 0.2);
+}
+
+.accentBarLong {
+  width: 158px;
+  height: 22px;
+  margin-left: -37px;
+}
+
+.accentBarShort {
+  width: 99px;
+  height: 21px;
+  margin-top: 10px;
+  margin-left: 78px;
+}
+
+.name {
+  margin: 14px 0 0;
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.role {
+  margin: 2px 0 0;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.portraitWrap {
+  position: absolute;
+  inset: 70px 90px 110px 330px;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.portraitFrame {
+  width: min(100%, 760px);
+  height: 100%;
+}
+
+.thumbSection {
+  position: relative;
+  z-index: 4;
+  width: min(100%, 1095px);
+  margin: -46px auto 0;
+}
+
+.thumbRail {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 18px;
+}
+
+.thumbSmall {
+  width: 89px;
+  height: 81px;
+}
+
+.thumbMedium {
+  width: 125px;
+  height: 117px;
+}
+
+.thumbCenter {
+  width: 218px;
+  height: 203px;
+}
+
+.thumbControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.miniArrow {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.miniTrack {
+  width: 180px;
+  height: 13px;
+  border-radius: 26px;
+  background: #3a3939;
+  overflow: hidden;
+}
+
+.miniTrackFill {
+  display: block;
+  width: 46px;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 26px;
+  background: #fff;
+}
+
+.stripBlock,
+.stripBlockPartners {
+  position: relative;
+  z-index: 3;
+  margin-top: 48px;
+}
+
+.stripBlockPartners {
+  margin-top: 44px;
+}
+
+.stripTitle {
+  margin: 0 0 18px 51px;
+  color: #fff;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.22;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    min-height: auto;
+    padding: 28px 12px 24px;
+  }
+
+  .heroCard {
+    min-height: 680px;
+  }
+
+  .nameBlock {
+    left: 36px;
+    top: 300px;
+  }
+
+  .name {
+    font-size: 3.2rem;
+  }
+
+  .role {
+    font-size: 1.6rem;
+  }
+
+  .portraitWrap {
+    inset: 58px 48px 120px 260px;
+  }
+
+  .thumbRail {
+    gap: 12px;
+  }
+
+  .thumbSmall {
+    width: 76px;
+    height: 72px;
+  }
+
+  .thumbMedium {
+    width: 108px;
+    height: 97px;
+  }
+
+  .thumbCenter {
+    width: 190px;
+    height: 178px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    border-radius: 34px;
+  }
+
+  .heroCard {
+    min-height: 560px;
+    border-radius: 34px;
+  }
+
+  .portraitWrap {
+    inset: 44px 28px 148px 28px;
+  }
+
+  .nameBlock {
+    left: 26px;
+    top: auto;
+    bottom: 154px;
+  }
+
+  .name {
+    font-size: 2.4rem;
+  }
+
+  .role {
+    font-size: 1.25rem;
+  }
+
+  .thumbSection {
+    width: 100%;
+  }
+
+  .thumbRail {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0 8px 8px;
+  }
+
+  .stripTitle {
+    margin-left: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-bottom: 56px;
+  }
+
+  .container {
+    padding: 16px 10px 18px;
+    border-radius: 24px;
+  }
+
+  .heroCard {
+    min-height: 440px;
+    border-radius: 24px;
+  }
+
+  .nameBlock {
+    left: 18px;
+    bottom: 110px;
+  }
+
+  .accentBarLong {
+    width: 98px;
+    height: 14px;
+    margin-left: -8px;
+  }
+
+  .accentBarShort {
+    width: 64px;
+    height: 12px;
+    margin-left: 36px;
+  }
+
+  .name {
+    font-size: 1.9rem;
+  }
+
+  .role {
+    font-size: 1rem;
+  }
+
+  .portraitWrap {
+    inset: 22px 18px 130px 18px;
+  }
+
+  .thumbSection {
+    margin-top: -34px;
+  }
+
+  .thumbRail {
+    gap: 10px;
+  }
+
+  .thumbSmall {
+    width: 62px;
+    height: 60px;
+  }
+
+  .thumbMedium {
+    width: 84px;
+    height: 78px;
+  }
+
+  .thumbCenter {
+    width: 132px;
+    height: 124px;
+  }
+
+  .miniTrack {
+    width: 110px;
+  }
+
+  .stripBlock,
+  .stripBlockPartners {
+    margin-top: 28px;
+  }
+
+  .stripTitle {
+    margin: 0 0 12px 10px;
+    font-size: 1.5rem;
+  }
+}

@@ -4,6 +4,7 @@ import { AcceleratorsSection } from "@/modules/landing/sections/accelerators/Acc
 import { CareerSection } from "@/modules/landing/sections/career/CareerSection";
 import { CareersInfoSection } from "@/modules/landing/sections/careers-info/CareersInfoSection";
 import { Hero } from "@/modules/landing/sections/hero/Hero";
+import { LeadershipSection } from "@/modules/landing/sections/leadership/LeadershipSection";
 import { FrameworksSection } from "@/modules/landing/sections/frameworks/FrameworksSection";
 import { IndustryExcellence } from "@/modules/landing/sections/industry-excellence/IndustryExcellence";
 import { Navbar } from "@/modules/landing/sections/navbar/Navbar";
@@ -23,6 +24,7 @@ export default function Home() {
         <AboutVisualSection />
         <CareerSection />
         <CareersInfoSection />
+        <LeadershipSection />
       </section>
     </main>
   );
