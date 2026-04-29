@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function AcceleratorsSection() {
   return (
-    <section className="accelerators-section">
+    <section id="innovations" className="accelerators-section">
       <article className="accelerators-panel">
         <div className="accelerators-spiral" aria-hidden>
           <span />

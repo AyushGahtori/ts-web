@@ -17,7 +17,7 @@ const saosCapabilities = [
 
 export function FrameworksSection() {
   return (
-    <section className="frameworks-section">
+    <section id="hub" className="frameworks-section">
       <div className="frameworks-wave-bg" style={{ position: "absolute", inset: 0 }} aria-hidden>
         <Image src="/Purple%20stream.png" alt="" fill sizes="100vw" loading="eager" className="frameworks-wave-image" />
       </div>

@@ -1,0 +1,15 @@
+.footerAttach {
+  margin-top: -48px;
+}
+
+@media (max-width: 1180px) {
+  .footerAttach {
+    margin-top: -36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerAttach {
+    margin-top: -18px;
+  }
+}

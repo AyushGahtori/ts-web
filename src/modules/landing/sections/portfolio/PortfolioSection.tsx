@@ -3,7 +3,7 @@ import { PortfolioCards } from "@/modules/landing/sections/portfolio/PortfolioCa
 
 export function PortfolioSection() {
   return (
-    <section className="portfolio-section">
+    <section id="service-portfolio" className="portfolio-section">
       <div className="portfolio-intro-row">
         <div className="portfolio-handshake-wrap" style={{ position: "relative" }} aria-hidden>
           <Image src="/handshake.png" alt="" fill sizes="(max-width: 768px) 108px, (max-width: 1120px) 170px, 272px" className="portfolio-handshake-image" />

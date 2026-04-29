@@ -5,7 +5,7 @@ import { HeroVisual } from "./HeroVisual";
 
 export function Hero() {
   return (
-    <section className="hero-section">
+    <section id="home" className="hero-section">
       <HeroBackground />
       <div className="hero-content">
         <div className="hero-left">

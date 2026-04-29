@@ -1,0 +1,704 @@
+.page {
+  position: relative;
+  min-height: 100%;
+  background:
+    radial-gradient(34% 22% at 50% 8%, rgba(120, 34, 255, 0.16) 0%, rgba(120, 34, 255, 0) 100%),
+    linear-gradient(180deg, #0a0a0a 0%, #060606 24%, #220434 56%, #3d0677 100%);
+}
+
+.header {
+  position: relative;
+  min-height: 700px;
+  padding: 132px 28px 164px;
+  overflow: hidden;
+  background:
+    radial-gradient(26% 24% at 72% 10%, rgba(123, 35, 255, 0.16) 0%, rgba(123, 35, 255, 0) 100%),
+    linear-gradient(180deg, #0c0d0d 0%, #090909 100%);
+}
+
+.headerGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 108px 108px;
+  opacity: 0.46;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.72));
+}
+
+.headerInner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding-top: 56px;
+  text-align: center;
+}
+
+.headerTitle {
+  margin: 0;
+  color: #5d2be8;
+  font-size: clamp(3rem, 5.6vw, 4.35rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.headerHash {
+  margin-right: 10px;
+  font-size: 1.12em;
+}
+
+.headerDoodles {
+  position: absolute;
+  top: 164px;
+  left: 50%;
+  z-index: 3;
+  width: min(54vw, 560px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.doodleStroke {
+  fill: none;
+  stroke: #b131ff;
+  stroke-width: 7.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.panel {
+  position: relative;
+  z-index: 4;
+  width: min(100%, 1388px);
+  margin: -256px auto 0;
+  border-radius: 90px 90px 0 0;
+  overflow: hidden;
+  background:
+    radial-gradient(52% 38% at 12% 18%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(44% 38% at 86% 14%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(180deg, #f299f0 0%, #e386f2 22%, #cb63ec 45%, #8d21dd 72%, #4b0082 100%);
+  box-shadow:
+    0 -12px 32px rgba(0, 0, 0, 0.16),
+    0 34px 84px rgba(0, 0, 0, 0.36);
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 14%, rgba(255, 255, 255, 0) 84%, rgba(255, 255, 255, 0.05) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 22%, rgba(0, 0, 0, 0.08) 100%);
+  pointer-events: none;
+}
+
+.panelInner {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1110px);
+  padding: 78px 54px 620px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  padding: 0 28px;
+  border: 2px solid rgba(12, 13, 13, 0.88);
+  border-radius: 999px;
+  background: rgba(255, 210, 245, 0.12);
+  color: #111111;
+  font-size: clamp(1.38rem, 2vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.introSection {
+  position: relative;
+  width: min(100%, 1040px);
+}
+
+.introPill {
+  min-width: min(100%, 694px);
+}
+
+.introCopy,
+.frameworkCopy,
+.advantageCopy,
+.labCopy,
+.pathDescription {
+  max-width: 1060px;
+  color: #110c15;
+  font-size: clamp(1.04rem, 1.34vw, 1.52rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.introCopy {
+  margin: 34px 0 0 12px;
+}
+
+.frameworksSection {
+  position: relative;
+  margin-top: 166px;
+  width: min(100%, 860px);
+  margin-left: clamp(330px, 37vw, 540px);
+  margin-right: 0;
+}
+
+.frameworkPill {
+  display: flex;
+  width: min(100%, 760px);
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.frameworkBody {
+  width: min(100%, 760px);
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+.frameworkCopy {
+  margin: 34px 0 0;
+  max-width: 690px;
+  text-align: center;
+}
+
+.blockStack {
+  display: grid;
+  gap: 74px;
+  margin-top: 88px;
+  padding-left: 0;
+}
+
+.block {
+  max-width: 740px;
+}
+
+.blockTitle {
+  margin: 0;
+  color: #09050c;
+  font-size: clamp(1.7rem, 2.2vw, 2.45rem);
+  font-weight: 800;
+  line-height: 1.18;
+}
+
+.blockDescription {
+  margin: 22px 0 0;
+  max-width: 700px;
+  color: #140d17;
+  font-size: clamp(1.04rem, 1.26vw, 1.46rem);
+  line-height: 1.2;
+}
+
+.blockList {
+  margin: 12px 0 0;
+  max-width: 700px;
+  padding-left: 22px;
+  color: #100914;
+  list-style: disc;
+}
+
+.blockList li {
+  margin-top: 8px;
+  font-size: clamp(1rem, 1.22vw, 1.4rem);
+  line-height: 1.18;
+}
+
+.blockList li::marker {
+  color: #110916;
+}
+
+.blockList span {
+  font-weight: 700;
+}
+
+.advantageSection {
+  position: relative;
+  margin-top: 122px;
+  width: min(100%, 840px);
+}
+
+.advantagePill {
+  min-width: min(100%, 470px);
+}
+
+.advantageCopy {
+  max-width: 930px;
+  margin: 26px 0 0;
+}
+
+.tableScroll {
+  margin-top: 26px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  width: min(100%, 1090px);
+}
+
+.table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+  color: #110813;
+  font-size: 1rem;
+  background: rgba(126, 37, 192, 0.08);
+}
+
+.table th,
+.table td {
+  border: 1px solid rgba(12, 13, 13, 0.62);
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.16;
+}
+
+.table th {
+  font-size: 1.02rem;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.table td {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.labSection {
+  position: relative;
+  margin-top: 148px;
+  width: min(100%, 860px);
+  margin-left: clamp(330px, 37vw, 540px);
+  margin-right: 0;
+  padding-left: 0;
+}
+
+.labPill {
+  display: flex;
+  width: min(100%, 760px);
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.labBody {
+  width: min(100%, 700px);
+  margin: 26px 0 0 22px;
+}
+
+.labCopy {
+  max-width: 670px;
+  margin: 0;
+}
+
+.labList {
+  max-width: 670px;
+  margin: 10px 0 0;
+  padding-left: 22px;
+  color: #100913;
+  list-style: disc;
+}
+
+.labList li {
+  margin-top: 8px;
+  font-size: clamp(1rem, 1.18vw, 1.36rem);
+  line-height: 1.18;
+}
+
+.pathSection {
+  position: relative;
+  margin-top: 160px;
+  width: min(100%, 760px);
+}
+
+.pathPill {
+  min-width: min(100%, 400px);
+}
+
+.pathDescription {
+  max-width: 930px;
+  margin: 30px 0 0;
+  font-weight: 700;
+}
+
+.pathList {
+  max-width: 980px;
+  margin: 18px 0 0 24px;
+  color: #0f0813;
+  font-size: clamp(1rem, 1.16vw, 1.34rem);
+  font-weight: 700;
+  line-height: 1.16;
+}
+
+.pathList li + li {
+  margin-top: 4px;
+}
+
+.bottomWordmark {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: -16px;
+  z-index: 1;
+  color: #7a18ff;
+  font-size: clamp(5.4rem, 13vw, 13rem);
+  font-weight: 900;
+  line-height: 0.84;
+  letter-spacing: -0.07em;
+  text-align: center;
+  opacity: 0.94;
+}
+
+.frameworkArrow,
+.useCasesArrow {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.frameworkArrow {
+  top: 352px;
+  left: 82px;
+  width: min(34vw, 320px);
+}
+
+.useCasesArrow {
+  top: 2010px;
+  left: 46px;
+  width: min(26vw, 240px);
+}
+
+.annotationStrokeBold {
+  fill: none;
+  stroke: #ff4ab2;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bottomArcText {
+  position: absolute;
+  left: 50%;
+  bottom: 160px;
+  z-index: 0;
+  width: min(100%, 920px);
+  transform: translateX(-50%);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.bottomArcText text {
+  fill: rgba(24, 5, 36, 0.44);
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+@media (max-width: 1260px) {
+  .header {
+    min-height: 620px;
+    padding-top: 128px;
+  }
+
+  .panel {
+    margin-top: -214px;
+    border-radius: 68px 68px 0 0;
+  }
+
+  .panelInner {
+    padding: 68px 34px 540px;
+  }
+
+  .blockStack {
+    padding-left: 112px;
+  }
+
+  .labSection {
+    padding-left: 104px;
+  }
+
+  .frameworkArrow {
+    left: 34px;
+  }
+
+  .useCasesArrow {
+    left: 12px;
+  }
+
+  .ghostDiagonal {
+    left: 164px;
+  }
+}
+
+@media (max-width: 980px) {
+  .header {
+    min-height: 560px;
+    padding: 124px 16px 132px;
+  }
+
+  .headerGrid {
+    background-size: 82px 82px;
+  }
+
+  .headerDoodles {
+    top: 174px;
+    width: min(62vw, 420px);
+  }
+
+  .panel {
+    margin-top: -164px;
+    border-radius: 48px 48px 0 0;
+  }
+
+  .panelInner {
+    padding: 42px 22px 420px;
+  }
+
+  .pill {
+    min-height: 50px;
+    padding: 0 22px;
+    font-size: 1.2rem;
+  }
+
+  .introCopy,
+  .frameworkCopy,
+  .advantageCopy,
+  .labCopy,
+  .pathDescription,
+  .blockDescription,
+  .blockList li,
+  .labList li,
+  .pathList {
+    font-size: 1rem;
+  }
+
+  .frameworksSection {
+    margin-top: 126px;
+    width: 100%;
+    margin-left: 54px;
+  }
+
+  .frameworkBody {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .blockStack {
+    gap: 48px;
+    margin-top: 60px;
+  }
+
+  .advantageSection,
+  .labSection,
+  .pathSection {
+    margin-top: 104px;
+    width: 100%;
+  }
+
+  .labBody {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .labSection {
+    margin-left: 44px;
+  }
+
+  .frameworkArrow {
+    top: 348px;
+    left: 8px;
+    width: 206px;
+  }
+
+  .useCasesArrow {
+    top: 1848px;
+    left: -12px;
+    width: 176px;
+  }
+
+  .bottomArcText {
+    bottom: 126px;
+    width: 720px;
+  }
+
+  .bottomArcText text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    min-height: 468px;
+    padding: 114px 12px 108px;
+  }
+
+  .headerGrid {
+    background-size: 64px 64px;
+    opacity: 0.38;
+  }
+
+  .headerInner {
+    padding-top: 34px;
+  }
+
+  .headerTitle {
+    font-size: 2.2rem;
+    line-height: 1.08;
+  }
+
+  .headerDoodles {
+    top: 150px;
+    width: 248px;
+  }
+
+  .doodleStroke {
+    stroke-width: 6;
+  }
+
+  .panel {
+    margin-top: -110px;
+    border-radius: 34px 34px 0 0;
+  }
+
+  .panelInner {
+    width: 100%;
+    padding: 28px 12px 260px;
+  }
+
+  .pill {
+    min-height: 42px;
+    width: auto;
+    max-width: 100%;
+    padding: 0 18px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .introPill,
+  .frameworkPill,
+  .labPill {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .advantagePill,
+  .pathPill {
+    min-width: 0;
+  }
+
+  .introCopy {
+    margin: 18px 0 0;
+  }
+
+  .frameworksSection {
+    margin-top: 96px;
+    margin-left: 0;
+  }
+
+  .frameworkPill,
+  .labPill {
+    margin-right: auto;
+  }
+
+  .frameworkBody,
+  .labBody {
+    width: 100%;
+    margin: 18px 0 0;
+  }
+
+  .labSection {
+    margin-left: 0;
+  }
+
+  .frameworkCopy {
+    margin-top: 0;
+  }
+
+  .blockStack {
+    gap: 34px;
+    margin-top: 42px;
+    padding-left: 0;
+  }
+
+  .blockTitle {
+    font-size: 1.28rem;
+  }
+
+  .blockDescription,
+  .blockList li,
+  .introCopy,
+  .frameworkCopy,
+  .advantageCopy,
+  .labCopy,
+  .labList li,
+  .pathDescription,
+  .pathList {
+    font-size: 0.92rem;
+    line-height: 1.24;
+  }
+
+  .advantageSection,
+  .labSection,
+  .pathSection {
+    margin-top: 82px;
+  }
+
+  .table {
+    min-width: 640px;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px 10px;
+    font-size: 0.82rem;
+  }
+
+  .labCopy,
+  .labList {
+    margin-left: 0;
+  }
+
+  .labList {
+    padding-left: 20px;
+  }
+
+  .pathList {
+    margin-left: 18px;
+  }
+
+  .frameworkArrow {
+    top: 292px;
+    left: -18px;
+    width: 142px;
+  }
+
+  .useCasesArrow {
+    top: 1672px;
+    left: -10px;
+    width: 132px;
+  }
+
+  .annotationStrokeBold {
+    stroke-width: 6;
+  }
+
+  .bottomArcText {
+    bottom: 96px;
+    width: 520px;
+  }
+
+  .bottomArcText text {
+    font-size: 15px;
+  }
+
+  .bottomWordmark {
+    left: 10px;
+    right: 10px;
+    bottom: 8px;
+    font-size: 4.7rem;
+  }
+}

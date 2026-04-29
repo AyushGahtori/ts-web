@@ -1,0 +1,396 @@
+.section {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  padding: 126px 22px 42px;
+  background: linear-gradient(180deg, #090909 0%, #090909 84%, #56009a 100%);
+}
+
+.panel {
+  position: relative;
+  width: min(100%, 1443px);
+  min-height: 858px;
+  margin: 0 auto;
+  padding: 56px 48px 36px;
+  overflow: hidden;
+  border-radius: 0 0 66px 66px;
+  background:
+    radial-gradient(62% 90% at 56% 100%, rgba(98, 22, 176, 0.28) 0%, rgba(98, 22, 176, 0) 38%),
+    linear-gradient(180deg, #0c0d0d 0%, #080808 100%);
+}
+
+.backgroundWhy {
+  position: absolute;
+  right: -120px;
+  top: 154px;
+  z-index: 0;
+  font-size: clamp(16rem, 30vw, 30rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  color: transparent;
+  opacity: 0.24;
+  -webkit-text-stroke: 1px rgba(212, 208, 208, 0.58);
+  pointer-events: none;
+}
+
+.layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(420px, 0.94fr) minmax(560px, 1fr);
+  align-items: center;
+  gap: 28px;
+}
+
+.visualColumn {
+  position: relative;
+  min-height: 764px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.visualStage {
+  position: relative;
+  width: 100%;
+  min-height: 764px;
+}
+
+.visualImage {
+  position: absolute;
+  left: -28px;
+  bottom: -52px;
+  width: min(100%, 726px);
+  height: auto;
+  filter: drop-shadow(0 21px 9.8px rgba(0, 0, 0, 0.06));
+  pointer-events: none;
+}
+
+.contentColumn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 764px;
+  padding: 22px 0 0;
+}
+
+.headerBlock {
+  position: relative;
+  max-width: 792px;
+}
+
+.heading {
+  margin: 0;
+  color: #fff;
+}
+
+.headingLine {
+  display: block;
+  font-size: clamp(3.35rem, 5.1vw, 4rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.headingAccentRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.arrowBadge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 108px;
+  height: 108px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: radial-gradient(70% 70% at 30% 30%, #6e0de6 0%, #50008f 60%, #3e006d 100%);
+  box-shadow:
+    0 0 28px rgba(88, 0, 170, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.arrowGlyph {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 22px;
+  border-top: 3px solid #fff;
+  transform: translateX(-2px);
+}
+
+.arrowGlyph::after {
+  content: "";
+  position: absolute;
+  top: -9px;
+  right: -1px;
+  width: 18px;
+  height: 18px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  transform: rotate(45deg);
+}
+
+.usText {
+  font-size: clamp(5rem, 7vw, 6rem);
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+  color: transparent;
+  -webkit-text-stroke: 2px #4b0082;
+}
+
+.questionMark {
+  font-size: clamp(5rem, 7vw, 6rem);
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+  color: #fff;
+}
+
+.subheading {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 22px 0 0;
+  color: #b9b9b9;
+  font-size: clamp(2rem, 3.1vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+.description {
+  max-width: 788px;
+  margin: 18px 0 0;
+  color: #aeacac;
+  font-size: 1.25rem;
+  line-height: 1.42;
+}
+
+.metricsBlock {
+  margin-top: 34px;
+}
+
+.metricsTitle {
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: clamp(2rem, 2.8vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 824px;
+}
+
+.metricCard {
+  min-height: 170px;
+  padding: 18px 14px 16px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #fdfdff 0%, #f2f0f8 100%);
+  box-shadow: -7px 7px 4.9px rgba(0, 0, 0, 0.2);
+}
+
+.metricAccent {
+  display: block;
+  width: 100%;
+  height: 6px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: #4b0082;
+}
+
+.metricValue {
+  display: block;
+  color: #4b0082;
+  font-size: 2.15rem;
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.metricLabel {
+  margin: 8px 0 0;
+  color: #4b0082;
+  font-size: 0.96rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+@media (max-width: 1320px) {
+  .section {
+    padding: 116px 14px 36px;
+  }
+
+  .panel {
+    padding: 48px 30px 34px;
+  }
+
+  .layout {
+    grid-template-columns: minmax(320px, 0.9fr) minmax(460px, 1fr);
+    gap: 18px;
+  }
+
+  .backgroundWhy {
+    right: -90px;
+    top: 220px;
+  }
+
+  .visualColumn,
+  .visualStage,
+  .contentColumn {
+    min-height: 680px;
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 980px) {
+  .panel {
+    min-height: auto;
+    padding: 38px 22px 34px;
+    border-radius: 0 0 42px 42px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .backgroundWhy {
+    right: -140px;
+    top: 360px;
+    font-size: 20rem;
+    opacity: 0.16;
+  }
+
+  .visualColumn {
+    order: 2;
+    min-height: 480px;
+  }
+
+  .visualStage {
+    min-height: 480px;
+  }
+
+  .visualImage {
+    left: 0;
+    bottom: 0;
+    width: min(100%, 640px);
+  }
+
+  .contentColumn {
+    order: 1;
+    min-height: auto;
+    padding-top: 0;
+  }
+
+  .headerBlock {
+    max-width: 100%;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 104px 0 28px;
+  }
+
+  .panel {
+    padding: 28px 14px 28px;
+    border-radius: 0 0 28px 28px;
+  }
+
+  .backgroundWhy {
+    display: none;
+  }
+
+  .headingLine {
+    font-size: 2.6rem;
+  }
+
+  .headingAccentRow {
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .arrowBadge {
+    width: 74px;
+    height: 74px;
+  }
+
+  .arrowGlyph {
+    width: 38px;
+    height: 16px;
+    border-top-width: 2px;
+  }
+
+  .arrowGlyph::after {
+    top: -7px;
+    width: 14px;
+    height: 14px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+  }
+
+  .usText,
+  .questionMark {
+    font-size: 3.6rem;
+  }
+
+  .subheading {
+    margin-top: 18px;
+    font-size: 1.75rem;
+  }
+
+  .description {
+    margin-top: 16px;
+    font-size: 1rem;
+  }
+
+  .visualColumn,
+  .visualStage {
+    min-height: 360px;
+  }
+
+  .visualImage {
+    width: min(100%, 420px);
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+
+  .metricsBlock {
+    margin-top: 28px;
+  }
+
+  .metricsTitle {
+    font-size: 1.7rem;
+  }
+
+  .metricsGrid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .metricCard {
+    min-height: 138px;
+  }
+}
