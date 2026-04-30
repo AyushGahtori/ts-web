@@ -76,7 +76,7 @@ export function FrameworksSection() {
         </article>
 
         <MotionSection className="frameworks-saos-logo" direction="up" delay={0.1}>
-          <Image src="/saos.png" alt="" fill sizes="(max-width: 1120px) 85vw, 41vw" className="frameworks-saos-logo-image" />
+          <Image src="/saos-cropped.png" alt="" fill sizes="(max-width: 1120px) 85vw, 41vw" className="frameworks-saos-logo-image" />
         </MotionSection>
       </div>
     </section>
