@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { cn } from "@/lib/cn";
 
 interface NavItemProps {
@@ -15,9 +14,9 @@ const activeNavClass =
 export function NavItem({ label, href, active = false }: NavItemProps) {
   return (
     <li className="relative">
-      <Link href={href} className={cn(active ? activeNavClass : navClass)}>
+      <a href={href} className={cn(active ? activeNavClass : navClass)}>
         {label}
-      </Link>
+      </a>
       {active ? <span className="nav-item-glow" aria-hidden /> : null}
     </li>
   );

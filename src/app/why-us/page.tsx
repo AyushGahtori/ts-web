@@ -1,12 +1,5 @@
-import { AcceleratorsSection } from "@/modules/landing/sections/accelerators/AcceleratorsSection";
-import { BrandFooterSection } from "@/modules/landing/sections/brand-footer/BrandFooterSection";
-import { LandingPageShell } from "@/modules/landing/pages/LandingPageShell";
+import { redirect } from "next/navigation";
 
 export default function WhyUsPage() {
-  return (
-    <LandingPageShell>
-      <AcceleratorsSection />
-      <BrandFooterSection />
-    </LandingPageShell>
-  );
+  redirect("/#why-us");
 }
