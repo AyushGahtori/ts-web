@@ -1,0 +1,64 @@
+.pageIntro {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  padding: 132px 28px 36px;
+  background: linear-gradient(180deg, #090909 0%, #090909 72%, #56009a 100%);
+}
+
+.introPanel {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  border-radius: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: radial-gradient(90% 120% at 80% -10%, rgba(116, 24, 214, 0.28) 0%, rgba(116, 24, 214, 0) 56%), #050505;
+  padding: 36px 34px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #d2cfe0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #7d1fff;
+  box-shadow: 0 0 16px rgba(125, 31, 255, 0.7);
+}
+
+.title {
+  margin: 14px 0 0;
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.copy {
+  max-width: 840px;
+  margin: 14px 0 0;
+  color: #c8c5d2;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .pageIntro {
+    padding: 112px 12px 24px;
+  }
+
+  .introPanel {
+    border-radius: 24px;
+    padding: 24px 18px;
+  }
+}
