@@ -130,6 +130,7 @@
   transform: rotate(-7deg);
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.35));
   pointer-events: none;
+  animation: serviceFloat 6.8s ease-in-out infinite;
 }
 
 .wordStack {
@@ -167,6 +168,7 @@
   white-space: nowrap;
   background: linear-gradient(180deg, #8a1730 0%, #750c20 100%);
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.34);
+  animation: pillDrift 5.8s ease-in-out infinite alternate;
 }
 
 .pillTop {
@@ -194,6 +196,25 @@
   height: auto;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.42));
   pointer-events: none;
+  animation: serviceFloat 5.6s ease-in-out infinite reverse;
+}
+
+@keyframes pillDrift {
+  from {
+    translate: -5px 0;
+  }
+  to {
+    translate: 6px 0;
+  }
+}
+
+@keyframes serviceFloat {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -8px;
+  }
 }
 
 .baseAccent {

@@ -96,6 +96,7 @@
   border-radius: 999px;
   background: linear-gradient(90deg, #ff099d 0%, #a40761 55%, #750647 100%);
   box-shadow: 0 0 28px rgba(255, 9, 157, 0.28);
+  animation: barDrift 5.8s ease-in-out infinite alternate;
 }
 
 .barShort {
@@ -110,6 +111,15 @@
 .barTiny {
   width: 36px;
   margin-left: 58px;
+}
+
+@keyframes barDrift {
+  from {
+    transform: translateX(-5px);
+  }
+  to {
+    transform: translateX(7px);
+  }
 }
 
 .illustrationShell {

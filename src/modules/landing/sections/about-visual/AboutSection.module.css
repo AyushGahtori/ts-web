@@ -79,6 +79,7 @@
   border-radius: 999px;
   background: linear-gradient(180deg, #ff099d 0%, #730633 100%);
   box-shadow: 0 0 30px rgba(255, 9, 157, 0.28);
+  animation: verticalDrift 6.4s ease-in-out infinite alternate;
 }
 
 .railBarLongTop {
@@ -133,6 +134,7 @@
   border-radius: 999px;
   background: linear-gradient(180deg, #ff099d 0%, #730633 100%);
   box-shadow: 0 0 22px rgba(255, 9, 157, 0.36);
+  animation: verticalDrift 5.8s ease-in-out infinite alternate;
 }
 
 .phoneGlowBarPrimary {
@@ -157,6 +159,12 @@
   inset: 0;
   transform: rotate(-8deg) translateX(-10px);
   z-index: 2;
+  transition: transform 320ms ease, filter 320ms ease;
+}
+
+.phoneStage:hover .phoneShell {
+  transform: rotate(-8deg) translate(-10px, -8px);
+  filter: drop-shadow(0 18px 32px rgba(255, 9, 157, 0.16));
 }
 
 .phoneImage {
@@ -177,6 +185,14 @@
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.18),
     0 26px 70px rgba(12, 6, 39, 0.44);
+  transition: transform 280ms ease, box-shadow 280ms ease;
+}
+
+.aboutCard:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 34px 86px rgba(12, 6, 39, 0.5);
 }
 
 .cardGlow {
@@ -219,6 +235,15 @@
   gap: 18px;
   align-items: stretch;
   margin-top: 36px;
+}
+
+@keyframes verticalDrift {
+  from {
+    transform: translateY(-6px);
+  }
+  to {
+    transform: translateY(7px);
+  }
 }
 
 .splitBlock {
@@ -284,6 +309,15 @@
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
     0 10px 24px rgba(43, 31, 102, 0.22);
+  transition: transform 240ms ease, color 240ms ease, background 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.valuePill:hover {
+  transform: translateY(-3px);
+  color: #000;
+  border-color: #000;
+  background: #fff;
+  box-shadow: 0 16px 34px rgba(255, 255, 255, 0.12);
 }
 
 @media (max-width: 1280px) {

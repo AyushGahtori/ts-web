@@ -10,6 +10,7 @@ import { IndustryExcellence } from "@/modules/landing/sections/industry-excellen
 import { LeadershipSection } from "@/modules/landing/sections/leadership/LeadershipSection";
 import { Navbar } from "@/modules/landing/sections/navbar/Navbar";
 import { PortfolioSection } from "@/modules/landing/sections/portfolio/PortfolioSection";
+import { MotionSection } from "@/components/motion/MotionSection";
 import { RouteSectionScroller } from "./RouteSectionScroller";
 
 interface LandingPageProps {
@@ -22,9 +23,9 @@ export function LandingPage({ initialSectionId }: LandingPageProps) {
       <section className="landing-canvas">
         {initialSectionId ? <RouteSectionScroller sectionId={initialSectionId} /> : null}
         <Navbar />
-        <div id="home">
+        <MotionSection id="home" direction="none">
           <Hero />
-        </div>
+        </MotionSection>
         <div id="about">
           <AboutSection />
         </div>

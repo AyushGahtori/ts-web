@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { MotionSection } from "@/components/motion/MotionSection";
 import { Navbar } from "../sections/navbar/Navbar";
 
 interface StandalonePageShellProps {
@@ -10,7 +11,9 @@ export function StandalonePageShell({ children }: StandalonePageShellProps) {
     <main className="landing-root">
       <section className="landing-canvas">
         <Navbar />
-        <div style={{ paddingTop: 140 }}>{children}</div>
+        <MotionSection className="standalone-page-content" direction="none">
+          {children}
+        </MotionSection>
       </section>
     </main>
   );

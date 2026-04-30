@@ -1,4 +1,7 @@
+"use client";
+
 import { FAQItem } from "@/modules/landing/sections/faq/FAQItem";
+import { useState } from "react";
 import styles from "./faq.module.css";
 
 const faqs = [
@@ -34,6 +37,8 @@ const faqs = [
 ];
 
 export function FAQSection() {
+  const [openId, setOpenId] = useState<string | undefined>(faqs.find((item) => item.defaultOpen)?.id ?? faqs[0]?.id);
+
   return (
     <section className={styles.section}>
       <div className={styles.panel}>
@@ -48,7 +53,13 @@ export function FAQSection() {
 
         <div className={styles.grid}>
           {faqs.map((item) => (
-            <FAQItem key={item.id} question={item.question} answer={item.answer} defaultOpen={item.defaultOpen} />
+            <FAQItem
+              key={item.id}
+              question={item.question}
+              answer={item.answer}
+              open={openId === item.id}
+              onToggle={() => setOpenId((current) => (current === item.id ? undefined : item.id))}
+            />
           ))}
         </div>
       </div>

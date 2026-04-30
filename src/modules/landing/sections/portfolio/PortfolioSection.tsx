@@ -1,10 +1,11 @@
 import Image from "next/image";
+import { MotionSection } from "@/components/motion/MotionSection";
 import { PortfolioCards } from "@/modules/landing/sections/portfolio/PortfolioCards";
 
 export function PortfolioSection() {
   return (
     <section className="portfolio-section">
-      <div className="portfolio-intro-row">
+      <MotionSection className="portfolio-intro-row" direction="up">
         <div className="portfolio-handshake-wrap" style={{ position: "relative" }} aria-hidden>
           <Image src="/handshake.png" alt="" fill sizes="(max-width: 768px) 108px, (max-width: 1120px) 170px, 272px" className="portfolio-handshake-image" />
         </div>
@@ -18,14 +19,14 @@ export function PortfolioSection() {
             seamlessly orchestrating people, processes, and technology into a living, breathing enterprise.&quot;
           </p>
         </div>
-      </div>
+      </MotionSection>
 
       <div className="portfolio-shell">
-        <div className="portfolio-label-card">
+        <MotionSection className="portfolio-label-card" direction="left">
           <span className="portfolio-label-dot" aria-hidden />
           <span className="portfolio-label-pill" aria-hidden />
           <p className="portfolio-label-text">Comprehensive Service Portfolio</p>
-        </div>
+        </MotionSection>
 
         <article className="portfolio-main-card">
           <div className="portfolio-main-bg" style={{ position: "absolute" }} aria-hidden>

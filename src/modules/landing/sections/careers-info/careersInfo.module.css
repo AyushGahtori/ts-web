@@ -34,6 +34,13 @@
   height: 18px;
   border-radius: 999px;
   opacity: 0.92;
+  border: 1px solid transparent;
+  transition:
+    transform 240ms ease,
+    background 240ms ease,
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    opacity 240ms ease;
 }
 
 .dotRed {
@@ -46,6 +53,16 @@
 
 .dotGreen {
   background: #1fff63;
+}
+
+.dotRed:hover,
+.dotYellow:hover,
+.dotGreen:hover {
+  transform: translateY(-3px);
+  background: #fff;
+  border-color: #000;
+  opacity: 1;
+  box-shadow: 0 16px 34px rgba(255, 255, 255, 0.12);
 }
 
 .topRule {

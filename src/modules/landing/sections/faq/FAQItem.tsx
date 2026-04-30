@@ -1,16 +1,17 @@
 "use client";
 
-import { useId, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useId } from "react";
 import styles from "./faq.module.css";
 
 interface FAQItemProps {
   question: string;
   answer: string;
-  defaultOpen?: boolean;
+  open?: boolean;
+  onToggle?: () => void;
 }
 
-export function FAQItem({ question, answer, defaultOpen = false }: FAQItemProps) {
-  const [open, setOpen] = useState(defaultOpen);
+export function FAQItem({ question, answer, open = false, onToggle }: FAQItemProps) {
   const answerId = useId();
 
   return (
@@ -20,20 +21,36 @@ export function FAQItem({ question, answer, defaultOpen = false }: FAQItemProps)
         className={styles.trigger}
         aria-expanded={open}
         aria-controls={answerId}
-        onClick={() => setOpen((value) => !value)}
+        onClick={onToggle}
       >
         <span className={styles.question}>{question}</span>
-        <span className={`${styles.iconWrap} ${open ? styles.iconWrapOpen : ""}`} aria-hidden>
+        <motion.span
+          className={`${styles.iconWrap} ${open ? styles.iconWrapOpen : ""}`}
+          aria-hidden
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+        >
           <span className={styles.iconHorizontal} />
           <span className={`${styles.iconVertical} ${open ? styles.iconVerticalClosed : ""}`} />
-        </span>
+        </motion.span>
       </button>
 
-      <div id={answerId} className={`${styles.answerShell} ${open ? styles.answerShellOpen : ""}`}>
-        <div className={styles.answerInner}>
-          <p className={styles.answer}>{answer}</p>
-        </div>
-      </div>
+      <AnimatePresence initial={false}>
+        {open ? (
+          <motion.div
+            id={answerId}
+            className={`${styles.answerShell} ${styles.answerShellOpen}`}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className={styles.answerInner}>
+              <p className={styles.answer}>{answer}</p>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </article>
   );
 }
