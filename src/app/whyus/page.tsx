@@ -1,12 +1,5 @@
-import { StandalonePageShell } from "@/modules/landing/pages/StandalonePageShell";
-import { AcceleratorsSection } from "@/modules/landing/sections/accelerators/AcceleratorsSection";
-import { BrandFooterSection } from "@/modules/landing/sections/brand-footer/BrandFooterSection";
+import { WhyUsPage } from "@/modules/landing/WhyUsPage";
 
-export default function WhyUsPage() {
-  return (
-    <StandalonePageShell>
-      <AcceleratorsSection />
-      <BrandFooterSection />
-    </StandalonePageShell>
-  );
+export default function WhyUsRoute() {
+  return <WhyUsPage />;
 }
