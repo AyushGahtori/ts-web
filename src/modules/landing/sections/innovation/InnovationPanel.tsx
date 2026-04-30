@@ -1,0 +1,117 @@
+import { InnovationBlock } from "./InnovationBlock";
+import { InnovationDecorations } from "./InnovationDecorations";
+import { InnovationPath } from "./InnovationPath";
+import { InnovationPill } from "./InnovationPill";
+import { InnovationTable } from "./InnovationTable";
+import styles from "./innovation.module.css";
+
+const frameworkBlocks = [
+  {
+    title: "1. SAOS (ServiceNow Autonomous Operating System)",
+    description: "The flagship framework for the self-driving enterprise.",
+    bullets: [
+      {
+        label: "Self-Healing Infrastructure",
+        text: "Automated detection and remediation of IT anomalies without human intervention.",
+      },
+      {
+        label: "Predictive AIOps",
+        text: "Correlation of events using machine learning to resolve issues before users are impacted.",
+      },
+      {
+        label: "Closed-Loop Automation",
+        text: "End-to-end workflow orchestration that handles the entire lifecycle of an incident.",
+      },
+    ],
+  },
+  {
+    title: "2. SNADA (ServiceNow AI Digital Assistant)",
+    description: "The intelligent bridge between complex enterprise data and seamless user experience.",
+    bullets: [
+      {
+        label: "Multi-Model Routing",
+        text: "Orchestrates requests across multiple LLMs like GPT-4, Gemini, and Claude based on cost and complexity.",
+      },
+      {
+        label: "Conversational Intelligence",
+        text: "Provides 24/7 natural language support for employees and customers.",
+      },
+      {
+        label: "Contextual RAG",
+        text: "Uses Retrieval-Augmented Generation to ensure AI responses are grounded in your specific corporate data.",
+      },
+    ],
+  },
+];
+
+const useCases = [
+  "BFSI: AI-driven fraud detection and automated regulatory compliance monitoring.",
+  "Manufacturing: Predictive maintenance for global assets and supply chain risk forecasting.",
+  "Healthcare/Pharma: GxP-compliant automated document processing and pharmacovigilance.",
+  "Retail & CX: Hyper-personalized customer journey orchestration across all digital touchpoints.",
+];
+
+export function InnovationPanel() {
+  return (
+    <section className={styles.panel}>
+      <InnovationDecorations area="panel" />
+
+      <div className={styles.panelInner}>
+        <section className={styles.introSection}>
+          <InnovationPill className={styles.introPill}>Engineering the Future of Work</InnovationPill>
+          <p className={styles.introCopy}>
+            At TechSnitch, innovation is not a buzzword; it is our architectural foundation. We empower
+            enterprises to transition from manual, reactive service management to Autonomous, Self-Healing
+            Operations. By decoupling intelligence from vendor constraints, we ensure your organization remains at
+            the cutting edge of the AI revolution.
+          </p>
+        </section>
+
+        <section className={styles.frameworksSection}>
+          <InnovationPill className={styles.frameworkPill}>Our Proprietary Innovation Frameworks</InnovationPill>
+          <div className={styles.frameworkBody}>
+            <p className={styles.frameworkCopy}>
+              We accelerate digital maturity through high-performance assets designed to sit atop your existing
+              ServiceNow and enterprise ecosystem.
+            </p>
+
+            <div className={styles.blockStack}>
+              {frameworkBlocks.map((block) => (
+                <InnovationBlock key={block.title} {...block} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.advantageSection}>
+          <InnovationPill className={styles.advantagePill}>The AI-Agnostic Advantage</InnovationPill>
+          <p className={styles.advantageCopy}>
+            TechSnitch&apos;s innovation strategy is built on the principle of Strategic Flexibility. We believe your
+            intelligence layer should never be a prisoner to a single vendor&apos;s roadmap.
+          </p>
+          <InnovationTable />
+        </section>
+
+        <section className={styles.labSection}>
+          <InnovationPill className={styles.labPill}>Our Innovation Lab: Leading Industry Use Cases</InnovationPill>
+          <div className={styles.labBody}>
+            <p className={styles.labCopy}>
+              We don&apos;t just build tools; we solve industry-specific complexities through intelligent automation.
+            </p>
+            <ul className={styles.labList}>
+              {useCases.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <InnovationPath />
+      </div>
+
+      <div className={styles.bottomWordmark} aria-hidden>
+        INNOVATIONS
+      </div>
+    </section>
+  );
+}

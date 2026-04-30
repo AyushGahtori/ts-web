@@ -1,5 +1,5 @@
-import { IntelligenceHubPage } from "@/modules/landing/IntelligenceHubPage";
+import { InnovationPage } from "@/modules/landing/InnovationPage";
 
 export default function IntelligenceHubRoute() {
-  return <IntelligenceHubPage />;
+  return <InnovationPage />;
 }
