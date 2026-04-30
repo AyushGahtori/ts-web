@@ -2,7 +2,6 @@
 
 import { useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { AccordionButton } from "@/components/ui/AccordionButton";
 import { cn } from "@/lib/cn";
 import styles from "./IndustryExcellence.module.css";
 
@@ -49,14 +48,21 @@ export function IndustryAccordionItem({
 
   return (
     <article className={cn(styles.item, isOpen && styles.itemOpen)}>
-      <AccordionButton
+      <button
+        type="button"
         id={`${id}-button`}
-        title={title}
-        isOpen={isOpen}
-        onClick={onToggle}
         aria-controls={`${id}-panel`}
+        aria-expanded={isOpen}
+        onClick={onToggle}
         className={styles.itemButton}
-      />
+      >
+        <span className={styles.itemTitle}>{title}</span>
+        <span className={cn(styles.itemChevron, isOpen && styles.itemChevronOpen)} aria-hidden>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M5.25 7.75L10 12.5L14.75 7.75" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+      </button>
 
       <div
         id={`${id}-panel`}
