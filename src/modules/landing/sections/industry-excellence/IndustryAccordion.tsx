@@ -15,7 +15,7 @@ export function IndustryAccordion({ items }: IndustryAccordionProps) {
 
   return (
     <div className={styles.accordionStack}>
-      {items.map((item, index) => {
+      {items.map((item) => {
         const isOpen = item.id === openId;
 
         return (
@@ -26,7 +26,7 @@ export function IndustryAccordion({ items }: IndustryAccordionProps) {
             isOpen={isOpen}
             onToggle={() => setOpenId(item.id)}
             description={item.description}
-            decorative={index === 0}
+            decorative
           >
             {item.rows ? <IndustryTable rows={item.rows} /> : <div className={styles.emptyPanel} aria-hidden />}
           </IndustryAccordionItem>
