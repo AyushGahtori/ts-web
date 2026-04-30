@@ -64,6 +64,7 @@
   height: auto;
   filter: drop-shadow(0 21px 9.8px rgba(0, 0, 0, 0.06));
   pointer-events: none;
+  animation: statueFloat 7.4s ease-in-out infinite;
 }
 
 .contentColumn {
@@ -200,6 +201,31 @@
   border-radius: 16px;
   background: linear-gradient(180deg, #fdfdff 0%, #f2f0f8 100%);
   box-shadow: -7px 7px 4.9px rgba(0, 0, 0, 0.2);
+  transition: transform 240ms ease, box-shadow 240ms ease, background 240ms ease, color 240ms ease;
+}
+
+.metricCard:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: linear-gradient(180deg, #111 0%, #070707 100%);
+  box-shadow: -8px 12px 24px rgba(0, 0, 0, 0.34), 0 0 30px rgba(110, 10, 241, 0.22);
+}
+
+.metricCard:hover .metricValue,
+.metricCard:hover .metricLabel {
+  color: #ffffff;
+}
+
+.metricCard:hover .metricAccent {
+  background: #ffffff;
+}
+
+@keyframes statueFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .metricAccent {

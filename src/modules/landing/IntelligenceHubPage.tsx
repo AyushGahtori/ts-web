@@ -2,6 +2,7 @@ import { BrandFooterSection } from "@/modules/landing/sections/brand-footer/Bran
 import { FrameworksSection } from "@/modules/landing/sections/frameworks/FrameworksSection";
 import { IndustryExcellence } from "@/modules/landing/sections/industry-excellence/IndustryExcellence";
 import { Navbar } from "@/modules/landing/sections/navbar/Navbar";
+import { MotionSection } from "@/components/motion/MotionSection";
 import styles from "./IntelligenceHubPage.module.css";
 
 export function IntelligenceHubPage() {
@@ -9,7 +10,7 @@ export function IntelligenceHubPage() {
     <main className="landing-root">
       <section className="landing-canvas">
         <Navbar />
-        <section className={styles.pageIntro}>
+        <MotionSection className={styles.pageIntro} direction="none">
           <div className={styles.introPanel}>
             <p className={styles.eyebrow}>
               <span className={styles.dot} aria-hidden />
@@ -21,10 +22,16 @@ export function IntelligenceHubPage() {
               enterprises from reactive service management to autonomous intelligence-led operations.
             </p>
           </div>
-        </section>
-        <FrameworksSection />
-        <IndustryExcellence />
-        <BrandFooterSection />
+        </MotionSection>
+        <div>
+          <FrameworksSection />
+        </div>
+        <MotionSection>
+          <IndustryExcellence />
+        </MotionSection>
+        <MotionSection>
+          <BrandFooterSection />
+        </MotionSection>
       </section>
     </main>
   );

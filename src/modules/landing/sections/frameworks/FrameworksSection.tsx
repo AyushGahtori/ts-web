@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MotionSection } from "@/components/motion/MotionSection";
 
 const snadaCapabilities = [
   "Persona-Based Intelligence",
@@ -26,18 +27,18 @@ export function FrameworksSection() {
         <span className="frameworks-pill frameworks-pill--small" aria-hidden />
         <span className="frameworks-pill frameworks-pill--long" aria-hidden />
         <span className="frameworks-pill frameworks-pill--dot" aria-hidden />
-        <div className="frameworks-title-banner">
+        <MotionSection className="frameworks-title-banner" direction="up">
           <h2>Proprietary Frameworks: SNADA &amp; SAOS</h2>
-        </div>
+        </MotionSection>
       </header>
 
       <div className="frameworks-content">
         <article className="frameworks-snada-row">
-          <div className="frameworks-snada-logo" style={{ position: "relative" }} aria-hidden>
+          <MotionSection className="frameworks-snada-logo" direction="up" delay={0.08}>
             <Image src="/snada.png" alt="" fill sizes="(max-width: 1120px) 88vw, 46vw" className="frameworks-snada-logo-image" />
-          </div>
+          </MotionSection>
 
-          <div className="frameworks-panel frameworks-panel--snada">
+          <MotionSection className="frameworks-panel frameworks-panel--snada" direction="up" delay={0.12} stagger>
             <h3>SNADA &mdash; ServiceNow AI Digital Assistant</h3>
             <p>
               SNADA is not a chatbot. It is an enterprise-grade, AI-agnostic conversational intelligence layer that transforms how
@@ -52,11 +53,11 @@ export function FrameworksSection() {
                 </span>
               ))}
             </div>
-          </div>
+          </MotionSection>
         </article>
 
         <article className="frameworks-saos-row">
-          <div className="frameworks-panel frameworks-panel--saos">
+          <MotionSection className="frameworks-panel frameworks-panel--saos" direction="up" stagger>
             <h3>SAOS &mdash; ServiceNow Autonomous Operating System</h3>
             <p>
               SAOS is TechSnitch&apos;s most transformative offering. It is the architectural framework that powers the autonomous
@@ -71,12 +72,12 @@ export function FrameworksSection() {
                 </span>
               ))}
             </div>
-          </div>
+          </MotionSection>
         </article>
 
-        <div className="frameworks-saos-logo" style={{ position: "absolute" }} aria-hidden>
+        <MotionSection className="frameworks-saos-logo" direction="up" delay={0.1}>
           <Image src="/saos.png" alt="" fill sizes="(max-width: 1120px) 85vw, 41vw" className="frameworks-saos-logo-image" />
-        </div>
+        </MotionSection>
       </div>
     </section>
   );

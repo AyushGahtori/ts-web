@@ -1,4 +1,6 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
 import styles from "./servicesGrid.module.css";
 
 type CardVariant = "salesforce" | "erp" | "microsoft" | "llm" | "cloud" | "itsm";
@@ -13,7 +15,14 @@ interface ServiceCardProps {
 
 export function ServiceCard({ title, description, bullets, variant, className = "" }: ServiceCardProps) {
   return (
-    <article className={`${styles.card} ${styles[`card${capitalize(variant)}`]} ${className}`}>
+    <motion.article
+      className={`${styles.card} ${styles[`card${capitalize(variant)}`]} ${className}`}
+      initial={{ opacity: 0, y: 22 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      whileHover={{ y: -5, scale: 1.012 }}
+      transition={{ duration: 0.46, ease: [0.22, 1, 0.36, 1] }}
+    >
       <div className={styles.cardBody}>
         <div className={styles.copy}>
           <h3 className={styles.cardTitle}>{title}</h3>
@@ -39,27 +48,11 @@ export function ServiceCard({ title, description, bullets, variant, className = 
           ) : null}
 
           {variant === "erp" ? (
-            <Image
-              src="/oracle.png"
-              alt=""
-              aria-hidden="true"
-              width={1024}
-              height={1536}
-              sizes="(max-width: 768px) 76vw, (max-width: 1180px) 32vw, 360px"
-              className={styles.erpImage}
-            />
+            <div className={styles.erpImage}>ERP</div>
           ) : null}
 
           {variant === "microsoft" ? (
-            <Image
-              src="/copiolet.png"
-              alt=""
-              aria-hidden="true"
-              width={297}
-              height={198}
-              className={styles.copilotImage}
-              style={{ height: "auto" }}
-            />
+            <div className={styles.copilotImage}>Copilot</div>
           ) : null}
 
           {variant === "llm" ? (
@@ -73,26 +66,10 @@ export function ServiceCard({ title, description, bullets, variant, className = 
           {variant === "cloud" ? (
             <>
               <div className={styles.cloudBadgeAws}>
-                <Image
-                  src="/aws.png"
-                  alt=""
-                  aria-hidden="true"
-                  width={233}
-                  height={155}
-                  sizes="(max-width: 768px) 32vw, 150px"
-                  className={styles.cloudBadgeImageAws}
-                />
+                <span className={styles.cloudBadgeImageAws}>AWS</span>
               </div>
               <div className={styles.cloudBadgeGcp}>
-                <Image
-                  src="/gcc.png"
-                  alt=""
-                  aria-hidden="true"
-                  width={293}
-                  height={162}
-                  sizes="(max-width: 768px) 34vw, 180px"
-                  className={styles.cloudBadgeImageGcp}
-                />
+                <span className={styles.cloudBadgeImageGcp}>GCP</span>
               </div>
             </>
           ) : null}
@@ -106,7 +83,7 @@ export function ServiceCard({ title, description, bullets, variant, className = 
           ) : null}
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }
 
