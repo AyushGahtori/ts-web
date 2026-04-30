@@ -58,6 +58,7 @@ export function ServiceCard({ title, description, bullets, variant, className = 
               width={297}
               height={198}
               className={styles.copilotImage}
+              style={{ height: "auto" }}
             />
           ) : null}
 
