@@ -13,30 +13,20 @@ import { PortfolioSection } from "@/modules/landing/sections/portfolio/Portfolio
 
 export default function Home() {
   return (
-    <main className="landing-root" id="home">
+    <main className="landing-root">
       <section className="landing-canvas">
         <Navbar />
         <Hero />
-        <section id="about">
-          <AboutSection />
-        </section>
-        <section id="why-us">
-          <AcceleratorsSection />
-        </section>
-        <section id="services">
-          <PortfolioSection />
-        </section>
-        <section id="intelligence-hub">
-          <FrameworksSection />
-          <IndustryExcellence />
-        </section>
-        <section id="innovations">
-          <AboutVisualSection />
-          <CareerSection />
-          <CareersInfoSection />
-          <LeadershipSection />
-          <BrandFooterSection />
-        </section>
+        <AboutSection />
+        <AcceleratorsSection />
+        <PortfolioSection />
+        <FrameworksSection />
+        <IndustryExcellence />
+        <AboutVisualSection />
+        <CareerSection />
+        <CareersInfoSection />
+        <LeadershipSection />
+        <BrandFooterSection />
       </section>
     </main>
   );
