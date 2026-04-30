@@ -956,8 +956,9 @@ body {
 
 .portfolio-intro-row {
   align-items: center;
+  justify-content: center;
   gap: 22px;
-  padding: 10px 24px 96px 108px;
+  padding: 10px 24px 96px;
   display: flex;
   position: relative
 }
@@ -966,7 +967,7 @@ body {
   flex: none;
   width: 272px;
   height: 228px;
-  margin-left: 8px;
+  margin-left: 0;
   position: relative
 }
 
@@ -980,7 +981,7 @@ body {
 }
 
 .portfolio-intro-copy-wrap {
-  flex: 1;
+  flex: 0 1 760px;
   max-width: 760px;
   margin-left: 0;
   padding-top: 4px;
@@ -1494,6 +1495,7 @@ body {
   }
 
   .portfolio-intro-row {
+    justify-content: center;
     gap: 10px;
     padding-inline: 14px
   }
@@ -1505,7 +1507,7 @@ body {
 
   .portfolio-intro-copy-wrap {
     max-width: 560px;
-    margin-left: -6px;
+    margin-left: 0;
     padding-top: 8px
   }
 
@@ -1819,7 +1821,8 @@ body {
   }
 
   .portfolio-intro-row {
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
     padding-inline: 8px
   }
@@ -2172,6 +2175,7 @@ body {
   }
 
   .portfolio-intro-row {
+    justify-content: center;
     gap: 6px;
     padding: 0 4px 6px
   }
@@ -2451,7 +2455,10 @@ body {
 .frameworks-snada-logo {
   aspect-ratio: 1026/684;
   filter: drop-shadow(-14px 4px 37.2px #0000004d);
+  isolation: isolate;
+  overflow: visible;
   width: min(100%, 640px);
+  margin-top: 40px;
   margin-left: -70px;
   position: relative
 }
@@ -2557,14 +2564,16 @@ body {
 }
 
 .frameworks-saos-logo {
-  aspect-ratio: 805/1208;
-  z-index: 4;
+  aspect-ratio: 710/912;
+  z-index: 12;
   filter: drop-shadow(-14px 4px 37.2px #0000004d);
-  pointer-events: none;
-  width: clamp(460px, 41vw, 805px);
+  isolation: isolate;
+  overflow: visible;
+  pointer-events: auto;
+  width: clamp(320px, 28.4vw, 558px);
   position: absolute;
-  top: 355px;
-  right: -20px
+  top: 485px;
+  right: 8px
 }
 
 .frameworks-saos-logo-image {
@@ -3105,15 +3114,50 @@ body {
 
 .frameworks-snada-logo,
 .frameworks-saos-logo {
-  transition: filter .7s ease, transform .7s ease;
+  transition: filter 1.45s cubic-bezier(.22, .61, .36, 1), transform 1.45s cubic-bezier(.22, .61, .36, 1);
+}
+
+.frameworks-snada-logo::before {
+  content: "";
+  pointer-events: none;
+  opacity: 0;
+  z-index: -1;
+  border-radius: 999px;
+  width: 78%;
+  height: 78%;
+  position: absolute;
+  inset: 11%;
+  transform: scale(.88);
+  transition: opacity 1.65s cubic-bezier(.22, .61, .36, 1), transform 1.65s cubic-bezier(.22, .61, .36, 1), filter 1.65s cubic-bezier(.22, .61, .36, 1);
+}
+
+.frameworks-snada-logo::before {
+  background: radial-gradient(circle at 52% 50%, rgba(255, 113, 201, .72) 0%, rgba(255, 82, 192, .44) 34%, rgba(255, 64, 180, .18) 58%, rgba(255, 64, 180, 0) 78%);
+  filter: blur(24px) saturate(1.18);
 }
 
 .frameworks-snada-logo:hover {
-  filter: drop-shadow(0 0 18px rgba(177, 49, 255, .34)) drop-shadow(0 26px 52px rgba(110, 10, 241, .24));
+  filter: drop-shadow(0 0 20px rgba(255, 92, 186, .52)) drop-shadow(0 0 44px rgba(255, 61, 171, .34)) drop-shadow(0 26px 52px rgba(255, 61, 171, .28));
+  transform: translateY(-2px) scale(1.01);
+}
+
+.frameworks-snada-logo:hover::before {
+  opacity: 1;
+  transform: scale(1.08);
 }
 
 .frameworks-saos-logo:hover {
-  filter: drop-shadow(0 0 18px rgba(197, 255, 171, .38)) drop-shadow(0 26px 52px rgba(119, 255, 143, .18));
+  filter: drop-shadow(0 0 14px rgba(130, 255, 166, .34)) drop-shadow(0 18px 36px rgba(83, 255, 132, .2));
+  transform: translateY(-2px) scale(1.01);
+}
+
+.frameworks-saos-logo-image {
+  transition: filter 1.65s cubic-bezier(.22, .61, .36, 1), transform 1.65s cubic-bezier(.22, .61, .36, 1);
+}
+
+.frameworks-saos-logo:hover .frameworks-saos-logo-image {
+  filter: drop-shadow(0 10px 28px rgba(144, 255, 180, .78)) drop-shadow(0 18px 58px rgba(106, 255, 156, .56)) drop-shadow(0 30px 104px rgba(86, 255, 141, .36));
+  transform: scale(1.008);
 }
 
 .stat-card,
@@ -3138,10 +3182,10 @@ body {
 
 @keyframes ts-drift-x {
   from {
-    transform: translateX(-6px);
+    transform: translateX(-12px);
   }
   to {
-    transform: translateX(7px);
+    transform: translateX(14px);
   }
 }
 
@@ -3217,6 +3261,24 @@ body {
   .frameworks-title-banner h2 {
     overflow-wrap: anywhere;
   }
+}
+
+/* Global stripe tuning: 2x speed (size unchanged) */
+
+.glow-pill,
+.about-pill,
+.frameworks-pill,
+.portfolio-label-pill,
+.portfolio-label-dot,
+.hero-glow-pill--short,
+.hero-glow-pill--long {
+  animation-duration: 2.9s;
+}
+
+.hero-glow-pill--long,
+.frameworks-pill--long,
+.portfolio-label-pill {
+  animation-duration: 3.6s;
 }
 
 @media (prefers-reduced-motion: reduce) {

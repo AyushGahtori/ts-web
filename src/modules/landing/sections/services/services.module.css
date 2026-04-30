@@ -168,7 +168,7 @@
   white-space: nowrap;
   background: linear-gradient(180deg, #8a1730 0%, #750c20 100%);
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.34);
-  animation: pillDrift 5.8s ease-in-out infinite alternate;
+  animation: pillDrift 2.9s ease-in-out infinite alternate;
 }
 
 .pillTop {
@@ -201,10 +201,10 @@
 
 @keyframes pillDrift {
   from {
-    translate: -5px 0;
+    translate: -10px 0;
   }
   to {
-    translate: 6px 0;
+    translate: 12px 0;
   }
 }
 
