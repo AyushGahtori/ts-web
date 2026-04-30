@@ -1,0 +1,533 @@
+.section {
+  position: relative;
+  z-index: 2;
+  margin-top: -18px;
+  padding: 0 22px 0;
+  background: #0c0d0d;
+}
+
+.panel {
+  width: min(100%, 1443px);
+  margin: 0 auto;
+  padding: 14px 22px 0;
+  background: #0c0d0d;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.headerLine {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.headerPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 14px;
+  border-radius: 6px;
+  background: #4b0082;
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.headerBrand {
+  color: #ffffff;
+}
+
+.headerText {
+  color: #8a35f5;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-areas:
+    "one one one one three three three three three three three three"
+    "one one one one two two two two four four four four"
+    "five five five five five five five five six six six six";
+  gap: 10px;
+  padding-bottom: 0;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 17px;
+  background:
+    radial-gradient(42% 52% at 78% 24%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 56%),
+    linear-gradient(180deg, #252324 0%, #1e1d1d 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 20px 32px rgba(0, 0, 0, 0.14);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 28px 44px rgba(76, 16, 144, 0.18);
+}
+
+.cardSalesforce {
+  min-height: 824px;
+}
+
+.cardMicrosoft {
+  min-height: 300px;
+}
+
+.cardErp,
+.cardLlm {
+  min-height: 256px;
+}
+
+.cardCloud,
+.cardItsm {
+  min-height: 260px;
+}
+
+.cardBody {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 430px);
+  padding: 18px 16px 16px;
+}
+
+.cardTitle {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.7rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.cardDescription {
+  margin: 16px 0 0;
+  color: #c4c1c1;
+  font-size: 1.02rem;
+  font-weight: 400;
+  line-height: 1.25;
+  white-space: pre-line;
+}
+
+.bulletList {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: #c4c1c1;
+}
+
+.bulletList li {
+  font-size: 0.98rem;
+  line-height: 1.26;
+}
+
+.learnMore {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fffbfb;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.learnArrow {
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  transform: rotate(45deg);
+}
+
+.visual {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.cardErp .copy {
+  width: min(100%, 405px);
+}
+
+.salesforceStar {
+  position: absolute;
+  right: 22px;
+  bottom: 24px;
+  width: 182px;
+  height: 182px;
+  background: rgba(68, 68, 68, 0.6);
+  clip-path: polygon(50% 0%, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0% 50%, 37% 37%);
+  box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.06);
+}
+
+.erpImage {
+  position: absolute;
+  left: -18px;
+  bottom: -22px;
+  width: min(88%, 420px);
+  height: auto;
+  opacity: 0.96;
+  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.28));
+}
+
+.copilotImage {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  width: min(44%, 297px);
+  height: auto;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.35));
+  pointer-events: none;
+}
+
+.codeWindow {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  width: 158px;
+  height: 112px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #232323 0%, #1b1b1b 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 16px 24px rgba(0, 0, 0, 0.14);
+}
+
+.windowDotRed,
+.windowDotGreen {
+  position: absolute;
+  top: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.windowDotRed {
+  left: 14px;
+  background: #ff0000;
+}
+
+.windowDotGreen {
+  left: 30px;
+  background: #3cff00;
+}
+
+.codeGlyph {
+  position: absolute;
+  left: 42px;
+  top: 42px;
+  width: 76px;
+  height: 28px;
+}
+
+.codeGlyph::before,
+.codeGlyph::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-top: 6px solid #ffffff;
+}
+
+.codeGlyph::before {
+  left: 0;
+  border-left: 6px solid #ffffff;
+  transform: rotate(-45deg);
+}
+
+.codeGlyph::after {
+  right: 0;
+  border-right: 6px solid #ffffff;
+  transform: rotate(45deg);
+}
+
+.cloudBadgeAws,
+.cloudBadgeGcp {
+  position: absolute;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #2f2f2f 0%, #262626 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 16px 28px rgba(0, 0, 0, 0.16);
+}
+
+.cloudBadgeAws {
+  top: 30px;
+  right: 180px;
+  width: 136px;
+  height: 136px;
+}
+
+.cloudBadgeGcp {
+  right: 44px;
+  bottom: 24px;
+  width: 148px;
+  height: 148px;
+  transform: rotate(42deg);
+}
+
+.cloudBadgeImageAws,
+.cloudBadgeImageGcp {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cloudBadgeImageAws {
+  padding: 26px;
+}
+
+.cloudBadgeImageGcp {
+  padding: 28px;
+  transform: rotate(-42deg) scale(0.88);
+}
+
+.supportAvatar {
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  width: 136px;
+  height: 136px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #303030 0%, #252525 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.supportHead {
+  position: absolute;
+  left: 38px;
+  top: 38px;
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  background: #727272;
+}
+
+.supportHead::before,
+.supportHead::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.supportHead::before {
+  left: 16px;
+}
+
+.supportHead::after {
+  right: 16px;
+}
+
+.supportEarLeft,
+.supportEarRight {
+  position: absolute;
+  top: 54px;
+  width: 14px;
+  height: 34px;
+  border-radius: 999px;
+  background: #505050;
+}
+
+.supportEarLeft {
+  left: 24px;
+}
+
+.supportEarRight {
+  right: 24px;
+}
+
+@media (max-width: 1180px) {
+  .section {
+    padding: 0 14px 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "one three"
+      "one three"
+      "two four"
+      "five six";
+  }
+
+  .cardSalesforce,
+  .cardMicrosoft {
+    min-height: 540px;
+  }
+
+  .copilotImage {
+    width: min(42%, 240px);
+    top: 18px;
+    right: 10px;
+  }
+
+  .erpImage {
+    left: -10px;
+    bottom: -18px;
+    width: min(84%, 360px);
+  }
+
+  .cloudBadgeAws {
+    right: 134px;
+  }
+
+  .cloudBadgeGcp {
+    right: 20px;
+    width: 132px;
+    height: 132px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 0 0 0;
+  }
+
+  .panel {
+    padding: 24px 10px 0;
+  }
+
+  .headerPill {
+    min-height: 42px;
+    font-size: 0.92rem;
+    padding: 0 12px;
+  }
+
+  .headerLine {
+    gap: 8px;
+  }
+
+  .headerText {
+    font-size: 0.92rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "one"
+      "three"
+      "two"
+      "four"
+      "five"
+      "six";
+    gap: 10px;
+  }
+
+  .cardSalesforce,
+  .cardMicrosoft,
+  .cardErp,
+  .cardLlm,
+  .cardCloud,
+  .cardItsm {
+    min-height: 280px;
+  }
+
+  .cardErp,
+  .cardCloud {
+    min-height: 318px;
+  }
+
+  .copy {
+    width: 100%;
+    padding: 16px 14px 36px;
+  }
+
+  .cardTitle {
+    font-size: 1.35rem;
+  }
+
+  .cardDescription,
+  .bulletList li {
+    font-size: 0.92rem;
+  }
+
+  .copilotImage {
+    width: min(44%, 180px);
+    top: 14px;
+    right: 10px;
+  }
+
+  .erpImage {
+    left: -8px;
+    bottom: -8px;
+    width: min(90%, 320px);
+  }
+
+  .cloudBadgeAws {
+    top: 30px;
+    right: 118px;
+    width: 104px;
+    height: 104px;
+  }
+
+  .cloudBadgeGcp {
+    right: 20px;
+    bottom: 28px;
+    width: 118px;
+    height: 118px;
+  }
+
+  .cloudBadgeImageAws {
+    padding: 18px;
+  }
+
+  .cloudBadgeImageGcp {
+    padding: 20px;
+  }
+}

@@ -1,5 +1,5 @@
-import { LandingPage } from "@/modules/landing/pages/LandingPage";
+import { ServicesPage } from "@/modules/landing/ServicesPage";
 
-export default function ServicesPage() {
-  return <LandingPage initialSectionId="services" />;
+export default function ServicesRoute() {
+  return <ServicesPage />;
 }

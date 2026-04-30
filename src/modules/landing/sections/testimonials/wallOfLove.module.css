@@ -1,0 +1,256 @@
+.section {
+  position: relative;
+  z-index: 2;
+  margin-top: -1px;
+  padding: 0 22px 0;
+  background: linear-gradient(180deg, #0c0d0d 0%, #4b0082 10%, #4b0082 100%);
+}
+
+.curveTop {
+  width: min(100%, 1402px);
+  height: 168px;
+  margin: 0 auto;
+  border-radius: 1402px 1402px 0 0;
+  background: #4b0082;
+}
+
+.panel {
+  width: min(100%, 1402px);
+  margin: -1px auto 0;
+  padding: 12px 32px 54px;
+  background: #4b0082;
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Brush Script MT", "Segoe Script", "Times New Roman", cursive;
+  font-size: clamp(4.2rem, 9vw, 7.4rem);
+  font-weight: 400;
+  line-height: 0.95;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.9fr) minmax(0, 1fr);
+  grid-template-areas:
+    "john . michael"
+    "emily . lisa"
+    "sarah . carter"
+    "david jennifer mark";
+  column-gap: 42px;
+  row-gap: 26px;
+  margin-top: 18px;
+  padding-bottom: 18px;
+}
+
+.item {
+  color: #ffffff;
+  max-width: 394px;
+}
+
+.name {
+  margin: 0;
+  font-size: 2.15rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.role {
+  margin: 0 0 6px;
+  font-size: 1.42rem;
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.divider {
+  display: block;
+  width: 100%;
+  max-width: 383px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(217, 217, 217, 0.88);
+}
+
+.quote {
+  margin: 8px 0 0;
+  font-size: 1.32rem;
+  font-weight: 400;
+  line-height: 1.18;
+}
+
+.charactersWrap {
+  position: absolute;
+  left: 50%;
+  bottom: 460px;
+  transform: translateX(-50%);
+  width: min(100%, 420px);
+  height: 360px;
+  pointer-events: none;
+}
+
+.shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  width: 286px;
+  height: 20px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.26);
+  filter: blur(5px);
+}
+
+.charactersImage {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  width: min(100%, 360px);
+  height: auto;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 22px 30px rgba(0, 0, 0, 0.24));
+}
+
+.john {
+  grid-area: john;
+}
+
+.michael {
+  grid-area: michael;
+  justify-self: end;
+}
+
+.emily {
+  grid-area: emily;
+}
+
+.lisa {
+  grid-area: lisa;
+  justify-self: end;
+}
+
+.sarah {
+  grid-area: sarah;
+}
+
+.carter {
+  grid-area: carter;
+  justify-self: end;
+}
+
+.david {
+  grid-area: david;
+  align-self: end;
+}
+
+.jennifer {
+  grid-area: jennifer;
+  justify-self: center;
+  align-self: end;
+  max-width: 320px;
+}
+
+.mark {
+  grid-area: mark;
+  justify-self: end;
+  align-self: end;
+}
+
+@media (max-width: 1180px) {
+  .section {
+    padding: 0 14px 0;
+  }
+
+  .panel {
+    padding: 18px 20px 48px;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 0.75fr) minmax(0, 1fr);
+    column-gap: 24px;
+    row-gap: 22px;
+  }
+
+  .name {
+    font-size: 1.7rem;
+  }
+
+  .role {
+    font-size: 1.22rem;
+  }
+
+  .quote {
+    font-size: 1.08rem;
+  }
+
+  .charactersWrap {
+    width: min(100%, 320px);
+    height: 292px;
+    bottom: 372px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 0 0 0;
+  }
+
+  .curveTop {
+    height: 110px;
+  }
+
+  .panel {
+    padding: 16px 14px 36px;
+  }
+
+  .title {
+    font-size: 3.2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "john"
+      "michael"
+      "emily"
+      "lisa"
+      "sarah"
+      "carter"
+      "david"
+      "jennifer"
+      "mark";
+    gap: 18px;
+    padding-bottom: 250px;
+  }
+
+  .name {
+    font-size: 1.45rem;
+  }
+
+  .role {
+    font-size: 1.1rem;
+  }
+
+  .quote {
+    font-size: 1rem;
+  }
+
+  .charactersWrap {
+    bottom: 320px;
+    width: min(100%, 280px);
+    height: 220px;
+  }
+
+  .shadow {
+    width: 220px;
+    bottom: 18px;
+  }
+
+  .charactersImage {
+    width: min(100%, 250px);
+    bottom: 12px;
+  }
+}
