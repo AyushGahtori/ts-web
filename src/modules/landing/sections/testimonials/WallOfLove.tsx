@@ -84,7 +84,7 @@ export function WallOfLove() {
         <div className={styles.charactersWrap} aria-hidden>
           <div className={styles.shadow} />
           <Image
-            src="/orange_pink%20person.png"
+            src="/image 54.png"
             alt=""
             width={811}
             height={811}

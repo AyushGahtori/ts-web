@@ -1,3 +1,4 @@
+import { MotionSection } from "@/components/motion/MotionSection";
 import { InnovationDecorations } from "./InnovationDecorations";
 import styles from "./innovation.module.css";
 
@@ -8,11 +9,13 @@ export function InnovationHeader() {
       <InnovationDecorations area="header" />
 
       <div className={styles.headerInner}>
-        <h1 className={styles.headerTitle}>
-          <span className={styles.headerHash}>#</span> Innovation at TechSnitch:
-          <br />
-          The Autonomous Frontier
-        </h1>
+        <MotionSection direction="up">
+          <h1 className={styles.headerTitle}>
+            <span className={styles.headerHash}>#</span> Innovation at TechSnitch:
+            <br />
+            The Autonomous Frontier
+          </h1>
+        </MotionSection>
       </div>
     </section>
   );

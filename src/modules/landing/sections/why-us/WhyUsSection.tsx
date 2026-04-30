@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MotionSection } from "@/components/motion/MotionSection";
 import { WhyUsContent } from "@/modules/landing/sections/why-us/WhyUsContent";
 import styles from "./whyUs.module.css";
 
@@ -11,7 +12,7 @@ export function WhyUsSection() {
         </span>
 
         <div className={styles.layout}>
-          <div className={styles.visualColumn}>
+          <MotionSection className={styles.visualColumn} direction="left">
             <div className={styles.visualStage}>
               <Image
                 src="/image 45.png"
@@ -23,7 +24,7 @@ export function WhyUsSection() {
                 priority
               />
             </div>
-          </div>
+          </MotionSection>
 
           <WhyUsContent />
         </div>

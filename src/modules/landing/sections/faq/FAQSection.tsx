@@ -37,7 +37,7 @@ const faqs = [
 ];
 
 export function FAQSection() {
-  const [openId, setOpenId] = useState<string | undefined>(faqs.find((item) => item.defaultOpen)?.id ?? faqs[0]?.id);
+  const [openIds, setOpenIds] = useState<string[]>(["q1", "q2"]);
 
   return (
     <section className={styles.section}>
@@ -57,8 +57,12 @@ export function FAQSection() {
               key={item.id}
               question={item.question}
               answer={item.answer}
-              open={openId === item.id}
-              onToggle={() => setOpenId((current) => (current === item.id ? undefined : item.id))}
+              open={openIds.includes(item.id)}
+              onToggle={() =>
+                setOpenIds((current) =>
+                  current.includes(item.id) ? current.filter((id) => id !== item.id) : [...current, item.id],
+                )
+              }
             />
           ))}
         </div>

@@ -20,7 +20,7 @@ export function ServicesLeft() {
       </div>
 
       <Image
-        src="/laptop.png"
+        src="/image 50.png"
         alt=""
         aria-hidden="true"
         width={297}
@@ -42,7 +42,7 @@ export function ServicesLeft() {
       <span className={`${styles.pill} ${styles.pillBottom}`}>AI-Driven Workflows</span>
 
       <Image
-        src="/coffee.png"
+        src="/image 49.png"
         alt=""
         aria-hidden="true"
         width={146}

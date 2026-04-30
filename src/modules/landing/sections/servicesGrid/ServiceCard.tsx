@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./servicesGrid.module.css";
 
@@ -48,11 +49,11 @@ export function ServiceCard({ title, description, bullets, variant, className = 
           ) : null}
 
           {variant === "erp" ? (
-            <div className={styles.erpImage}>ERP</div>
+            <Image src="/image 64.png" alt="" aria-hidden="true" width={459} height={264} className={styles.erpImage} />
           ) : null}
 
           {variant === "microsoft" ? (
-            <div className={styles.copilotImage}>Copilot</div>
+            <Image src="/image 65.png" alt="" aria-hidden="true" width={469} height={394} className={styles.copilotImage} />
           ) : null}
 
           {variant === "llm" ? (
@@ -65,12 +66,8 @@ export function ServiceCard({ title, description, bullets, variant, className = 
 
           {variant === "cloud" ? (
             <>
-              <div className={styles.cloudBadgeAws}>
-                <span className={styles.cloudBadgeImageAws}>AWS</span>
-              </div>
-              <div className={styles.cloudBadgeGcp}>
-                <span className={styles.cloudBadgeImageGcp}>GCP</span>
-              </div>
+              <Image src="/image 69.png" alt="" aria-hidden="true" width={233} height={155} className={styles.cloudBadgeAws} />
+              <Image src="/image 68.png" alt="" aria-hidden="true" width={293} height={162} className={styles.cloudBadgeGcp} />
             </>
           ) : null}
 
