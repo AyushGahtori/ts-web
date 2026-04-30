@@ -3,6 +3,7 @@ import { InnovationDecorations } from "./InnovationDecorations";
 import { InnovationPath } from "./InnovationPath";
 import { InnovationPill } from "./InnovationPill";
 import { InnovationTable } from "./InnovationTable";
+import { MotionSection } from "@/components/motion/MotionSection";
 import styles from "./innovation.module.css";
 
 const frameworkBlocks = [
@@ -54,10 +55,12 @@ const useCases = [
 export function InnovationPanel() {
   return (
     <section className={styles.panel}>
-      <InnovationDecorations area="panel" />
+      <MotionSection direction="none">
+        <InnovationDecorations area="panel" />
+      </MotionSection>
 
       <div className={styles.panelInner}>
-        <section className={styles.introSection}>
+        <MotionSection className={styles.introSection} direction="up">
           <InnovationPill className={styles.introPill}>Engineering the Future of Work</InnovationPill>
           <p className={styles.introCopy}>
             At TechSnitch, innovation is not a buzzword; it is our architectural foundation. We empower
@@ -65,9 +68,9 @@ export function InnovationPanel() {
             Operations. By decoupling intelligence from vendor constraints, we ensure your organization remains at
             the cutting edge of the AI revolution.
           </p>
-        </section>
+        </MotionSection>
 
-        <section className={styles.frameworksSection}>
+        <MotionSection className={styles.frameworksSection} direction="up" stagger>
           <InnovationPill className={styles.frameworkPill}>Our Proprietary Innovation Frameworks</InnovationPill>
           <div className={styles.frameworkBody}>
             <p className={styles.frameworkCopy}>
@@ -81,18 +84,18 @@ export function InnovationPanel() {
               ))}
             </div>
           </div>
-        </section>
+        </MotionSection>
 
-        <section className={styles.advantageSection}>
+        <MotionSection className={styles.advantageSection} direction="up" stagger>
           <InnovationPill className={styles.advantagePill}>The AI-Agnostic Advantage</InnovationPill>
           <p className={styles.advantageCopy}>
             TechSnitch&apos;s innovation strategy is built on the principle of Strategic Flexibility. We believe your
             intelligence layer should never be a prisoner to a single vendor&apos;s roadmap.
           </p>
           <InnovationTable />
-        </section>
+        </MotionSection>
 
-        <section className={styles.labSection}>
+        <MotionSection className={styles.labSection} direction="up" stagger>
           <InnovationPill className={styles.labPill}>Our Innovation Lab: Leading Industry Use Cases</InnovationPill>
           <div className={styles.labBody}>
             <p className={styles.labCopy}>
@@ -104,9 +107,11 @@ export function InnovationPanel() {
               ))}
             </ul>
           </div>
-        </section>
+        </MotionSection>
 
-        <InnovationPath />
+        <MotionSection direction="up">
+          <InnovationPath />
+        </MotionSection>
       </div>
 
       <div className={styles.bottomWordmark} aria-hidden>

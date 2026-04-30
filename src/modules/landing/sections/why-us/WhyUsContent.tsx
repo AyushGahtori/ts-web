@@ -1,9 +1,10 @@
+import { MotionSection } from "@/components/motion/MotionSection";
 import { ValueMetrics } from "@/modules/landing/sections/why-us/ValueMetrics";
 import styles from "./whyUs.module.css";
 
 export function WhyUsContent() {
   return (
-    <div className={styles.contentColumn}>
+    <MotionSection className={styles.contentColumn} direction="up" stagger>
       <header className={styles.headerBlock}>
         <h2 className={styles.heading}>
           <span className={styles.headingLine}>Why Choose</span>
@@ -30,6 +31,6 @@ export function WhyUsContent() {
       </header>
 
       <ValueMetrics />
-    </div>
+    </MotionSection>
   );
 }
