@@ -1,5 +1,5 @@
-import { LandingPage } from "@/modules/landing/pages/LandingPage";
+import { redirect } from "next/navigation";
 
 export default function IntelligenceHubPage() {
-  return <LandingPage initialSectionId="intelligence-hub" />;
+  redirect("/intelligencehub");
 }

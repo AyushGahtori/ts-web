@@ -1,5 +1,12 @@
-import { redirect } from "next/navigation";
+import { StandalonePageShell } from "@/modules/landing/pages/StandalonePageShell";
+import { AcceleratorsSection } from "@/modules/landing/sections/accelerators/AcceleratorsSection";
+import { BrandFooterSection } from "@/modules/landing/sections/brand-footer/BrandFooterSection";
 
-export default function WhyUsAliasPage() {
-  redirect("/why-us");
+export default function WhyUsPage() {
+  return (
+    <StandalonePageShell>
+      <AcceleratorsSection />
+      <BrandFooterSection />
+    </StandalonePageShell>
+  );
 }
