@@ -11,13 +11,21 @@ const navItems = [
   { id: "about", label: "About\u00A0Us", href: "/about-us" },
   { id: "why", label: "Why\u00A0Us?", href: "/whyus" },
   { id: "services", label: "Services", href: "/services" },
+  { id: "join", label: "Join\u00A0Us", href: "/join-us" },
   { id: "hub", label: "Intelligence\u00A0Hub", href: "/intelligencehub" },
   { id: "innovations", label: "Innovations", href: "/innovations" },
 ];
 
 export function Navbar() {
   const pathname = usePathname();
-  const normalizedPath = pathname === "/why-us" ? "/whyus" : pathname === "/intelligence-hub" ? "/intelligencehub" : pathname;
+  const normalizedPath =
+    pathname === "/why-us"
+      ? "/whyus"
+      : pathname === "/intelligence-hub"
+        ? "/intelligencehub"
+        : pathname === "/joinus"
+          ? "/join-us"
+          : pathname;
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
