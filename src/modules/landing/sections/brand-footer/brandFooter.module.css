@@ -4,16 +4,16 @@
   margin-top: -2px;
   padding: 0 10px 56px;
   background:
-    linear-gradient(180deg, rgba(117, 26, 193, 0.18) 0%, rgba(12, 13, 13, 0.96) 7%, #050505 18%, #050505 100%);
+    linear-gradient(180deg, rgba(117, 26, 193, 0.34) 0%, rgba(12, 13, 13, 0.96) 9%, #050505 18%, #050505 100%);
 }
 
 .transitionBand {
   width: min(100%, 1440px);
-  height: 116px;
+  height: 132px;
   margin: 0 auto;
   background:
-    radial-gradient(58% 170% at 50% 100%, rgba(129, 18, 232, 0.82) 0%, rgba(198, 162, 255, 0.58) 26%, rgba(255, 255, 255, 0.94) 47%, rgba(255, 255, 255, 0.36) 62%, rgba(255, 255, 255, 0) 100%);
-  filter: blur(3px);
+    radial-gradient(62% 185% at 50% 100%, rgba(119, 18, 232, 0.95) 0%, rgba(176, 119, 255, 0.72) 24%, rgba(255, 255, 255, 0.98) 45%, rgba(255, 255, 255, 0.42) 64%, rgba(255, 255, 255, 0) 100%);
+  filter: blur(4px);
 }
 
 .panel {
@@ -37,10 +37,10 @@
   position: absolute;
   left: 50%;
   top: -48px;
-  width: 62%;
-  height: 200px;
+  width: 70%;
+  height: 230px;
   transform: translateX(-50%);
-  background: radial-gradient(50% 50% at 50% 50%, rgba(133, 31, 235, 0.26) 0%, rgba(133, 31, 235, 0.08) 48%, rgba(133, 31, 235, 0) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(133, 31, 235, 0.38) 0%, rgba(133, 31, 235, 0.12) 48%, rgba(133, 31, 235, 0) 100%);
   filter: blur(18px);
   pointer-events: none;
 }
@@ -60,7 +60,7 @@
 
 .wordmarkStaticT,
 .wordmarkStaticRest {
-  color: #353333;
+  color: rgba(68, 65, 65, 0.68);
   font-size: clamp(5rem, 13.5vw, 12.5rem);
   font-weight: 800;
   line-height: 0.9;
@@ -76,7 +76,7 @@
   width: clamp(7.5rem, 15vw, 15rem);
   height: clamp(7.8rem, 16vw, 15.2rem);
   margin-bottom: -6px;
-  transform: translateY(42px);
+  transform: translateY(36px);
 }
 
 .wordmarkAnimatedC {
@@ -144,7 +144,7 @@
   z-index: 2;
   width: min(100%, 1060px);
   height: 505px;
-  margin: 46px auto 0;
+  margin: 40px auto 0;
 }
 
 .mascotGlow {
