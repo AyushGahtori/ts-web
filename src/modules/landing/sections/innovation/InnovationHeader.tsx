@@ -1,3 +1,4 @@
+import { CursorBlurText } from "@/components/effects/CursorBlurText";
 import { MotionSection } from "@/components/motion/MotionSection";
 import { InnovationDecorations } from "./InnovationDecorations";
 import styles from "./innovation.module.css";
@@ -10,11 +11,11 @@ export function InnovationHeader() {
 
       <div className={styles.headerInner}>
         <MotionSection direction="up">
-          <h1 className={styles.headerTitle}>
+          <CursorBlurText as="h1" className={`${styles.headerTitle} blur-reveal blur-reveal--violet`} spotSize={210}>
             <span className={styles.headerHash}>#</span> Innovation at TechSnitch:
             <br />
             The Autonomous Frontier
-          </h1>
+          </CursorBlurText>
         </MotionSection>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import { CursorBlurText } from "@/components/effects/CursorBlurText";
 import styles from "./career.module.css";
 
 export function CareerCard() {
@@ -11,11 +12,11 @@ export function CareerCard() {
           <span>future</span>
         </h3>
 
-        <p className={styles.quote}>
+        <CursorBlurText as="p" className={`${styles.quote} blur-reveal blur-reveal--pink blur-reveal--delay-1`} spotSize={170}>
           <span>“Build What Has</span>
           <span>Never Been</span>
           <span>Built”</span>
-        </p>
+        </CursorBlurText>
       </div>
 
       <div className={styles.barCluster} aria-hidden>

@@ -944,94 +944,14 @@ body {
 .portfolio-section {
   z-index: 6;
   background: #6008aa;
-  margin-top: -120px;
-  padding: 154px 10px 30px;
+  margin-top: -88px;
+  padding: 52px 10px 30px;
   position: relative;
   overflow: visible
 }
 
 .portfolio-section:before {
   content: none
-}
-
-.portfolio-intro-row {
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-  padding: 10px 24px 96px;
-  display: flex;
-  position: relative
-}
-
-.portfolio-handshake-wrap {
-  flex: none;
-  width: 272px;
-  height: 228px;
-  margin-left: 0;
-  position: relative
-}
-
-.portfolio-handshake-image {
-  object-fit: contain;
-  object-position: center;
-  transform-origin: 50%;
-  mix-blend-mode: screen;
-  filter: saturate(1.05)brightness(1.03);
-  transform: scale(1)
-}
-
-.portfolio-intro-copy-wrap {
-  flex: 0 1 760px;
-  max-width: 760px;
-  margin-left: 0;
-  padding-top: 4px;
-  position: relative
-}
-
-.portfolio-intro-orbs {
-  pointer-events: none;
-  width: 780px;
-  height: 430px;
-  position: absolute;
-  inset: -92px auto auto 106px
-}
-
-.portfolio-orb {
-  border-radius: 999px;
-  position: absolute
-}
-
-.portfolio-orb--deep {
-  opacity: .5;
-  background: radial-gradient(circle at 38% 34%, #4d1787 0%, #32085e 58%, #220240 100%);
-  width: 282px;
-  height: 282px;
-  top: 39px;
-  left: 35px
-}
-
-.portfolio-orb--bright {
-  opacity: .62;
-  background: radial-gradient(circle at 38% 34%, #9f54ff 0%, #7f2dde 62%, #5e1bb5 100%);
-  width: 310px;
-  height: 310px;
-  top: 25px;
-  left: 305px;
-  box-shadow: 0 20px 44px #802dde6b
-}
-
-.portfolio-intro-copy {
-  z-index: 2;
-  font-family: var(--font-inter), sans-serif;
-  color: #fff;
-  text-wrap: pretty;
-  letter-spacing: -.01em;
-  max-width: 38ch;
-  margin: 0;
-  font-size: clamp(22px, 1.58vw, 30px);
-  font-weight: 700;
-  line-height: 1.16;
-  position: relative
 }
 
 .portfolio-shell {
@@ -1494,45 +1414,6 @@ body {
     left: 57%
   }
 
-  .portfolio-intro-row {
-    justify-content: center;
-    gap: 10px;
-    padding-inline: 14px
-  }
-
-  .portfolio-handshake-wrap {
-    width: 252px;
-    height: 190px
-  }
-
-  .portfolio-intro-copy-wrap {
-    max-width: 560px;
-    margin-left: 0;
-    padding-top: 8px
-  }
-
-  .portfolio-intro-orbs {
-    width: 380px;
-    height: 198px;
-    top: -24px;
-    left: 18px
-  }
-
-  .portfolio-orb--deep {
-    width: 176px;
-    height: 176px
-  }
-
-  .portfolio-orb--bright {
-    width: 192px;
-    height: 192px;
-    left: 138px
-  }
-
-  .portfolio-intro-copy {
-    font-size: 28px
-  }
-
   .portfolio-label-card {
     border-radius: 38px;
     width: 620px;
@@ -1816,47 +1697,8 @@ body {
   }
 
   .portfolio-section {
-    margin-top: -90px;
-    padding: 102px 8px 24px
-  }
-
-  .portfolio-intro-row {
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding-inline: 8px
-  }
-
-  .portfolio-handshake-wrap {
-    width: 170px;
-    height: 140px
-  }
-
-  .portfolio-intro-copy-wrap {
-    max-width: 420px
-  }
-
-  .portfolio-intro-orbs {
-    width: 250px;
-    height: 124px;
-    top: -10px;
-    left: 40px
-  }
-
-  .portfolio-orb--deep {
-    width: 116px;
-    height: 116px
-  }
-
-  .portfolio-orb--bright {
-    width: 126px;
-    height: 126px;
-    left: 106px
-  }
-
-  .portfolio-intro-copy {
-    font-size: 21px;
-    line-height: 1.26
+    margin-top: -72px;
+    padding: 44px 8px 24px
   }
 
   .portfolio-shell {
@@ -2170,46 +2012,8 @@ body {
   }
 
   .portfolio-section {
-    margin-top: -68px;
-    padding: 76px 4px 16px
-  }
-
-  .portfolio-intro-row {
-    justify-content: center;
-    gap: 6px;
-    padding: 0 4px 6px
-  }
-
-  .portfolio-handshake-wrap {
-    width: 108px;
-    height: 94px
-  }
-
-  .portfolio-intro-copy-wrap {
-    max-width: 250px
-  }
-
-  .portfolio-intro-orbs {
-    width: 150px;
-    height: 90px;
-    top: -8px;
-    left: 24px
-  }
-
-  .portfolio-orb--deep {
-    width: 70px;
-    height: 70px
-  }
-
-  .portfolio-orb--bright {
-    width: 80px;
-    height: 80px;
-    left: 62px
-  }
-
-  .portfolio-intro-copy {
-    font-size: 13px;
-    line-height: 1.24
+    margin-top: -52px;
+    padding: 34px 4px 16px
   }
 
   .portfolio-shell {
@@ -3094,19 +2898,16 @@ body {
 .hero-visual,
 .frameworks-snada-logo,
 .frameworks-saos-logo,
-.portfolio-handshake-wrap,
 .about-dim-logo {
   will-change: transform;
 }
 
 .frameworks-snada-logo,
-.frameworks-saos-logo,
-.portfolio-handshake-wrap {
+.frameworks-saos-logo {
   animation: ts-float-y 7s ease-in-out infinite;
 }
 
 .hero-visual:hover,
-.portfolio-handshake-wrap:hover,
 .stat-card:hover,
 .portfolio-service-card:hover {
   filter: drop-shadow(0 26px 46px rgba(255, 9, 157, .24));
@@ -3180,6 +2981,93 @@ body {
   box-shadow: 0 18px 44px rgba(31, 3, 61, .45), inset 0 1px rgba(255, 255, 255, .24);
 }
 
+.frameworks-chip:hover {
+  color: #5a06a8;
+  background: #fff;
+}
+
+.blur-reveal {
+  --blur-reveal-delay: 0ms;
+  --blur-reveal-glow: rgba(255, 255, 255, .36);
+  animation: ts-blur-reveal 1.15s var(--blur-reveal-delay) cubic-bezier(.22, 1, .36, 1) both;
+  text-shadow: 0 0 30px var(--blur-reveal-glow);
+  will-change: opacity, filter, transform;
+}
+
+.blur-reveal--violet {
+  --blur-reveal-glow: rgba(151, 60, 255, .46);
+}
+
+.blur-reveal--pink {
+  --blur-reveal-glow: rgba(255, 9, 157, .42);
+}
+
+.blur-reveal--muted {
+  --blur-reveal-glow: rgba(190, 178, 216, .28);
+}
+
+.blur-reveal--delay-1 {
+  --blur-reveal-delay: 120ms;
+}
+
+.blur-reveal--delay-2 {
+  --blur-reveal-delay: 240ms;
+}
+
+.cursor-blur-text {
+  --cursor-blur-bleed: 112px;
+  --cursor-blur-x: 50%;
+  --cursor-blur-y: 50%;
+  --cursor-blur-radius: 150px;
+  --cursor-blur-strength: 0;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.cursor-blur-text__base {
+  display: contents;
+}
+
+.cursor-blur-text__overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: calc(var(--cursor-blur-bleed) * -1);
+  z-index: 2;
+  box-sizing: border-box;
+  display: inherit;
+  flex-direction: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  gap: inherit;
+  padding: var(--cursor-blur-bleed);
+  color: inherit;
+  background: inherit;
+  -webkit-background-clip: inherit;
+  background-clip: inherit;
+  -webkit-text-fill-color: inherit;
+  filter: blur(calc(5px + (var(--cursor-blur-strength) * 12px)));
+  opacity: calc(var(--cursor-blur-strength) * .95);
+  text-shadow:
+    0 0 calc(16px + (var(--cursor-blur-strength) * 28px)) currentColor,
+    0 0 calc(28px + (var(--cursor-blur-strength) * 42px)) var(--blur-reveal-glow, rgba(255, 255, 255, .35));
+  -webkit-mask-image: radial-gradient(
+    circle var(--cursor-blur-radius) at calc(var(--cursor-blur-x) + var(--cursor-blur-bleed)) calc(var(--cursor-blur-y) + var(--cursor-blur-bleed)),
+    #000 0%,
+    rgba(0, 0, 0, .92) 34%,
+    rgba(0, 0, 0, .18) 64%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    circle var(--cursor-blur-radius) at calc(var(--cursor-blur-x) + var(--cursor-blur-bleed)) calc(var(--cursor-blur-y) + var(--cursor-blur-bleed)),
+    #000 0%,
+    rgba(0, 0, 0, .92) 34%,
+    rgba(0, 0, 0, .18) 64%,
+    transparent 78%
+  );
+  transition: opacity .22s ease, filter .22s ease;
+  will-change: opacity, filter, mask-image;
+}
+
 @keyframes ts-drift-x {
   from {
     transform: translateX(-12px);
@@ -3195,6 +3083,23 @@ body {
   }
   50% {
     transform: translateY(-9px);
+  }
+}
+
+@keyframes ts-blur-reveal {
+  0% {
+    opacity: 0;
+    filter: blur(18px);
+    transform: translateY(14px) scale(.985);
+  }
+  58% {
+    opacity: 1;
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
   }
 }
 

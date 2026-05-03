@@ -1,11 +1,12 @@
+import { CursorBlurText } from "@/components/effects/CursorBlurText";
 import styles from "./services.module.css";
 
 export function ServicesRight() {
   return (
     <div className={styles.rightColumn}>
-      <span className={styles.brandGhost} aria-hidden>
+      <CursorBlurText as="span" className={`${styles.brandGhost} blur-reveal blur-reveal--muted`} aria-hidden preservePosition spotSize={190}>
         TechSnitch:
-      </span>
+      </CursorBlurText>
       <span className={styles.outlineGhost} aria-hidden>
         Ser
       </span>
