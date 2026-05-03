@@ -56,6 +56,7 @@
   justify-content: center;
   gap: 0;
   min-height: 208px;
+  transform: translateX(-50px);
 }
 
 .wordmarkStaticT,
@@ -71,16 +72,21 @@
   margin-left: -4px;
 }
 
+.wordmarkStaticT {
+  transform: translateX(clamp(68px, 5.8vw, 108px));
+}
+
 .wordmarkAnimatedE,
 .wordmarkAnimatedC {
   width: clamp(7.5rem, 15vw, 15rem);
   height: clamp(7.8rem, 16vw, 15.2rem);
   margin-bottom: -6px;
-  transform: translateY(36px);
+  transform: translate(clamp(48px, 4.5vw, 82px), 36px);
 }
 
 .wordmarkAnimatedC {
   width: clamp(7.1rem, 14vw, 14rem);
+  transform: translate(clamp(12px, 1.1vw, 20px), 36px);
 }
 
 .animatedLetterWrap {

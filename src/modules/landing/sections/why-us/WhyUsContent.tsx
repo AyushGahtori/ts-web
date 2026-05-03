@@ -1,3 +1,4 @@
+import { CursorBlurText } from "@/components/effects/CursorBlurText";
 import { MotionSection } from "@/components/motion/MotionSection";
 import { ValueMetrics } from "@/modules/landing/sections/why-us/ValueMetrics";
 import styles from "./whyUs.module.css";
@@ -6,7 +7,7 @@ export function WhyUsContent() {
   return (
     <MotionSection className={styles.contentColumn} direction="up" stagger>
       <header className={styles.headerBlock}>
-        <h2 className={`${styles.heading} blur-reveal`}>
+        <CursorBlurText as="h2" className={`${styles.heading} blur-reveal`} spotSize={175}>
           <span className={styles.headingLine}>Why Choose</span>
           <span className={styles.headingAccentRow}>
             <span className={styles.arrowBadge} aria-hidden>
@@ -15,7 +16,7 @@ export function WhyUsContent() {
             <span className={styles.usText}>US</span>
             <span className={styles.questionMark}>?</span>
           </span>
-        </h2>
+        </CursorBlurText>
 
         <p className={styles.subheading}>
           <span>Let&apos;s</span>

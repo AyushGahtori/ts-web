@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CursorBlurText } from "@/components/effects/CursorBlurText";
 import styles from "./lifeAt.module.css";
 
 export function LifeAtHero() {
@@ -8,11 +9,13 @@ export function LifeAtHero() {
         Life at
       </p>
       <div className={styles.content}>
-        <h1 className={`${styles.title} blur-reveal`}>
+        <CursorBlurText as="h1" className={`${styles.title} blur-reveal`} spotSize={190}>
           <span className={styles.titleTop}>Life at</span>
           <span className={styles.titleBottom}>Techsnitch</span>
-        </h1>
-        <p className={`${styles.subtitle} blur-reveal blur-reveal--muted blur-reveal--delay-1`}>Empowering the Visionaries</p>
+        </CursorBlurText>
+        <CursorBlurText as="p" className={`${styles.subtitle} blur-reveal blur-reveal--muted blur-reveal--delay-1`} spotSize={145}>
+          Empowering the Visionaries
+        </CursorBlurText>
       </div>
       <div className={styles.peopleWrap} aria-hidden>
         <Image

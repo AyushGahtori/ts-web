@@ -3014,6 +3014,60 @@ body {
   --blur-reveal-delay: 240ms;
 }
 
+.cursor-blur-text {
+  --cursor-blur-bleed: 112px;
+  --cursor-blur-x: 50%;
+  --cursor-blur-y: 50%;
+  --cursor-blur-radius: 150px;
+  --cursor-blur-strength: 0;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.cursor-blur-text__base {
+  display: contents;
+}
+
+.cursor-blur-text__overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: calc(var(--cursor-blur-bleed) * -1);
+  z-index: 2;
+  box-sizing: border-box;
+  display: inherit;
+  flex-direction: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  gap: inherit;
+  padding: var(--cursor-blur-bleed);
+  color: inherit;
+  background: inherit;
+  -webkit-background-clip: inherit;
+  background-clip: inherit;
+  -webkit-text-fill-color: inherit;
+  filter: blur(calc(5px + (var(--cursor-blur-strength) * 12px)));
+  opacity: calc(var(--cursor-blur-strength) * .95);
+  text-shadow:
+    0 0 calc(16px + (var(--cursor-blur-strength) * 28px)) currentColor,
+    0 0 calc(28px + (var(--cursor-blur-strength) * 42px)) var(--blur-reveal-glow, rgba(255, 255, 255, .35));
+  -webkit-mask-image: radial-gradient(
+    circle var(--cursor-blur-radius) at calc(var(--cursor-blur-x) + var(--cursor-blur-bleed)) calc(var(--cursor-blur-y) + var(--cursor-blur-bleed)),
+    #000 0%,
+    rgba(0, 0, 0, .92) 34%,
+    rgba(0, 0, 0, .18) 64%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    circle var(--cursor-blur-radius) at calc(var(--cursor-blur-x) + var(--cursor-blur-bleed)) calc(var(--cursor-blur-y) + var(--cursor-blur-bleed)),
+    #000 0%,
+    rgba(0, 0, 0, .92) 34%,
+    rgba(0, 0, 0, .18) 64%,
+    transparent 78%
+  );
+  transition: opacity .22s ease, filter .22s ease;
+  will-change: opacity, filter, mask-image;
+}
+
 @keyframes ts-drift-x {
   from {
     transform: translateX(-12px);
