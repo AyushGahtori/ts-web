@@ -11,7 +11,7 @@ export function CareerCard() {
           <span>future</span>
         </h3>
 
-        <p className={styles.quote}>
+        <p className={`${styles.quote} blur-reveal blur-reveal--pink blur-reveal--delay-1`}>
           <span>“Build What Has</span>
           <span>Never Been</span>
           <span>Built”</span>

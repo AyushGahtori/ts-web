@@ -7,7 +7,7 @@ export function WhyTechsnitchSection() {
     <section className={styles.section}>
       <div className={styles.container}>
         <MotionSection direction="up">
-          <h2 className={styles.sectionTitle}>
+          <h2 className={`${styles.sectionTitle} blur-reveal`}>
             <span>Why </span>
             <span className={styles.sectionTitleAccent}>TechSnitch</span>
             <span>?</span>

@@ -2986,6 +2986,34 @@ body {
   background: #fff;
 }
 
+.blur-reveal {
+  --blur-reveal-delay: 0ms;
+  --blur-reveal-glow: rgba(255, 255, 255, .36);
+  animation: ts-blur-reveal 1.15s var(--blur-reveal-delay) cubic-bezier(.22, 1, .36, 1) both;
+  text-shadow: 0 0 30px var(--blur-reveal-glow);
+  will-change: opacity, filter, transform;
+}
+
+.blur-reveal--violet {
+  --blur-reveal-glow: rgba(151, 60, 255, .46);
+}
+
+.blur-reveal--pink {
+  --blur-reveal-glow: rgba(255, 9, 157, .42);
+}
+
+.blur-reveal--muted {
+  --blur-reveal-glow: rgba(190, 178, 216, .28);
+}
+
+.blur-reveal--delay-1 {
+  --blur-reveal-delay: 120ms;
+}
+
+.blur-reveal--delay-2 {
+  --blur-reveal-delay: 240ms;
+}
+
 @keyframes ts-drift-x {
   from {
     transform: translateX(-12px);
@@ -3001,6 +3029,23 @@ body {
   }
   50% {
     transform: translateY(-9px);
+  }
+}
+
+@keyframes ts-blur-reveal {
+  0% {
+    opacity: 0;
+    filter: blur(18px);
+    transform: translateY(14px) scale(.985);
+  }
+  58% {
+    opacity: 1;
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
   }
 }
 

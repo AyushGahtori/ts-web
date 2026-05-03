@@ -6,7 +6,7 @@ export function WhyUsContent() {
   return (
     <MotionSection className={styles.contentColumn} direction="up" stagger>
       <header className={styles.headerBlock}>
-        <h2 className={styles.heading}>
+        <h2 className={`${styles.heading} blur-reveal`}>
           <span className={styles.headingLine}>Why Choose</span>
           <span className={styles.headingAccentRow}>
             <span className={styles.arrowBadge} aria-hidden>

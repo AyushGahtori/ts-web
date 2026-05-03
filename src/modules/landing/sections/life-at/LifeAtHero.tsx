@@ -8,11 +8,11 @@ export function LifeAtHero() {
         Life at
       </p>
       <div className={styles.content}>
-        <h1 className={styles.title}>
+        <h1 className={`${styles.title} blur-reveal`}>
           <span className={styles.titleTop}>Life at</span>
           <span className={styles.titleBottom}>Techsnitch</span>
         </h1>
-        <p className={styles.subtitle}>Empowering the Visionaries</p>
+        <p className={`${styles.subtitle} blur-reveal blur-reveal--muted blur-reveal--delay-1`}>Empowering the Visionaries</p>
       </div>
       <div className={styles.peopleWrap} aria-hidden>
         <Image

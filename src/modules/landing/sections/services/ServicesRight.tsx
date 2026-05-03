@@ -3,7 +3,7 @@ import styles from "./services.module.css";
 export function ServicesRight() {
   return (
     <div className={styles.rightColumn}>
-      <span className={styles.brandGhost} aria-hidden>
+      <span className={`${styles.brandGhost} blur-reveal blur-reveal--muted`} aria-hidden>
         TechSnitch:
       </span>
       <span className={styles.outlineGhost} aria-hidden>

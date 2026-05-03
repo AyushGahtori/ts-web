@@ -10,7 +10,7 @@ export function InnovationHeader() {
 
       <div className={styles.headerInner}>
         <MotionSection direction="up">
-          <h1 className={styles.headerTitle}>
+          <h1 className={`${styles.headerTitle} blur-reveal blur-reveal--violet`}>
             <span className={styles.headerHash}>#</span> Innovation at TechSnitch:
             <br />
             The Autonomous Frontier
