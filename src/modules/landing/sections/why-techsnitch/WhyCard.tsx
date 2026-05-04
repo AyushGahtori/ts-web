@@ -49,12 +49,23 @@ export function WhyCard() {
 
             <div className={styles.visualColumn}>
               <div className={styles.visualGlow} aria-hidden />
+              <div className={styles.yellowCircle} aria-hidden />
               <Image
-                src="/computer.png"
+                src="/stary%20heart.png"
                 alt=""
                 aria-hidden="true"
-                width={642}
-                height={1194}
+                width={241}
+                height={168}
+                sizes="(max-width: 768px) 64px, 92px"
+                className={styles.heartAccent}
+              />
+              <Image
+                src="/man%20with%20a%20laptop.png"
+                alt=""
+                aria-hidden="true"
+                width={768}
+                height={1024}
+                sizes="(max-width: 768px) 84vw, (max-width: 1260px) 42vw, 520px"
                 className={styles.visualImage}
               />
             </div>
