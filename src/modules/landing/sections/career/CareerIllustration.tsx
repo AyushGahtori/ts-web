@@ -31,42 +31,17 @@ export function CareerIllustration() {
       return;
     }
 
-    const canRestoreScroll = "scrollRestoration" in window.history;
-    const previousScrollRestoration = canRestoreScroll
-      ? window.history.scrollRestoration
-      : "auto";
-    const navigation = window.performance.getEntriesByType(
-      "navigation",
-    )[0] as PerformanceNavigationTiming | undefined;
-
     let desiredDirection: Direction = 1;
     let visibleDirection: Direction = 1;
     let playbackRate = 1;
     let isLoaded = false;
     let isActive = false;
     let isMoving = false;
-    let isResettingInitialScroll = navigation?.type === "reload";
     let lastInputAt = 0;
     let smoothedSpeed = 0;
     let touchY: number | null = null;
     let pauseTimer: number | undefined;
     let resumeTimer: number | undefined;
-
-    const resetWindowScroll = () => {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    };
-
-    if (canRestoreScroll) {
-      window.history.scrollRestoration = "manual";
-    }
-
-    if (isResettingInitialScroll) {
-      resetWindowScroll();
-      window.requestAnimationFrame(() => {
-        resetWindowScroll();
-        isResettingInitialScroll = false;
-      });
-    }
 
     const getActivationTarget = () => shell.parentElement ?? shell;
 
@@ -82,19 +57,19 @@ export function CareerIllustration() {
       isLoaded = true;
     };
 
+    const hasDuration = () =>
+      Number.isFinite(forwardVideo.duration) &&
+      forwardVideo.duration > 0 &&
+      Number.isFinite(reverseVideo.duration) &&
+      reverseVideo.duration > 0;
+
     const getDuration = () => {
-      if (Number.isFinite(forwardVideo.duration) && forwardVideo.duration > 0) {
-        return forwardVideo.duration;
+      if (!hasDuration()) {
+        return 0;
       }
 
-      if (Number.isFinite(reverseVideo.duration) && reverseVideo.duration > 0) {
-        return reverseVideo.duration;
-      }
-
-      return 0;
+      return Math.min(forwardVideo.duration, reverseVideo.duration);
     };
-
-    const hasDuration = () => getDuration() > 0;
 
     const getForwardTime = () => {
       const duration = getDuration();
@@ -241,7 +216,13 @@ export function CareerIllustration() {
     };
 
     const lockToVideo = (scrollDelta: number) => {
-      if (isResettingInitialScroll || isActive || !isCenteredEnough()) {
+      if (isActive || !isCenteredEnough()) {
+        return false;
+      }
+
+      loadVideos();
+
+      if (!hasDuration()) {
         return false;
       }
 
@@ -250,7 +231,6 @@ export function CareerIllustration() {
       }
 
       isActive = true;
-      loadVideos();
       forwardVideo.pause();
       reverseVideo.pause();
       return true;
@@ -347,23 +327,10 @@ export function CareerIllustration() {
       releaseAtStart();
     };
 
-    const onBeforeUnload = () => {
-      resetVideoToStart();
-      resetWindowScroll();
-    };
-
     const onPageShow = (event: PageTransitionEvent) => {
-      if (!event.persisted && navigation?.type !== "reload") {
-        return;
+      if (event.persisted) {
+        resetVideoToStart();
       }
-
-      isResettingInitialScroll = true;
-      resetVideoToStart();
-      resetWindowScroll();
-      window.requestAnimationFrame(() => {
-        resetWindowScroll();
-        isResettingInitialScroll = false;
-      });
     };
 
     const onWheel = (event: WheelEvent) => {
@@ -399,6 +366,20 @@ export function CareerIllustration() {
     };
 
     const onKeyDown = (event: KeyboardEvent) => {
+      const target = event.target;
+
+      if (target instanceof HTMLElement) {
+        const isInteractiveTarget =
+          target.isContentEditable ||
+          target.closest(
+            'input, textarea, select, button, a[href], [contenteditable=""], [contenteditable="true"]',
+          ) !== null;
+
+        if (isInteractiveTarget) {
+          return;
+        }
+      }
+
       const keyScrollDelta: Record<string, number> = {
         ArrowDown: 120,
         PageDown: 360,
@@ -435,7 +416,6 @@ export function CareerIllustration() {
     reverseVideo.addEventListener("loadedmetadata", onLoadedMetadata);
     forwardVideo.addEventListener("ended", onForwardEnded);
     reverseVideo.addEventListener("ended", onReverseEnded);
-    window.addEventListener("beforeunload", onBeforeUnload);
     window.addEventListener("pageshow", onPageShow);
     window.addEventListener("wheel", onWheel, { passive: false });
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -451,12 +431,6 @@ export function CareerIllustration() {
       reverseVideo.removeEventListener("loadedmetadata", onLoadedMetadata);
       forwardVideo.removeEventListener("ended", onForwardEnded);
       reverseVideo.removeEventListener("ended", onReverseEnded);
-
-      if (canRestoreScroll) {
-        window.history.scrollRestoration = previousScrollRestoration;
-      }
-
-      window.removeEventListener("beforeunload", onBeforeUnload);
       window.removeEventListener("pageshow", onPageShow);
       window.removeEventListener("wheel", onWheel);
       window.removeEventListener("scroll", onScroll);

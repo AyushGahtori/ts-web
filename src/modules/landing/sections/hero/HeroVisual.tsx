@@ -12,7 +12,13 @@ export function HeroVisual() {
       whileHover={{ y: -16, scale: 1.015 }}
       transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
     >
-      <Image src="/Hands.png" alt="" fill preload className="object-cover" />
+      <Image
+        src="/Hands.png"
+        alt=""
+        fill
+        loading="eager"
+        className="object-cover"
+      />
     </motion.div>
   );
 }
