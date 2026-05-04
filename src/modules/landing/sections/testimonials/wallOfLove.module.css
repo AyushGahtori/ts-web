@@ -2,8 +2,8 @@
   position: relative;
   z-index: 2;
   margin-top: -1px;
-  padding: 0 22px 0;
-  background: linear-gradient(180deg, #0c0d0d 0%, #4b0082 10%, #4b0082 100%);
+  padding: 58px 22px 0;
+  background: linear-gradient(180deg, #0c0d0d 0%, #0c0d0d 24%, #4b0082 25%, #4b0082 100%);
 }
 
 .curveTop {
@@ -161,7 +161,7 @@
 
 @media (max-width: 1180px) {
   .section {
-    padding: 0 14px 0;
+    padding: 46px 14px 0;
   }
 
   .panel {
@@ -195,7 +195,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 0 0 0;
+    padding: 34px 0 0;
   }
 
   .curveTop {

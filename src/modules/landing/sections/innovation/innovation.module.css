@@ -20,11 +20,26 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 108px 108px;
-  opacity: 0.46;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.72));
+  opacity: 1;
+  pointer-events: none;
+  mask-image:
+    linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.34) 16%, rgba(0, 0, 0, 0.94) 42%, rgba(0, 0, 0, 0.94) 58%, rgba(0, 0, 0, 0.34) 84%, transparent 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.66));
+  mask-composite: intersect;
+}
+
+.headerGrid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+  background-size: inherit;
+  mask-image: radial-gradient(ellipse 52% 42% at 50% 48%, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.68) 42%, transparent 78%);
 }
 
 .headerInner {
@@ -123,14 +138,24 @@
   font-size: clamp(1.38rem, 2vw, 2.2rem);
   font-weight: 800;
   line-height: 1;
+  text-align: center;
+  white-space: nowrap;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
-  transition: transform 240ms ease, box-shadow 240ms ease, background 240ms ease;
+  transition:
+    transform 240ms ease,
+    box-shadow 240ms ease,
+    background 240ms ease,
+    color 240ms ease;
 }
 
 .pill:hover {
   transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.22);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 14px 30px rgba(75, 0, 130, 0.16);
+  background: #ffffff;
+  color: #000000;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    0 14px 30px rgba(75, 0, 130, 0.16),
+    0 0 24px rgba(255, 255, 255, 0.18);
 }
 
 .introSection {
@@ -250,7 +275,7 @@
 }
 
 .tableScroll {
-  margin-top: 26px;
+  margin-top: 22px;
   overflow-x: auto;
   padding-bottom: 8px;
   width: min(100%, 1090px);
@@ -268,10 +293,10 @@
 .table th,
 .table td {
   border: 1px solid rgba(12, 13, 13, 0.62);
-  padding: 12px 14px;
+  padding: 13px 16px;
   text-align: left;
   vertical-align: top;
-  line-height: 1.16;
+  line-height: 1.2;
 }
 
 .table th {
@@ -288,7 +313,7 @@
 .labSection {
   position: relative;
   margin-top: 148px;
-  width: min(100%, 860px);
+  width: min(100%, 820px);
   margin-left: clamp(330px, 37vw, 540px);
   margin-right: 0;
   padding-left: 0;
@@ -296,14 +321,17 @@
 
 .labPill {
   display: flex;
-  width: min(100%, 760px);
+  justify-content: center;
+  width: min(100%, 660px);
   margin-left: 0;
   margin-right: auto;
+  padding-inline: clamp(22px, 2.4vw, 34px);
+  font-size: clamp(1rem, 1.22vw, 1.42rem);
 }
 
 .labBody {
-  width: min(100%, 700px);
-  margin: 26px 0 0 22px;
+  width: min(100%, 720px);
+  margin: 22px 0 0 18px;
 }
 
 .labCopy {
@@ -337,13 +365,14 @@
 
 .pathDescription {
   max-width: 930px;
-  margin: 30px 0 0;
+  margin: 26px 0 0;
   font-weight: 700;
 }
 
 .pathList {
   max-width: 980px;
-  margin: 18px 0 0 24px;
+  margin: 8px 0 0;
+  padding-left: 30px;
   color: #0f0813;
   font-size: clamp(1rem, 1.16vw, 1.34rem);
   font-weight: 700;
@@ -434,7 +463,13 @@
   }
 
   .labSection {
-    padding-left: 104px;
+    width: calc(100% - clamp(120px, 18vw, 220px));
+    margin-left: clamp(120px, 18vw, 220px);
+    padding-left: 0;
+  }
+
+  .labPill {
+    width: min(100%, 640px);
   }
 
   .frameworkArrow {
@@ -522,6 +557,7 @@
 
   .labSection {
     margin-left: 44px;
+    width: calc(100% - 44px);
   }
 
   .frameworkArrow {
@@ -592,6 +628,7 @@
     padding: 0 18px;
     font-size: 0.95rem;
     text-align: center;
+    white-space: normal;
   }
 
   .introPill,
