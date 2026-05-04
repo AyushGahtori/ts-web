@@ -16,7 +16,11 @@ const navItems = [
   { id: "innovations", label: "Innovations", href: "/innovations" },
 ];
 
-export function Navbar() {
+interface NavbarProps {
+  hiddenItemIds?: string[];
+}
+
+export function Navbar({ hiddenItemIds = ["about", "innovations"] }: NavbarProps) {
   const pathname = usePathname();
   const normalizedPath =
     pathname === "/why-us"
@@ -27,6 +31,7 @@ export function Navbar() {
           ? "/join-us"
           : pathname;
   const [menuOpen, setMenuOpen] = useState(false);
+  const visibleNavItems = navItems.filter((item) => !hiddenItemIds.includes(item.id));
 
   return (
     <header className="premium-nav">
@@ -42,7 +47,7 @@ export function Navbar() {
       </div>
       <nav className="premium-nav__center" aria-label="Primary">
         <ul className="premium-nav__list">
-          {navItems.map((item) => (
+          {visibleNavItems.map((item) => (
             <NavItem key={item.id} label={item.label} href={item.href} active={normalizedPath === item.href} />
           ))}
         </ul>
@@ -70,7 +75,7 @@ export function Navbar() {
             exit={{ opacity: 0, y: -10, scale: 0.98 }}
             transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
           >
-            {navItems.map((item, index) => (
+            {visibleNavItems.map((item, index) => (
               <motion.a
                 key={item.id}
                 href={item.href}
