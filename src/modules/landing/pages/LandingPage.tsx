@@ -7,7 +7,6 @@ import { CareersInfoSection } from "@/modules/landing/sections/careers-info/Care
 import { FrameworksSection } from "@/modules/landing/sections/frameworks/FrameworksSection";
 import { Hero } from "@/modules/landing/sections/hero/Hero";
 import { IndustryExcellence } from "@/modules/landing/sections/industry-excellence/IndustryExcellence";
-import { LeadershipSection } from "@/modules/landing/sections/leadership/LeadershipSection";
 import { Navbar } from "@/modules/landing/sections/navbar/Navbar";
 import { PortfolioSection } from "@/modules/landing/sections/portfolio/PortfolioSection";
 import { MotionSection } from "@/components/motion/MotionSection";
@@ -43,7 +42,6 @@ export function LandingPage({ initialSectionId }: LandingPageProps) {
           <AboutVisualSection />
           <CareerSection />
           <CareersInfoSection />
-          <LeadershipSection />
           <BrandFooterSection />
         </div>
       </section>

@@ -81,9 +81,7 @@
   stroke-width: 7.5;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 920;
-  stroke-dashoffset: 920;
-  animation: doodleDraw 1.6s ease-out forwards;
+  filter: drop-shadow(0 0 10px rgba(177, 49, 255, 0.32));
 }
 
 .panel {
@@ -110,12 +108,6 @@
     linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 14%, rgba(255, 255, 255, 0) 84%, rgba(255, 255, 255, 0.05) 100%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 22%, rgba(0, 0, 0, 0.08) 100%);
   pointer-events: none;
-}
-
-@keyframes doodleDraw {
-  to {
-    stroke-dashoffset: 0;
-  }
 }
 
 .panelInner {
@@ -423,6 +415,7 @@
   stroke-width: 8;
   stroke-linecap: round;
   stroke-linejoin: round;
+  filter: drop-shadow(0 0 10px rgba(255, 74, 178, 0.28));
 }
 
 .bottomArcText {
