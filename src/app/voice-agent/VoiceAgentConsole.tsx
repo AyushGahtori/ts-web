@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
 import styles from "./voice-agent.module.css";
 import type { ScheduledCall } from "@/lib/voice-agent/types";
 
@@ -32,6 +32,9 @@ const defaultInstruction =
 
 const defaultKnowledgeBase =
   "Company: TechSnitch\nPurpose: Qualify the lead, understand their need, and schedule a follow-up with the team.\nEscalation: If the person asks for pricing, custom contracts, or sensitive data, collect context and say a human specialist will follow up.";
+
+const CALLS_POLL_MS = 5_000;
+const STATUS_POLL_MS = 30_000;
 
 function toDatetimeLocal(date: Date) {
   const offsetDate = new Date(date.getTime() - date.getTimezoneOffset() * 60_000);
@@ -65,32 +68,57 @@ export function VoiceAgentConsole() {
     return "Local mock mode";
   }, [status]);
 
-  async function refresh() {
-    const [callsResponse, statusResponse] = await Promise.all([
-      fetch("/api/voice-agent/calls", { cache: "no-store" }),
-      fetch("/api/voice-agent/status", { cache: "no-store" }),
-    ]);
-
+  const refreshCalls = useCallback(async () => {
+    const callsResponse = await fetch("/api/voice-agent/calls");
     const callsPayload = (await callsResponse.json()) as { calls: ScheduledCall[] };
-    const statusPayload = (await statusResponse.json()) as StatusResponse;
-
     setCalls(callsPayload.calls);
+  }, []);
+
+  const refreshStatus = useCallback(async () => {
+    const statusResponse = await fetch("/api/voice-agent/status");
+    const statusPayload = (await statusResponse.json()) as StatusResponse;
     setStatus(statusPayload.status);
-  }
+  }, []);
+
+  const refresh = useCallback(async () => {
+    await Promise.all([refreshCalls(), refreshStatus()]);
+  }, [refreshCalls, refreshStatus]);
 
   useEffect(() => {
-    const initialTimer = window.setTimeout(() => {
-      void refresh();
-    }, 0);
-    const interval = window.setInterval(() => {
-      void refresh();
-    }, 5_000);
+    let isMounted = true;
+    const isVisible = () => document.visibilityState === "visible";
+    const refreshWhenVisible = () => {
+      if (isVisible()) {
+        void refresh();
+      }
+    };
+
+    queueMicrotask(() => {
+      if (isMounted && isVisible()) {
+        void refresh();
+      }
+    });
+
+    const callsInterval = window.setInterval(() => {
+      if (isVisible()) {
+        void refreshCalls();
+      }
+    }, CALLS_POLL_MS);
+    const statusInterval = window.setInterval(() => {
+      if (isVisible()) {
+        void refreshStatus();
+      }
+    }, STATUS_POLL_MS);
+
+    document.addEventListener("visibilitychange", refreshWhenVisible);
 
     return () => {
-      window.clearTimeout(initialTimer);
-      window.clearInterval(interval);
+      isMounted = false;
+      document.removeEventListener("visibilitychange", refreshWhenVisible);
+      window.clearInterval(callsInterval);
+      window.clearInterval(statusInterval);
     };
-  }, []);
+  }, [refresh, refreshCalls, refreshStatus]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

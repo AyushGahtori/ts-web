@@ -31,8 +31,6 @@
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 1;
-  shape-rendering: geometricPrecision;
-  vector-effect: non-scaling-stroke;
 }
 
 .scrollSpiralPath {
@@ -41,6 +39,12 @@
 
 .scrollSpiralEngulfPath {
   stroke-width: 9.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollSpiralLayer {
+    display: none;
+  }
 }
 
 .header {

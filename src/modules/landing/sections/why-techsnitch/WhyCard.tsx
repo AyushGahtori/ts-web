@@ -1,7 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { motion, type TargetAndTransition } from "framer-motion";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { motion, useInView, type TargetAndTransition } from "framer-motion";
 import Image from "next/image";
 import styles from "./whyTechsnitch.module.css";
 
@@ -339,6 +339,8 @@ function getCardTransform(signedDistance: number, isPreviewOpen: boolean, isHove
 }
 
 export function WhyCard() {
+  const deckRegionRef = useRef<HTMLDivElement | null>(null);
+  const isDeckInView = useInView(deckRegionRef, { amount: 0.28 });
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -373,16 +375,16 @@ export function WhyCard() {
   }, [totalCards]);
 
   useEffect(() => {
-    if (isPreviewOpen || isAutoPaused) {
+    if (!isDeckInView || isPreviewOpen || isAutoPaused) {
       return;
     }
 
     const interval = window.setInterval(advanceCard, CARD_ROTATION_MS);
     return () => window.clearInterval(interval);
-  }, [advanceCard, isAutoPaused, isPreviewOpen]);
+  }, [advanceCard, isAutoPaused, isDeckInView, isPreviewOpen]);
 
   return (
-    <div className={styles.deckRegion}>
+    <div ref={deckRegionRef} className={styles.deckRegion}>
       <div
         className={styles.cardDeck}
         onMouseEnter={() => setIsPreviewOpen(true)}
@@ -397,44 +399,50 @@ export function WhyCard() {
           const zIndex = isActive ? 100 : isHovered ? 82 : 18 + (FAN_VISIBLE_SLOTS - Math.min(absoluteDistance, FAN_VISIBLE_SLOTS));
           const pointerEvents = isActive ? "auto" : isPreviewOpen ? "auto" : "none";
 
-          if (!isActive) {
-            return (
-              <motion.button
-                key={card.number}
-                type="button"
-                className={`${styles.outerLayer} ${styles.deckCard} ${styles.previewDeckCard}`}
-                aria-hidden={!isPreviewOpen}
-                aria-label={`Show card ${card.number}: ${card.title}`}
-                animate={cardTransform}
-                initial={false}
-                onClick={() => {
-                  selectCard(index);
-                  closePreview();
-                }}
-                onFocus={() => {
-                  setIsPreviewOpen(true);
-                  setHoveredIndex(index);
-                }}
-                onBlur={() => setHoveredIndex(null)}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                style={{ zIndex, pointerEvents }}
-                tabIndex={isPreviewOpen ? 0 : -1}
-                transition={{ duration: isHovered ? 0.28 : 0.62, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <CardFace card={card} isActive={false} isPreview />
-              </motion.button>
-            );
-          }
-
           return (
             <motion.div
               key={card.number}
-              className={`${styles.outerLayer} ${styles.deckCard} ${isActive ? styles.activeDeckCard : ""}`}
+              className={`${styles.outerLayer} ${styles.deckCard} ${!isActive ? styles.previewDeckCard : styles.activeDeckCard}`}
+              role={!isActive ? "button" : undefined}
+              aria-hidden={!isActive && !isPreviewOpen}
+              aria-label={!isActive ? `Show card ${card.number}: ${card.title}` : undefined}
               animate={cardTransform}
               initial={false}
+              onClick={
+                !isActive
+                  ? () => {
+                      selectCard(index);
+                      closePreview();
+                    }
+                  : undefined
+              }
+              onFocus={
+                !isActive
+                  ? () => {
+                      setIsPreviewOpen(true);
+                      setHoveredIndex(index);
+                    }
+                  : undefined
+              }
+              onBlur={!isActive ? () => setHoveredIndex(null) : undefined}
+              onKeyDown={
+                !isActive
+                  ? (event) => {
+                      if (event.key !== "Enter" && event.key !== " ") {
+                        return;
+                      }
+
+                      event.preventDefault();
+                      selectCard(index);
+                      closePreview();
+                    }
+                  : undefined
+              }
+              onMouseEnter={!isActive ? () => setHoveredIndex(index) : undefined}
+              onMouseLeave={!isActive ? () => setHoveredIndex(null) : undefined}
               style={{ zIndex, pointerEvents }}
-              transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
+              tabIndex={!isActive && isPreviewOpen ? 0 : -1}
+              transition={{ duration: isHovered ? 0.28 : 0.62, ease: [0.22, 1, 0.36, 1] }}
             >
               <CardFace card={card} isActive={isActive} isPreview={!isActive} />
             </motion.div>

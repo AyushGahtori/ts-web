@@ -101,19 +101,23 @@
 }
 
 .panelViewport {
+  display: grid;
+  grid-template-rows: 0fr;
   overflow: hidden;
   opacity: 0;
   transition:
-    height 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    grid-template-rows 420ms cubic-bezier(0.22, 1, 0.36, 1),
     opacity 280ms ease;
-  will-change: height;
 }
 
 .panelViewport[data-open="true"] {
+  grid-template-rows: 1fr;
   opacity: 1;
 }
 
 .panelInner {
+  min-height: 0;
+  overflow: hidden;
   padding: 0 20px 20px;
   transform: translateY(-10px);
   transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);

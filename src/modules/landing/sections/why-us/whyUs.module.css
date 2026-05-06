@@ -228,6 +228,16 @@
   }
 }
 
+.section[data-paused="true"] .visualImage {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visualImage {
+    animation: none !important;
+  }
+}
+
 .metricAccent {
   display: block;
   width: 100%;

@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useId } from "react";
 import styles from "./faq.module.css";
 
@@ -35,22 +35,11 @@ export function FAQItem({ question, answer, open = false, onToggle }: FAQItemPro
         </motion.span>
       </button>
 
-      <AnimatePresence initial={false}>
-        {open ? (
-          <motion.div
-            id={answerId}
-            className={`${styles.answerShell} ${styles.answerShellOpen}`}
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className={styles.answerInner}>
-              <p className={styles.answer}>{answer}</p>
-            </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+      <div id={answerId} className={`${styles.answerShell} ${open ? styles.answerShellOpen : ""}`}>
+        <div className={styles.answerInner}>
+          <p className={styles.answer}>{answer}</p>
+        </div>
+      </div>
     </article>
   );
 }

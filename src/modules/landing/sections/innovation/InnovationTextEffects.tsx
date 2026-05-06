@@ -19,12 +19,10 @@ const wordReveal: Variants = {
   hidden: {
     opacity: 0,
     y: 16,
-    filter: "blur(10px)",
   },
   show: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.52,
       ease: [0.16, 1, 0.3, 1],
@@ -37,13 +35,11 @@ const headingWordReveal: Variants = {
     opacity: 0,
     y: 28,
     rotateX: -42,
-    filter: "blur(12px)",
   },
   show: {
     opacity: 1,
     y: 0,
     rotateX: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.64,
       ease: [0.16, 1, 0.3, 1],
@@ -55,12 +51,10 @@ const listItemReveal: Variants = {
   hidden: {
     opacity: 0,
     x: -18,
-    filter: "blur(8px)",
   },
   show: {
     opacity: 1,
     x: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.46,
       ease: [0.16, 1, 0.3, 1],
@@ -94,7 +88,7 @@ export function WordRevealText({ as = "p", className, text }: WordRevealTextProp
     variants: textContainer,
     initial: "hidden",
     whileInView: "show",
-    viewport: { once: false, amount: 0.42, margin: "0px 0px -12% 0px" },
+    viewport: { once: true, amount: 0.42, margin: "0px 0px -12% 0px" },
   };
 
   if (as === "span") {
@@ -116,7 +110,7 @@ export function KineticHeading({ as = "h3", className, children }: KineticHeadin
     variants: textContainer,
     initial: "hidden",
     whileInView: "show",
-    viewport: { once: false, amount: 0.5, margin: "0px 0px -12% 0px" },
+    viewport: { once: true, amount: 0.5, margin: "0px 0px -12% 0px" },
   };
   const content = renderAnimatedWords(children, headingWordReveal);
 
@@ -147,7 +141,7 @@ export function AnimatedList({ as = "ul", className, children }: AnimatedListPro
     },
     initial: "hidden",
     whileInView: "show",
-    viewport: { once: false, amount: 0.35, margin: "0px 0px -12% 0px" },
+    viewport: { once: true, amount: 0.35, margin: "0px 0px -12% 0px" },
   };
 
   if (as === "ol") {

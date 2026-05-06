@@ -1,11 +1,18 @@
+"use client";
+
 import Image from "next/image";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 import { MotionSection } from "@/components/motion/MotionSection";
 import { WhyUsContent } from "@/modules/landing/sections/why-us/WhyUsContent";
 import styles from "./whyUs.module.css";
 
 export function WhyUsSection() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const isInView = useInView(sectionRef, { amount: 0.14 });
+
   return (
-    <section id="why" className={styles.section}>
+    <section ref={sectionRef} id="why" className={styles.section} data-paused={!isInView}>
       <div className={styles.panel}>
         <span className={styles.backgroundWhy} aria-hidden>
           WHY

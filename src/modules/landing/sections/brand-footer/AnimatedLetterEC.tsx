@@ -18,7 +18,7 @@ export function AnimatedLetterEC({ letter, className }: AnimatedLetterECProps) {
       <svg viewBox={viewBox} className={styles.animatedLetterSvg} preserveAspectRatio="xMidYMid meet">
         <defs>
           <filter id={filterId}>
-            <feGaussianBlur stdDeviation="12" />
+            <feGaussianBlur stdDeviation="6" />
           </filter>
           <mask id={maskId} maskUnits="userSpaceOnUse" x="0" y="0" width={width} height="242">
             <rect width={width} height="242" fill="black" />
