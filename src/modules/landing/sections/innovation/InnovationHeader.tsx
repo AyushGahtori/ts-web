@@ -1,13 +1,11 @@
 import { CursorBlurText } from "@/components/effects/CursorBlurText";
 import { MotionSection } from "@/components/motion/MotionSection";
-import { InnovationDecorations } from "./InnovationDecorations";
 import styles from "./innovation.module.css";
 
 export function InnovationHeader() {
   return (
     <section className={styles.header}>
       <div className={styles.headerGrid} aria-hidden />
-      <InnovationDecorations area="header" />
 
       <div className={styles.headerInner}>
         <MotionSection direction="up">

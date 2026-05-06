@@ -12,7 +12,7 @@ const monoton = Monoton({
   variable: "--font-monoton",
   subsets: ["latin"],
   weight: "400",
-});
+});                                                                                                                                 
 
 const monda = Monda({
   variable: "--font-monda",

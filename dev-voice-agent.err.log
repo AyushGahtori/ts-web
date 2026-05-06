@@ -1,0 +1,1438 @@
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/voice-agent" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="inter_cb0c501c-module__AUPRoG__variable monoton_1cbf45c3-module__7Yjdwq__variable..."
+-                         data-darkreader-proxy-injected="true"
+                        >
+                  ...
+ 
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="inter_cb0c501c-module__AUPRoG__variable monoton_1cbf45c3-module__7Yjdwq__variable..."
+-                         data-darkreader-mode="dynamic"
+-                         data-darkreader-scheme="dark"
+-                         data-darkreader-proxy-injected="true"
+                        >
+                          ...
+                            <section className="landing-ca...">
+                              ...
+                                <div className="premium-na...">
+                                  <img
+                                    alt="TechSnitch logo"
+                                    fetchPriority={undefined}
+                                    loading={undefined}
+                                    width={86}
+                                    height={52}
+                                    decoding="async"
+                                    data-nimg="1"
+                                    className={undefined}
+                                    style={{
++                                     color: "transparent"
+-                                     color: "transparent"
++                                     width: "auto"
+-                                     width: "auto"
++                                     height: "auto"
+-                                     height: "auto"
+-                                     --darkreader-inline-color: "transparent"
+                                    }}
+                                    sizes={undefined}
+                                    srcSet={"/_next/image?url=%2Ftechsnitch%2520logo.png&w=96&q=75 1x, /_next/image?u..."}
+                                    src={"/_next/image?url=%2Ftechsnitch%2520logo.png&w=256&q=75"}
+                                    ref={function}
+                                    onLoad={function onLoad}
+                                    onError={function onError}
+-                                   data-darkreader-inline-color=""
+                                  >
+                                  ...
+                              ...
+                                <div className="hero-visual" aria-hidden={true} style={{}} ...>
+                                  <img
+                                    alt=""
+                                    fetchPriority={undefined}
+                                    loading="eager"
+                                    width={undefined}
+                                    height={undefined}
+                                    decoding="async"
+                                    data-nimg="fill"
+                                    className="object-cover"
+                                    style={{
++                                     position: "absolute"
+-                                     position: "absolute"
++                                     height: "100%"
+-                                     height: "100%"
++                                     width: "100%"
+-                                     width: "100%"
++                                     left: 0
+-                                     left: "0px"
++                                     top: 0
+-                                     top: "0px"
++                                     right: 0
+-                                     right: "0px"
++                                     bottom: 0
+-                                     bottom: "0px"
++                                     objectFit: undefined
++                                     objectPosition: undefined
++                                     color: "transparent"
+-                                     color: "transparent"
+-                                     --darkreader-inline-color: "transparent"
+                                    }}
+                                    sizes="100vw"
+                                    srcSet={"/_next/image?url=%2FHands.png&w=640&q=75 640w, /_next/image?url=%2FHands..."}
+                                    src={"/_next/image?url=%2FHands.png&w=3840&q=75"}
+                                    ref={function}
+                                    onLoad={function onLoad}
+                                    onError={function onError}
+-                                   data-darkreader-inline-color=""
+                                  >
+                              ...
+                                <div className="about-dim-..." style={{position:"..."}} aria-hidden={true}>
+                                  <img
+                                    alt=""
+                                    fetchPriority={undefined}
+                                    loading="lazy"
+                                    width={undefined}
+                                    height={undefined}
+                                    decoding="async"
+                                    data-nimg="fill"
+                                    className="object-contain"
+                                    style={{
++                                     position: "absolute"
+-                                     position: "absolute"
++                                     height: "100%"
+-                                     height: "100%"
++                                     width: "100%"
+-                                     width: "100%"
++                                     left: 0
+-                                     left: "0px"
++                                     top: 0
+-                                     top: "0px"
++                                     right: 0
+-                                     right: "0px"
++                                     bottom: 0
+-                                     bottom: "0px"
++                                     objectFit: undefined
++                                     objectPosition: undefined
++                                     color: "transparent"
+-                                     color: "transparent"
+-                                     --darkreader-inline-color: "transparent"
+                                    }}
+                                    sizes="(max-width: 768px) 560px, (max-width: 1280px) 1020px, 1260px"
+                                    srcSet={"/_next/image?url=%2Ftechsnitch%2520logo.png&w=32&q=75 32w, /_next/image?..."}
+                                    src={"/_next/image?url=%2Ftechsnitch%2520logo.png&w=3840&q=75"}
+                                    ref={function}
+                                    onLoad={function onLoad}
+                                    onError={function onError}
+-                                   data-darkreader-inline-color=""
+                                  >
+                              ...
+                                <div className="accelerato..." aria-hidden={true}>
+                                  <img
+                                    alt=""
+                                    fetchPriority={undefined}
+                                    loading="lazy"
+                                    width={undefined}
+                                    height={undefined}
+                                    decoding="async"
+                                    data-nimg="fill"
+                                    className="accelerators-spiral-bg-image"
+                                    style={{
++                                     position: "absolute"
+-                                     position: "absolute"
++                                     height: "100%"
+-                                     height: "100%"
++                                     width: "100%"
+-                                     width: "100%"
++                                     left: 0
+-                                     left: "0px"
++                                     top: 0
+-                                     top: "0px"
++                                     right: 0
+-                                     right: "0px"
++                                     bottom: 0
+-                                     bottom: "0px"
++                                     objectFit: undefined
++                                     objectPosition: undefined
++                                     color: "transparent"
+-                                     color: "transparent"
+-                                     --darkreader-inline-color: "transparent"
+                                    }}
+                                    sizes="100vw"
+                                    srcSet={"/_next/image?url=%2FPurple%2520spiral%25201.png&w=640&q=75 640w, /_next/..."}
+                                    src={"/_next/image?url=%2FPurple%2520spiral%25201.png&w=3840&q=75"}
+                                    ref={function}
+                                    onLoad={function onLoad}
+                                    onError={function onError}
+-                                   data-darkreader-inline-color=""
+                                  >
+                              ...
+                                <div className="portfolio-..." style={{position:"..."}} aria-hidden={true}>
+                                  <img
+                                    alt=""
+                                    fetchPriority={undefined}
+                                    loading="lazy"
+                                    width={undefined}
+                                    height={undefined}
+                                    decoding="async"
+                                    data-nimg="fill"
+                                    className="portfolio-main-bg-image"
+                                    style={{
++                                     position: "absolute"
+-                                     position: "absolute"
++                                     height: "100%"
+-                                     height: "100%"
++                                     width: "100%"
+-                                     width: "100%"
++                                     left: 0
+-                                     left: "0px"
++                                     top: 0
+-                                     top: "0px"
++                                     right: 0
+-                                     right: "0px"
++                                     bottom: 0
+-                                     bottom: "0px"
++                                     objectFit: undefined
++                                     objectPosition: undefined
++                                     color: "transparent"
+-                                     color: "transparent"
+-                                     --darkreader-inline-color: "transparent"
+                                    }}
+                                    sizes="100vw"
+                                    srcSet={"/_next/image?url=%2Fpurple%2520spiral%25202.png&w=640&q=75 640w, /_next/..."}
+                                    src={"/_next/image?url=%2Fpurple%2520spiral%25202.png&w=3840&q=75"}
+                                    ref={function}
+                                    onLoad={function onLoad}
+                                    onError={function onError}
+-                                   data-darkreader-inline-color=""
+                                  >
+                              <div id="intelligen...">
+                                <FrameworksSection>
+                                  <section className="frameworks...">
+                                    <div className="frameworks..." style={{position:"...", ...}} aria-hidden={true}>
+                                      <img
+                                        alt=""
+                                        fetchPriority={undefined}
+                                        loading="eager"
+                                        width={undefined}
+                                        height={undefined}
+                                        decoding="async"
+                                        data-nimg="fill"
+                                        className="frameworks-wave-image"
+                                        style={{
++                                         position: "absolute"
+-                                         position: "absolute"
++                                         height: "100%"
+-                                         height: "100%"
++                                         width: "100%"
+-                                         width: "100%"
++                                         left: 0
+-                                         left: "0px"
++                                         top: 0
+-                                         top: "0px"
++                                         right: 0
+-                                         right: "0px"
++                                         bottom: 0
+-                                         bottom: "0px"
++                                         objectFit: undefined
++                                         objectPosition: undefined
++                                         color: "transparent"
+-                                         color: "transparent"
+-                                         --darkreader-inline-color: "transparent"
+                                        }}
+                                        sizes="100vw"
+                                        srcSet={"/_next/image?url=%2FPurple%2520stream.png&w=640&q=75 640w, /_next/im..."}
+                                        src={"/_next/image?url=%2FPurple%2520stream.png&w=3840&q=75"}
+                                        ref={function}
+                                        onLoad={function onLoad}
+                                        onError={function onError}
+-                                       data-darkreader-inline-color=""
+                                      >
+                                    <header>
+                                    <div className="frameworks...">
+                                      ...
+                                        <div id={undefined} className="frameworks..." style={{opacity:0, ...}} ...>
+                                          <img
+                                            alt=""
+                                            fetchPriority={undefined}
+                                            loading="lazy"
+                                            width={undefined}
+                                            height={undefined}
+                                            decoding="async"
+                                            data-nimg="fill"
+                                            className="frameworks-snada-logo-image"
+                                            style={{
++                                             position: "absolute"
+-                                             position: "absolute"
++                                             height: "100%"
+-                                             height: "100%"
++                                             width: "100%"
+-                                             width: "100%"
++                                             left: 0
+-                                             left: "0px"
++                                             top: 0
+-                                             top: "0px"
++                                             right: 0
+-                                             right: "0px"
++                                             bottom: 0
+-                                             bottom: "0px"
++                                             objectFit: undefined
++                                             objectPosition: undefined
++                                             color: "transparent"
+-                                             color: "transparent"
+-                                             --darkreader-inline-color: "transparent"
+                                            }}
+                                            sizes="(max-width: 1120px) 88vw, 46vw"
+                                            srcSet={"/_next/image?url=%2Fsnada.png&w=384&q=75 384w, /_next/image?url=..."}
+                                            src={"/_next/image?url=%2Fsnada.png&w=3840&q=75"}
+                                            ref={function}
+                                            onLoad={function onLoad}
+                                            onError={function onError}
+-                                           data-darkreader-inline-color=""
+                                          >
+                                      <article>
+                                      ...
+                                        <div id={undefined} className="frameworks..." style={{opacity:0, ...}} ...>
+                                          <img
+                                            alt=""
+                                            fetchPriority={undefined}
+                                            loading="lazy"
+                                            width={undefined}
+                                            height={undefined}
+                                            decoding="async"
+                                            data-nimg="fill"
+                                            className="frameworks-saos-logo-image"
+                                            style={{
++                                             position: "absolute"
+-                                             position: "absolute"
++                                             height: "100%"
+-                                             height: "100%"
++                                             width: "100%"
+-                                             width: "100%"
++                                             left: 0
+-                                             left: "0px"
++                                             top: 0
+-                                             top: "0px"
++                                             right: 0
+-                                             right: "0px"
++                                             bottom: 0
+-                                             bottom: "0px"
++                                             objectFit: undefined
++                                             objectPosition: undefined
++                                             color: "transparent"
+-                                             color: "transparent"
+-                                             --darkreader-inline-color: "transparent"
+                                            }}
+                                            sizes="(max-width: 1120px) 85vw, 41vw"
+                                            srcSet={"/_next/image?url=%2Fsaos-cropped.png&w=384&q=75 384w, /_next/ima..."}
+                                            src={"/_next/image?url=%2Fsaos-cropped.png&w=3840&q=75"}
+                                            ref={function}
+                                            onLoad={function onLoad}
+                                            onError={function onError}
+-                                           data-darkreader-inline-color=""
+                                          >
+                                ...
+                                  <div className="IndustryEx...">
+                                    <IndustryAccordionItem id="industry-s..." title="Industry-S..." isOpen={true} ...>
+                                      <article className="IndustryEx...">
+                                        <button type="button" id="industry-s..." aria-controls="industry-s..." ...>
+                                          <span>
+                                          <span className="IndustryEx..." aria-hidden={true}>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                              <path
+                                                d="M5.25 7.75L10 12.5L14.75 7.75"
+                                                stroke="currentColor"
+                                                strokeWidth="2.1"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+-                                               data-darkreader-inline-stroke=""
+-                                               style={{--darkreader-inline-stroke:"currentColor"}}
+                                              >
+                                        ...
+                                          <div className="IndustryEx...">
+                                            <div className="IndustryEx..." aria-hidden={true}>
+                                              <img
+                                                alt=""
+                                                fetchPriority={undefined}
+                                                loading="lazy"
+                                                width={undefined}
+                                                height={undefined}
+                                                decoding="async"
+                                                data-nimg="fill"
+                                                className="IndustryExcellence-module__POQxbG__spiralImage"
+                                                style={{
++                                                 position: "absolute"
+-                                                 position: "absolute"
++                                                 height: "100%"
+-                                                 height: "100%"
++                                                 width: "100%"
+-                                                 width: "100%"
++                                                 left: 0
+-                                                 left: "0px"
++                                                 top: 0
+-                                                 top: "0px"
++                                                 right: 0
+-                                                 right: "0px"
++                                                 bottom: 0
+-                                                 bottom: "0px"
++                                                 objectFit: undefined
++                                                 objectPosition: undefined
++                                                 color: "transparent"
+-                                                 color: "transparent"
+-                                                 --darkreader-inline-color: "transparent"
+                                                }}
+                                                sizes="(max-width: 768px) 75vw, 42vw"
+                                                srcSet={"/_next/image?url=%2Fpurple%2520spiral%25202.png&w=384&q=75 3..."}
+                                                src={"/_next/image?url=%2Fpurple%2520spiral%25202.png&w=3840&q=75"}
+                                                ref={function}
+                                                onLoad={function onLoad}
+                                                onError={function onError}
+-                                               data-darkreader-inline-color=""
+                                              >
+                                            ...
+                                              <tbody>
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                    <IndustryAccordionItem id="ai-agnosti..." title="AI-Agnosti..." isOpen={false} ...>
+                                      <article className="IndustryEx...">
+                                        <button type="button" id="ai-agnosti..." aria-controls="ai-agnosti..." ...>
+                                          <span>
+                                          <span className="IndustryEx..." aria-hidden={true}>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                              <path
+                                                d="M5.25 7.75L10 12.5L14.75 7.75"
+                                                stroke="currentColor"
+                                                strokeWidth="2.1"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+-                                               data-darkreader-inline-stroke=""
+-                                               style={{--darkreader-inline-stroke:"currentColor"}}
+                                              >
+                                        ...
+                                          <div className="IndustryEx...">
+                                            <div className="IndustryEx..." aria-hidden={true}>
+                                              <img
+                                                alt=""
+                                                fetchPriority={undefined}
+                                                loading="lazy"
+                                                width={undefined}
+                                                height={undefined}
+                                                decoding="async"
+                                                data-nimg="fill"
+                                                className="IndustryExcellence-module__POQxbG__spiralImage"
+                                                style={{
++                                                 position: "absolute"
+-                                                 position: "absolute"
++                                                 height: "100%"
+-                                                 height: "100%"
++                                                 width: "100%"
+-                                                 width: "100%"
++                                                 left: 0
+-                                                 left: "0px"
++                                                 top: 0
+-                                                 top: "0px"
++                                                 right: 0
+-                                                 right: "0px"
++                                                 bottom: 0
+-                                                 bottom: "0px"
++                                                 objectFit: undefined
++                                                 objectPosition: undefined
++                                                 color: "transparent"
+-                                                 color: "transparent"
+-                                                 --darkreader-inline-color: "transparent"
+                                                }}
+                                                sizes="(max-width: 768px) 75vw, 42vw"
+                                                srcSet={"/_next/image?url=%2Fpurple%2520spiral%25202.png&w=384&q=75 3..."}
+                                                src={"/_next/image?url=%2Fpurple%2520spiral%25202.png&w=3840&q=75"}
+                                                ref={function}
+                                                onLoad={function onLoad}
+                                                onError={function onError}
+-                                               data-darkreader-inline-color=""
+                                              >
+                                            ...
+                                              <tbody>
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                    <IndustryAccordionItem id="elite-adva..." title="The Elite ..." isOpen={false} ...>
+                                      <article className="IndustryEx...">
+                                        <button type="button" id="elite-adva..." aria-controls="elite-adva..." ...>
+                                          <span>
+                                          <span className="IndustryEx..." aria-hidden={true}>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                              <path
+                                                d="M5.25 7.75L10 12.5L14.75 7.75"
+                                                stroke="currentColor"
+                                                strokeWidth="2.1"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+-                                               data-darkreader-inline-stroke=""
+-                                               style={{--darkreader-inline-stroke:"currentColor"}}
+                                              >
+                                        ...
+                                          <div className="IndustryEx...">
+                                            <div className="IndustryEx..." aria-hidden={true}>
+                                              <img
+                                                alt=""
+                                                fetchPriority={undefined}
+                                                loading="lazy"
+                                                width={undefined}
+                                                height={undefined}
+                                                decoding="async"
+                                                data-nimg="fill"
+                                                className="IndustryExcellence-module__POQxbG__spiralImage"
+                                                style={{
++                                                 position: "absolute"
+-                                                 position: "absolute"
++                                                 height: "100%"
+-                                                 height: "100%"
++                                                 width: "100%"
+-                                                 width: "100%"
++                                                 left: 0
+-                                                 left: "0px"
++                                                 top: 0
+-                                                 top: "0px"
++                                                 right: 0
+-                                                 right: "0px"
++                                                 bottom: 0
+-                                                 bottom: "0px"
++                                                 objectFit: undefined
++                                                 objectPosition: undefined
++                                                 color: "transparent"
+-                                                 color: "transparent"
+-                                                 --darkreader-inline-color: "transparent"
+                                                }}
+                                                sizes="(max-width: 768px) 75vw, 42vw"
+                                                srcSet={"/_next/image?url=%2Fpurple%2520spiral%25202.png&w=384&q=75 3..."}
+                                                src={"/_next/image?url=%2Fpurple%2520spiral%25202.png&w=3840&q=75"}
+                                                ref={function}
+                                                onLoad={function onLoad}
+                                                onError={function onError}
+-                                               data-darkreader-inline-color=""
+                                              >
+                                            ...
+                                              <tbody>
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                    <IndustryAccordionItem id="engagement..." title="Engagement..." isOpen={false} ...>
+                                      <article className="IndustryEx...">
+                                        <button type="button" id="engagement..." aria-controls="engagement..." ...>
+                                          <span>
+                                          <span className="IndustryEx..." aria-hidden={true}>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                              <path
+                                                d="M5.25 7.75L10 12.5L14.75 7.75"
+                                                stroke="currentColor"
+                                                strokeWidth="2.1"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+-                                               data-darkreader-inline-stroke=""
+-                                               style={{--darkreader-inline-stroke:"currentColor"}}
+                                              >
+                                        ...
+                                          <div className="IndustryEx...">
+                                            <div className="IndustryEx..." aria-hidden={true}>
+                                              <img
+                                                alt=""
+                                                fetchPriority={undefined}
+                                                loading="lazy"
+                                                width={undefined}
+                                                height={undefined}
+                                                decoding="async"
+                                                data-nimg="fill"
+                                                className="IndustryExcellence-module__POQxbG__spiralImage"
+                                                style={{
++                                                 position: "absolute"
+-                                                 position: "absolute"
++                                                 height: "100%"
+-                                                 height: "100%"
++                                                 width: "100%"
+-                                                 width: "100%"
++                                                 left: 0
+-                                                 left: "0px"
++                                                 top: 0
+-                                                 top: "0px"
++                                                 right: 0
+-                                                 right: "0px"
++                                                 bottom: 0
+-                                                 bottom: "0px"
++                                                 objectFit: undefined
++                                                 objectPosition: undefined
++                                                 color: "transparent"
+-                                                 color: "transparent"
+-                                                 --darkreader-inline-color: "transparent"
+                                                }}
+                                                sizes="(max-width: 768px) 75vw, 42vw"
+                                                srcSet={"/_next/image?url=%2Fpurple%2520spiral%25202.png&w=384&q=75 3..."}
+                                                src={"/_next/image?url=%2Fpurple%2520spiral%25202.png&w=3840&q=75"}
+                                                ref={function}
+                                                onLoad={function onLoad}
+                                                onError={function onError}
+-                                               data-darkreader-inline-color=""
+                                              >
+                                            ...
+                                              <tbody>
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                <tr>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                                                  <td>
+                                                  <td>
+                                                    <div className="IndustryEx...">
+                                                      <span className="IndustryEx..." aria-hidden={true}>
+                                                        <svg
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth="1.7"
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+-                                                         data-darkreader-inline-stroke=""
+-                                                         style={{--darkreader-inline-stroke:"currentColor"}}
+                                                        >
+                                                      ...
+                              <div id="innovations">
+                                ...
+                                  <div className="AboutSecti...">
+                                    <img
+                                      alt=""
+                                      fetchPriority={undefined}
+                                      loading="lazy"
+                                      width={undefined}
+                                      height={undefined}
+                                      decoding="async"
+                                      data-nimg="fill"
+                                      className="AboutSection-module__hhz6ZW__phoneImage"
+                                      style={{
++                                       position: "absolute"
+-                                       position: "absolute"
++                                       height: "100%"
+-                                       height: "100%"
++                                       width: "100%"
+-                                       width: "100%"
++                                       left: 0
+-                                       left: "0px"
++                                       top: 0
+-                                       top: "0px"
++                                       right: 0
+-                                       right: "0px"
++                                       bottom: 0
+-                                       bottom: "0px"
++                                       objectFit: undefined
++                                       objectPosition: undefined
++                                       color: "transparent"
+-                                       color: "transparent"
+-                                       --darkreader-inline-color: "transparent"
+                                      }}
+                                      sizes="(max-width: 768px) 320px, (max-width: 1024px) 420px, 504px"
+                                      srcSet={"/_next/image?url=%2Fphone.png&w=32&q=75 32w, /_next/image?url=%2Fphone..."}
+                                      src={"/_next/image?url=%2Fphone.png&w=3840&q=75"}
+                                      ref={function}
+                                      onLoad={function onLoad}
+                                      onError={function onError}
+-                                     data-darkreader-inline-color=""
+                                    >
+                                <section>
+                                ...
+                                  <div className="careersInf..." aria-hidden={true}>
+                                    <img
+                                      alt=""
+                                      fetchPriority={undefined}
+                                      loading="lazy"
+                                      width={undefined}
+                                      height={undefined}
+                                      decoding="async"
+                                      data-nimg="fill"
+                                      className="careersInfo-module__q_5K2a__gradientBlobImage"
+                                      style={{
++                                       position: "absolute"
+-                                       position: "absolute"
++                                       height: "100%"
+-                                       height: "100%"
++                                       width: "100%"
+-                                       width: "100%"
++                                       left: 0
+-                                       left: "0px"
++                                       top: 0
+-                                       top: "0px"
++                                       right: 0
+-                                       right: "0px"
++                                       bottom: 0
+-                                       bottom: "0px"
++                                       objectFit: undefined
++                                       objectPosition: undefined
++                                       color: "transparent"
+-                                       color: "transparent"
+-                                       --darkreader-inline-color: "transparent"
+                                      }}
+                                      sizes="(max-width: 768px) 80vw, 56vw"
+                                      srcSet={"/_next/image?url=%2FPurple%2520spiral%25201.png&w=384&q=75 384w, /_nex..."}
+                                      src={"/_next/image?url=%2FPurple%2520spiral%25201.png&w=3840&q=75"}
+                                      ref={function}
+                                      onLoad={function onLoad}
+                                      onError={function onError}
+-                                     data-darkreader-inline-color=""
+                                    >
+                                <BrandFooterSection>
+                                  <section className="brandFoote...">
+                                    <div>
+                                    <div className="brandFoote...">
+                                      <BrandWordmark>
+                                        <div className="brandFoote...">
+                                          <div className="brandFoote..." aria-label="TECHSNITCH">
+                                            <span>
+                                            <AnimatedLetterEC>
+                                              <div className="brandFoote..." aria-hidden={true}>
+                                                <svg viewBox="0 0 240 242" className="brandFoote..." ...>
+                                                  <defs>
+                                                    <filter>
+                                                    <mask id="_S_1_-mask" maskUnits="userSpaceO..." x="0" y="0" ...>
+                                                      <rect
+                                                        width={240}
+                                                        height="242"
+                                                        fill="black"
+-                                                       data-darkreader-inline-fill=""
+-                                                       style={{--darkreader-inline-fill:"var(--dark..."}}
+                                                      >
+                                                      <text
+                                                        x="50%"
+                                                        y="79%"
+                                                        textAnchor="middle"
+                                                        fontFamily="var(--font-inter), sans-serif"
+                                                        fontWeight="800"
+                                                        fontSize="242"
+                                                        fill="white"
+-                                                       data-darkreader-inline-fill=""
+-                                                       style={{--darkreader-inline-fill:"var(--dark..."}}
+                                                      >
++                                                       E
+                                                  <text
+                                                    x="50%"
+                                                    y="79%"
+                                                    textAnchor="middle"
+                                                    fontFamily="var(--font-inter), sans-serif"
+                                                    fontWeight="800"
+                                                    fontSize="242"
+                                                    fill="#353333"
+-                                                   data-darkreader-inline-fill=""
+-                                                   style={{--darkreader-inline-fill:"var(--dark..."}}
+                                                  >
++                                                   E
+                                                  ...
+                                            <AnimatedLetterEC>
+                                              <div className="brandFoote..." aria-hidden={true}>
+                                                <svg viewBox="0 0 220 242" className="brandFoote..." ...>
+                                                  <defs>
+                                                    <filter>
+                                                    <mask id="_S_2_-mask" maskUnits="userSpaceO..." x="0" y="0" ...>
+                                                      <rect
+                                                        width={220}
+                                                        height="242"
+                                                        fill="black"
+-                                                       data-darkreader-inline-fill=""
+-                                                       style={{--darkreader-inline-fill:"var(--dark..."}}
+                                                      >
+                                                      <text
+                                                        x="50%"
+                                                        y="79%"
+                                                        textAnchor="middle"
+                                                        fontFamily="var(--font-inter), sans-serif"
+                                                        fontWeight="800"
+                                                        fontSize="242"
+                                                        fill="white"
+-                                                       data-darkreader-inline-fill=""
+-                                                       style={{--darkreader-inline-fill:"var(--dark..."}}
+                                                      >
++                                                       C
+                                                  <text
+                                                    x="50%"
+                                                    y="79%"
+                                                    textAnchor="middle"
+                                                    fontFamily="var(--font-inter), sans-serif"
+                                                    fontWeight="800"
+                                                    fontSize="242"
+                                                    fill="#353333"
+-                                                   data-darkreader-inline-fill=""
+-                                                   style={{--darkreader-inline-fill:"var(--dark..."}}
+                                                  >
++                                                   C
+                                                  ...
+                                            ...
+                                          ...
+                                      <MascotRow>
+                                        <div className="brandFoote...">
+                                          <div>
+                                          <div className="brandFoote...">
+                                            <img
+                                              alt=""
+                                              fetchPriority={undefined}
+                                              loading="lazy"
+                                              width={undefined}
+                                              height={undefined}
+                                              decoding="async"
+                                              data-nimg="fill"
+                                              className="brandFooter-module__FKOV_a__mascotImage"
+                                              style={{
++                                               position: "absolute"
+-                                               position: "absolute"
++                                               height: "100%"
+-                                               height: "100%"
++                                               width: "100%"
+-                                               width: "100%"
++                                               left: 0
+-                                               left: "0px"
++                                               top: 0
+-                                               top: "0px"
++                                               right: 0
+-                                               right: "0px"
++                                               bottom: 0
+-                                               bottom: "0px"
++                                               objectFit: undefined
++                                               objectPosition: undefined
++                                               color: "transparent"
+-                                               color: "transparent"
+-                                               --darkreader-inline-color: "transparent"
+                                              }}
+                                              sizes="(max-width: 768px) 88vw, (max-width: 1200px) 68vw, 980px"
+                                              srcSet={"/_next/image?url=%2FFooter.png&w=640&q=75 640w, /_next/image?u..."}
+                                              src={"/_next/image?url=%2FFooter.png&w=3840&q=75"}
+                                              ref={function}
+                                              onLoad={function onLoad}
+                                              onError={function onError}
+-                                             data-darkreader-inline-color=""
+                                            >
+                                          ...
+                                      ...
+                  ...
+ 
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
