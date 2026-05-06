@@ -466,7 +466,7 @@ function assetSrc(file: string) {
   return `/home/${file.replaceAll(" ", "%20")}`;
 }
 
-function settleToNearestHeroState(section: HTMLElement) {
+function settleToNearestHeroState(section: HTMLElement, direction: number) {
   const start = section.getBoundingClientRect().top + window.scrollY;
   const travel = section.offsetHeight - window.innerHeight;
 
@@ -476,14 +476,16 @@ function settleToNearestHeroState(section: HTMLElement) {
 
   const progress = Math.min(1, Math.max(0, (window.scrollY - start) / travel));
 
-  if (progress < 0.1 || progress > 0.82) {
+  if (progress < 0.1) {
     return;
   }
 
-  const settlePoints = [0, 0.3, 0.56, 0.78];
-  const targetProgress = settlePoints.reduce((nearest, point) =>
-    Math.abs(point - progress) < Math.abs(nearest - progress) ? point : nearest,
-  );
+  const targetProgress =
+    direction > 0 && progress >= 0.64
+      ? 1
+      : [0, 0.3, 0.56, 0.78].reduce((nearest, point) =>
+          Math.abs(point - progress) < Math.abs(nearest - progress) ? point : nearest,
+        );
 
   if (Math.abs(targetProgress - progress) < 0.025) {
     return;
@@ -548,6 +550,8 @@ function useCinematicScrollProgress(sectionRef: RefObject<HTMLElement | null>) {
 
 function useMagneticScrollSettle(sectionRef: RefObject<HTMLElement | null>) {
   const settleTimer = useRef<number | null>(null);
+  const lastScrollY = useRef(0);
+  const lastDirection = useRef(0);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -556,7 +560,17 @@ function useMagneticScrollSettle(sectionRef: RefObject<HTMLElement | null>) {
       return undefined;
     }
 
+    lastScrollY.current = window.scrollY;
+
     const onScroll = () => {
+      const nextScrollY = window.scrollY;
+      const nextDirection = Math.sign(nextScrollY - lastScrollY.current);
+      lastScrollY.current = nextScrollY;
+
+      if (nextDirection !== 0) {
+        lastDirection.current = nextDirection;
+      }
+
       const bounds = section.getBoundingClientRect();
       const isActive = bounds.top <= 4 && bounds.bottom >= window.innerHeight - 4;
 
@@ -569,7 +583,7 @@ function useMagneticScrollSettle(sectionRef: RefObject<HTMLElement | null>) {
       }
 
       settleTimer.current = window.setTimeout(() => {
-        settleToNearestHeroState(section);
+        settleToNearestHeroState(section, lastDirection.current);
       }, 180);
     };
 
@@ -643,15 +657,15 @@ export function Hero() {
 
   const introOpacity = useTransform(progress, [0, 0.72, 0.9], [1, 0.86, 0]);
   const introScale = useTransform(progress, [0, 0.86], [1, 1.028]);
-  const typeOpacity = useTransform(progress, [0, 0.5, 0.82], [0.82, 0.58, 0.03]);
+  const typeOpacity = useTransform(progress, [0, 0.5, 0.82], [0.96, 0.68, 0.03]);
   const typeY = useTransform(progress, [0, 0.82], [0, -64]);
   const foregroundOpacity = useTransform(progress, [0, 0.24, 0.52, 0.76], [1, 0.88, 0.22, 0.02]);
   const foregroundY = useTransform(progress, [0, 0.24, 0.55, 0.84], [0, -78, -330, -720]);
   const foregroundZ = useTransform(progress, [0, 0.84], [260, 420]);
-  const waveOpacity = useTransform(rawProgress, [0.6, 0.74, 1], [0, 0.9, 1]);
-  const waveScale = useTransform(rawProgress, [0.6, 0.82, 1], [0.08, 3.05, 5.25]);
-  const veilOpacity = useTransform(rawProgress, [0.68, 0.82, 1], [0, 0.94, 1]);
-  const veilY = useTransform(rawProgress, [0.86, 0.98], [0, -14]);
+  const waveOpacity = useTransform(rawProgress, [0.6, 0.74, 0.88, 0.98, 1], [0, 0.9, 1, 0.36, 0]);
+  const waveScale = useTransform(rawProgress, [0.6, 0.82, 0.94, 1], [0.08, 3.05, 4.72, 0.08]);
+  const veilOpacity = useTransform(rawProgress, [0.68, 0.82, 0.92, 0.985, 1], [0, 0.94, 1, 0.18, 0]);
+  const veilY = useTransform(rawProgress, [0.86, 0.96, 1], [0, -24, -92]);
 
   return (
     <section ref={sectionRef} className="home-cinematic-experience" aria-label="TechSnitch home introduction">

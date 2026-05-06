@@ -3262,10 +3262,9 @@ body::-webkit-scrollbar:horizontal {
 
 .home-cinematic-experience {
   position: relative;
-  z-index: 30;
   height: 372vh;
   min-height: 2680px;
-  background: #060207;
+  background: transparent;
 }
 
 .landing-root:has(.home-cinematic-experience),
@@ -3293,6 +3292,7 @@ body:has(.home-cinematic-experience) {
 
 .home-cinematic-sticky {
   position: sticky;
+  z-index: 30;
   top: 0;
   width: 100%;
   height: 100vh;
@@ -3300,9 +3300,15 @@ body:has(.home-cinematic-experience) {
   overflow: hidden;
   isolation: isolate;
   perspective: 1300px;
-  background: #e5d1d2;
+  background: transparent;
   border-radius: 0;
   contain: layout paint;
+}
+
+.landing-canvas:has(.home-cinematic-experience) #about {
+  position: relative;
+  z-index: 20;
+  margin-top: min(-100vh, -640px);
 }
 
 .home-intro-scene {
@@ -3331,11 +3337,11 @@ body:has(.home-cinematic-experience) {
 
 .home-techsnitch-type {
   position: absolute;
-  z-index: 6;
+  z-index: 132;
   top: 54%;
   left: 50%;
   width: 100%;
-  color: rgba(255, 255, 255, .92);
+  color: rgba(255, 255, 255, .98);
   font-family: var(--font-inter), sans-serif;
   font-size: clamp(74px, 14vw, 200px);
   font-weight: 500;
@@ -3557,6 +3563,10 @@ body:has(.home-cinematic-experience) {
 @media (max-width: 780px) {
   .home-cinematic-sticky {
     min-height: 620px;
+  }
+
+  .landing-canvas:has(.home-cinematic-experience) #about {
+    margin-top: min(-100vh, -620px);
   }
 
   .home-techsnitch-type {
