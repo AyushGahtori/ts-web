@@ -2,7 +2,7 @@
 
 import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
 import styles from "./voice-agent.module.css";
-import type { ScheduledCall } from "@/lib/voice-agent/types";
+import type { CallStatus, ScheduledCall } from "@/lib/voice-agent/types";
 
 type StatusResponse = {
   status: {
@@ -26,6 +26,96 @@ type StatusResponse = {
     };
   };
 };
+
+function isStringArray(value: unknown): value is string[] {
+  return Array.isArray(value) && value.every((item) => typeof item === "string");
+}
+
+function isCallStatus(value: unknown): value is CallStatus {
+  return (
+    value === "scheduled" ||
+    value === "queued" ||
+    value === "dialing" ||
+    value === "mocked" ||
+    value === "connected" ||
+    value === "completed" ||
+    value === "failed" ||
+    value === "canceled"
+  );
+}
+
+function isScheduledCall(value: unknown): value is ScheduledCall {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const call = value as ScheduledCall;
+  return (
+    typeof call.id === "string" &&
+    typeof call.phoneNumber === "string" &&
+    typeof call.objective === "string" &&
+    typeof call.systemInstruction === "string" &&
+    typeof call.knowledgeBase === "string" &&
+    typeof call.scheduledAt === "string" &&
+    isCallStatus(call.status) &&
+    (call.dispatchMode === "mock" || call.dispatchMode === "callhippo") &&
+    typeof call.createdAt === "string" &&
+    typeof call.updatedAt === "string" &&
+    Array.isArray(call.events)
+  );
+}
+
+function isCallsResponse(value: unknown): value is { calls: ScheduledCall[] } {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const response = value as { calls?: unknown };
+  return Array.isArray(response.calls) && response.calls.every(isScheduledCall);
+}
+
+function isCallhippoStatus(value: unknown): value is StatusResponse["status"]["callhippo"] {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const status = value as StatusResponse["status"]["callhippo"];
+  return (
+    typeof status.ready === "boolean" &&
+    typeof status.method === "string" &&
+    typeof status.endpointType === "string" &&
+    typeof status.campaignIdSet === "boolean" &&
+    typeof status.agentEmailSet === "boolean" &&
+    typeof status.autoStartCampaign === "boolean" &&
+    typeof status.needsCallSessionPayload === "boolean" &&
+    typeof status.fromNumberSet === "boolean" &&
+    typeof status.webhookSecretSet === "boolean" &&
+    isStringArray(status.missing)
+  );
+}
+
+function isDeepgramStatus(value: unknown): value is StatusResponse["status"]["deepgram"] {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const status = value as StatusResponse["status"]["deepgram"];
+  return (
+    typeof status.ready === "boolean" &&
+    typeof status.agentEndpoint === "string" &&
+    typeof status.voiceModel === "string" &&
+    isStringArray(status.missing)
+  );
+}
+
+function isStatusResponse(value: unknown): value is StatusResponse {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const response = value as { status?: { callhippo?: unknown; deepgram?: unknown } };
+  return isCallhippoStatus(response.status?.callhippo) && isDeepgramStatus(response.status?.deepgram);
+}
 
 const defaultInstruction =
   "You are a concise, helpful voice calling agent. Speak naturally, confirm important details, and end with a clear next step.";
@@ -68,52 +158,88 @@ export function VoiceAgentConsole() {
     return "Local mock mode";
   }, [status]);
 
-  const refreshCalls = useCallback(async () => {
-    const callsResponse = await fetch("/api/voice-agent/calls");
-    const callsPayload = (await callsResponse.json()) as { calls: ScheduledCall[] };
-    setCalls(callsPayload.calls);
+  const refreshCalls = useCallback(async (signal?: AbortSignal) => {
+    try {
+      const callsResponse = await fetch("/api/voice-agent/calls", { signal });
+
+      if (!callsResponse.ok) {
+        throw new Error(`Unable to refresh calls: ${callsResponse.status}`);
+      }
+
+      const callsPayload: unknown = await callsResponse.json();
+
+      if (!isCallsResponse(callsPayload)) {
+        throw new Error("Unable to refresh calls: unexpected response shape");
+      }
+
+      setCalls(callsPayload.calls);
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") {
+        return;
+      }
+
+      console.error(error);
+    }
   }, []);
 
-  const refreshStatus = useCallback(async () => {
-    const statusResponse = await fetch("/api/voice-agent/status");
-    const statusPayload = (await statusResponse.json()) as StatusResponse;
-    setStatus(statusPayload.status);
+  const refreshStatus = useCallback(async (signal?: AbortSignal) => {
+    try {
+      const statusResponse = await fetch("/api/voice-agent/status", { signal });
+
+      if (!statusResponse.ok) {
+        throw new Error(`Unable to refresh status: ${statusResponse.status}`);
+      }
+
+      const statusPayload: unknown = await statusResponse.json();
+
+      if (
+        !statusPayload ||
+        typeof statusPayload !== "object" ||
+        !isStatusResponse(statusPayload)
+      ) {
+        throw new Error("Unable to refresh status: unexpected response shape");
+      }
+
+      setStatus(statusPayload.status);
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") {
+        return;
+      }
+
+      console.error(error);
+    }
   }, []);
 
-  const refresh = useCallback(async () => {
-    await Promise.all([refreshCalls(), refreshStatus()]);
+  const refresh = useCallback(async (signal?: AbortSignal) => {
+    await Promise.all([refreshCalls(signal), refreshStatus(signal)]);
   }, [refreshCalls, refreshStatus]);
 
   useEffect(() => {
-    let isMounted = true;
+    const controller = new AbortController();
     const isVisible = () => document.visibilityState === "visible";
     const refreshWhenVisible = () => {
       if (isVisible()) {
-        void refresh();
+        void refresh(controller.signal);
       }
     };
 
-    queueMicrotask(() => {
-      if (isMounted && isVisible()) {
-        void refresh();
-      }
-    });
+    refreshWhenVisible();
 
     const callsInterval = window.setInterval(() => {
       if (isVisible()) {
-        void refreshCalls();
+        void refreshCalls(controller.signal);
       }
     }, CALLS_POLL_MS);
     const statusInterval = window.setInterval(() => {
       if (isVisible()) {
-        void refreshStatus();
+        void refreshStatus(controller.signal);
       }
     }, STATUS_POLL_MS);
 
     document.addEventListener("visibilitychange", refreshWhenVisible);
 
     return () => {
-      isMounted = false;
+      controller.abort();
       document.removeEventListener("visibilitychange", refreshWhenVisible);
       window.clearInterval(callsInterval);
       window.clearInterval(statusInterval);

@@ -96,10 +96,10 @@ function getCellIcon(cell: IndustryTableCell) {
   }
 
   if (cell.icon.type === "industry") {
-    return industryIconMap[cell.icon.key as IndustryIconKey];
+    return industryIconMap[cell.icon.key];
   }
 
-  return outcomeIconMap[cell.icon.key as OutcomeIconKey];
+  return outcomeIconMap[cell.icon.key];
 }
 
 export function IndustryTable({ columns, rows }: IndustryTableProps) {
@@ -118,20 +118,23 @@ export function IndustryTable({ columns, rows }: IndustryTableProps) {
             <tr key={row.cells.map((cell) => cell.text).join("|")}>
               {row.cells.map((cell, index) => {
                 const icon = getCellIcon(cell);
+                const content = icon ? (
+                  <div className={styles.tableLead}>
+                    <span className={styles.tableIcon} aria-hidden>
+                      {icon}
+                    </span>
+                    <span>{cell.text}</span>
+                  </div>
+                ) : (
+                  cell.text
+                );
 
-                return (
-                  <td key={`${cell.text}-${index}`}>
-                    {icon ? (
-                      <div className={styles.tableLead}>
-                        <span className={styles.tableIcon} aria-hidden>
-                          {icon}
-                        </span>
-                        <span>{cell.text}</span>
-                      </div>
-                    ) : (
-                      cell.text
-                    )}
-                  </td>
+                return index === 0 ? (
+                  <th key={`${cell.text}-${index}`} scope="row">
+                    {content}
+                  </th>
+                ) : (
+                  <td key={`${cell.text}-${index}`}>{content}</td>
                 );
               })}
             </tr>

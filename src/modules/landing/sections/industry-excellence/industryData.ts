@@ -1,12 +1,19 @@
 export type IndustryIconKey = "bfsi" | "pharma" | "telecom" | "oil" | "manufacturing";
 export type OutcomeIconKey = "shield" | "clipboard" | "gauge" | "helmet" | "gear";
 
+type IndustryTableCellIcon =
+  | {
+      type: "industry";
+      key: IndustryIconKey;
+    }
+  | {
+      type: "outcome";
+      key: OutcomeIconKey;
+    };
+
 export interface IndustryTableCell {
   text: string;
-  icon?: {
-    type: "industry" | "outcome";
-    key: IndustryIconKey | OutcomeIconKey;
-  };
+  icon?: IndustryTableCellIcon;
 }
 
 export interface IndustryTableRow {

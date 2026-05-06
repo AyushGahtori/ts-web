@@ -127,6 +127,19 @@
   transform: translateY(0);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .panelViewport,
+  .panelViewport[data-open="true"] {
+    transition: none;
+  }
+
+  .panelInner,
+  .panelViewport[data-open="true"] .panelInner {
+    transform: none;
+    transition: none;
+  }
+}
+
 .description {
   border-top: 1px solid rgba(168, 168, 168, 0.7);
   padding: 16px 12px 0;
@@ -216,23 +229,28 @@
 }
 
 .table thead th:last-child,
-.table tbody td:last-child {
+.table tbody td:last-child,
+.table tbody th:last-child {
   border-right: 0;
 }
 
-.table tbody td {
+.table tbody td,
+.table tbody th {
   padding: 16px 22px;
   border-right: 1px solid rgba(216, 216, 216, 0.16);
   border-bottom: 1px solid rgba(216, 216, 216, 0.16);
   color: rgba(255, 255, 255, 0.92);
   font-family: var(--font-monda), sans-serif;
   font-size: 1rem;
+  font-weight: 400;
   line-height: 1.4;
+  text-align: left;
   vertical-align: top;
   background: rgba(6, 6, 6, 0.52);
 }
 
-.table tbody tr:last-child td {
+.table tbody tr:last-child td,
+.table tbody tr:last-child th {
   border-bottom: 0;
 }
 
@@ -380,7 +398,8 @@
   }
 
   .table thead th,
-  .table tbody td {
+  .table tbody td,
+  .table tbody th {
     padding: 12px 14px;
     font-size: 0.82rem;
   }

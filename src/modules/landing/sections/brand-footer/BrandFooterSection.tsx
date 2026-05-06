@@ -12,7 +12,7 @@ export function BrandFooterSection() {
   const isInView = useInView(sectionRef, { amount: 0.12 });
 
   return (
-    <section ref={sectionRef} className={styles.section} data-paused={!isInView}>
+    <section ref={sectionRef} className={styles.section} data-paused={!isInView ? "true" : undefined}>
       <div className={styles.transitionBand} aria-hidden />
       <div className={styles.panel}>
         <BrandWordmark />

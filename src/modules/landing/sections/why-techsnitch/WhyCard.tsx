@@ -389,6 +389,11 @@ export function WhyCard() {
         className={styles.cardDeck}
         onMouseEnter={() => setIsPreviewOpen(true)}
         onMouseLeave={closePreview}
+        onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) {
+            closePreview();
+          }
+        }}
       >
         {cards.map((card, index) => {
           const signedDistance = getSignedDistance(index, activeIndex, totalCards);
@@ -441,7 +446,7 @@ export function WhyCard() {
               onMouseEnter={!isActive ? () => setHoveredIndex(index) : undefined}
               onMouseLeave={!isActive ? () => setHoveredIndex(null) : undefined}
               style={{ zIndex, pointerEvents }}
-              tabIndex={!isActive && isPreviewOpen ? 0 : -1}
+              tabIndex={isActive ? -1 : 0}
               transition={{ duration: isHovered ? 0.28 : 0.62, ease: [0.22, 1, 0.36, 1] }}
             >
               <CardFace card={card} isActive={isActive} isPreview={!isActive} />

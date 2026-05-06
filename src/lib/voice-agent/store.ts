@@ -117,6 +117,16 @@ export function updateCall(
     events: trimEvents(call.events),
   };
 
+  if (terminalStatuses.has(nextCall.status)) {
+    const timer = store.timers.get(id);
+
+    if (timer) {
+      clearTimeout(timer);
+    }
+
+    store.timers.delete(id);
+  }
+
   store.calls.set(id, nextCall);
   return nextCall;
 }

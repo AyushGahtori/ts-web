@@ -47,6 +47,7 @@ export function IndustryAccordionItem({
         aria-labelledby={`${id}-button`}
         className={styles.panelViewport}
         data-open={isOpen}
+        inert={!isOpen}
       >
         <div className={styles.panelInner}>
           {description ? <p className={styles.description}>{description}</p> : null}
