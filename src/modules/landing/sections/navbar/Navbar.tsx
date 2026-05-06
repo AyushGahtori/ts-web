@@ -41,8 +41,8 @@ export function Navbar({ hiddenItemIds = ["about", "innovations"] }: NavbarProps
           alt="TechSnitch logo"
           width={86}
           height={52}
-          preload
-          style={{ width: "auto", height: "auto" }}
+          priority
+          sizes="86px"
         />
       </div>
       <nav className="premium-nav__center" aria-label="Primary">

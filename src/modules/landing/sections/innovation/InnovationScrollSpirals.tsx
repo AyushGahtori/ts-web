@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import styles from "./innovation.module.css";
 
 const mainSpiralPath =
@@ -14,6 +14,7 @@ const engulfPath =
   "M62 3370 C246 3302 454 3312 612 3346 C804 3388 1016 3360 1324 3304";
 
 export function InnovationScrollSpirals() {
+  const shouldReduceMotion = useReducedMotion();
   const layerRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: layerRef,
@@ -31,6 +32,10 @@ export function InnovationScrollSpirals() {
   const engulfProgress = useTransform(scrollProgress, [0.84, 0.96], [0, 1]);
   const engulfOpacity = useTransform(scrollProgress, [0.8, 0.86, 1], [0, 1, 1]);
   const engulfStrokeWidth = useTransform(scrollProgress, [0.84, 0.9, 0.98, 1], [12, 96, 420, 420]);
+
+  if (shouldReduceMotion) {
+    return null;
+  }
 
   return (
     <div ref={layerRef} className={styles.scrollSpiralLayer} aria-hidden="true">

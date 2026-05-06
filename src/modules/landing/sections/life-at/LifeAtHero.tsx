@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { motion, type Variants } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView, type Variants } from "framer-motion";
 import styles from "./lifeAt.module.css";
 
 const titleEase = [0.16, 1, 0.3, 1] as const;
@@ -45,46 +45,10 @@ function RevealLetters({ className, startIndex = 0, text }: { className: string;
 
 export function LifeAtHero() {
   const heroRef = useRef<HTMLElement | null>(null);
-  const lastScrollY = useRef(0);
-  const [isRevealed, setIsRevealed] = useState(false);
-
-  useEffect(() => {
-    lastScrollY.current = window.scrollY;
-
-    const handleScroll = () => {
-      const hero = heroRef.current;
-
-      if (!hero) {
-        return;
-      }
-
-      const scrollY = window.scrollY;
-      const direction = scrollY >= lastScrollY.current ? "down" : "up";
-      const rect = hero.getBoundingClientRect();
-      const heroIsReadable = rect.top < window.innerHeight * 0.78 && rect.bottom > window.innerHeight * 0.22;
-
-      if (direction === "down" && scrollY > 8 && heroIsReadable) {
-        setIsRevealed(true);
-      }
-
-      if (direction === "up" && rect.top > -80) {
-        setIsRevealed(false);
-      }
-
-      if (scrollY <= 4) {
-        setIsRevealed(false);
-      }
-
-      lastScrollY.current = scrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const isRevealed = useInView(heroRef, { amount: 0.34, margin: "-22% 0px -22% 0px" });
 
   return (
-    <section ref={heroRef} className={styles.hero} aria-label="Life at Techsnitch">
+    <section ref={heroRef} className={styles.hero} data-paused={!isRevealed} aria-label="Life at Techsnitch">
       <p className={styles.backgroundWord} aria-hidden>
         Life at
       </p>

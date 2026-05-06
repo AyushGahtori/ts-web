@@ -92,8 +92,11 @@ function SlotMachineParagraph() {
 }
 
 export function LifeAtCultureSection() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const isSectionInView = useInView(sectionRef, { amount: 0.18 });
+
   return (
-    <section className={styles.cultureSection} aria-label="Our culture">
+    <section ref={sectionRef} className={styles.cultureSection} data-paused={!isSectionInView} aria-label="Our culture">
       <div className={styles.cultureArt} aria-hidden>
         <Image
           src="/coffee-person and-yoga.png"

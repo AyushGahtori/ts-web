@@ -136,6 +136,14 @@
   animation: driftE 7.8s ease-in-out infinite alternate;
 }
 
+.section[data-paused="true"] .orbPrimary,
+.section[data-paused="true"] .orbSecondary,
+.section[data-paused="true"] .orbTertiary,
+.section[data-paused="true"] .orbQuaternary,
+.section[data-paused="true"] .orbQuinary {
+  animation-play-state: paused;
+}
+
 .tagline {
   margin: 14px 0 0;
   text-align: center;
@@ -289,6 +297,16 @@
 @keyframes driftE {
   0% { transform: translate(0px, 0px) scale(1); }
   100% { transform: translate(10px, -16px) scale(0.94); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbPrimary,
+  .orbSecondary,
+  .orbTertiary,
+  .orbQuaternary,
+  .orbQuinary {
+    animation: none !important;
+  }
 }
 
 @media (max-width: 1200px) {

@@ -13,6 +13,86 @@ interface CursorBlurTextProps extends HTMLAttributes<HTMLElement> {
   spotSize?: number;
 }
 
+interface CursorBlurSubscriber {
+  element: HTMLElement;
+  influenceRadius: number;
+  visible: boolean;
+}
+
+const cursorBlurSubscribers = new Set<CursorBlurSubscriber>();
+let cursorBlurPointerX = -9999;
+let cursorBlurPointerY = -9999;
+let cursorBlurFrame = 0;
+let cursorBlurListening = false;
+
+function updateCursorBlurSubscribers() {
+  cursorBlurFrame = 0;
+
+  cursorBlurSubscribers.forEach((subscriber) => {
+    const { element, influenceRadius, visible } = subscriber;
+
+    if (!visible) {
+      element.style.setProperty("--cursor-blur-strength", "0");
+      return;
+    }
+
+    const rect = element.getBoundingClientRect();
+    const localX = cursorBlurPointerX - rect.left;
+    const localY = cursorBlurPointerY - rect.top;
+    const distanceX = Math.max(rect.left - cursorBlurPointerX, 0, cursorBlurPointerX - rect.right);
+    const distanceY = Math.max(rect.top - cursorBlurPointerY, 0, cursorBlurPointerY - rect.bottom);
+    const distance = Math.hypot(distanceX, distanceY);
+    const strength = Math.max(0, 1 - distance / influenceRadius);
+
+    element.style.setProperty("--cursor-blur-x", `${localX}px`);
+    element.style.setProperty("--cursor-blur-y", `${localY}px`);
+    element.style.setProperty("--cursor-blur-strength", strength.toFixed(3));
+  });
+}
+
+function queueCursorBlurUpdate() {
+  if (!cursorBlurFrame) {
+    cursorBlurFrame = window.requestAnimationFrame(updateCursorBlurSubscribers);
+  }
+}
+
+function handleSharedPointerMove(event: PointerEvent) {
+  cursorBlurPointerX = event.clientX;
+  cursorBlurPointerY = event.clientY;
+  queueCursorBlurUpdate();
+}
+
+function handleSharedPointerLeave() {
+  cursorBlurSubscribers.forEach(({ element }) => {
+    element.style.setProperty("--cursor-blur-strength", "0");
+  });
+}
+
+function ensureCursorBlurListeners() {
+  if (cursorBlurListening) {
+    return;
+  }
+
+  window.addEventListener("pointermove", handleSharedPointerMove, { passive: true });
+  window.addEventListener("pointerleave", handleSharedPointerLeave);
+  cursorBlurListening = true;
+}
+
+function teardownCursorBlurListenersIfIdle() {
+  if (!cursorBlurListening || cursorBlurSubscribers.size > 0) {
+    return;
+  }
+
+  window.removeEventListener("pointermove", handleSharedPointerMove);
+  window.removeEventListener("pointerleave", handleSharedPointerLeave);
+  cursorBlurListening = false;
+
+  if (cursorBlurFrame) {
+    window.cancelAnimationFrame(cursorBlurFrame);
+    cursorBlurFrame = 0;
+  }
+}
+
 export function CursorBlurText({
   as = "span",
   children,
@@ -31,53 +111,37 @@ export function CursorBlurText({
   useEffect(() => {
     const element = textRef.current;
 
-    if (!element || window.matchMedia("(pointer: coarse)").matches) {
+    if (!element || window.matchMedia("(pointer: coarse), (prefers-reduced-motion: reduce)").matches) {
       return;
     }
 
-    let frame = 0;
-    let pointerX = -9999;
-    let pointerY = -9999;
-
-    const updateBlurSpot = () => {
-      frame = 0;
-
-      const rect = element.getBoundingClientRect();
-      const localX = pointerX - rect.left;
-      const localY = pointerY - rect.top;
-      const distanceX = Math.max(rect.left - pointerX, 0, pointerX - rect.right);
-      const distanceY = Math.max(rect.top - pointerY, 0, pointerY - rect.bottom);
-      const distance = Math.hypot(distanceX, distanceY);
-      const strength = Math.max(0, 1 - distance / influenceRadius);
-
-      element.style.setProperty("--cursor-blur-x", `${localX}px`);
-      element.style.setProperty("--cursor-blur-y", `${localY}px`);
-      element.style.setProperty("--cursor-blur-strength", strength.toFixed(3));
+    const subscriber: CursorBlurSubscriber = {
+      element,
+      influenceRadius,
+      visible: false,
     };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        subscriber.visible = Boolean(entry?.isIntersecting);
 
-    const handlePointerMove = (event: PointerEvent) => {
-      pointerX = event.clientX;
-      pointerY = event.clientY;
+        if (!subscriber.visible) {
+          element.style.setProperty("--cursor-blur-strength", "0");
+        } else {
+          queueCursorBlurUpdate();
+        }
+      },
+      { rootMargin: `${Math.ceil(influenceRadius)}px` },
+    );
 
-      if (!frame) {
-        frame = window.requestAnimationFrame(updateBlurSpot);
-      }
-    };
-
-    const clearBlurSpot = () => {
-      element.style.setProperty("--cursor-blur-strength", "0");
-    };
-
-    window.addEventListener("pointermove", handlePointerMove, { passive: true });
-    window.addEventListener("pointerleave", clearBlurSpot);
+    observer.observe(element);
+    cursorBlurSubscribers.add(subscriber);
+    ensureCursorBlurListeners();
 
     return () => {
-      window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("pointerleave", clearBlurSpot);
-
-      if (frame) {
-        window.cancelAnimationFrame(frame);
-      }
+      observer.disconnect();
+      cursorBlurSubscribers.delete(subscriber);
+      element.style.setProperty("--cursor-blur-strength", "0");
+      teardownCursorBlurListenersIfIdle();
     };
   }, [influenceRadius]);
 

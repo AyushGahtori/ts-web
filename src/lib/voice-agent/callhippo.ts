@@ -6,6 +6,8 @@ type ProviderStep = {
   response: unknown;
 };
 
+const CALLHIPPO_FETCH_TIMEOUT_MS = 8_000;
+
 function getProviderCallId(response: unknown) {
   if (!response || typeof response !== "object") {
     return undefined;
@@ -46,6 +48,7 @@ async function callCallHippoApi(path: string, body?: unknown, method = "POST") {
   const config = getVoiceAgentRuntimeConfig();
   const response = await fetch(`${config.callhippoApiBaseUrl}${path}`, {
     method,
+    signal: AbortSignal.timeout(CALLHIPPO_FETCH_TIMEOUT_MS),
     headers: {
       apiToken: config.callhippoApiKey ?? "",
       "Content-Type": "application/json",
@@ -103,28 +106,34 @@ export async function placeCallWithCallHippo(call: ScheduledCall): Promise<CallD
     };
   }
 
-  if (config.callhippoAgentEmail && config.callhippoSetAgentAvailable) {
-    const statusUpdate = await callCallHippoApi(
-      "/user/status",
-      {
-        email: config.callhippoAgentEmail,
-        status: "Available",
-      },
-      "PATCH",
-    );
-    steps.push({ step: "agent_status_available", response: statusUpdate });
-  }
-
   if (config.callhippoAgentEmail) {
-    const sessionStart = await callCallHippoApi(
-      "/user/callsession",
-      {
-        email: config.callhippoAgentEmail,
-        action: "start",
-      },
-      "PATCH",
+    const agentRequests: Promise<ProviderStep>[] = [];
+
+    if (config.callhippoSetAgentAvailable) {
+      agentRequests.push(
+        callCallHippoApi(
+          "/user/status",
+          {
+            email: config.callhippoAgentEmail,
+            status: "Available",
+          },
+          "PATCH",
+        ).then((response) => ({ step: "agent_status_available", response })),
+      );
+    }
+
+    agentRequests.push(
+      callCallHippoApi(
+        "/user/callsession",
+        {
+          email: config.callhippoAgentEmail,
+          action: "start",
+        },
+        "PATCH",
+      ).then((response) => ({ step: "agent_campaign_session_start", response })),
     );
-    steps.push({ step: "agent_campaign_session_start", response: sessionStart });
+
+    steps.push(...(await Promise.all(agentRequests)));
   }
 
   const campaignStart = await callCallHippoApi(`/campaign/${config.callhippoCampaignId}/start`, undefined, "PATCH");

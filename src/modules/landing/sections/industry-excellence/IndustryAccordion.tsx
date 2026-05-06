@@ -28,7 +28,7 @@ export function IndustryAccordion({ items }: IndustryAccordionProps) {
             description={item.description}
             decorative
           >
-            {item.rows ? <IndustryTable rows={item.rows} /> : <div className={styles.emptyPanel} aria-hidden />}
+            {item.rows && item.columns ? <IndustryTable columns={item.columns} rows={item.rows} /> : <div className={styles.emptyPanel} aria-hidden />}
           </IndustryAccordionItem>
         );
       })}

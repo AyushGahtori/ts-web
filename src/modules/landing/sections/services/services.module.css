@@ -217,6 +217,20 @@
   }
 }
 
+.section[data-paused="true"] .laptopImage,
+.section[data-paused="true"] .pill,
+.section[data-paused="true"] .cupImage {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laptopImage,
+  .pill,
+  .cupImage {
+    animation: none !important;
+  }
+}
+
 .baseAccent {
   position: absolute;
   left: 220px;

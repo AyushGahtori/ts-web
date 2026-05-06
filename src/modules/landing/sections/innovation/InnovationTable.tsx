@@ -27,9 +27,9 @@ export function InnovationTable() {
       <table className={styles.table}>
         <thead>
           <motion.tr
-            initial={{ opacity: 0, y: 16, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            viewport={{ once: false, amount: 0.6 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.48, ease: [0.16, 1, 0.3, 1] }}
           >
             <th>Innovation Pillar</th>
@@ -41,9 +41,9 @@ export function InnovationTable() {
           {rows.map((row, index) => (
             <motion.tr
               key={row.pillar}
-              initial={{ opacity: 0, y: 20, filter: "blur(10px)", backgroundColor: "rgba(255, 255, 255, 0.16)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", backgroundColor: "rgba(255, 255, 255, 0)" }}
-              viewport={{ once: false, amount: 0.55 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.55 }}
               transition={{ duration: 0.56, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
             >
               <td>{row.pillar}</td>

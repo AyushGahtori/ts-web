@@ -5,6 +5,11 @@ type VoiceAgentStore = {
   timers: Map<string, ReturnType<typeof setTimeout>>;
 };
 
+const MAX_EVENTS_PER_CALL = 50;
+const MAX_LISTED_CALLS = 100;
+const CALL_RETENTION_MS = 24 * 60 * 60 * 1000;
+const terminalStatuses = new Set<CallStatus>(["completed", "failed", "canceled"]);
+
 declare global {
   // Keeps local prototype state stable across route handler reloads in next dev.
   var __voiceAgentStore: VoiceAgentStore | undefined;
@@ -34,6 +39,29 @@ function createEvent(type: string, payload?: unknown): CallEvent {
   };
 }
 
+function trimEvents(events: CallEvent[]) {
+  return events.slice(-MAX_EVENTS_PER_CALL);
+}
+
+function pruneStore(store = getStore()) {
+  const cutoff = Date.now() - CALL_RETENTION_MS;
+
+  for (const [id, call] of store.calls) {
+    const updatedAt = new Date(call.updatedAt).getTime();
+
+    if (terminalStatuses.has(call.status) && updatedAt < cutoff) {
+      const timer = store.timers.get(id);
+
+      if (timer) {
+        clearTimeout(timer);
+      }
+
+      store.timers.delete(id);
+      store.calls.delete(id);
+    }
+  }
+}
+
 export function addCall(input: CreateCallInput): ScheduledCall {
   const timestamp = nowIso();
   const scheduledAt = input.scheduledAt || timestamp;
@@ -52,14 +80,19 @@ export function addCall(input: CreateCallInput): ScheduledCall {
     events: [createEvent("created", { scheduledAt })],
   };
 
-  getStore().calls.set(call.id, call);
+  const store = getStore();
+  pruneStore(store);
+  store.calls.set(call.id, call);
   return call;
 }
 
 export function listCalls(): ScheduledCall[] {
-  return Array.from(getStore().calls.values()).sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
-  );
+  const store = getStore();
+  pruneStore(store);
+
+  return Array.from(store.calls.values())
+    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+    .slice(0, MAX_LISTED_CALLS);
 }
 
 export function getCall(id: string): ScheduledCall | undefined {
@@ -81,7 +114,18 @@ export function updateCall(
     ...call,
     ...patch,
     updatedAt: nowIso(),
+    events: trimEvents(call.events),
   };
+
+  if (terminalStatuses.has(nextCall.status)) {
+    const timer = store.timers.get(id);
+
+    if (timer) {
+      clearTimeout(timer);
+    }
+
+    store.timers.delete(id);
+  }
 
   store.calls.set(id, nextCall);
   return nextCall;
@@ -97,7 +141,7 @@ export function appendCallEvent(id: string, type: string, payload?: unknown): Sc
 
   const nextCall: ScheduledCall = {
     ...call,
-    events: [...call.events, createEvent(type, payload)],
+    events: trimEvents([...call.events, createEvent(type, payload)]),
     updatedAt: nowIso(),
   };
 

@@ -1,8 +1,9 @@
 import type { ReactElement } from "react";
-import type { IndustryIconKey, IndustryTableRow, OutcomeIconKey } from "@/modules/landing/sections/industry-excellence/industryData";
+import type { IndustryIconKey, IndustryTableCell, IndustryTableRow, OutcomeIconKey } from "@/modules/landing/sections/industry-excellence/industryData";
 import styles from "./IndustryExcellence.module.css";
 
 interface IndustryTableProps {
+  columns: string[];
   rows: IndustryTableRow[];
 }
 
@@ -89,37 +90,53 @@ const outcomeIconMap: Record<OutcomeIconKey, ReactElement> = {
   ),
 };
 
-export function IndustryTable({ rows }: IndustryTableProps) {
+function getCellIcon(cell: IndustryTableCell) {
+  if (!cell.icon) {
+    return null;
+  }
+
+  if (cell.icon.type === "industry") {
+    return industryIconMap[cell.icon.key];
+  }
+
+  return outcomeIconMap[cell.icon.key];
+}
+
+export function IndustryTable({ columns, rows }: IndustryTableProps) {
   return (
     <div className={styles.tableScroller}>
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>Industry</th>
-            <th>Key Capabilities</th>
-            <th>Flagship Outcomes</th>
+            {columns.map((column) => (
+              <th key={column}>{column}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
           {rows.map((row) => (
-            <tr key={row.industry}>
-              <td>
-                <div className={styles.tableLead}>
-                  <span className={styles.tableIcon} aria-hidden>
-                    {industryIconMap[row.industryIcon]}
-                  </span>
-                  <span>{row.industry}</span>
-                </div>
-              </td>
-              <td>{row.capabilities}</td>
-              <td>
-                <div className={styles.tableLead}>
-                  <span className={styles.tableIcon} aria-hidden>
-                    {outcomeIconMap[row.outcomeIcon]}
-                  </span>
-                  <span>{row.outcomes}</span>
-                </div>
-              </td>
+            <tr key={row.cells.map((cell) => cell.text).join("|")}>
+              {row.cells.map((cell, index) => {
+                const icon = getCellIcon(cell);
+                const content = icon ? (
+                  <div className={styles.tableLead}>
+                    <span className={styles.tableIcon} aria-hidden>
+                      {icon}
+                    </span>
+                    <span>{cell.text}</span>
+                  </div>
+                ) : (
+                  cell.text
+                );
+
+                return index === 0 ? (
+                  <th key={`${cell.text}-${index}`} scope="row">
+                    {content}
+                  </th>
+                ) : (
+                  <td key={`${cell.text}-${index}`}>{content}</td>
+                );
+              })}
             </tr>
           ))}
         </tbody>

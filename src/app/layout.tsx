@@ -5,19 +5,23 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "700", "800"],
+  display: "swap",
 });
 
 const monoton = Monoton({
   variable: "--font-monoton",
   subsets: ["latin"],
   weight: "400",
-});                                                                                                                                 
+  display: "swap",
+  preload: false,
+});
 
 const monda = Monda({
   variable: "--font-monda",
   subsets: ["latin"],
   weight: ["400", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
