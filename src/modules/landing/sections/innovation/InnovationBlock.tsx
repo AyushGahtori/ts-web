@@ -1,3 +1,4 @@
+import { AnimatedList, AnimatedListItem, KineticHeading, WordRevealText } from "./InnovationTextEffects";
 import styles from "./innovation.module.css";
 
 interface InnovationBullet {
@@ -14,16 +15,16 @@ interface InnovationBlockProps {
 export function InnovationBlock({ title, description, bullets }: InnovationBlockProps) {
   return (
     <section className={styles.block}>
-      <h3 className={styles.blockTitle}>{title}</h3>
-      <p className={styles.blockDescription}>{description}</p>
+      <KineticHeading className={styles.blockTitle}>{title}</KineticHeading>
+      <WordRevealText className={styles.blockDescription} text={description} />
 
-      <ul className={styles.blockList}>
+      <AnimatedList className={styles.blockList}>
         {bullets.map((bullet) => (
-          <li key={bullet.label}>
+          <AnimatedListItem key={bullet.label}>
             <span>{bullet.label}:</span> {bullet.text}
-          </li>
+          </AnimatedListItem>
         ))}
-      </ul>
+      </AnimatedList>
     </section>
   );
 }

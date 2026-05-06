@@ -6,6 +6,43 @@
     linear-gradient(180deg, #0a0a0a 0%, #060606 24%, #220434 56%, #3d0677 100%);
 }
 
+.scrollSpiralLayer {
+  position: absolute;
+  top: -376px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.scrollSpiralSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.scrollSpiralPath,
+.scrollSpiralEngulfPath {
+  fill: none;
+  stroke: #5d0094;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 1;
+  shape-rendering: geometricPrecision;
+  vector-effect: non-scaling-stroke;
+}
+
+.scrollSpiralPath {
+  stroke-width: 9.5;
+}
+
+.scrollSpiralEngulfPath {
+  stroke-width: 9.5;
+}
+
 .header {
   position: relative;
   min-height: 700px;
@@ -87,10 +124,11 @@
 .panel {
   position: relative;
   z-index: 4;
+  isolation: isolate;
   width: min(100%, 1388px);
   margin: -256px auto 0;
   border-radius: 90px 90px 0 0;
-  overflow: hidden;
+  overflow: visible;
   background:
     radial-gradient(52% 38% at 12% 18%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 100%),
     radial-gradient(44% 38% at 86% 14%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%),
@@ -104,6 +142,8 @@
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 0;
+  border-radius: inherit;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 14%, rgba(255, 255, 255, 0) 84%, rgba(255, 255, 255, 0.05) 100%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 22%, rgba(0, 0, 0, 0.08) 100%);
@@ -112,7 +152,7 @@
 
 .panelInner {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   width: min(100%, 1110px);
   padding: 78px 54px 620px;
 }
@@ -140,6 +180,32 @@
     color 240ms ease;
 }
 
+.motionPill {
+  position: relative;
+  overflow: hidden;
+  transform-origin: center;
+  will-change: transform, opacity, clip-path;
+}
+
+.motionPillText {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+.motionPillSheen {
+  position: absolute;
+  z-index: 1;
+  top: -40%;
+  bottom: -40%;
+  left: -24%;
+  width: 36%;
+  transform: rotate(18deg);
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.34) 50%, transparent 100%);
+  pointer-events: none;
+}
+
 .pill:hover {
   transform: translateY(-3px);
   background: #ffffff;
@@ -148,6 +214,40 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.78),
     0 14px 30px rgba(75, 0, 130, 0.16),
     0 0 24px rgba(255, 255, 255, 0.18);
+}
+
+.kineticText,
+.kineticHeading {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.animatedWord {
+  display: inline-block;
+  transform-origin: 50% 80%;
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+}
+
+.kineticHeading {
+  perspective: 900px;
+}
+
+.kineticList {
+  position: relative;
+}
+
+.kineticListItem {
+  position: relative;
+  overflow: hidden;
+  will-change: transform, opacity, filter;
+}
+
+.kineticListScan {
+  position: absolute;
+  inset: -8px -18px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.22) 48%, transparent 100%);
+  pointer-events: none;
 }
 
 .introSection {
@@ -268,14 +368,15 @@
 
 .tableScroll {
   margin-top: 22px;
-  overflow-x: auto;
-  padding-bottom: 8px;
+  overflow: visible;
+  padding-bottom: 0;
   width: min(100%, 1090px);
 }
 
 .table {
   width: 100%;
-  min-width: 780px;
+  min-width: 0;
+  table-layout: fixed;
   border-collapse: collapse;
   color: #110813;
   font-size: 1rem;
@@ -289,6 +390,7 @@
   text-align: left;
   vertical-align: top;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .table th {
@@ -380,7 +482,7 @@
   left: 24px;
   right: 24px;
   bottom: -16px;
-  z-index: 1;
+  z-index: 2;
   color: #7a18ff;
   font-size: clamp(5.4rem, 13vw, 13rem);
   font-weight: 900;
@@ -393,20 +495,20 @@
 .frameworkArrow,
 .useCasesArrow {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
 }
 
 .frameworkArrow {
-  top: 352px;
-  left: 82px;
-  width: min(34vw, 320px);
+  top: 386px;
+  left: clamp(160px, 17vw, 248px);
+  width: min(28vw, 270px);
 }
 
 .useCasesArrow {
   top: 2010px;
-  left: 46px;
-  width: min(26vw, 240px);
+  left: clamp(132px, 14vw, 212px);
+  width: min(22vw, 205px);
 }
 
 .annotationStrokeBold {
@@ -466,11 +568,11 @@
   }
 
   .frameworkArrow {
-    left: 34px;
+    left: clamp(92px, 13vw, 160px);
   }
 
   .useCasesArrow {
-    left: 12px;
+    left: clamp(82px, 11vw, 132px);
   }
 
   .ghostDiagonal {
@@ -554,15 +656,15 @@
   }
 
   .frameworkArrow {
-    top: 348px;
-    left: 8px;
-    width: 206px;
+    top: 352px;
+    left: 84px;
+    width: 176px;
   }
 
   .useCasesArrow {
     top: 1848px;
-    left: -12px;
-    width: 176px;
+    left: 70px;
+    width: 148px;
   }
 
   .bottomArcText {
@@ -694,7 +796,7 @@
   }
 
   .table {
-    min-width: 640px;
+    min-width: 0;
   }
 
   .table th,
@@ -717,15 +819,15 @@
   }
 
   .frameworkArrow {
-    top: 292px;
-    left: -18px;
-    width: 142px;
+    top: 306px;
+    left: 42px;
+    width: 118px;
   }
 
   .useCasesArrow {
     top: 1672px;
-    left: -10px;
-    width: 132px;
+    left: 34px;
+    width: 104px;
   }
 
   .annotationStrokeBold {

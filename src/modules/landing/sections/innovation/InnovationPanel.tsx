@@ -2,7 +2,9 @@ import { InnovationBlock } from "./InnovationBlock";
 import { InnovationDecorations } from "./InnovationDecorations";
 import { InnovationPath } from "./InnovationPath";
 import { InnovationPill } from "./InnovationPill";
+import { InnovationScrollSpirals } from "./InnovationScrollSpirals";
 import { InnovationTable } from "./InnovationTable";
+import { AnimatedList, AnimatedListItem, WordRevealText } from "./InnovationTextEffects";
 import { MotionSection } from "@/components/motion/MotionSection";
 import styles from "./innovation.module.css";
 
@@ -55,6 +57,8 @@ const useCases = [
 export function InnovationPanel() {
   return (
     <section className={styles.panel}>
+      <InnovationScrollSpirals />
+
       <MotionSection direction="none">
         <InnovationDecorations area="panel" />
       </MotionSection>
@@ -62,21 +66,19 @@ export function InnovationPanel() {
       <div className={styles.panelInner}>
         <MotionSection className={styles.introSection} direction="up">
           <InnovationPill className={styles.introPill}>Engineering the Future of Work</InnovationPill>
-          <p className={styles.introCopy}>
-            At TechSnitch, innovation is not a buzzword; it is our architectural foundation. We empower
-            enterprises to transition from manual, reactive service management to Autonomous, Self-Healing
-            Operations. By decoupling intelligence from vendor constraints, we ensure your organization remains at
-            the cutting edge of the AI revolution.
-          </p>
+          <WordRevealText
+            className={styles.introCopy}
+            text="At TechSnitch, innovation is not a buzzword; it is our architectural foundation. We empower enterprises to transition from manual, reactive service management to Autonomous, Self-Healing Operations. By decoupling intelligence from vendor constraints, we ensure your organization remains at the cutting edge of the AI revolution."
+          />
         </MotionSection>
 
         <MotionSection className={styles.frameworksSection} direction="up" stagger>
           <InnovationPill className={styles.frameworkPill}>Our Proprietary Innovation Frameworks</InnovationPill>
           <div className={styles.frameworkBody}>
-            <p className={styles.frameworkCopy}>
-              We accelerate digital maturity through high-performance assets designed to sit atop your existing
-              ServiceNow and enterprise ecosystem.
-            </p>
+            <WordRevealText
+              className={styles.frameworkCopy}
+              text="We accelerate digital maturity through high-performance assets designed to sit atop your existing ServiceNow and enterprise ecosystem."
+            />
 
             <div className={styles.blockStack}>
               {frameworkBlocks.map((block) => (
@@ -88,24 +90,25 @@ export function InnovationPanel() {
 
         <MotionSection className={styles.advantageSection} direction="up" stagger>
           <InnovationPill className={styles.advantagePill}>The AI-Agnostic Advantage</InnovationPill>
-          <p className={styles.advantageCopy}>
-            TechSnitch&apos;s innovation strategy is built on the principle of Strategic Flexibility. We believe your
-            intelligence layer should never be a prisoner to a single vendor&apos;s roadmap.
-          </p>
+          <WordRevealText
+            className={styles.advantageCopy}
+            text="TechSnitch's innovation strategy is built on the principle of Strategic Flexibility. We believe your intelligence layer should never be a prisoner to a single vendor's roadmap."
+          />
           <InnovationTable />
         </MotionSection>
 
         <MotionSection className={styles.labSection} direction="up" stagger>
           <InnovationPill className={styles.labPill}>Our Innovation Lab: Leading Industry Use Cases</InnovationPill>
           <div className={styles.labBody}>
-            <p className={styles.labCopy}>
-              We don&apos;t just build tools; we solve industry-specific complexities through intelligent automation.
-            </p>
-            <ul className={styles.labList}>
+            <WordRevealText
+              className={styles.labCopy}
+              text="We don't just build tools; we solve industry-specific complexities through intelligent automation."
+            />
+            <AnimatedList className={styles.labList}>
               {useCases.map((item) => (
-                <li key={item}>{item}</li>
+                <AnimatedListItem key={item}>{item}</AnimatedListItem>
               ))}
-            </ul>
+            </AnimatedList>
           </div>
         </MotionSection>
 
