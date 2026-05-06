@@ -1,6 +1,4 @@
-import { AboutSection } from "@/modules/landing/sections/about/AboutSection";
 import { AboutSection as AboutVisualSection } from "@/modules/landing/sections/about-visual/AboutSection";
-import { AcceleratorsSection } from "@/modules/landing/sections/accelerators/AcceleratorsSection";
 import { BrandFooterSection } from "@/modules/landing/sections/brand-footer/BrandFooterSection";
 import { CareerSection } from "@/modules/landing/sections/career/CareerSection";
 import { CareersInfoSection } from "@/modules/landing/sections/careers-info/CareersInfoSection";
@@ -9,6 +7,8 @@ import { Hero } from "@/modules/landing/sections/hero/Hero";
 import { IndustryExcellence } from "@/modules/landing/sections/industry-excellence/IndustryExcellence";
 import { Navbar } from "@/modules/landing/sections/navbar/Navbar";
 import { PortfolioSection } from "@/modules/landing/sections/portfolio/PortfolioSection";
+import { QualitiesSection } from "@/modules/landing/sections/qualities/QualitiesSection";
+import { WhoWeAreSection } from "@/modules/landing/sections/who-we-are/WhoWeAreSection";
 import { RouteSectionScroller } from "./RouteSectionScroller";
 
 interface LandingPageProps {
@@ -25,10 +25,8 @@ export function LandingPage({ initialSectionId }: LandingPageProps) {
           <Hero />
         </div>
         <div id="about">
-          <AboutSection />
-        </div>
-        <div id="why-us">
-          <AcceleratorsSection />
+          <QualitiesSection />
+          <WhoWeAreSection />
         </div>
         <div id="services">
           <PortfolioSection />
@@ -40,7 +38,9 @@ export function LandingPage({ initialSectionId }: LandingPageProps) {
         <div id="innovations">
           <AboutVisualSection />
           <CareerSection />
-          <CareersInfoSection />
+          <div id="join-us">
+            <CareersInfoSection />
+          </div>
           <BrandFooterSection />
         </div>
       </section>

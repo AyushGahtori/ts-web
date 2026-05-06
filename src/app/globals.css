@@ -3263,8 +3263,8 @@ body::-webkit-scrollbar:horizontal {
 .home-cinematic-experience {
   position: relative;
   z-index: 30;
-  height: 360vh;
-  min-height: 2600px;
+  height: 372vh;
+  min-height: 2680px;
   background: #060207;
 }
 
@@ -3331,7 +3331,7 @@ body:has(.home-cinematic-experience) {
 
 .home-techsnitch-type {
   position: absolute;
-  z-index: 88;
+  z-index: 6;
   top: 54%;
   left: 50%;
   width: 100%;
@@ -3351,7 +3351,7 @@ body:has(.home-cinematic-experience) {
 
 .cinematic-poster {
   position: absolute;
-  z-index: 10;
+  z-index: 18;
   top: 47%;
   left: 50%;
   width: min(1440px, 100vw);
@@ -3392,10 +3392,11 @@ body:has(.home-cinematic-experience) {
 
 .home-intro-copy {
   position: absolute;
-  z-index: 90;
+  z-index: 140;
   color: #0c0d0d;
   font-family: var(--font-inter), sans-serif;
   letter-spacing: 0;
+  transform-style: preserve-3d;
   will-change: opacity, transform;
 }
 
@@ -3446,7 +3447,7 @@ body:has(.home-cinematic-experience) {
 
 .home-gradient-wave {
   position: absolute;
-  z-index: 38;
+  z-index: 118;
   top: 50%;
   left: 50%;
   width: 70vmax;
@@ -3492,7 +3493,7 @@ body:has(.home-cinematic-experience) {
 
 .home-gradient-veil {
   position: absolute;
-  z-index: 39;
+  z-index: 119;
   inset: -10vh -7vw;
   pointer-events: none;
   background:
@@ -3503,6 +3504,11 @@ body:has(.home-cinematic-experience) {
       #6008aa 82%,
       #14001f 100%);
   will-change: opacity, transform;
+}
+
+.landing-canvas:has(.home-cinematic-experience) .premium-nav {
+  position: fixed;
+  z-index: 160;
 }
 
 .home-gradient-veil::before {

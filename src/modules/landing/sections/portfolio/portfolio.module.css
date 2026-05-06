@@ -1,0 +1,314 @@
+.section {
+  position: relative;
+  z-index: 6;
+  min-height: clamp(760px, 71vw, 1024px);
+  overflow: hidden;
+  isolation: isolate;
+  background: #e4b3b3;
+  color: #080808;
+  padding: 0 clamp(10px, 2.4vw, 40px) clamp(46px, 4.4vw, 78px);
+}
+
+.heroBand {
+  position: relative;
+  min-height: clamp(238px, 22vw, 330px);
+  margin: 0 clamp(-10px, -2.4vw, -40px);
+  overflow: hidden;
+  background: #050707;
+}
+
+.characterArt {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: clamp(18px, 3vw, 42px);
+  width: min(66vw, 720px);
+  aspect-ratio: 1189 / 729;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 22px 30px rgba(0, 0, 0, 0.2));
+}
+
+.characterImage {
+  object-fit: contain;
+}
+
+.arrowLeft,
+.arrowRight {
+  position: absolute;
+  width: clamp(58px, 7vw, 122px);
+  aspect-ratio: 1;
+  pointer-events: none;
+}
+
+.arrowLeft {
+  left: -28px;
+  bottom: 30px;
+  background:
+    linear-gradient(#fff 0 0) 0 42% / 80% 18% no-repeat,
+    linear-gradient(45deg, transparent 42%, #fff 43% 57%, transparent 58%) 36% 0 / 70% 70% no-repeat;
+  transform: rotate(45deg);
+}
+
+.arrowRight {
+  right: -12px;
+  top: 22px;
+  background:
+    linear-gradient(#fff 0 0) 0 42% / 80% 18% no-repeat,
+    linear-gradient(45deg, transparent 42%, #fff 43% 57%, transparent 58%) 36% 0 / 70% 70% no-repeat;
+  transform: rotate(-135deg);
+}
+
+.quote {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: clamp(-34px, -2.2vw, -18px);
+  width: min(41vw, 520px);
+  min-height: clamp(100px, 8vw, 132px);
+  margin: 0;
+  padding: clamp(14px, 1.8vw, 22px) clamp(16px, 2vw, 28px);
+  border-radius: 12px 12px 0 0;
+  background: #e4b3b3;
+  color: #161010;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(12px, 1.05vw, 17px);
+  font-weight: 500;
+  line-height: 1.18;
+  transform: translateX(-50%);
+}
+
+.titleWrap {
+  position: relative;
+  z-index: 5;
+  width: fit-content;
+  margin: clamp(34px, 3.2vw, 58px) auto 0;
+  text-align: center;
+}
+
+.titleWrap h2 {
+  margin: 0;
+  color: #000;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 5.5vw, 82px);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.titleWrap span {
+  display: block;
+  font-size: 0.82em;
+}
+
+.cards {
+  position: relative;
+  z-index: 8;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(18px, 2.8vw, 50px);
+  align-items: end;
+  width: min(100%, 1360px);
+  margin: clamp(22px, 2.4vw, 38px) auto 0;
+}
+
+.card {
+  position: relative;
+  min-height: clamp(358px, 27vw, 500px);
+  color: #fff;
+  transform-origin: center;
+  outline: none;
+  will-change: transform, opacity;
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  border-radius: 18px;
+  background: var(--tone-color);
+  box-shadow: 0 18px 28px rgba(35, 4, 18, 0.18);
+}
+
+.card::before {
+  top: 0;
+  height: 63%;
+  clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%, 0 8%);
+}
+
+.card::after {
+  bottom: 0;
+  height: 39%;
+  clip-path: polygon(0 0, 100% 0, 100% 91%, 91% 100%, 0 100%);
+}
+
+.card[data-tone="delivery"] {
+  --tone-color: #801404;
+}
+
+.card[data-tone="intelligence"] {
+  --tone-color: #a2074f;
+}
+
+.card[data-tone="operations"] {
+  --tone-color: #078f2e;
+}
+
+.card[data-tone="advisory"] {
+  --tone-color: #076fcb;
+}
+
+.figureWrap {
+  position: relative;
+  z-index: 4;
+  height: clamp(232px, 19.6vw, 318px);
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+}
+
+.figure {
+  z-index: 3;
+  object-fit: contain;
+  object-position: center bottom;
+  padding: clamp(36px, 4.2vw, 64px) 0 0;
+  filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.18));
+}
+
+.number {
+  position: absolute;
+  z-index: 1;
+  left: clamp(-34px, -0.8vw, -10px);
+  top: clamp(16px, 2.2vw, 28px);
+  color: rgba(255, 255, 255, 0.94);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(132px, 18vw, 280px);
+  font-weight: 700;
+  line-height: 0.72;
+  pointer-events: none;
+}
+
+.figureWrap h3 {
+  position: absolute;
+  z-index: 5;
+  left: clamp(10px, 1.4vw, 20px);
+  top: clamp(18px, 2vw, 30px);
+  margin: 0;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 2.1vw, 40px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cursor {
+  position: absolute;
+  z-index: 6;
+  right: clamp(14px, 1.6vw, 26px);
+  top: 27%;
+  width: clamp(54px, 6.5vw, 96px);
+  height: auto;
+  transform: rotate(-33deg);
+  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.18));
+}
+
+.copyPanel {
+  position: relative;
+  z-index: 5;
+  min-height: clamp(132px, 10.8vw, 178px);
+  margin-top: clamp(-14px, -0.8vw, -8px);
+  padding: clamp(16px, 1.6vw, 25px) clamp(14px, 1.6vw, 22px);
+}
+
+.copyPanel h4 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(15px, 1.45vw, 24px);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.copyPanel p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.94);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(10px, 0.82vw, 14px);
+  font-weight: 400;
+  line-height: 1.18;
+}
+
+.copyPanel button {
+  position: absolute;
+  right: clamp(12px, 1.2vw, 18px);
+  bottom: clamp(12px, 1vw, 18px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 28px;
+  padding: 5px 9px 5px 12px;
+  border-radius: 0;
+  background: #0c0d0d;
+  color: #fff;
+  font-size: clamp(10px, 0.82vw, 14px);
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 220ms ease, background 220ms ease;
+}
+
+.copyPanel button span:last-child {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: #fff;
+  color: #0c0d0d;
+}
+
+.card:hover .copyPanel button,
+.card:focus-within .copyPanel button {
+  transform: translateY(-2px);
+  background: #050505;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    min-height: auto;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 760px;
+  }
+
+  .quote {
+    width: min(62vw, 520px);
+  }
+}
+
+@media (max-width: 640px) {
+  .heroBand {
+    min-height: 280px;
+  }
+
+  .characterArt {
+    top: 36px;
+    width: 116vw;
+  }
+
+  .quote {
+    width: calc(100% - 48px);
+  }
+
+  .titleWrap h2 {
+    font-size: 36px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    max-width: 330px;
+  }
+}

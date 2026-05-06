@@ -43,7 +43,7 @@ export function Navbar({ hiddenItemIds = ["about", "innovations"] }: NavbarProps
     const revealAfterIntro = () => {
       const hero = document.querySelector<HTMLElement>(".home-cinematic-experience");
       const revealAt = hero
-        ? hero.getBoundingClientRect().top + window.scrollY + (hero.offsetHeight - window.innerHeight) * 0.965
+        ? hero.getBoundingClientRect().top + window.scrollY + hero.offsetHeight - 1
         : window.innerHeight * 2.55;
 
       setIntroHidden(window.scrollY < revealAt);

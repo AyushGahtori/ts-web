@@ -645,13 +645,13 @@ export function Hero() {
   const introScale = useTransform(progress, [0, 0.86], [1, 1.028]);
   const typeOpacity = useTransform(progress, [0, 0.5, 0.82], [0.82, 0.58, 0.03]);
   const typeY = useTransform(progress, [0, 0.82], [0, -64]);
-  const foregroundOpacity = useTransform(progress, [0, 0.24, 0.52, 0.74], [1, 0.82, 0.18, 0.015]);
-  const foregroundY = useTransform(progress, [0, 0.24, 0.55, 0.84], [0, -82, -360, -760]);
-  const foregroundZ = useTransform(progress, [0, 0.22, 0.26], [96, 96, 6]);
-  const waveOpacity = useTransform(progress, [0.66, 0.78, 0.91, 0.98], [0, 0.86, 0.96, 0]);
-  const waveScale = useTransform(progress, [0.66, 0.86, 0.98], [0.08, 3.05, 4.45]);
-  const veilOpacity = useTransform(progress, [0.72, 0.84, 0.94, 1], [0, 0.86, 1, 0]);
-  const veilY = useTransform(progress, [0.88, 1], [0, -90]);
+  const foregroundOpacity = useTransform(progress, [0, 0.24, 0.52, 0.76], [1, 0.88, 0.22, 0.02]);
+  const foregroundY = useTransform(progress, [0, 0.24, 0.55, 0.84], [0, -78, -330, -720]);
+  const foregroundZ = useTransform(progress, [0, 0.84], [260, 420]);
+  const waveOpacity = useTransform(rawProgress, [0.6, 0.74, 1], [0, 0.9, 1]);
+  const waveScale = useTransform(rawProgress, [0.6, 0.82, 1], [0.08, 3.05, 5.25]);
+  const veilOpacity = useTransform(rawProgress, [0.68, 0.82, 1], [0, 0.94, 1]);
+  const veilY = useTransform(rawProgress, [0.86, 0.98], [0, -14]);
 
   return (
     <section ref={sectionRef} className="home-cinematic-experience" aria-label="TechSnitch home introduction">
@@ -669,7 +669,7 @@ export function Hero() {
 
           <motion.div
             className="home-intro-copy home-intro-copy--left"
-            style={{ opacity: foregroundOpacity, y: foregroundY, zIndex: foregroundZ }}
+            style={{ opacity: foregroundOpacity, y: foregroundY, z: foregroundZ }}
           >
             <p>ELITE AI-AGNOSTIC SERVICENOW PARTNER</p>
             <h1>
@@ -680,7 +680,7 @@ export function Hero() {
 
           <motion.p
             className="home-intro-copy home-intro-copy--right"
-            style={{ opacity: foregroundOpacity, y: foregroundY, zIndex: foregroundZ }}
+            style={{ opacity: foregroundOpacity, y: foregroundY, z: foregroundZ }}
           >
             Transforming global enterprises through AI-agnostic ServiceNow intelligence, delivering measurable outcomes, operational autonomy, and
             future-proof resilience without vendor lock-in.
