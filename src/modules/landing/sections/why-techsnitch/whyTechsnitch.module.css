@@ -54,7 +54,7 @@
 .cardDeck {
   position: relative;
   width: 100%;
-  height: calc(var(--why-card-height) + 88px);
+  height: calc(var(--why-card-height) + 132px);
   overflow: visible;
   isolation: isolate;
   perspective: 1600px;
@@ -79,13 +79,27 @@
   width: 100%;
   height: var(--why-card-height);
   margin: 0;
-  transform-origin: 50% 6%;
+  transform-origin: 50% 94%;
   backface-visibility: hidden;
   transform: translateZ(0);
   will-change: transform, opacity;
   box-shadow:
     -7px -7px 16px rgba(0, 0, 0, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.previewDeckCard {
+  appearance: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.previewDeckCard:focus-visible {
+  outline: 2px solid rgba(227, 255, 13, 0.78);
+  outline-offset: 8px;
 }
 
 .deckCard::before {
@@ -137,10 +151,15 @@
 
 .previewInnerLayer {
   background:
+    radial-gradient(68% 58% at 50% 16%, rgba(255, 255, 255, 0.075) 0%, rgba(255, 255, 255, 0) 64%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0) 42%),
     linear-gradient(rgba(255, 255, 255, 0.038) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.038) 1px, transparent 1px),
     #2f2e2e;
-  background-size: 88px 88px, 88px 88px, auto;
+  background-size: auto, auto, 88px 88px, 88px 88px, auto;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    inset 0 -42px 72px rgba(0, 0, 0, 0.34);
 }
 
 .previewInnerLayer .backgroundNumber {

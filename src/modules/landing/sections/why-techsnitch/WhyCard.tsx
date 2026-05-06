@@ -1,11 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type TargetAndTransition } from "framer-motion";
 import Image from "next/image";
 import styles from "./whyTechsnitch.module.css";
 
 const CARD_ROTATION_MS = 10000;
+const FAN_VISIBLE_SLOTS = 5;
 
 interface CardSection {
   heading: string;
@@ -18,6 +19,8 @@ interface ShowcaseCard {
   subtitle: string;
   sections: CardSection[];
 }
+
+type CardTransform = TargetAndTransition;
 
 const cards: ShowcaseCard[] = [
   {
@@ -217,11 +220,7 @@ function CardFace({ card, isActive, isPreview }: { card: ShowcaseCard; isActive:
   if (isPreview) {
     return (
       <div className={styles.middleLayer}>
-        <article className={`${styles.innerLayer} ${styles.previewInnerLayer}`}>
-          <div className={styles.backgroundNumber} aria-hidden>
-            {card.number}.
-          </div>
-        </article>
+        <article className={`${styles.innerLayer} ${styles.previewInnerLayer}`} />
       </div>
     );
   }
@@ -283,62 +282,159 @@ function CardFace({ card, isActive, isPreview }: { card: ShowcaseCard; isActive:
   );
 }
 
+function getSignedDistance(index: number, activeIndex: number, totalCards: number) {
+  let signedDistance = (index - activeIndex + totalCards) % totalCards;
+
+  if (signedDistance > totalCards / 2) {
+    signedDistance -= totalCards;
+  }
+
+  return signedDistance;
+}
+
+function getCardTransform(signedDistance: number, isPreviewOpen: boolean, isHovered: boolean): CardTransform {
+  const absoluteDistance = Math.abs(signedDistance);
+
+  if (!isPreviewOpen) {
+    return {
+      x: signedDistance * 2,
+      y: absoluteDistance * 4,
+      rotate: 0,
+      scale: 1 - absoluteDistance * 0.002,
+      opacity: 1,
+    };
+  }
+
+  if (signedDistance === 0) {
+    return {
+      x: 0,
+      y: 0,
+      rotate: 0,
+      scale: 1,
+      opacity: 1,
+    };
+  }
+
+  if (absoluteDistance > FAN_VISIBLE_SLOTS) {
+    return {
+      x: 0,
+      y: 42,
+      rotate: 0,
+      scale: 0.93,
+      opacity: 0.18,
+    };
+  }
+
+  const side = Math.sign(signedDistance);
+  const fanSlot = absoluteDistance;
+  const hoverLift = isHovered ? -42 : 0;
+
+  return {
+    x: side * (fanSlot * 46 + fanSlot * fanSlot * 5),
+    y: 34 + fanSlot * 13 + hoverLift,
+    rotate: side * (fanSlot * 4.4 + fanSlot * fanSlot * 0.28),
+    scale: 0.972 - fanSlot * 0.008 + (isHovered ? 0.035 : 0),
+    opacity: isHovered ? 1 : 0.96,
+  };
+}
+
 export function WhyCard() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isAutoPaused, setIsAutoPaused] = useState(false);
   const totalCards = cards.length;
 
-  const showCard = useCallback(
+  const selectCard = useCallback(
     (index: number) => {
+      setIsAutoPaused(true);
       setActiveIndex(((index % totalCards) + totalCards) % totalCards);
     },
     [totalCards],
   );
 
+  const closePreview = useCallback(() => {
+    setIsPreviewOpen(false);
+    setHoveredIndex(null);
+  }, []);
+
   const showNext = useCallback(() => {
+    setIsAutoPaused(true);
     setActiveIndex((current) => (current + 1) % totalCards);
   }, [totalCards]);
 
   const showPrevious = useCallback(() => {
+    setIsAutoPaused(true);
     setActiveIndex((current) => (current - 1 + totalCards) % totalCards);
   }, [totalCards]);
 
+  const advanceCard = useCallback(() => {
+    setActiveIndex((current) => (current + 1) % totalCards);
+  }, [totalCards]);
+
   useEffect(() => {
-    if (isPreviewOpen) {
+    if (isPreviewOpen || isAutoPaused) {
       return;
     }
 
-    const interval = window.setInterval(showNext, CARD_ROTATION_MS);
+    const interval = window.setInterval(advanceCard, CARD_ROTATION_MS);
     return () => window.clearInterval(interval);
-  }, [isPreviewOpen, showNext]);
+  }, [advanceCard, isAutoPaused, isPreviewOpen]);
 
   return (
     <div className={styles.deckRegion}>
       <div
         className={styles.cardDeck}
         onMouseEnter={() => setIsPreviewOpen(true)}
-        onMouseLeave={() => setIsPreviewOpen(false)}
+        onMouseLeave={closePreview}
       >
         {cards.map((card, index) => {
-          const distance = (index - activeIndex + totalCards) % totalCards;
-          const stackDepth = isPreviewOpen ? Math.min(distance, 7) : distance;
-          const isActive = distance === 0;
+          const signedDistance = getSignedDistance(index, activeIndex, totalCards);
+          const absoluteDistance = Math.abs(signedDistance);
+          const isActive = signedDistance === 0;
+          const isHovered = hoveredIndex === index;
+          const cardTransform = getCardTransform(signedDistance, isPreviewOpen, isHovered);
+          const zIndex = isActive ? 100 : isHovered ? 82 : 18 + (FAN_VISIBLE_SLOTS - Math.min(absoluteDistance, FAN_VISIBLE_SLOTS));
+          const pointerEvents = isActive ? "auto" : isPreviewOpen ? "auto" : "none";
+
+          if (!isActive) {
+            return (
+              <motion.button
+                key={card.number}
+                type="button"
+                className={`${styles.outerLayer} ${styles.deckCard} ${styles.previewDeckCard}`}
+                aria-hidden={!isPreviewOpen}
+                aria-label={`Show card ${card.number}: ${card.title}`}
+                animate={cardTransform}
+                initial={false}
+                onClick={() => {
+                  selectCard(index);
+                  closePreview();
+                }}
+                onFocus={() => {
+                  setIsPreviewOpen(true);
+                  setHoveredIndex(index);
+                }}
+                onBlur={() => setHoveredIndex(null)}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                style={{ zIndex, pointerEvents }}
+                tabIndex={isPreviewOpen ? 0 : -1}
+                transition={{ duration: isHovered ? 0.28 : 0.62, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <CardFace card={card} isActive={false} isPreview />
+              </motion.button>
+            );
+          }
 
           return (
             <motion.div
               key={card.number}
               className={`${styles.outerLayer} ${styles.deckCard} ${isActive ? styles.activeDeckCard : ""}`}
-              aria-hidden={!isActive}
-              animate={{
-                x: isPreviewOpen ? stackDepth * 4 : distance * 2,
-                y: isPreviewOpen ? stackDepth * 11 : distance * 4,
-                rotate: isPreviewOpen ? stackDepth * 0.24 : 0,
-                scale: 1 - (isPreviewOpen ? stackDepth * 0.004 : distance * 0.002),
-                opacity: isPreviewOpen && distance > 8 ? 0.18 : 1,
-              }}
+              animate={cardTransform}
               initial={false}
-              style={{ zIndex: totalCards - distance, pointerEvents: isActive ? "auto" : "none" }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              style={{ zIndex, pointerEvents }}
+              transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
             >
               <CardFace card={card} isActive={isActive} isPreview={!isActive} />
             </motion.div>
@@ -364,7 +460,7 @@ export function WhyCard() {
             min="0"
             max={totalCards - 1}
             value={activeIndex}
-            onChange={(event) => showCard(Number(event.target.value))}
+            onChange={(event) => selectCard(Number(event.target.value))}
           />
         </label>
 
@@ -383,7 +479,7 @@ export function WhyCard() {
               key={card.number}
               type="button"
               className={`${styles.deckDot} ${activeIndex === index ? styles.deckDotActive : ""}`}
-              onClick={() => showCard(index)}
+              onClick={() => selectCard(index)}
               aria-label={`Show card ${card.number}`}
               aria-current={activeIndex === index ? "true" : undefined}
             />
