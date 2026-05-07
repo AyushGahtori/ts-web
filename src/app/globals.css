@@ -318,6 +318,14 @@ body {
   margin: 0
 }
 
+.home-asset-gate {
+  width: 100%;
+  min-height: 100vh;
+  background:
+    radial-gradient(72% 56% at 51% 42%, rgba(255, 255, 255, .2) 0%, rgba(255, 255, 255, 0) 64%),
+    linear-gradient(180deg, #ead7d8 0%, #dfc8ca 100%);
+}
+
 .landing-root {
   background: radial-gradient(90% 95% at 50% -10%, #291033 0%, #070707 54%, #020202 100%);
   justify-content: center;

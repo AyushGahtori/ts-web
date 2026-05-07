@@ -8,6 +8,7 @@ const services = [
     description:
       "TechSnitch empowers organizations to unlock the full potential of the Salesforce ecosystem by integrating advanced AI capabilities. Our AI-agnostic approach ensures your platform is not locked into a single provider, enabling seamless integration with industry-leading LLMs to deliver hyper-personalized customer journeys.",
     variant: "salesforce" as const,
+    learnMoreHref: "/learnmore/salesforce",
   },
   {
     id: "two",
@@ -15,6 +16,7 @@ const services = [
     description:
       "We specialize in modernizing legacy ERP landscapes through AI-driven automation and advanced analytics, focusing on Oracle Cloud and SAP S/4HANA.",
     variant: "erp" as const,
+    learnMoreHref: "/learnmore/enterprise-erp",
   },
   {
     id: "three",
@@ -22,6 +24,7 @@ const services = [
     description:
       "TechSnitch integrates the full Microsoft AI stack—including Copilot and Azure OpenAI—into your Dynamics 365 environment. We transform standard business processes into intelligent workflows using the Power Platform (Power BI, Apps, and Automate).",
     variant: "microsoft" as const,
+    learnMoreHref: "/learnmore/microsoft-dynamics",
   },
   {
     id: "four",
@@ -29,6 +32,7 @@ const services = [
     description:
       'For organizations seeking a competitive edge, we build domain-specific AI applications that go beyond "off-the-shelf" capabilities.',
     variant: "llm" as const,
+    learnMoreHref: "/learnmore/ai-customer-development-llm",
   },
   {
     id: "five",
@@ -40,6 +44,7 @@ const services = [
       "AIOps & Observability: Closed-loop remediation using Dynatrace, Datadog, and Prometheus.",
     ],
     variant: "cloud" as const,
+    learnMoreHref: "/learnmore/devops-cloud-infrastructure",
   },
   {
     id: "six",
@@ -47,6 +52,7 @@ const services = [
     description:
       "Whether you are optimizing a mid-market solution or managing a complex enterprise BMC footprint, TechSnitch provides the bridge to modern AI operations.",
     variant: "itsm" as const,
+    learnMoreHref: "/learnmore/it-service-management",
   },
 ];
 

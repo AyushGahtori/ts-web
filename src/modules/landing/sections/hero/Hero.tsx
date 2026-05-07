@@ -685,7 +685,7 @@ export function Hero() {
             className="home-intro-copy home-intro-copy--left"
             style={{ opacity: foregroundOpacity, y: foregroundY, z: foregroundZ }}
           >
-            <p>ELITE AI-AGNOSTIC SERVICENOW PARTNER</p>
+            <p>AI-AGNOSTIC SERVICENOW PARTNER</p>
             <h1>
               Engineering the
               <span>Autonomous Enterprise</span>

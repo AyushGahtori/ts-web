@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./qualities.module.css";
@@ -13,8 +12,6 @@ const metrics = [
 ];
 
 export function QualitiesSection() {
-  const [supportSolved, setSupportSolved] = useState(false);
-
   return (
     <section className={styles.section} aria-label="Our qualities">
       <div className={styles.grid} aria-hidden />
@@ -55,28 +52,12 @@ export function QualitiesSection() {
             }}
           >
             <div className={styles.metricPanel}>
-              <motion.span
-                key={metric.label === "WhiteCollar Support" && supportSolved ? "support-solved" : metric.value}
-                initial={metric.label === "WhiteCollar Support" && supportSolved ? { scale: 0.78, opacity: 0 } : false}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              >
-                {metric.label === "WhiteCollar Support" && supportSolved ? "168" : metric.value}
+              <motion.span animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}>
+                {metric.value}
               </motion.span>
             </div>
             <div className={styles.controls}>
-              {metric.label === "WhiteCollar Support" ? (
-                <button
-                  type="button"
-                  className={`${styles.pill} ${styles.supportPill}`}
-                  aria-label="Calculate 24 times 7"
-                  onClick={() => setSupportSolved(true)}
-                >
-                  {supportSolved ? "24 x 7 = 168" : "24 x 7"}
-                </button>
-              ) : (
-                <span className={styles.pill} aria-hidden />
-              )}
+              <span className={styles.pill} aria-hidden />
               <span className={styles.dots} aria-hidden>
                 <span />
                 <span />

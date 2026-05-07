@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./servicesGrid.module.css";
 
@@ -11,10 +12,11 @@ interface ServiceCardProps {
   description: string;
   bullets?: string[];
   variant: CardVariant;
+  learnMoreHref: string;
   className?: string;
 }
 
-export function ServiceCard({ title, description, bullets, variant, className = "" }: ServiceCardProps) {
+export function ServiceCard({ title, description, bullets, variant, learnMoreHref, className = "" }: ServiceCardProps) {
   return (
     <motion.article
       className={`${styles.card} ${styles[`card${capitalize(variant)}`]} ${className}`}
@@ -36,10 +38,10 @@ export function ServiceCard({ title, description, bullets, variant, className = 
             </ul>
           ) : null}
 
-          <a href="#wall-of-love" className={styles.learnMore}>
+          <Link href={learnMoreHref} className={styles.learnMore}>
             <span>Learn More</span>
             <span className={styles.learnArrow} aria-hidden />
-          </a>
+          </Link>
         </div>
 
         <div className={styles.visual} aria-hidden>

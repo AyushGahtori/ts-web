@@ -186,8 +186,8 @@
 
 .dots {
   position: relative;
-  width: clamp(47px, 4.5vw, 84px);
-  height: clamp(42px, 4.1vw, 78px);
+  width: clamp(48px, 4.4vw, 84px);
+  aspect-ratio: 1;
 }
 
 .dots span {
@@ -199,23 +199,27 @@
 }
 
 .dots span:nth-child(1) {
-  left: 32%;
+  left: 50%;
   top: 0;
+  transform: translateX(-50%);
 }
 
 .dots span:nth-child(2) {
   left: 0;
-  top: 30%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .dots span:nth-child(3) {
-  right: clamp(5px, 0.52vw, 10px);
-  top: 30%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .dots span:nth-child(4) {
-  left: 32%;
+  left: 50%;
   bottom: 0;
+  transform: translateX(-50%);
 }
 
 .card p {
