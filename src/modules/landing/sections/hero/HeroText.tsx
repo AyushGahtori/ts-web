@@ -5,7 +5,7 @@ const specialties = ["AI-AGNOSTIC", "AUTONOMOUS", "OUTCOME-DRIVEN"];
 export function HeroText() {
   return (
     <div className="hero-text">
-      <p className="hero-eyebrow">ELITE AI-AGNOSTIC SERVICENOW PARTNER</p>
+      <p className="hero-eyebrow">AI-AGNOSTIC SERVICENOW PARTNER</p>
       <h1 className="hero-title">
         Engineering the
         <span className="hero-title-accent">

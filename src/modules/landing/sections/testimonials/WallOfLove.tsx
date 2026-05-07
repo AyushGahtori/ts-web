@@ -8,14 +8,14 @@ const testimonials = [
     name: "John Smith",
     role: "Operations Manager",
     quote:
-      "ServiceNow changed how we do business. We have benefited greatly from the increased insight into our supply chain and IT assets. Our operational efficiency has never been higher, and we can now act swiftly on well-informed decisions.",
+      "TechSnitch changed how we do business. We have benefited greatly from the increased insight into our supply chain and IT assets. Our operational efficiency has never been higher, and we can now act swiftly on well-informed decisions.",
   },
   {
     slot: "michael",
     name: "Michael Thompson",
     role: "Chief Technology Officer",
     quote:
-      "ServiceNow has completely revolutionized our approach to network management and customer service. The enhancements in reliability and responsiveness have made a significant impact on our customer satisfaction and operational efficiency.",
+      "TechSnitch has completely revolutionized our approach to network management and customer service. The enhancements in reliability and responsiveness have made a significant impact on our customer satisfaction and operational efficiency.",
   },
   {
     slot: "emily",
@@ -29,42 +29,42 @@ const testimonials = [
     name: "Lisa Johnson",
     role: "Operations Manager",
     quote:
-      "ServiceNow has revolutionized our operations beyond expectations. Its capability to streamline asset tracking and automate compliance processes has significantly enhanced our efficiency and elevated our safety standards.",
+      "TechSnitch has revolutionized our operations beyond expectations. Its capability to streamline asset tracking and automate compliance processes has significantly enhanced our efficiency and elevated our safety standards.",
   },
   {
     slot: "sarah",
     name: "Dr. Sarah Thompson",
     role: "Vice President of Student Affairs",
     quote:
-      "For us, ServiceNow has changed the game. The opportunity to simplify IT support and student services has revolutionized our campus life. We can concentrate more on education, which is what really counts, and our faculty and students are happier as a result.",
+      "For us, TechSnitch has changed the game. The opportunity to simplify IT support and student services has revolutionized our campus life. We can concentrate more on education, which is what really counts, and our faculty and students are happier as a result.",
   },
   {
     slot: "carter",
     name: "Dr. Emily Carter",
     role: "Director of Regulatory Affairs",
     quote:
-      "ServiceNow has redefined our approach to quality management and clinical trials. By enhancing efficiency and ensuring compliance, it has greatly accelerated our efforts to deliver innovative therapies to market.",
+      "TechSnitch has redefined our approach to quality management and clinical trials. By enhancing efficiency and ensuring compliance, it has greatly accelerated our efforts to deliver innovative therapies to market.",
   },
   {
     slot: "david",
     name: "David Rodriguez",
     role: "Chief Operating Officer",
     quote:
-      "Our interactions with our citizens have been radically altered by ServiceNow. Our community's trust in us has grown as a result of our enhanced response and effective case management and service request automation.",
+      "Our interactions with our citizens have been radically altered by TechSnitch. Our community's trust in us has grown as a result of our enhanced response and effective case management and service request automation.",
   },
   {
     slot: "jennifer",
     name: "Jennifer Lee",
     role: "Executive Director",
     quote:
-      "The way we handle our beneficiary cases and donor relationships has been completely changed by ServiceNow. We have been able to concentrate more on our goal and truly impact our community because to the improved efficiency and accountability.",
+      "The way we handle our beneficiary cases and donor relationships has been completely changed by TechSnitch. We have been able to concentrate more on our goal and truly impact our community because to the improved efficiency and accountability.",
   },
   {
     slot: "mark",
     name: "Mark Wilson",
     role: "Director of Operations",
     quote:
-      "Our operations and guest services management has been completely transformed with ServiceNow. Our brand's image and financial performance have been greatly impacted by the increases in productivity and guest happiness.",
+      "Our operations and guest services management has been completely transformed with TechSnitch. Our brand's image and financial performance have been greatly impacted by the increases in productivity and guest happiness.",
   },
 ];
 

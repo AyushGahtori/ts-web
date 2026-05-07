@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import styles from "./qualities.module.css";
 
 const metrics = [
-  { value: "500+", label: "Enterprise Deployments" },
+  { value: "100+", label: "Enterprise Deployments" },
   { value: "24*7", label: "WhiteCollar Support" },
   { value: "5+", label: "Regulated Industries" },
   { value: "100%", label: "Outcome-Driven SLAs" },
