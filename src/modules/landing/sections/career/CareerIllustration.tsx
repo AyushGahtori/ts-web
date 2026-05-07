@@ -6,7 +6,7 @@ export function CareerIllustration() {
     <div className={styles.illustrationShell}>
       <div className={styles.illustrationInner}>
         <Image
-          src="/3d%20sculptors.png"
+          src="/3d-sculptors.png"
           alt="3D team sculpture showing people working across desks and dashboards"
           fill
           sizes="(max-width: 900px) 96vw, 760px"

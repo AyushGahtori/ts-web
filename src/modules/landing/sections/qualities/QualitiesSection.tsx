@@ -6,7 +6,7 @@ import styles from "./qualities.module.css";
 
 const metrics = [
   { value: "100+", label: "Enterprise Deployments" },
-  { value: "24*7", label: "WhiteCollar Support" },
+  { value: "24/7", label: "WhiteCollar Support" },
   { value: "5+", label: "Regulated Industries" },
   { value: "100%", label: "Outcome-Driven SLAs" },
 ];
@@ -52,7 +52,7 @@ export function QualitiesSection() {
             }}
           >
             <div className={styles.metricPanel}>
-              <motion.span animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}>
+              <motion.span initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}>
                 {metric.value}
               </motion.span>
             </div>

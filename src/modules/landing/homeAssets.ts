@@ -1,4 +1,4 @@
-import { readdirSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 import path from "node:path";
 
 const homeAssetsDirectory = path.join(process.cwd(), "public", "home");
@@ -11,21 +11,29 @@ function toPublicHomeUrl(filePath: string) {
 }
 
 function collectHomeAssetSources(directory: string): string[] {
-  return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
-    const entryPath = path.join(directory, entry.name);
+  try {
+    return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+      const entryPath = path.join(directory, entry.name);
 
-    if (entry.isDirectory()) {
-      return collectHomeAssetSources(entryPath);
-    }
+      if (entry.isDirectory()) {
+        return collectHomeAssetSources(entryPath);
+      }
 
-    if (!entry.isFile()) {
-      return [];
-    }
+      if (!entry.isFile()) {
+        return [];
+      }
 
-    return toPublicHomeUrl(entryPath);
-  });
+      return toPublicHomeUrl(entryPath);
+    });
+  } catch {
+    return [];
+  }
 }
 
 export function getHomeAssetSources() {
+  if (!existsSync(homeAssetsDirectory)) {
+    return [];
+  }
+
   return collectHomeAssetSources(homeAssetsDirectory).sort((first, second) => first.localeCompare(second, undefined, { numeric: true }));
 }

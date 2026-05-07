@@ -64,7 +64,6 @@
   left: 50%;
   bottom: 0;
   width: min(41vw, 520px);
-  min-height: auto;
   margin: 0;
   padding: clamp(13px, 1.55vw, 20px) clamp(16px, 2vw, 28px);
   border-radius: 12px 12px 0 0;
@@ -112,6 +111,7 @@
 }
 
 .card {
+  --tone-color: #801404;
   --figure-row-height: clamp(282px, 25vw, 408px);
   --copy-row-height: clamp(184px, 14.6vw, 236px);
   --card-panel-gap: clamp(8px, 0.72vw, 12px);
@@ -124,12 +124,17 @@
   color: #fff;
   cursor: url("/Hand%20Cursor.svg") 13 13, url("/hand-cursor.png") 13 13, pointer;
   transform-origin: center;
-  outline: none;
   will-change: transform, opacity;
 }
 
 .card * {
   cursor: inherit;
+}
+
+.card:focus-visible,
+.card:focus-within {
+  outline: 3px solid #ffffff;
+  outline-offset: 5px;
 }
 
 .card::before,
@@ -252,7 +257,9 @@
   transform: translateY(-1px);
 }
 
-.card:hover .learnMore {
+.card:hover .learnMore,
+.card:focus-visible .learnMore,
+.card:focus-within .learnMore {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, -50%) translateY(0) scale(1);
@@ -277,10 +284,6 @@
 }
 
 @media (max-width: 1024px) {
-  .section {
-    min-height: auto;
-  }
-
   .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: 760px;

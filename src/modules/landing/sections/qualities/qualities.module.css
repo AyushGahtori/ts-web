@@ -126,6 +126,7 @@
   border-radius: clamp(9px, 0.78vw, 15px);
   background: #f0b4e6;
   color: #fff;
+  transform-style: preserve-3d;
 }
 
 .metricPanel span {

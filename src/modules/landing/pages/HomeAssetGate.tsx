@@ -39,23 +39,24 @@ function preloadHomeAssets(assetSources: string[]) {
 }
 
 export function HomeAssetGate({ assetSources, children }: HomeAssetGateProps) {
-  const [ready, setReady] = useState(false);
+  const assetSourcesKey = assetSources.join("\n");
+  const [loadedKey, setLoadedKey] = useState<string | null>(null);
 
   useEffect(() => {
     let isMounted = true;
 
     preloadHomeAssets(assetSources).then(() => {
       if (isMounted) {
-        setReady(true);
+        setLoadedKey(assetSourcesKey);
       }
     });
 
     return () => {
       isMounted = false;
     };
-  }, [assetSources]);
+  }, [assetSources, assetSourcesKey]);
 
-  if (!ready) {
+  if (loadedKey !== assetSourcesKey) {
     return <div className="home-asset-gate" aria-hidden />;
   }
 
