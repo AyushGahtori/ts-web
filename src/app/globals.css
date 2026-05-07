@@ -2267,6 +2267,20 @@ body {
   position: relative
 }
 
+.frameworks-snada-link {
+  display: block;
+  position: absolute;
+  inset: 0;
+  cursor: pointer
+}
+
+.frameworks-saos-link {
+  display: block;
+  position: absolute;
+  inset: 0;
+  cursor: pointer
+}
+
 .frameworks-snada-logo-image {
   object-fit: contain;
   object-position: left center

@@ -11,8 +11,6 @@ type PortfolioCard = {
   copy: string;
   image: string;
   tone: "delivery" | "intelligence" | "advisory" | "operations";
-  rotate?: number;
-  showCursor?: boolean;
 };
 
 const cards: PortfolioCard[] = [
@@ -24,8 +22,6 @@ const cards: PortfolioCard[] = [
       "Precision execution across the full ServiceNow ecosystem, powered by pre-configured accelerators that dramatically reduce project timelines and implementation risk.",
     image: "/image%2014.svg",
     tone: "delivery",
-    rotate: -11.99,
-    showCursor: true,
   },
   {
     number: "02",
@@ -64,11 +60,10 @@ export function PortfolioCards() {
           key={card.number}
           className={styles.card}
           data-tone={card.tone}
-          tabIndex={0}
-          initial={{ opacity: 0, y: 56, rotate: (card.rotate ?? 0) * 0.5 }}
-          whileInView={{ opacity: 1, y: 0, rotate: card.rotate ?? 0 }}
+          initial={{ opacity: 0, y: 56 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          whileHover={{ y: -8, scale: 1.018, rotate: card.rotate ?? 0 }}
+          whileHover={{ y: -8, scale: 1.018 }}
           transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className={styles.figureWrap}>
@@ -77,17 +72,16 @@ export function PortfolioCards() {
               {card.number.slice(1)}
             </span>
             <h3>{card.tag}</h3>
-            {card.showCursor ? (
-              <Image src="/Hand%20Cursor.svg" alt="" width={96} height={96} className={styles.cursor} loading="eager" aria-hidden />
-            ) : null}
           </div>
+          <button type="button" className={styles.learnMore} aria-label={`Learn more about ${card.title}`}>
+            <span>Learn More</span>
+            <span className={styles.learnMoreArrow} aria-hidden>
+              &rarr;
+            </span>
+          </button>
           <div className={styles.copyPanel}>
             <h4>{card.title}</h4>
             <p>{card.copy}</p>
-            <button type="button">
-              <span>Learn More</span>
-              <span aria-hidden>{">"}</span>
-            </button>
           </div>
         </motion.article>
       ))}

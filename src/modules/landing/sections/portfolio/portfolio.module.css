@@ -1,7 +1,7 @@
 .section {
   position: relative;
   z-index: 6;
-  min-height: clamp(760px, 71vw, 1024px);
+  min-height: clamp(860px, 76vw, 1160px);
   overflow: hidden;
   isolation: isolate;
   background: #e4b3b3;
@@ -62,18 +62,18 @@
   position: absolute;
   z-index: 4;
   left: 50%;
-  bottom: clamp(-34px, -2.2vw, -18px);
+  bottom: 0;
   width: min(41vw, 520px);
-  min-height: clamp(100px, 8vw, 132px);
+  min-height: auto;
   margin: 0;
-  padding: clamp(14px, 1.8vw, 22px) clamp(16px, 2vw, 28px);
+  padding: clamp(13px, 1.55vw, 20px) clamp(16px, 2vw, 28px);
   border-radius: 12px 12px 0 0;
   background: #e4b3b3;
   color: #161010;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(12px, 1.05vw, 17px);
+  font-size: clamp(12px, 0.96vw, 16px);
   font-weight: 500;
-  line-height: 1.18;
+  line-height: 1.2;
   transform: translateX(-50%);
 }
 
@@ -105,43 +105,37 @@
   z-index: 8;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(18px, 2.8vw, 50px);
+  gap: clamp(18px, 2.4vw, 46px);
   align-items: end;
   width: min(100%, 1360px);
   margin: clamp(22px, 2.4vw, 38px) auto 0;
 }
 
 .card {
+  --figure-row-height: clamp(282px, 25vw, 408px);
+  --copy-row-height: clamp(184px, 14.6vw, 236px);
+  --card-panel-gap: clamp(8px, 0.72vw, 12px);
+  --learn-more-offset: clamp(-10px, -0.72vw, -6px);
   position: relative;
-  min-height: clamp(358px, 27vw, 500px);
+  display: grid;
+  grid-template-rows: var(--figure-row-height) var(--copy-row-height);
+  gap: var(--card-panel-gap);
+  height: clamp(478px, 40.32vw, 656px);
   color: #fff;
+  cursor: url("/Hand%20Cursor.svg") 13 13, url("/hand-cursor.png") 13 13, pointer;
   transform-origin: center;
   outline: none;
   will-change: transform, opacity;
 }
 
+.card * {
+  cursor: inherit;
+}
+
 .card::before,
 .card::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  left: 0;
-  right: 0;
-  border-radius: 18px;
-  background: var(--tone-color);
-  box-shadow: 0 18px 28px rgba(35, 4, 18, 0.18);
-}
-
-.card::before {
-  top: 0;
-  height: 63%;
-  clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%, 0 8%);
-}
-
-.card::after {
-  bottom: 0;
-  height: 39%;
-  clip-path: polygon(0 0, 100% 0, 100% 91%, 91% 100%, 0 100%);
+  content: none;
+  display: none;
 }
 
 .card[data-tone="delivery"] {
@@ -163,9 +157,18 @@
 .figureWrap {
   position: relative;
   z-index: 4;
-  height: clamp(232px, 19.6vw, 318px);
+  height: 100%;
   overflow: hidden;
-  border-radius: 14px 14px 0 0;
+  border-radius: 18px;
+  background: var(--tone-color);
+  box-shadow: 0 16px 24px rgba(35, 4, 18, 0.16);
+  clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%, 0 8%);
+  transition: transform 280ms ease, box-shadow 280ms ease;
+}
+
+.card:hover .figureWrap {
+  box-shadow: 0 24px 34px rgba(35, 4, 18, 0.2);
+  transform: translateY(clamp(-34px, -2.25vw, -24px));
 }
 
 .figure {
@@ -202,30 +205,64 @@
   line-height: 1;
 }
 
-.cursor {
-  position: absolute;
-  z-index: 6;
-  right: clamp(14px, 1.6vw, 26px);
-  top: 27%;
-  width: clamp(54px, 6.5vw, 96px);
-  height: auto;
-  transform: rotate(-33deg);
-  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.18));
-}
-
 .copyPanel {
   position: relative;
   z-index: 5;
-  min-height: clamp(132px, 10.8vw, 178px);
-  margin-top: clamp(-14px, -0.8vw, -8px);
-  padding: clamp(16px, 1.6vw, 25px) clamp(14px, 1.6vw, 22px);
+  height: 100%;
+  padding: clamp(18px, 1.8vw, 30px) clamp(16px, 1.7vw, 26px) clamp(22px, 1.9vw, 34px);
+  border-radius: 18px;
+  background: var(--tone-color);
+  box-shadow: 0 18px 28px rgba(35, 4, 18, 0.16);
+  clip-path: polygon(0 0, 100% 0, 100% 91%, 91% 100%, 0 100%);
+}
+
+.learnMore {
+  position: absolute;
+  z-index: 8;
+  left: 50%;
+  top: calc(var(--figure-row-height) + var(--learn-more-offset));
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(12px, 1.1vw, 20px);
+  width: auto;
+  min-width: clamp(148px, 11.6vw, 212px);
+  min-height: clamp(30px, 2.35vw, 42px);
+  padding: clamp(5px, 0.48vw, 8px) clamp(12px, 1vw, 18px);
+  border: 0;
+  border-radius: 0;
+  background: #070808;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(16px, 1.22vw, 23px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -35%) translateY(16px) scale(0.96);
+  transition: opacity 220ms ease, transform 280ms ease;
+}
+
+.learnMoreArrow {
+  display: inline-block;
+  font-size: 1.18em;
+  line-height: 0.75;
+  transform: translateY(-1px);
+}
+
+.card:hover .learnMore {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) translateY(0) scale(1);
 }
 
 .copyPanel h4 {
-  margin: 0 0 10px;
+  margin: 0 0 clamp(8px, 0.72vw, 12px);
   color: #fff;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(15px, 1.45vw, 24px);
+  font-size: clamp(20px, 1.62vw, 30px);
   font-weight: 700;
   line-height: 1.05;
 }
@@ -234,44 +271,9 @@
   margin: 0;
   color: rgba(255, 255, 255, 0.94);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(10px, 0.82vw, 14px);
+  font-size: clamp(11px, 0.86vw, 15px);
   font-weight: 400;
   line-height: 1.18;
-}
-
-.copyPanel button {
-  position: absolute;
-  right: clamp(12px, 1.2vw, 18px);
-  bottom: clamp(12px, 1vw, 18px);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 28px;
-  padding: 5px 9px 5px 12px;
-  border-radius: 0;
-  background: #0c0d0d;
-  color: #fff;
-  font-size: clamp(10px, 0.82vw, 14px);
-  line-height: 1;
-  cursor: pointer;
-  transition: transform 220ms ease, background 220ms ease;
-}
-
-.copyPanel button span:last-child {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  aspect-ratio: 1;
-  border-radius: 999px;
-  background: #fff;
-  color: #0c0d0d;
-}
-
-.card:hover .copyPanel button,
-.card:focus-within .copyPanel button {
-  transform: translateY(-2px);
-  background: #050505;
 }
 
 @media (max-width: 1024px) {

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { MotionSection } from "@/components/motion/MotionSection";
 
 const snadaCapabilities = [
@@ -35,7 +36,15 @@ export function FrameworksSection() {
       <div className="frameworks-content">
         <article className="frameworks-snada-row">
           <MotionSection className="frameworks-snada-logo" direction="up" delay={0.08}>
-            <Image src="/snada.png" alt="" fill sizes="(max-width: 1120px) 88vw, 46vw" className="frameworks-snada-logo-image" />
+            <Link
+              href="https://snadaagent.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open SNADA agent"
+              className="frameworks-snada-link"
+            >
+              <Image src="/snada.png" alt="" fill sizes="(max-width: 1120px) 88vw, 46vw" className="frameworks-snada-logo-image" />
+            </Link>
           </MotionSection>
 
           <MotionSection className="frameworks-panel frameworks-panel--snada" direction="up" delay={0.12} stagger>
@@ -76,7 +85,15 @@ export function FrameworksSection() {
         </article>
 
         <MotionSection className="frameworks-saos-logo" direction="up" delay={0.1}>
-          <Image src="/saos-cropped.png" alt="" fill sizes="(max-width: 1120px) 85vw, 41vw" className="frameworks-saos-logo-image" />
+          <Link
+            href="https://snadaagent.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open SNADA agent"
+            className="frameworks-saos-link"
+          >
+            <Image src="/saos-cropped.png" alt="" fill sizes="(max-width: 1120px) 85vw, 41vw" className="frameworks-saos-logo-image" />
+          </Link>
         </MotionSection>
       </div>
     </section>

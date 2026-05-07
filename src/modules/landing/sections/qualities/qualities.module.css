@@ -149,10 +149,39 @@
 }
 
 .pill {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: clamp(52px, 6vw, 116px);
   height: clamp(13px, 1.45vw, 28px);
   border: 1px solid #000;
   border-radius: 999px;
+  padding: 0;
+  color: #000;
+  font: inherit;
+  font-size: clamp(8px, 0.68vw, 13px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.supportPill {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.18);
+  transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.supportPill:hover,
+.supportPill:focus-visible {
+  background: rgba(255, 255, 255, 0.38);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+}
+
+.supportPill:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 3px;
 }
 
 .dots {
@@ -180,7 +209,7 @@
 }
 
 .dots span:nth-child(3) {
-  right: 0;
+  right: clamp(5px, 0.52vw, 10px);
   top: 30%;
 }
 
