@@ -13,9 +13,9 @@ export function CareerCard() {
         </h3>
 
         <CursorBlurText as="p" className={`${styles.quote} blur-reveal blur-reveal--pink blur-reveal--delay-1`} spotSize={170}>
-          <span>“Build What Has</span>
+          <span>&ldquo;Build What Has</span>
           <span>Never Been</span>
-          <span>Built”</span>
+          <span>Built&rdquo;</span>
         </CursorBlurText>
       </div>
 

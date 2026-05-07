@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavItem } from "./NavItem";
 
 const navItems = [
@@ -31,10 +31,39 @@ export function Navbar({ hiddenItemIds = ["about", "innovations"] }: NavbarProps
           ? "/join-us"
           : pathname;
   const [menuOpen, setMenuOpen] = useState(false);
+  const [introHidden, setIntroHidden] = useState(true);
+  const hideForHomeIntro = pathname === "/" && introHidden;
   const visibleNavItems = navItems.filter((item) => !hiddenItemIds.includes(item.id));
 
+  useEffect(() => {
+    if (pathname !== "/") {
+      return undefined;
+    }
+
+    const revealAfterIntro = () => {
+      const hero = document.querySelector<HTMLElement>(".home-cinematic-experience");
+      const sticky = hero?.querySelector<HTMLElement>(".home-cinematic-sticky");
+      const stickyHeight = sticky?.offsetHeight ?? window.innerHeight;
+      const revealAt = hero
+        ? hero.getBoundingClientRect().top + window.scrollY + hero.offsetHeight - stickyHeight - 1
+        : window.innerHeight * 2.55;
+
+      setIntroHidden(window.scrollY < revealAt);
+    };
+
+    const frame = window.requestAnimationFrame(revealAfterIntro);
+    window.addEventListener("scroll", revealAfterIntro, { passive: true });
+    window.addEventListener("resize", revealAfterIntro);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", revealAfterIntro);
+      window.removeEventListener("resize", revealAfterIntro);
+    };
+  }, [pathname]);
+
   return (
-    <header className="premium-nav">
+    <header className={`premium-nav ${hideForHomeIntro ? "premium-nav--intro-hidden" : ""}`}>
       <div className="premium-nav__logo-wrap">
         <Image
           src="/techsnitch%20logo.png"

@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/Card";
 
 const stats = [
-  { value: "500+", label: "Enterprise Deployments", variant: "dark" as const },
+  { value: "100+", label: "Enterprise Deployments", variant: "dark" as const },
   { value: "24 X 7", label: "White-Glove Support", variant: "light" as const },
   { value: "5+", label: "Regulated Industries", variant: "light" as const },
   { value: "100%", label: "Outcome-Driven SLAs", variant: "dark" as const, className: "stat-card--sla" },

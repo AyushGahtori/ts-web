@@ -148,7 +148,7 @@
   background: linear-gradient(180deg, #fbfbfd 0%, #f2eff9 100%);
 }
 
-.illustrationVideo {
+.illustrationImage {
   position: absolute;
   inset: 0;
   display: block;
@@ -157,23 +157,6 @@
   object-fit: contain;
   object-position: center;
   pointer-events: none;
-  transition: opacity 80ms linear;
-}
-
-.forwardVideo {
-  opacity: 1;
-}
-
-.reverseVideo {
-  opacity: 0;
-}
-
-.illustrationShell[data-video-direction="reverse"] .forwardVideo {
-  opacity: 0;
-}
-
-.illustrationShell[data-video-direction="reverse"] .reverseVideo {
-  opacity: 1;
 }
 
 @media (max-width: 1200px) {
