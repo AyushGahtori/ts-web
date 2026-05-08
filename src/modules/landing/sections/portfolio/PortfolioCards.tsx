@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./portfolio.module.css";
 
@@ -10,17 +11,19 @@ type PortfolioCard = {
   title: string;
   copy: string;
   image: string;
+  slug: string;
   tone: "delivery" | "intelligence" | "advisory" | "operations";
 };
 
 const cards: PortfolioCard[] = [
   {
     number: "01",
-    tag: "Delivery",
-    title: "Precision Delivery",
+    tag: "Implementation",
+    title: "Implementation & Transformation",
     copy:
       "Precision execution across the full ServiceNow ecosystem, powered by pre-configured accelerators that dramatically reduce project timelines and implementation risk.",
     image: "/image%2014.svg",
+    slug: "implementation-transformation",
     tone: "delivery",
   },
   {
@@ -30,24 +33,27 @@ const cards: PortfolioCard[] = [
     copy:
       "We move AI from pilot to production at scale, with governance, and without locking you into a single vendor. From multi-model orchestration to GenAI copilots, we operationalize intelligence.",
     image: "/image%2015.svg",
+    slug: "ai-genai-enablement",
     tone: "intelligence",
   },
   {
     number: "03",
     tag: "Operations",
-    title: "White-Glove Operations",
+    title: "Managed Services",
     copy:
       "Our managed services are a strategic operational extension of your enterprise - proactive, predictive, and perpetually optimizing your platform.",
     image: "/image%2016.svg",
+    slug: "managed-services",
     tone: "operations",
   },
   {
     number: "04",
     tag: "Advisory",
-    title: "Strategic Advisory",
+    title: "Strategic Advisory & Consulting",
     copy:
       "We co-create transformation strategies grounded in platform intelligence, industry benchmarks, and your organizational context.",
     image: "/image%2017.svg",
+    slug: "strategic-advisory-consulting",
     tone: "advisory",
   },
 ];
@@ -73,12 +79,12 @@ export function PortfolioCards() {
             </span>
             <h3>{card.tag}</h3>
           </div>
-          <button type="button" className={styles.learnMore} aria-label={`Learn more about ${card.title}`}>
+          <Link href={`/learnmore/${card.slug}`} className={styles.learnMore} aria-label={`Learn more about ${card.title}`}>
             <span>Learn More</span>
             <span className={styles.learnMoreArrow} aria-hidden>
               &rarr;
             </span>
-          </button>
+          </Link>
           <div className={styles.copyPanel}>
             <h4>{card.title}</h4>
             <p>{card.copy}</p>
