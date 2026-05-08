@@ -474,20 +474,46 @@ function settleToNearestHeroState(section: HTMLElement, direction: number) {
     return;
   }
 
-  const progress = Math.min(1, Math.max(0, (window.scrollY - start) / travel));
+  const heroEnd = start + travel;
 
-  if (progress < 0.1) {
+  // Cross-section magnet: if scrollY is just inside Qualities but user scrolls up,
+  // snap back to the clean hero-end position so the transition re-seals.
+  const overrun = window.scrollY - heroEnd;
+  if (overrun > 0) {
+    if (direction < 0 && overrun < window.innerHeight * 0.32) {
+      window.scrollTo({ top: heroEnd, behavior: "smooth" });
+    }
     return;
   }
 
-  const targetProgress =
-    direction > 0 && progress >= 0.64
-      ? 1
-      : [0, 0.3, 0.56, 0.78].reduce((nearest, point) =>
-          Math.abs(point - progress) < Math.abs(nearest - progress) ? point : nearest,
-        );
+  const progress = Math.min(1, Math.max(0, (window.scrollY - start) / travel));
 
-  if (Math.abs(targetProgress - progress) < 0.025) {
+  if (progress < 0.08) {
+    return;
+  }
+
+  let targetProgress: number;
+
+  if (direction > 0) {
+    // Scrolling down: past 76 % → magnet all the way to hero end (Qualities entry).
+    targetProgress =
+      progress >= 0.76
+        ? 1
+        : [0, 0.3, 0.56, 0.78].reduce((nearest, point) =>
+            Math.abs(point - progress) < Math.abs(nearest - progress) ? point : nearest,
+          );
+  } else {
+    // Scrolling up: if already close to hero end, hold at 1 rather than
+    // jumping back to 0.78, which felt jarring.
+    targetProgress =
+      progress >= 0.88
+        ? 1
+        : [0, 0.3, 0.56, 0.78].reduce((nearest, point) =>
+            Math.abs(point - progress) < Math.abs(nearest - progress) ? point : nearest,
+          );
+  }
+
+  if (Math.abs(targetProgress - progress) < 0.02) {
     return;
   }
 
@@ -572,7 +598,13 @@ function useMagneticScrollSettle(sectionRef: RefObject<HTMLElement | null>) {
       }
 
       const bounds = section.getBoundingClientRect();
-      const isActive = bounds.top <= 4 && bounds.bottom >= window.innerHeight - 4;
+      // Active while hero is the sticky section, OR while in the shallow
+      // Qualities-entry zone so the cross-section reverse magnet can fire.
+      const heroEndY = bounds.top + window.scrollY + section.offsetHeight - window.innerHeight;
+      const overrun  = nextScrollY - heroEndY;
+      const isActive =
+        (bounds.top <= 4 && bounds.bottom >= window.innerHeight - 4) ||
+        (overrun > 0 && overrun < window.innerHeight * 0.32);
 
       if (settleTimer.current !== null) {
         window.clearTimeout(settleTimer.current);
@@ -584,7 +616,7 @@ function useMagneticScrollSettle(sectionRef: RefObject<HTMLElement | null>) {
 
       settleTimer.current = window.setTimeout(() => {
         settleToNearestHeroState(section, lastDirection.current);
-      }, 180);
+      }, 100);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
