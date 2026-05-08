@@ -1,0 +1,850 @@
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="inter_1365...">
+                          <body
+-                           data-new-gr-c-s-check-loaded="14.1137.0"
+-                           data-gr-ext-installed=""
+                          >
+                  ...
+ 
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+Persisting failed: Unable to write SST file 00000023.sst
+
+Caused by:
+    0: Failed to write value block
+    1: Failed to write block data
+    2: There is not enough space on the disk. (os error 112)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+⨯ Failed to write image to cache fGrHME-Wc8QMbMAvmEuZYRGfb5rOtOvYKUCIobfgmvQ Error: ENOSPC: no space left on device, mkdir 'C:\Users\gahto\OneDrive\Desktop\ts-web\.next\dev\cache\images\fGrHME-Wc8QMbMAvmEuZYRGfb5rOtOvYKUCIobfgmvQ'
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'mkdir',
+  path: 'C:\\Users\\gahto\\OneDrive\\Desktop\\ts-web\\.next\\dev\\cache\\images\\fGrHME-Wc8QMbMAvmEuZYRGfb5rOtOvYKUCIobfgmvQ'
+}
+⨯ Failed to write image to cache ICI1OqviTruOdc2CVqOMnSiXe7WbnjP7mmyS1qGfE78 Error: ENOSPC: no space left on device, mkdir 'C:\Users\gahto\OneDrive\Desktop\ts-web\.next\dev\cache\images\ICI1OqviTruOdc2CVqOMnSiXe7WbnjP7mmyS1qGfE78'
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'mkdir',
+  path: 'C:\\Users\\gahto\\OneDrive\\Desktop\\ts-web\\.next\\dev\\cache\\images\\ICI1OqviTruOdc2CVqOMnSiXe7WbnjP7mmyS1qGfE78'
+}
+⨯ Failed to write image to cache G-A30v3jDih6N7Kdy9C9tJ2fF5iQ4l36kgYouFezalo Error: ENOSPC: no space left on device, mkdir 'C:\Users\gahto\OneDrive\Desktop\ts-web\.next\dev\cache\images\G-A30v3jDih6N7Kdy9C9tJ2fF5iQ4l36kgYouFezalo'
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'mkdir',
+  path: 'C:\\Users\\gahto\\OneDrive\\Desktop\\ts-web\\.next\\dev\\cache\\images\\G-A30v3jDih6N7Kdy9C9tJ2fF5iQ4l36kgYouFezalo'
+}
+⨯ Failed to write image to cache 4ex66X_K8YQfKTac7cGRO7YP_vHWgCDtOuEmfvtYNHE Error: ENOSPC: no space left on device, mkdir 'C:\Users\gahto\OneDrive\Desktop\ts-web\.next\dev\cache\images\4ex66X_K8YQfKTac7cGRO7YP_vHWgCDtOuEmfvtYNHE'
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'mkdir',
+  path: 'C:\\Users\\gahto\\OneDrive\\Desktop\\ts-web\\.next\\dev\\cache\\images\\4ex66X_K8YQfKTac7cGRO7YP_vHWgCDtOuEmfvtYNHE'
+}
+Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  syscall: 'write',
+  code: 'ENOSPC'
+}
+⨯ uncaughtException: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  syscall: 'write',
+  code: 'ENOSPC'
+}
+⨯ uncaughtException:  Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  syscall: 'write',
+  code: 'ENOSPC'
+}
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+⨯ Failed to write image to cache ICI1OqviTruOdc2CVqOMnSiXe7WbnjP7mmyS1qGfE78 Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+⨯ Failed to write image to cache fGrHME-Wc8QMbMAvmEuZYRGfb5rOtOvYKUCIobfgmvQ Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+⨯ Failed to write image to cache 4ex66X_K8YQfKTac7cGRO7YP_vHWgCDtOuEmfvtYNHE Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+⨯ Failed to write image to cache G-A30v3jDih6N7Kdy9C9tJ2fF5iQ4l36kgYouFezalo Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+⨯ Failed to write image to cache qWcOako3k6ZQxJvR7Lhk0mGLrjw0kl-iOgpmipfTntA Error: ENOSPC: no space left on device, mkdir 'C:\Users\gahto\OneDrive\Desktop\ts-web\.next\dev\cache\images\qWcOako3k6ZQxJvR7Lhk0mGLrjw0kl-iOgpmipfTntA'
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'mkdir',
+  path: 'C:\\Users\\gahto\\OneDrive\\Desktop\\ts-web\\.next\\dev\\cache\\images\\qWcOako3k6ZQxJvR7Lhk0mGLrjw0kl-iOgpmipfTntA'
+}
+⨯ Failed to write image to cache GChi8tpXjxi7ZW4fe3Jn7v3t1Vw-PsNRpdx1sGUjpmg Error: ENOSPC: no space left on device, mkdir 'C:\Users\gahto\OneDrive\Desktop\ts-web\.next\dev\cache\images\GChi8tpXjxi7ZW4fe3Jn7v3t1Vw-PsNRpdx1sGUjpmg'
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'mkdir',
+  path: 'C:\\Users\\gahto\\OneDrive\\Desktop\\ts-web\\.next\\dev\\cache\\images\\GChi8tpXjxi7ZW4fe3Jn7v3t1Vw-PsNRpdx1sGUjpmg'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Failed to flush logs to file: Error: ENOSPC: no space left on device, write
+    at ignore-listed frames {
+  errno: -4055,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)

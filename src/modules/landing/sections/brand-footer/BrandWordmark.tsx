@@ -1,14 +1,14 @@
-import { AnimatedLetterEC } from "@/modules/landing/sections/brand-footer/AnimatedLetterEC";
 import styles from "./brandFooter.module.css";
+import { TechsnitchShader } from "@/modules/landing/sections/brand-footer/TechsnitchShader";
 
 export function BrandWordmark() {
   return (
     <div className={styles.wordmarkBlock}>
-      <div className={styles.wordmark} aria-label="TECHSNITCH">
-        <span className={styles.wordmarkStaticT}>T</span>
-        <AnimatedLetterEC letter="E" className={styles.wordmarkAnimatedE} />
-        <AnimatedLetterEC letter="C" className={styles.wordmarkAnimatedC} />
-        <span className={styles.wordmarkStaticRest}>HSNITCH</span>
+      <div className={styles.wordmarkContainer}>
+        <span className={styles.wordmarkText} aria-label="TECHSNITCH">
+          TECHSNITCH
+        </span>
+        <TechsnitchShader />
       </div>
 
       <p className={styles.tagline}>/A place for tech</p>

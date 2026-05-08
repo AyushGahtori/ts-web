@@ -1,0 +1,42 @@
+
+> ts-web@0.1.0 dev
+> next dev --port 3000
+
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.29.88:3000
+- Environments: .env.local
+✓ Ready in 1867ms
+- Experiments (use with caution):
+  · optimizePackageImports
+
+○ Compiling / ...
+ GET / 200 in 14.6s (next.js: 12.5s, application-code: 2.1s)
+ GET /services 200 in 2.7s (next.js: 2.2s, application-code: 539ms)
+ GET /learnmore/implementation-transformation 200 in 3.8s (next.js: 3.6s, generate-params: 994ms, application-code: 216ms)
+ GET /learnmore/ai-genai-enablement 200 in 115ms (next.js: 23ms, generate-params: 14ms, application-code: 91ms)
+ GET /learnmore/managed-services 200 in 96ms (next.js: 7ms, generate-params: 88µs, application-code: 89ms)
+ GET /learnmore/strategic-advisory-consulting 200 in 103ms (next.js: 5ms, generate-params: 47µs, application-code: 97ms)
+ GET /learnmore/ai-genai-enablement 200 in 69ms (next.js: 17ms, generate-params: 9ms, application-code: 52ms)
+ GET /services 200 in 41ms (next.js: 3ms, application-code: 37ms)
+ GET / 200 in 82ms (next.js: 7ms, application-code: 75ms)
+✓ Compiled in 224ms
+ GET / 200 in 1196ms (next.js: 242ms, application-code: 954ms)
+ GET / 200 in 855ms (next.js: 516ms, application-code: 339ms)
+ GET / 200 in 484ms (next.js: 236ms, application-code: 248ms)
+ GET / 200 in 470ms (next.js: 144ms, application-code: 326ms)
+ GET / 200 in 472ms (next.js: 322ms, application-code: 150ms)
+ GET / 200 in 1543ms (next.js: 13ms, application-code: 1530ms)
+✓ Compiled in 258ms
+ GET / 200 in 470ms (next.js: 160ms, application-code: 310ms)
+ GET / 200 in 215ms (next.js: 8ms, application-code: 207ms)
+ GET / 200 in 125ms (next.js: 4ms, application-code: 121ms)
+ GET / 200 in 128ms (next.js: 47ms, application-code: 81ms)
+✓ Compiled in 146ms
+ GET / 200 in 290ms (next.js: 98ms, application-code: 191ms)
+ GET / 200 in 97ms (next.js: 7ms, application-code: 90ms)
+✓ Compiled in 35ms
+ GET / 200 in 184ms (next.js: 71ms, application-code: 113ms)
+ GET / 200 in 42ms (next.js: 4ms, application-code: 39ms)
+✓ Compiled in 18ms
+[?25h
