@@ -338,6 +338,140 @@ export const learnMorePages: LearnMorePageData[] = [
       secondary: "Request a platform assessment",
     },
   },
+  {
+    slug: "implementation-transformation",
+    eyebrow: "Delivery",
+    title: "Implementation & Transformation: Precision Execution, Zero Disruption",
+    summary: "Enterprise-grade ServiceNow deployments built for speed, scale, security, and resilience.",
+    lead: [
+      "Speed should never compromise stability. TechSnitch engineers enterprise-grade ServiceNow deployments built for scale, security, and resilience.",
+      "Moving away from traditional, sluggish implementation cycles, we utilize a proprietary library of production-grade accelerators to drastically reduce time-to-value while mitigating project risk.",
+      "From foundational IT workflows to complex, heavily regulated industry solutions, we do not just deploy software. We engineer a connected enterprise. We deliver. Every time.",
+    ],
+    sections: [
+      {
+        title: "Our Delivery Capabilities",
+        bullets: [
+          "Full-spectrum ecosystem deployment across ITSM, ITOM, CSM, HRSD, GRC/IRM, SPM, and specialized industry verticals.",
+          "Accelerated time-to-market through pre-configured, battle-tested implementation methodologies.",
+          "Seamless enterprise connectivity with bi-directional integrations across SAP, Salesforce, Oracle, Workday, and other core systems.",
+          "Frictionless cutover and migration with zero-disruption strategies that protect business continuity from day one.",
+        ],
+      },
+    ],
+    outcomes: [
+      "Reduced time-to-value without compromising platform stability.",
+      "Secure, scalable ServiceNow deployments ready for enterprise complexity.",
+      "Lower migration risk through carefully orchestrated cutover strategies.",
+    ],
+    cta: {
+      heading: "Ready for precision execution?",
+      body: "Turn your ServiceNow roadmap into a stable implementation that moves quickly without surprising the business.",
+      primary: "Plan your implementation",
+      secondary: "Explore delivery accelerators",
+    },
+  },
+  {
+    slug: "ai-genai-enablement",
+    eyebrow: "Intelligence",
+    title: "AI & GenAI Enablement: Enterprise Intelligence, Unleashed",
+    summary: "Securely operationalize AI across ServiceNow and the enterprise with model-agnostic orchestration.",
+    lead: [
+      "Stop experimenting and start scaling. The true power of Artificial Intelligence is realized only when it is securely woven into your daily operations.",
+      "As an AI-agnostic partner, we refuse to lock you into a single vendor ecosystem. Instead, we orchestrate the optimal mix of large language models to automate complex workflows, deflect ticket volumes, and arm your workforce with contextual intelligence.",
+    ],
+    sections: [
+      {
+        title: "Operationalizing AI at Scale",
+        bullets: [
+          "Agnostic multi-model orchestration connecting ServiceNow with Azure OpenAI, Google Gemini, AWS Bedrock, and leading open-source LLMs.",
+          "Next-generation copilots, including GenAI-powered virtual agents and executive copilots that can reduce Tier-1 support volumes by up to 60%.",
+          "Cognitive automation for intelligent document processing and automated regulatory summarization.",
+          "Predictive AIOps that identifies anomalies, reduces MTTR, and resolves incidents before they impact the business.",
+          "Hyper-personalized experiences using contextual and sentiment intelligence to humanize automated interactions.",
+        ],
+      },
+    ],
+    outcomes: [
+      "AI programs that move from pilot mode to enterprise-wide production.",
+      "Lower support volume through smarter virtual agents and copilots.",
+      "Predictive operational intelligence that improves service resilience.",
+    ],
+    cta: {
+      heading: "Ready to scale enterprise intelligence?",
+      body: "Operationalize AI securely across ServiceNow and your enterprise workflows without locking into one model provider.",
+      primary: "Design an AI roadmap",
+      secondary: "Explore GenAI copilots",
+    },
+  },
+  {
+    slug: "managed-services",
+    eyebrow: "Operations",
+    title: "Managed Services: Predictive Operations for Peak Performance",
+    summary: "White-glove ServiceNow operations that keep your platform secure, optimized, and aligned with every release.",
+    lead: [
+      "Your ServiceNow platform is a living, evolving ecosystem. Treating it like a static application is a recipe for stagnation.",
+      "TechSnitch Managed Services go far beyond traditional break-fix helpdesks. We act as a strategic, intelligence-led extension of your enterprise.",
+      "Our white-glove management approach keeps your platform secure, optimized, and perpetually aligned with the latest ServiceNow releases.",
+    ],
+    sections: [
+      {
+        title: "Our Operational Excellence",
+        bullets: [
+          "Premium 24x7 platform stewardship by dedicated, certified ServiceNow engineers who know your environment.",
+          "Predictive health and optimization that identifies bottlenecks before they impact users.",
+          "Frictionless release governance with rigorous testing, seamless release management, and continuous feature adoption.",
+          "AI lifecycle management that monitors, retrains, and governs models to sustain accuracy and prevent data drift.",
+          "Executive-grade service improvement with KPI-driven reporting and continuous improvement plans.",
+        ],
+      },
+    ],
+    outcomes: [
+      "A healthier ServiceNow platform that improves year over year.",
+      "Lower operational drag for internal teams.",
+      "Predictable governance for releases, AI, and platform performance.",
+    ],
+    cta: {
+      heading: "Ready for predictive operations?",
+      body: "Give your platform white-glove stewardship while your teams focus on innovation.",
+      primary: "Review managed services",
+      secondary: "Plan platform stewardship",
+    },
+  },
+  {
+    slug: "strategic-advisory-consulting",
+    eyebrow: "Advisory",
+    title: "Strategic Advisory & Consulting: Charting Your Path to the Autonomous Enterprise",
+    summary: "Data-driven roadmaps that bridge executive objectives and technical execution.",
+    lead: [
+      "Transformation fails without a definitive blueprint. At TechSnitch, we bridge the gap between your highest-level business objectives and technical execution.",
+      "We do not deliver generic playbooks. We architect data-driven, actionable roadmaps tailored to your organizational DNA.",
+      "By leveraging platform intelligence and industry benchmarks, we turn complexity into clarity and operational friction into compounding ROI.",
+    ],
+    sections: [
+      {
+        title: "How We Drive Strategic Value",
+        bullets: [
+          "Deep-dive maturity assessments that uncover hidden technical debt, expose untapped platform value, and de-risk transformation before a single line of code is written.",
+          "Board-ready AI strategies aligned with C-suite priorities and tangible business outcomes.",
+          "Future-proof governance models that maintain platform integrity and drive continuous adoption after go-live.",
+          "Immediate ROI generation through license optimization and value realization audits.",
+          "Architectural consolidation plans to retire legacy systems, consolidate platforms, and streamline enterprise architecture.",
+        ],
+      },
+    ],
+    outcomes: [
+      "A definitive blueprint that connects strategy to execution.",
+      "Clearer investment priorities backed by platform intelligence.",
+      "Governance, consolidation, and AI roadmaps built for measurable value.",
+    ],
+    cta: {
+      heading: "Ready to chart your path?",
+      body: "Rescue a stalled initiative or build the foundation for an AI-native future.",
+      primary: "Start advisory planning",
+      secondary: "Assess platform maturity",
+    },
+  },
 ];
 
 export function getLearnMorePage(slug: string) {
