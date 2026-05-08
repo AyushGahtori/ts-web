@@ -326,6 +326,16 @@ body {
     linear-gradient(180deg, #ead7d8 0%, #dfc8ca 100%);
 }
 
+.home-asset-prepaint {
+  visibility: hidden;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+
 .landing-root {
   background: radial-gradient(90% 95% at 50% -10%, #291033 0%, #070707 54%, #020202 100%);
   justify-content: center;
