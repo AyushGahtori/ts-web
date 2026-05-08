@@ -50,98 +50,35 @@
   z-index: 2;
 }
 
-.wordmark {
+/* ── new shader-based wordmark ─────────────────────────────────────────── */
+
+.wordmarkContainer {
+  position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  gap: 0;
   min-height: 208px;
-  transform: translateX(-50px);
+  padding: 12px 0;
 }
 
-.wordmarkStaticT,
-.wordmarkStaticRest {
+.wordmarkText {
   color: rgba(68, 65, 65, 0.68);
   font-size: clamp(5rem, 13.5vw, 12.5rem);
   font-weight: 800;
   line-height: 0.9;
   letter-spacing: -0.06em;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-.wordmarkStaticRest {
-  margin-left: -4px;
-}
-
-.wordmarkStaticT {
-  transform: translateX(clamp(68px, 5.8vw, 108px));
-}
-
-.wordmarkAnimatedE,
-.wordmarkAnimatedC {
-  width: clamp(7.5rem, 15vw, 15rem);
-  height: clamp(7.8rem, 16vw, 15.2rem);
-  margin-bottom: -6px;
-  transform: translate(clamp(48px, 4.5vw, 82px), 36px);
-}
-
-.wordmarkAnimatedC {
-  width: clamp(7.1rem, 14vw, 14rem);
-  transform: translate(clamp(12px, 1.1vw, 20px), 36px);
-}
-
-.animatedLetterWrap {
-  position: relative;
-  display: inline-flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.animatedLetterSvg {
+.shaderCanvas {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  overflow: visible;
-}
-
-.orbPrimary,
-.orbSecondary,
-.orbTertiary,
-.orbQuaternary,
-.orbQuinary {
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-.orbPrimary {
-  fill: #ff00b7;
-  animation: driftA 7.2s ease-in-out infinite alternate;
-}
-
-.orbSecondary {
-  fill: #430195;
-  animation: driftB 6.1s ease-in-out infinite alternate;
-}
-
-.orbTertiary {
-  fill: #0466ef;
-  animation: driftC 8.4s ease-in-out infinite alternate;
-}
-
-.orbQuaternary {
-  fill: #0466ef;
-  animation: driftD 5.9s ease-in-out infinite alternate;
-}
-
-.orbQuinary {
-  fill: #ff00b7;
-  animation: driftE 7.8s ease-in-out infinite alternate;
-}
-
-.section[data-paused="true"] .orbPrimary,
-.section[data-paused="true"] .orbSecondary,
-.section[data-paused="true"] .orbTertiary,
-.section[data-paused="true"] .orbQuaternary,
-.section[data-paused="true"] .orbQuinary {
-  animation-play-state: paused;
+  pointer-events: none;
+  display: block;
 }
 
 .tagline {
@@ -274,38 +211,9 @@
   height: 18px;
 }
 
-@keyframes driftA {
-  0% { transform: translate(0px, 0px) scale(1); }
-  100% { transform: translate(18px, -10px) scale(1.1); }
-}
-
-@keyframes driftB {
-  0% { transform: translate(0px, 0px) scale(1); }
-  100% { transform: translate(-16px, 12px) scale(0.92); }
-}
-
-@keyframes driftC {
-  0% { transform: translate(0px, 0px) scale(1); }
-  100% { transform: translate(12px, 16px) scale(1.06); }
-}
-
-@keyframes driftD {
-  0% { transform: translate(0px, 0px) scale(1); }
-  100% { transform: translate(-18px, -8px) scale(1.08); }
-}
-
-@keyframes driftE {
-  0% { transform: translate(0px, 0px) scale(1); }
-  100% { transform: translate(10px, -16px) scale(0.94); }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .orbPrimary,
-  .orbSecondary,
-  .orbTertiary,
-  .orbQuaternary,
-  .orbQuinary {
-    animation: none !important;
+  .shaderCanvas {
+    display: none;
   }
 }
 
@@ -347,8 +255,7 @@
     border-radius: 30px;
   }
 
-  .wordmark {
-    flex-wrap: nowrap;
+  .wordmarkContainer {
     min-height: 140px;
   }
 
