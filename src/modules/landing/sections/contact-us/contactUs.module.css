@@ -1,0 +1,437 @@
+.section {
+  position: relative;
+  width: 100%;
+  background: #e9d3d3;
+  color: #2e2d2d;
+  isolation: isolate;
+  overflow: clip;
+}
+
+.scroll {
+  position: relative;
+  width: 100%;
+  /* Long scroll runway for cinematic phasing — ~700vh of travel. */
+  height: 700vh;
+}
+
+.stage {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 80% at 50% 50%, #eed8d8 0%, #e9d3d3 55%, #ddc4c4 100%);
+}
+
+/* ── mannequin layer ────────────────────────────────────────────────── */
+
+.mannequinFrame {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.mannequin {
+  /* Full-body figure: SVG is 1024×1536. We size it ~2× stage height so
+     the camera can pan down the body across scroll. Centered via
+     inset:0 + margin:auto so Framer Motion's animated x/y/scale don't
+     fight a CSS translate(-50%,-50%) — Motion would otherwise overwrite
+     that whole transform property and the figure would jump. */
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  height: 200vh;
+  /* Width derived from aspect ratio 1024/1536 ≈ 0.6667. */
+  width: calc(200vh * 1024 / 1536);
+  max-width: 92vw;
+  will-change: transform, filter;
+}
+
+.mannequin img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 30px 40px rgba(60, 30, 30, 0.18));
+}
+
+/* Soft pink ground shadow under the mannequin (matches D5 ellipse). */
+.groundShadow {
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  width: 38vw;
+  height: 60px;
+  background: rgba(54, 52, 52, 0.22);
+  filter: blur(7px);
+  border-radius: 999px;
+  /* Pure CSS centering (no animation here) — translateX is fine. */
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* ── right-side scroll-rail (the gray + black indicator) ───────────── */
+
+.rail {
+  position: absolute;
+  right: clamp(28px, 3vw, 64px);
+  top: 12%;
+  width: 6px;
+  height: 76%;
+  background: #d9d9d9;
+  border-radius: 999px;
+  z-index: 30;
+}
+
+.railThumb {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 14%;
+  background: #000;
+  border-radius: 999px;
+  will-change: top;
+}
+
+/* ── HERO PHASE — title + glass cards ──────────────────────────────── */
+
+.heroLayer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(80px, 9vh, 120px) clamp(40px, 5vw, 96px) 0;
+  /* Above mannequin (z:1) and the icon stack (z:10–16). */
+  z-index: 22;
+  pointer-events: none;
+}
+
+.standalone .heroLayer {
+  padding-top: clamp(148px, 16vh, 176px);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+  font-weight: 700;
+  font-size: clamp(72px, 13vw, 250px);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: #b86767;
+  white-space: nowrap;
+  padding-left: 1vw;
+  will-change: transform, opacity;
+}
+
+.glassRow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0 clamp(40px, 5vw, 96px);
+  gap: clamp(24px, 4vw, 80px);
+  /* Above the mannequin's transform-induced stacking context (z:1). */
+  z-index: 22;
+  pointer-events: auto;
+  will-change: transform, opacity;
+}
+
+.glassCard {
+  flex: 1 1 0;
+  max-width: 650px;
+  min-height: 240px;
+  padding: clamp(24px, 3vw, 44px) clamp(28px, 3vw, 50px);
+  border-radius: clamp(36px, 4vw, 73px);
+  background: rgba(212, 212, 212, 0.18);
+  -webkit-backdrop-filter: blur(17px);
+  backdrop-filter: blur(17px);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow:
+    0 22px 48px -28px rgba(120, 60, 60, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  display: flex;
+  align-items: center;
+  color: #be5555;
+  font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+  font-weight: 700;
+  font-size: clamp(20px, 1.9vw, 40px);
+  line-height: 1.22;
+}
+
+/* ── PHONE / EMAIL ICON BLOBS + ART ────────────────────────────────── */
+
+.iconBlob {
+  /* Centered by inset+margin:auto so Motion's transform won't fight a
+     CSS translate. Motion shifts via x/y from this centered base. */
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: clamp(220px, 21vw, 408px);
+  height: clamp(220px, 21vw, 408px);
+  border-radius: 999px;
+  background: rgba(255, 0, 0, 0.71);
+  box-shadow: 0 30px 80px -20px rgba(255, 0, 0, 0.5);
+  z-index: 10;
+  will-change: transform, opacity;
+}
+
+.iconArt {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: clamp(140px, 12vw, 240px);
+  height: clamp(140px, 12vw, 240px);
+  z-index: 11;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.iconArt img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ── CALL / EMAIL TEXT BLOCKS ──────────────────────────────────────── */
+
+.callBlock {
+  position: absolute;
+  left: clamp(40px, 5vw, 96px);
+  top: 50%;
+  /* No transform here — Motion drives `y` with calc(-50% + offset). */
+  z-index: 15;
+  font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+  font-weight: 700;
+  font-size: clamp(20px, 2vw, 40px);
+  line-height: 1.5;
+  color: #2e2d2d;
+  pointer-events: auto;
+  will-change: transform, opacity;
+}
+
+.callBlock h3 {
+  margin: 0 0 14px;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.callBlock a {
+  display: block;
+  color: #2e2d2d;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.callBlock a:hover {
+  color: #be5555;
+}
+
+.emailBlock {
+  position: absolute;
+  right: clamp(40px, 5vw, 96px);
+  top: 50%;
+  z-index: 15;
+  font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+  font-weight: 700;
+  font-size: clamp(20px, 2vw, 40px);
+  line-height: 1.5;
+  color: #2e2d2d;
+  text-align: right;
+  pointer-events: auto;
+  will-change: transform, opacity;
+}
+
+.emailBlock h3 {
+  margin: 0 0 14px;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.emailBlock a {
+  color: #2e2d2d;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.emailBlock a:hover {
+  color: #be5555;
+}
+
+/* ── FOOTPRINT TRAIL ───────────────────────────────────────────────── */
+
+.footprintLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 12;
+}
+
+.footprintAnchor {
+  /* Static placement + rotation. Centers itself on the anchor point so
+     the inner motion.div can animate transforms without fighting CSS. */
+  position: absolute;
+  width: clamp(64px, 7vw, 135px);
+  aspect-ratio: 135 / 193;
+  transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
+  pointer-events: none;
+}
+
+.footprint {
+  width: 100%;
+  height: 100%;
+  will-change: opacity, transform;
+}
+
+.footprint img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* ── FOLLOW / REACH HEADINGS ───────────────────────────────────────── */
+
+.followLabel,
+.reachLabel {
+  position: absolute;
+  top: 14vh;
+  font-family: "Poppins", var(--font-inter, "Inter"), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: clamp(22px, 2vw, 40px);
+  color: #000;
+  z-index: 18;
+  will-change: transform, opacity;
+}
+
+.followLabel {
+  left: clamp(40px, 6vw, 120px);
+}
+
+.reachLabel {
+  right: clamp(60px, 9vw, 180px);
+}
+
+/* ── MAP CARD ──────────────────────────────────────────────────────── */
+
+.mapCard {
+  position: absolute;
+  top: 50%;
+  right: clamp(40px, 5vw, 130px);
+  width: clamp(360px, 42vw, 646px);
+  aspect-ratio: 646 / 418;
+  border: 9px solid #dab4b4;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px -30px rgba(80, 30, 30, 0.45);
+  background: #f4dada;
+  z-index: 16;
+  pointer-events: auto;
+  will-change: transform, opacity;
+  display: block;
+  transition: filter 0.25s ease;
+}
+
+.mapCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.mapCard:hover {
+  filter: brightness(1.04) saturate(1.05);
+}
+
+/* ── ENDING BLOCK ──────────────────────────────────────────────────── */
+
+.endBlock {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  background: #050505;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(40px, 8vh, 120px) 24px;
+}
+
+.endText {
+  font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+  font-weight: 800;
+  font-size: clamp(80px, 16vw, 280px);
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  color: #fff;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── responsive trims ──────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .scroll {
+    height: 620vh;
+  }
+
+  .glassRow {
+    flex-direction: column;
+    gap: 16px;
+    bottom: 8vh;
+  }
+
+  .glassCard {
+    min-height: 140px;
+  }
+
+  .rail {
+    display: none;
+  }
+
+  .mapCard {
+    width: 78vw;
+    right: 50%;
+  }
+
+  .callBlock,
+  .emailBlock {
+    font-size: 22px;
+  }
+
+  .followLabel,
+  .reachLabel {
+    top: 8vh;
+  }
+
+  .standalone .heroLayer {
+    padding-top: 132px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll {
+    height: auto;
+  }
+
+  .stage {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 80px;
+  }
+}

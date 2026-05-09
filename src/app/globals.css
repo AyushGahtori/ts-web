@@ -3322,6 +3322,34 @@ body:has(.home-cinematic-experience) {
   overscroll-behavior: none !important;
 }
 
+/* Contact-Us standalone page — same overflow release as the home page so
+   the section's `position: sticky` stage actually sticks. Default
+   `.landing-canvas { overflow: hidden }` and any clipped html/body would
+   otherwise turn it into a scroll container with no scroll, killing
+   sticky behavior and collapsing the runway. */
+.landing-root:has(.contact-cinematic-experience),
+.landing-canvas:has(.contact-cinematic-experience) {
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+}
+
+.landing-root:has(.contact-cinematic-experience) {
+  background: #e9d3d3 !important;
+}
+
+.landing-canvas:has(.contact-cinematic-experience) {
+  background: #e9d3d3 !important;
+  border-radius: 0 !important;
+}
+
+html:has(.contact-cinematic-experience),
+body:has(.contact-cinematic-experience) {
+  background: #e9d3d3 !important;
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+  overscroll-behavior: none !important;
+}
+
 .home-cinematic-sticky {
   position: sticky;
   z-index: 30;
