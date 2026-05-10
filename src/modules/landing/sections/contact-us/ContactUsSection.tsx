@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import {
   motion,
   useMotionValue,
@@ -18,6 +18,23 @@ const MAP_SRC = "/Screenshot%202026-05-08%20202822%201.svg";
 
 const MAP_LINK =
   "https://www.bing.com/maps/search?name=Techsnitch+Private+Limited&trfc=&mepi=0%7E%7EEmbedded%7ELargeMapLink&FORM=MPSRPL&style=r&q=Techsnitch+Private+Limited&ss=id.ypid%3AYN4070x4610447463168281581&ppois=28.610538482666016_77.1121597290039_Techsnitch+Private+Limited&cp=28.609583%7E77.113844&lvl=14.1";
+
+const CONTACT_INBOX = "hello@techsnitch.co";
+
+/* Gmail compose URL — pure client redirect, no backend. The `from` field
+   isn't settable in Gmail compose (Gmail uses the logged-in sender), so it
+   is stitched into the body so we still know who wrote in. */
+function buildGmailComposeUrl(opts: { from: string; subject: string; message: string }) {
+  const body = `From: ${opts.from}\n\n${opts.message}`;
+  const params = new URLSearchParams({
+    view: "cm",
+    fs: "1",
+    to: CONTACT_INBOX,
+    su: opts.subject,
+    body,
+  });
+  return `https://mail.google.com/mail/?${params.toString()}`;
+}
 
 /* Scroll phase boundaries (0 → 1 over the sticky scroll runway). */
 const PHASE = {
@@ -138,6 +155,91 @@ function Footprint({
   );
 }
 
+/* Email compose form. State is local — Send opens Gmail compose with the
+   user's input pre-filled and Reset clears the inputs. No backend, no PII
+   leaves the browser unless the user actually hits Send in Gmail. */
+function ContactForm() {
+  const [from, setFrom] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const url = buildGmailComposeUrl({ from, subject, message });
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
+  const handleReset = () => {
+    setFrom("");
+    setSubject("");
+    setMessage("");
+  };
+
+  return (
+    <form className={styles.emailForm} onSubmit={handleSubmit} noValidate>
+      <h3 className={styles.emailFormTitle}>EMAIL US</h3>
+
+      <label className={styles.field}>
+        <span className={styles.fieldLabel}>To</span>
+        <input
+          type="email"
+          value={CONTACT_INBOX}
+          readOnly
+          className={`${styles.input} ${styles.inputReadonly}`}
+          tabIndex={-1}
+          aria-readonly
+        />
+      </label>
+
+      <label className={styles.field}>
+        <span className={styles.fieldLabel}>From</span>
+        <input
+          type="email"
+          required
+          value={from}
+          onChange={(event) => setFrom(event.target.value)}
+          placeholder="you@example.com"
+          className={styles.input}
+          autoComplete="email"
+        />
+      </label>
+
+      <label className={styles.field}>
+        <span className={styles.fieldLabel}>Subject</span>
+        <input
+          type="text"
+          required
+          value={subject}
+          onChange={(event) => setSubject(event.target.value)}
+          placeholder="How can we help?"
+          className={styles.input}
+        />
+      </label>
+
+      <label className={styles.field}>
+        <span className={styles.fieldLabel}>Message</span>
+        <textarea
+          required
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
+          placeholder="Tell us what you need…"
+          rows={4}
+          className={`${styles.input} ${styles.textarea}`}
+        />
+      </label>
+
+      <div className={styles.emailFormActions}>
+        <button type="button" className={styles.btnGhost} onClick={handleReset}>
+          Reset
+        </button>
+        <button type="submit" className={styles.btnPrimary}>
+          Send
+        </button>
+      </div>
+    </form>
+  );
+}
+
 interface ContactUsSectionProps {
   standalone?: boolean;
 }
@@ -189,10 +291,22 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
       "-90vh",
     ],
   );
+  /* Email phase pulls the figure to the LEFT half of the stage so the
+     right half can host the contact form, then the figure smoothly
+     drifts back to centre as the trail/map phases take over. */
   const mannequinX = useTransform(
     progress,
-    [0, PHASE.phoneHold, PHASE.emailHold, PHASE.trailIn, PHASE.mapIn, 1],
-    ["0vh", "0vh", "0vh", "5vh", "8vh", "6vh"],
+    [
+      0,
+      PHASE.phoneHold,
+      PHASE.emailIn,
+      PHASE.emailHold,
+      PHASE.emailOut,
+      PHASE.trailIn,
+      PHASE.mapIn,
+      1,
+    ],
+    ["0vh", "0vh", "-12vh", "-26vh", "-12vh", "0vh", "5vh", "4vh"],
   );
   const mannequinScale = useTransform(
     progress,
@@ -430,7 +544,7 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
           <motion.div
             className={styles.iconBlob}
             style={{
-              x: "-6vh",
+              x: "-22vh",
               y: "4vh",
               scale: emailBlobScale,
               opacity: emailBlobOpacity,
@@ -440,7 +554,7 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
           <motion.div
             className={styles.iconArt}
             style={{
-              x: "-6vh",
+              x: "-22vh",
               y: "4vh",
               scale: emailIconScale,
               opacity: emailIconOpacity,
@@ -451,11 +565,10 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
           </motion.div>
 
           <motion.div
-            className={styles.emailBlock}
+            className={styles.emailFormWrap}
             style={{ opacity: emailBlockOpacity, y: emailBlockY }}
           >
-            <h3>EMAIL US</h3>
-            <a href="mailto:hello@techsnitch.co">hello@techsnitch.co</a>
+            <ContactForm />
           </motion.div>
 
           {/* FOOTPRINT TRAIL — guides toward the map. */}
