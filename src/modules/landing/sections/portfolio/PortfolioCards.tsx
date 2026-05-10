@@ -22,7 +22,7 @@ const cards: PortfolioCard[] = [
     title: "Implementation & Transformation",
     copy:
       "Precision execution across the full ServiceNow ecosystem, powered by pre-configured accelerators that dramatically reduce project timelines and implementation risk.",
-    image: "/image%2014.svg",
+    image: "/ChatGPT%20Image%20May%2010,%202026,%2009_46_05%20PM%201.svg",
     slug: "implementation-transformation",
     tone: "delivery",
   },
