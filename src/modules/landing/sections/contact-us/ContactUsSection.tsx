@@ -19,7 +19,7 @@ const MAP_SRC = "/Screenshot%202026-05-08%20202822%201.svg";
 const MAP_LINK =
   "https://www.bing.com/maps/search?name=Techsnitch+Private+Limited&trfc=&mepi=0%7E%7EEmbedded%7ELargeMapLink&FORM=MPSRPL&style=r&q=Techsnitch+Private+Limited&ss=id.ypid%3AYN4070x4610447463168281581&ppois=28.610538482666016_77.1121597290039_Techsnitch+Private+Limited&cp=28.609583%7E77.113844&lvl=14.1";
 
-const CONTACT_INBOX = "hello@techsnitch.co";
+const CONTACT_INBOX = "info@techsnitch.co";
 
 /* Gmail compose URL — pure client redirect, no backend. The `from` field
    isn't settable in Gmail compose (Gmail uses the logged-in sender), so it
