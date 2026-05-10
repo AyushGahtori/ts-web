@@ -141,7 +141,7 @@
   gap: clamp(24px, 4vw, 80px);
   /* Above the mannequin's transform-induced stacking context (z:1). */
   z-index: 22;
-  pointer-events: auto;
+  pointer-events: none;
   will-change: transform, opacity;
 }
 
@@ -239,36 +239,148 @@
   color: #be5555;
 }
 
-.emailBlock {
+/* ── EMAIL FORM ────────────────────────────────────────────────────── */
+
+.emailFormWrap {
   position: absolute;
-  right: clamp(40px, 5vw, 96px);
+  right: clamp(32px, 4vw, 96px);
   top: 50%;
-  z-index: 15;
-  font-family: var(--font-inter, "Inter", system-ui, sans-serif);
-  font-weight: 700;
-  font-size: clamp(20px, 2vw, 40px);
-  line-height: 1.5;
-  color: #2e2d2d;
-  text-align: right;
+  width: clamp(340px, 38vw, 560px);
+  /* No CSS transform here — Motion drives `y` with calc(-50% + offset). */
+  z-index: 25;
   pointer-events: auto;
   will-change: transform, opacity;
 }
 
-.emailBlock h3 {
-  margin: 0 0 14px;
-  font-size: 1em;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
-.emailBlock a {
+.emailForm {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.2vh, 16px);
+  padding: clamp(22px, 2.6vw, 34px) clamp(24px, 2.6vw, 36px);
+  border-radius: clamp(28px, 3vw, 44px);
+  background: rgba(212, 212, 212, 0.18);
+  -webkit-backdrop-filter: blur(17px);
+  backdrop-filter: blur(17px);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow:
+    0 28px 60px -32px rgba(120, 60, 60, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.32);
+  font-family: var(--font-inter, "Inter", system-ui, sans-serif);
   color: #2e2d2d;
-  text-decoration: none;
-  transition: color 0.2s ease;
 }
 
-.emailBlock a:hover {
+.emailFormTitle {
+  margin: 0 0 4px;
   color: #be5555;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: clamp(18px, 1.4vw, 24px);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fieldLabel {
+  font-size: clamp(11px, 0.85vw, 13px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(46, 45, 45, 0.66);
+}
+
+.input {
+  width: 100%;
+  padding: clamp(8px, 1vh, 12px) 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(190, 85, 85, 0.22);
+  background: rgba(255, 255, 255, 0.42);
+  font-family: inherit;
+  font-size: clamp(14px, 1vw, 16px);
+  font-weight: 500;
+  color: #2e2d2d;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.input::placeholder {
+  color: rgba(46, 45, 45, 0.42);
+  font-weight: 400;
+}
+
+.input:focus {
+  border-color: rgba(190, 85, 85, 0.6);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 3px rgba(190, 85, 85, 0.18);
+}
+
+.inputReadonly {
+  background: rgba(255, 255, 255, 0.22);
+  color: rgba(46, 45, 45, 0.78);
+  cursor: default;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: clamp(80px, 12vh, 140px);
+  line-height: 1.45;
+  font-family: inherit;
+}
+
+.emailFormActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.btnGhost,
+.btnPrimary {
+  font-family: inherit;
+  font-size: clamp(13px, 0.95vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: clamp(9px, 1vh, 12px) clamp(18px, 1.6vw, 26px);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+.btnGhost {
+  background: transparent;
+  color: #2e2d2d;
+  border: 1px solid rgba(46, 45, 45, 0.32);
+}
+
+.btnGhost:hover {
+  background: rgba(255, 255, 255, 0.32);
+  border-color: rgba(46, 45, 45, 0.5);
+}
+
+.btnPrimary {
+  background: linear-gradient(180deg, #c96666 0%, #a44a4a 100%);
+  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 16px 32px -18px rgba(160, 60, 60, 0.7);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 36px -18px rgba(160, 60, 60, 0.85);
+}
+
+.btnPrimary:active {
+  transform: translateY(0);
 }
 
 /* ── FOOTPRINT TRAIL ───────────────────────────────────────────────── */
@@ -408,9 +520,20 @@
     right: 50%;
   }
 
-  .callBlock,
-  .emailBlock {
+  .callBlock {
     font-size: 22px;
+  }
+
+  .emailFormWrap {
+    width: min(92vw, 460px);
+    right: 4vw;
+    /* Stays vertically centred on mobile — Motion's `calc(-50% + ...)` y
+       animation only works correctly from a top:50% anchor. */
+  }
+
+  .emailForm {
+    padding: 18px 18px;
+    gap: 8px;
   }
 
   .followLabel,
