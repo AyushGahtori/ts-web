@@ -2409,7 +2409,7 @@ body {
   width: clamp(512px, 45.44vw, 893px);
   position: absolute;
   top: 485px;
-  right: -96px
+  right: clamp(0px, 1.2vw, 24px)
 }
 
 .frameworks-saos-logo-image {
@@ -2462,7 +2462,7 @@ body {
   .frameworks-saos-logo {
     width: clamp(672px, 62.4vw, 1088px);
     top: 364px;
-    right: -150px
+    right: 0
   }
 }
 
@@ -2541,7 +2541,7 @@ body {
     width: min(100%, 896px);
     top: auto;
     bottom: -10px;
-    right: -60px
+    right: 0
   }
 }
 
@@ -2634,7 +2634,7 @@ body {
   .frameworks-saos-logo {
     width: min(100%, 656px);
     bottom: 0;
-    right: -24px
+    right: 0
   }
 }
 
@@ -2753,7 +2753,8 @@ body {
 }
 
 .frameworks-saos-logo {
-  transform: translate(14%, 10%) !important;
+  right: clamp(-148px, -7.8vw, -96px) !important;
+  transform-origin: center right;
 }
 
 .frameworks-saos-logo::before {
@@ -3006,7 +3007,6 @@ body::-webkit-scrollbar:horizontal {
 
 .frameworks-saos-logo:hover {
   filter: drop-shadow(0 0 18px rgba(255, 92, 186, .5)) drop-shadow(0 18px 42px rgba(255, 61, 171, .28));
-  transform: translate(14%, 10%) translateY(-2px) scale(1.01) !important;
 }
 
 .frameworks-saos-logo:hover::before,
@@ -3445,6 +3445,14 @@ body:has(.contact-cinematic-experience) {
   pointer-events: none;
   transform: translate3d(-50%, -50%, 0);
   transform-style: preserve-3d;
+}
+
+.cinematic-poster--front {
+  z-index: 136;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0 38%, #000 44%, #000 64%, transparent 70%);
+  mask-image: linear-gradient(to bottom, transparent 0 38%, #000 44%, #000 64%, transparent 70%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
 
 .cinematic-object {

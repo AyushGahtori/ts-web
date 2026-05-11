@@ -169,6 +169,27 @@
   line-height: 1.5;
 }
 
+.contactBlock {
+  display: grid;
+  gap: 6px;
+  margin-top: 18px;
+}
+
+.contactBlock a {
+  width: fit-content;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 1.04rem;
+  font-weight: 600;
+  line-height: 1.28;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.contactBlock a:hover {
+  color: #fff;
+  transform: translateX(2px);
+}
+
 .statusRow {
   display: inline-flex;
   align-items: center;
@@ -254,6 +275,7 @@
 
   .footerColumn li,
   .addressBlock p,
+  .contactBlock a,
   .statusRow {
     font-size: 1.1rem;
   }
@@ -343,6 +365,7 @@
 
   .footerColumn li,
   .addressBlock p,
+  .contactBlock a,
   .statusRow {
     font-size: 0.95rem;
     line-height: 1.55;

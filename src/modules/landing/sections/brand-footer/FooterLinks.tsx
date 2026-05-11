@@ -2,6 +2,12 @@ import styles from "./brandFooter.module.css";
 
 const docsLinks = ["Getting Started", "API Reference", "Integrations", "Examples", "SDKs"];
 const legalLinks = ["Privacy Policy", "Terms of Service"];
+const contactLinks = [
+  { label: "+91 9310266326", href: "tel:+919310266326" },
+  { label: "+91 8766207465", href: "tel:+918766207465" },
+  { label: "+1 5055001244", href: "tel:+15055001244" },
+  { label: "info@techsnitch.co", href: "mailto:info@techsnitch.co" },
+];
 
 export function FooterLinks() {
   return (
@@ -28,6 +34,14 @@ export function FooterLinks() {
         <div className={styles.addressBlock}>
           <p>2261 Balcones Drive</p>
           <p>Austin, TX, United States</p>
+        </div>
+
+        <div className={styles.contactBlock} aria-label="Company contact details">
+          {contactLinks.map((item) => (
+            <a key={item.href} href={item.href}>
+              {item.label}
+            </a>
+          ))}
         </div>
 
         <div className={styles.statusRow}>

@@ -17,7 +17,7 @@ export function PortfolioSection() {
         </blockquote>
       </div>
 
-      <div className={styles.titleWrap}>
+      <div id="service-portfolio" className={styles.titleWrap}>
         <h2>
           Comprehensive
           <span>Service Portfolio</span>
