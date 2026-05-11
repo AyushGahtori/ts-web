@@ -92,7 +92,7 @@ export function FrameworksSection() {
             aria-label="Open SNADA agent"
             className="frameworks-saos-link"
           >
-            <Image src="/saos-cropped.png" alt="" fill sizes="(max-width: 1120px) 85vw, 41vw" className="frameworks-saos-logo-image" />
+            <Image src="/ChatGPT%20Image%20May%2011,%202026,%2012_26_49%20PM%201.svg" alt="" fill sizes="(max-width: 1120px) 85vw, 41vw" className="frameworks-saos-logo-image" />
           </Link>
         </MotionSection>
       </div>
