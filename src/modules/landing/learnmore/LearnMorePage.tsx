@@ -17,7 +17,7 @@ export function LearnMorePage({ page }: LearnMorePageProps) {
     <main className={styles.root}>
       <section className={styles.night}>
         <div className={styles.navRow}>
-          <Link href="/" className={styles.backLink}>
+          <Link href="/#service-portfolio" className={styles.backLink}>
             <span aria-hidden>‹</span>
             Home
           </Link>

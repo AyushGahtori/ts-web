@@ -3,21 +3,43 @@
 import { useEffect } from "react";
 
 interface RouteSectionScrollerProps {
-  sectionId: string;
+  sectionId?: string;
 }
 
 export function RouteSectionScroller({ sectionId }: RouteSectionScrollerProps) {
   useEffect(() => {
-    const element = document.getElementById(sectionId);
-    if (!element) {
-      return;
-    }
+    const getTargetId = () => {
+      if (sectionId) {
+        return sectionId;
+      }
 
-    const frame = window.requestAnimationFrame(() => {
+      return window.location.hash ? decodeURIComponent(window.location.hash.slice(1)) : "";
+    };
+
+    const scrollToTarget = () => {
+      const targetId = getTargetId();
+      if (!targetId) {
+        return;
+      }
+
+      const element = document.getElementById(targetId);
+      if (!element) {
+        return;
+      }
+
       element.scrollIntoView({ behavior: "auto", block: "start" });
-    });
+    };
 
-    return () => window.cancelAnimationFrame(frame);
+    const frame = window.requestAnimationFrame(scrollToTarget);
+    const timers = [120, 360, 720].map((delay) => window.setTimeout(scrollToTarget, delay));
+
+    window.addEventListener("hashchange", scrollToTarget);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      timers.forEach((timer) => window.clearTimeout(timer));
+      window.removeEventListener("hashchange", scrollToTarget);
+    };
   }, [sectionId]);
 
   return null;

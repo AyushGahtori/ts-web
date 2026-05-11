@@ -313,6 +313,8 @@ const homeObjects: HomeObjectAsset[] = [
   },
 ];
 
+const foregroundHomeObjects = homeObjects.filter((item) => item.layer >= 23);
+
 function assetSrc(file: string) {
   return `/home/${file.replaceAll(" ", "%20")}`;
 }
@@ -561,6 +563,12 @@ export function Hero() {
           <div className="cinematic-poster" aria-hidden>
             {homeObjects.map((item) => (
               <HomeObject key={item.id} item={item} progress={progress} />
+            ))}
+          </div>
+
+          <div className="cinematic-poster cinematic-poster--front" aria-hidden>
+            {foregroundHomeObjects.map((item) => (
+              <HomeObject key={`front-${item.id}`} item={item} progress={progress} />
             ))}
           </div>
 
