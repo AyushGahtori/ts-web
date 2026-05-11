@@ -17,9 +17,9 @@ export function LearnMorePage({ page }: LearnMorePageProps) {
     <main className={styles.root}>
       <section className={styles.night}>
         <div className={styles.navRow}>
-          <Link href="/services" className={styles.backLink}>
+          <Link href="/" className={styles.backLink}>
             <span aria-hidden>‹</span>
-            Services
+            Home
           </Link>
           <span className={styles.brand}>TechSnitch</span>
         </div>
@@ -135,8 +135,8 @@ export function LearnMorePage({ page }: LearnMorePageProps) {
               <p>{page.cta.body}</p>
             </div>
             <div className={styles.ctaActions}>
-              <Link href="/services#wall-of-love">{page.cta.primary}</Link>
-              <Link href="/services#services-grid">{page.cta.secondary}</Link>
+              <Link href="/contact-us">{page.cta.primary}</Link>
+              <Link href="/contact-us">{page.cta.secondary}</Link>
             </div>
           </motion.section>
         </div>
