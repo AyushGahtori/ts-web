@@ -63,11 +63,9 @@ export function WhoWeAreSection() {
       >
         <h3>Where ServiceNow Excellence Meets AI Freedom</h3>
         <p>
-          TechSnitch stands at the forefront of enterprise transformation, an elite partner that fuses deep ServiceNow platform mastery with a truly
-          AI-agnostic philosophy.
+          TechSnitch combines deep ServiceNow expertise with an AI-agnostic approach to enterprise transformation.
           <br />
-          We don&apos;t just implement; we architect resilient, self-optimizing digital ecosystems that scale with your ambitions and adapt to any AI
-          landscape you choose to adopt.
+          We architect resilient digital ecosystems that scale with your ambitions and adapt to any AI landscape.
         </p>
       </motion.article>
 
@@ -79,11 +77,9 @@ export function WhoWeAreSection() {
         transition={{ duration: 0.72, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
       >
         <p>
-          Our proprietary accelerators - <strong>SNADA (ServiceNow AI Digital Assistant)</strong> and{" "}
-          <strong>SAOS (ServiceNow Autonomous Operating System)</strong> - are not afterthoughts.
+          Our proprietary accelerators - <strong>SNADA</strong> and <strong>SAOS</strong> - compress time-to-value and reduce operational drag.
           <br />
-          They are precision instruments engineered to compress time-to-value, eliminate operational drag, and permanently shift enterprises from
-          reactive firefighting to autonomous, intelligence-led operations.
+          They help enterprises move from reactive firefighting to autonomous, intelligence-led operations.
         </p>
       </motion.article>
     </section>
