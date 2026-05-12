@@ -1,26 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Monda, Monoton } from "next/font/google";
-import "./globals.css";
+import { Inter } from "next/font/google";
+import "./base.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "700", "800"],
-  display: "swap",
-});
-
-const monoton = Monoton({
-  variable: "--font-monoton",
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-  preload: false,
-});
-
-const monda = Monda({
-  variable: "--font-monda",
-  subsets: ["latin"],
-  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -35,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${monoton.variable} ${monda.variable} antialiased`}>
+    <html lang="en" className={`${inter.variable} antialiased`}>
       <body>{children}</body>
     </html>
   );

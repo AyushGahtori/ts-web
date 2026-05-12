@@ -17,6 +17,7 @@ interface ShowcaseCard {
   number: number;
   title: string;
   subtitle: string;
+  imageSrc: string;
   sections: CardSection[];
 }
 
@@ -27,6 +28,7 @@ const cards: ShowcaseCard[] = [
     number: 1,
     title: "Why TechSnitch",
     subtitle: "The Elite Advantage in AI-Agnostic ServiceNow Transformation",
+    imageSrc: "/ai%20agnostic%201.svg",
     sections: [
       {
         heading: "Key Differentiators",
@@ -53,6 +55,7 @@ const cards: ShowcaseCard[] = [
     number: 2,
     title: "AI-Agnostic Architecture",
     subtitle: "Freedom to Innovate Without Vendor Lock-In",
+    imageSrc: "/ai%20agnostic%201.svg",
     sections: [
       {
         heading: "Supported AI Ecosystems",
@@ -68,6 +71,7 @@ const cards: ShowcaseCard[] = [
     number: 3,
     title: "Solutions",
     subtitle: "Purpose-Built Solutions for Enterprise Transformation",
+    imageSrc: "/solutions%201.svg",
     sections: [
       {
         heading: "Key Solution Offerings",
@@ -83,6 +87,7 @@ const cards: ShowcaseCard[] = [
     number: 4,
     title: "Accelerators",
     subtitle: "Accelerating Time-to-Value with Proven Frameworks",
+    imageSrc: "/acceleratorr%201.svg",
     sections: [
       {
         heading: "Key Accelerators",
@@ -98,6 +103,7 @@ const cards: ShowcaseCard[] = [
     number: 5,
     title: "Customer Success Stories",
     subtitle: "Proof Through Measurable Business Outcomes",
+    imageSrc: "/employee%201.svg",
     sections: [
       {
         heading: "Story Themes",
@@ -113,6 +119,7 @@ const cards: ShowcaseCard[] = [
     number: 6,
     title: "Partnerships & Alliances",
     subtitle: "Collaborating with Industry Leaders",
+    imageSrc: "/partnership%20and%20alliance%201.svg",
     sections: [
       {
         heading: "Strategic Partners",
@@ -128,6 +135,7 @@ const cards: ShowcaseCard[] = [
     number: 7,
     title: "Delivery & Engagement Model",
     subtitle: "From Vision to Value",
+    imageSrc: "/delivery%20guy%201.svg",
     sections: [
       {
         heading: "Delivery Framework",
@@ -143,6 +151,7 @@ const cards: ShowcaseCard[] = [
     number: 8,
     title: "Resource Center",
     subtitle: "Knowledge Hub for Digital Transformation",
+    imageSrc: "/resource%20center%201.svg",
     sections: [
       {
         heading: "Content Categories",
@@ -158,6 +167,7 @@ const cards: ShowcaseCard[] = [
     number: 9,
     title: "Events & Webinars",
     subtitle: "Engage with TechSnitch Experts",
+    imageSrc: "/events%20and%20webinars%201.svg",
     sections: [
       {
         heading: "Page Sections",
@@ -173,6 +183,7 @@ const cards: ShowcaseCard[] = [
     number: 10,
     title: "ESG & Corporate Responsibility",
     subtitle: "Driving Sustainable and Responsible Innovation",
+    imageSrc: "/employee%201.svg",
     sections: [
       {
         heading: "Responsible Innovation",
@@ -188,6 +199,7 @@ const cards: ShowcaseCard[] = [
     number: 11,
     title: "Leadership Team",
     subtitle: "Visionaries Behind TechSnitch",
+    imageSrc: "/leadership%20team%201.svg",
     sections: [
       {
         heading: "Profile Structure",
@@ -203,6 +215,7 @@ const cards: ShowcaseCard[] = [
     number: 12,
     title: "Technology & Integration Ecosystem",
     subtitle: "Seamless Integration Across the Enterprise",
+    imageSrc: "/pricing%201.svg",
     sections: [
       {
         heading: "Integration Capabilities",
@@ -267,7 +280,7 @@ function CardFace({ card, isActive, isPreview }: { card: ShowcaseCard; isActive:
               className={styles.heartAccent}
             />
             <Image
-              src="/man%20with%20a%20laptop.png"
+              src={card.imageSrc}
               alt=""
               aria-hidden="true"
               width={768}
@@ -388,7 +401,6 @@ export function WhyCard() {
       <div
         className={styles.cardDeck}
         onMouseEnter={() => setIsPreviewOpen(true)}
-        onMouseLeave={closePreview}
         onBlur={(event) => {
           if (!event.currentTarget.contains(event.relatedTarget)) {
             closePreview();
@@ -417,7 +429,8 @@ export function WhyCard() {
                 !isActive
                   ? () => {
                       selectCard(index);
-                      closePreview();
+                      setIsPreviewOpen(true);
+                      setHoveredIndex(null);
                     }
                   : undefined
               }
@@ -439,7 +452,8 @@ export function WhyCard() {
 
                       event.preventDefault();
                       selectCard(index);
-                      closePreview();
+                      setIsPreviewOpen(true);
+                      setHoveredIndex(null);
                     }
                   : undefined
               }

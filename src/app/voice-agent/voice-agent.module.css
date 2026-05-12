@@ -5,6 +5,7 @@
     linear-gradient(135deg, rgba(11, 18, 31, .96), rgba(4, 8, 14, 1) 52%),
     radial-gradient(circle at 82% 12%, rgba(0, 184, 148, .16), transparent 32%);
   color: #f7fafc;
+  overflow-x: clip;
 }
 
 .header {
@@ -50,6 +51,7 @@
   border: 1px solid rgba(255, 255, 255, .12);
   border-radius: 8px;
   background: rgba(255, 255, 255, .06);
+  contain: layout paint;
 }
 
 .statusCard strong,
@@ -101,6 +103,7 @@
   border-radius: 8px;
   background: rgba(7, 13, 24, .84);
   box-shadow: 0 24px 70px rgba(0, 0, 0, .28);
+  contain: layout paint;
 }
 
 .panelHeader {
@@ -225,6 +228,8 @@
 .callList {
   display: grid;
   gap: 10px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 320px;
 }
 
 .callItem {
@@ -234,6 +239,7 @@
   border: 1px solid rgba(255, 255, 255, .1);
   border-radius: 8px;
   background: rgba(255, 255, 255, .045);
+  contain: layout paint;
 }
 
 .callItem strong,
@@ -304,5 +310,15 @@
   .callMeta {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryButton {
+    transition: none;
+  }
+
+  .primaryButton:hover {
+    transform: none;
   }
 }

@@ -7,8 +7,9 @@ type VoiceAgentStore = {
 
 const MAX_EVENTS_PER_CALL = 50;
 const MAX_LISTED_CALLS = 100;
+const MAX_STORED_CALLS = 250;
 const CALL_RETENTION_MS = 24 * 60 * 60 * 1000;
-const terminalStatuses = new Set<CallStatus>(["completed", "failed", "canceled"]);
+const terminalStatuses = new Set<CallStatus>(["mocked", "completed", "failed", "canceled"]);
 
 declare global {
   // Keeps local prototype state stable across route handler reloads in next dev.
@@ -60,6 +61,26 @@ function pruneStore(store = getStore()) {
       store.calls.delete(id);
     }
   }
+
+  if (store.calls.size <= MAX_STORED_CALLS) {
+    return;
+  }
+
+  const removableCalls = Array.from(store.calls.values())
+    .filter((call) => terminalStatuses.has(call.status))
+    .sort((a, b) => new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime());
+  const overage = store.calls.size - MAX_STORED_CALLS;
+
+  removableCalls.slice(0, overage).forEach((call) => {
+    const timer = store.timers.get(call.id);
+
+    if (timer) {
+      clearTimeout(timer);
+    }
+
+    store.timers.delete(call.id);
+    store.calls.delete(call.id);
+  });
 }
 
 export function addCall(input: CreateCallInput): ScheduledCall {

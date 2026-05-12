@@ -3,6 +3,10 @@ import { appendCallEvent, getCall, mapProviderStatus, updateCall } from "@/lib/v
 
 export const dynamic = "force-dynamic";
 
+const noStoreHeaders = {
+  "Cache-Control": "no-store, max-age=0",
+};
+
 function getNestedString(source: unknown, path: string[]) {
   let current = source;
 
@@ -18,7 +22,7 @@ function getNestedString(source: unknown, path: string[]) {
 }
 
 export async function GET() {
-  return Response.json({ ok: true, service: "callhippo-webhook" });
+  return Response.json({ ok: true, service: "callhippo-webhook" }, { headers: noStoreHeaders });
 }
 
 export async function POST(request: Request) {
@@ -29,7 +33,7 @@ export async function POST(request: Request) {
       request.headers.get("x-webhook-secret") ?? request.headers.get("x-callhippo-secret");
 
     if (providedSecret !== config.callhippoWebhookSecret) {
-      return Response.json({ error: "Invalid webhook secret." }, { status: 401 });
+      return Response.json({ error: "Invalid webhook secret." }, { status: 401, headers: noStoreHeaders });
     }
   }
 
@@ -40,7 +44,10 @@ export async function POST(request: Request) {
     getNestedString(payload, ["voiceAgentCallId"]);
 
   if (!localCallId || !getCall(localCallId)) {
-    return Response.json({ ok: true, accepted: false, reason: "No matching local call." }, { status: 202 });
+    return Response.json(
+      { ok: true, accepted: false, reason: "No matching local call." },
+      { status: 202, headers: noStoreHeaders },
+    );
   }
 
   const providerStatus =
@@ -56,5 +63,5 @@ export async function POST(request: Request) {
 
   appendCallEvent(localCallId, providerStatus || "callhippo_webhook", payload);
 
-  return Response.json({ ok: true, accepted: true });
+  return Response.json({ ok: true, accepted: true }, { headers: noStoreHeaders });
 }
