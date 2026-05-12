@@ -51,7 +51,7 @@ export function QualitiesSection() {
               show: { opacity: 1, y: 0, transition: { duration: 0.48, ease: [0.22, 1, 0.36, 1] } },
             }}
           >
-            <div className={styles.cardInner}>
+            <div className={styles.cardSurface}>
               <div className={styles.metricPanel}>
                 <motion.span initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}>
                   {metric.value}
