@@ -14,10 +14,10 @@ const MANNEQUIN_SRC = "/ChatGPT%20Image%20May%208,%202026,%2012_21_54%20PM%201.s
 const PHONE_SRC = "/Ringer%20Volume.svg";
 const EMAIL_SRC = "/image%2010.svg";
 const FOOT_SRC = "/image%203.svg";
-const MAP_SRC = "/Screenshot%202026-05-08%20202822%201.svg";
+const MAP_SRC = "/Screenshot%202026-05-12%20210119.png";
 
 const MAP_LINK =
-  "https://www.bing.com/maps/search?name=Techsnitch+Private+Limited&trfc=&mepi=0%7E%7EEmbedded%7ELargeMapLink&FORM=MPSRPL&style=r&q=Techsnitch+Private+Limited&ss=id.ypid%3AYN4070x4610447463168281581&ppois=28.610538482666016_77.1121597290039_Techsnitch+Private+Limited&cp=28.609583%7E77.113844&lvl=14.1";
+  "https://www.google.com/maps/place/TechSnitch+Private+Limited/@28.5825678,77.3117407,17z/data=!3m2!4b1!5s0x390ce45ec9dda3cd:0xd646b54c41dc923!4m6!3m5!1s0xb90a41971ed5f0f:0xb0c3dcdf8a2869c2!8m2!3d28.5825631!4d77.3143156!16s%2Fg%2F11vy5ncgyw?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D";
 
 const CONTACT_INBOX = "info@techsnitch.co";
 
@@ -369,6 +369,11 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
     [PHASE.phoneIn + 0.06, PHASE.phoneHold - 0.02, PHASE.phoneOut],
     [0, 1, 0],
   );
+  const callBlockPointerEvents = useTransform(
+    progress,
+    [0, PHASE.phoneIn + 0.06, PHASE.phoneHold, PHASE.phoneOut],
+    ["none", "auto", "auto", "none"],
+  );
   /* `top: 50%` on the call/email/map elements is centered via Motion's `y`
      using calc() so the element's own −50% offset rides along with the
      animated entry distance. */
@@ -409,6 +414,11 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
     progress,
     [PHASE.emailIn + 0.06, PHASE.emailHold - 0.02, PHASE.emailOut],
     [0, 1, 0],
+  );
+  const emailBlockPointerEvents = useTransform(
+    progress,
+    [0, PHASE.emailIn + 0.06, PHASE.emailHold, PHASE.emailOut],
+    ["none", "auto", "auto", "none"],
   );
   const emailBlockY = useTransform(
     progress,
@@ -453,6 +463,11 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
     progress,
     [PHASE.mapIn - 0.04, PHASE.mapIn + 0.06],
     ["calc(-50% + 40px)", "-50%"],
+  );
+  const mapPointerEvents = useTransform(
+    progress,
+    [0, PHASE.mapIn, PHASE.mapIn + 0.04, 1],
+    ["none", "none", "auto", "auto"],
   );
 
   return (
@@ -530,7 +545,7 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
 
           <motion.div
             className={styles.callBlock}
-            style={{ opacity: callBlockOpacity, y: callBlockY }}
+            style={{ opacity: callBlockOpacity, y: callBlockY, pointerEvents: callBlockPointerEvents }}
           >
             <h3>CALL US</h3>
             <a href="tel:+919310266326">+91 9310266326</a>
@@ -566,7 +581,7 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
 
           <motion.div
             className={styles.emailFormWrap}
-            style={{ opacity: emailBlockOpacity, y: emailBlockY }}
+            style={{ opacity: emailBlockOpacity, y: emailBlockY, pointerEvents: emailBlockPointerEvents }}
           >
             <ContactForm />
           </motion.div>
@@ -604,8 +619,8 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
             target="_blank"
             rel="noopener noreferrer"
             className={styles.mapCard}
-            style={{ opacity: mapOpacity, scale: mapScale, y: mapY }}
-            aria-label="Open Techsnitch on Bing Maps"
+            style={{ opacity: mapOpacity, scale: mapScale, y: mapY, pointerEvents: mapPointerEvents }}
+            aria-label="Open Techsnitch on Google Maps"
           >
             <img src={MAP_SRC} alt="Techsnitch Private Limited on the map" />
           </motion.a>
