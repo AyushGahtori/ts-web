@@ -51,21 +51,23 @@ export function QualitiesSection() {
               show: { opacity: 1, y: 0, transition: { duration: 0.48, ease: [0.22, 1, 0.36, 1] } },
             }}
           >
-            <div className={styles.metricPanel}>
-              <motion.span initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}>
-                {metric.value}
-              </motion.span>
+            <div className={styles.cardInner}>
+              <div className={styles.metricPanel}>
+                <motion.span initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}>
+                  {metric.value}
+                </motion.span>
+              </div>
+              <div className={styles.controls}>
+                <span className={styles.pill} aria-hidden />
+                <span className={styles.dots} aria-hidden>
+                  <span />
+                  <span />
+                  <span />
+                  <span />
+                </span>
+              </div>
+              <p>{metric.label}</p>
             </div>
-            <div className={styles.controls}>
-              <span className={styles.pill} aria-hidden />
-              <span className={styles.dots} aria-hidden>
-                <span />
-                <span />
-                <span />
-                <span />
-              </span>
-            </div>
-            <p>{metric.label}</p>
           </motion.article>
         ))}
       </motion.div>
