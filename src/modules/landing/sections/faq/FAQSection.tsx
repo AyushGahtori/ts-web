@@ -37,7 +37,7 @@ const faqs = [
 ];
 
 export function FAQSection() {
-  const [openIds, setOpenIds] = useState<string[]>(["q1", "q2"]);
+  const [openIds, setOpenIds] = useState<string[]>(() => faqs.map((item) => item.id));
 
   return (
     <section className={styles.section}>
