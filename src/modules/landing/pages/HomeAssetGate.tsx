@@ -7,24 +7,14 @@ interface HomeAssetGateProps {
   assetSources: string[];
 }
 
-const PRELOAD_TIMEOUT_MS = 900;
-const PREPAINT_TIMEOUT_MS = 700;
-
 let homeAssetsKey: string | null = null;
 let homeAssetsPromise: Promise<void> | null = null;
-
-function withTimeout(promise: Promise<void>, timeoutMs: number) {
-  return Promise.race([
-    promise,
-    new Promise<void>((resolve) => {
-      window.setTimeout(resolve, timeoutMs);
-    }),
-  ]);
-}
 
 function preloadImage(src: string) {
   return new Promise<void>((resolve) => {
     const image = new Image();
+    image.decoding = "async";
+    image.loading = "eager";
 
     image.onload = () => {
       if (typeof image.decode !== "function") {
@@ -63,7 +53,9 @@ function waitForImageElement(image: HTMLImageElement) {
 function waitForNextPaint() {
   return new Promise<void>((resolve) => {
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => resolve());
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => resolve());
+      });
     });
   });
 }
@@ -88,7 +80,7 @@ export function HomeAssetGate({ assetSources, children }: HomeAssetGateProps) {
   useEffect(() => {
     let isMounted = true;
 
-    withTimeout(preloadHomeAssets(assetSources), PRELOAD_TIMEOUT_MS).then(() => {
+    preloadHomeAssets(assetSources).then(() => {
       if (isMounted) {
         setPreloadedKey(assetSourcesKey);
       }
@@ -110,7 +102,7 @@ export function HomeAssetGate({ assetSources, children }: HomeAssetGateProps) {
       const stage = stageRef.current;
       const heroImages = Array.from(stage?.querySelectorAll<HTMLImageElement>(".cinematic-object__media") ?? []);
 
-      await withTimeout(Promise.all(heroImages.map(waitForImageElement)).then(() => undefined), PREPAINT_TIMEOUT_MS);
+      await Promise.all(heroImages.map(waitForImageElement));
       await waitForNextPaint();
 
       if (isMounted) {

@@ -327,13 +327,15 @@ body {
 }
 
 .home-asset-prepaint {
-  visibility: hidden;
-  position: absolute;
+  opacity: 0;
+  position: fixed;
   inset: 0;
   width: 100%;
   height: 100vh;
   overflow: hidden;
   pointer-events: none;
+  transform: translateZ(0);
+  user-select: none;
 }
 
 .landing-root {
