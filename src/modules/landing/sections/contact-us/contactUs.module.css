@@ -48,7 +48,7 @@
   box-shadow:
     0 0 0 0 rgba(190, 85, 85, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 0.45);
-  animation: contactAssetPulse 1.2s ease-in-out infinite;
+  animation: contact-asset-pulse 1.2s ease-in-out infinite;
 }
 
 .srOnly {
@@ -58,7 +58,8 @@
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -816,7 +817,7 @@
   }
 }
 
-@keyframes contactAssetPulse {
+@keyframes contact-asset-pulse {
   0%,
   100% {
     transform: scale(0.94);

@@ -25,6 +25,7 @@ const CONTACT_ASSETS = [
   MAP_SRC,
   NAV_LOGO_SRC,
 ];
+const CONTACT_ASSET_TIMEOUT_MS = 4000;
 
 const MAP_LINK =
   "https://www.google.com/maps/place/TechSnitch+Private+Limited/@28.5825678,77.3117407,17z/data=!3m2!4b1!5s0x390ce45ec9dda3cd:0xd646b54c41dc923!4m6!3m5!1s0xb90a41971ed5f0f:0xb0c3dcdf8a2869c2!8m2!3d28.5825631!4d77.3143156!16s%2Fg%2F11vy5ncgyw?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D";
@@ -90,17 +91,26 @@ function preloadImageAsset(src: string) {
   return new Promise<void>((resolve) => {
     const image = new window.Image();
     let settled = false;
+    let timeout = 0;
 
-    const finish = () => {
+    const complete = () => {
       if (settled) return;
       settled = true;
+      window.clearTimeout(timeout);
+      image.onload = null;
+      image.onerror = null;
+      resolve();
+    };
 
+    timeout = window.setTimeout(complete, CONTACT_ASSET_TIMEOUT_MS);
+
+    const finish = () => {
       if (typeof image.decode !== "function") {
-        resolve();
+        complete();
         return;
       }
 
-      image.decode().then(resolve).catch(resolve);
+      image.decode().then(complete).catch(complete);
     };
 
     image.onload = finish;
