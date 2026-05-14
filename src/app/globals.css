@@ -2630,13 +2630,16 @@ body {
 
   .frameworks-saos-row {
     margin-top: 46px;
-    padding-bottom: 238px
+    padding-bottom: 0
   }
 
   .frameworks-saos-logo {
-    width: min(100%, 656px);
-    bottom: 0;
-    right: 0
+    width: min(82vw, 330px);
+    margin: 18px auto 0;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto
   }
 }
 
@@ -3231,6 +3234,22 @@ body::-webkit-scrollbar:horizontal {
   .frameworks-title-banner h2 {
     overflow-wrap: anywhere;
   }
+
+}
+
+@media (max-width: 768px) {
+  .frameworks-saos-logo {
+    display: block !important;
+    width: min(82vw, 330px) !important;
+    margin: 18px auto 0 !important;
+    left: auto !important;
+    right: auto !important;
+    transform-origin: center center !important;
+  }
+
+  .frameworks-saos-logo-image {
+    object-position: center center !important;
+  }
 }
 
 /* Global stripe tuning: 2x speed (size unchanged) */
@@ -3661,7 +3680,7 @@ body:has(.contact-cinematic-experience) {
 
   .home-techsnitch-type {
     top: 46%;
-    font-size: clamp(58px, 17vw, 112px);
+    font-size: 64px;
   }
 
   .cinematic-poster {
@@ -3697,6 +3716,10 @@ body:has(.contact-cinematic-experience) {
     min-height: 2060px;
   }
 
+  .home-techsnitch-type {
+    font-size: 40px;
+  }
+
   .home-cinematic-sticky {
     border-radius: 0;
   }
@@ -3714,5 +3737,11 @@ body:has(.contact-cinematic-experience) {
   .home-intro-copy--left h1 span {
     max-width: calc(100vw - 36px);
     white-space: normal;
+  }
+}
+
+@media (max-width: 360px) {
+  .home-techsnitch-type {
+    font-size: 36px;
   }
 }

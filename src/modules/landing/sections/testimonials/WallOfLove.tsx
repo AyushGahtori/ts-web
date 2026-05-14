@@ -90,6 +90,7 @@ export function WallOfLove() {
             height={811}
             sizes="(max-width: 768px) 56vw, (max-width: 1180px) 30vw, 360px"
             className={styles.charactersImage}
+            unoptimized
           />
         </div>
       </div>

@@ -203,7 +203,8 @@
   }
 
   .panel {
-    padding: 16px 14px 36px;
+    position: relative;
+    padding: 16px 14px 282px;
   }
 
   .title {
@@ -223,7 +224,7 @@
       "jennifer"
       "mark";
     gap: 18px;
-    padding-bottom: 250px;
+    padding-bottom: 0;
   }
 
   .name {
@@ -239,7 +240,7 @@
   }
 
   .charactersWrap {
-    bottom: 320px;
+    bottom: 36px;
     width: min(100%, 280px);
     height: 220px;
   }

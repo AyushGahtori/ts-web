@@ -503,18 +503,52 @@
     height: 620vh;
   }
 
+  .mannequin {
+    height: 180vh;
+    width: calc(180vh * 1024 / 1536);
+    max-width: 88vw;
+  }
+
+  .heroLayer {
+    align-items: center;
+    padding: 96px 20px 0;
+  }
+
+  .title {
+    width: 100%;
+    padding-left: 0;
+    font-size: clamp(48px, 10.5vw, 80px);
+    line-height: 0.96;
+    letter-spacing: -0.025em;
+    text-align: center;
+  }
+
   .glassRow {
     flex-direction: column;
     gap: 16px;
     bottom: 8vh;
+    padding: 0 24px;
+    align-items: center;
   }
 
   .glassCard {
-    min-height: 140px;
+    width: min(100%, 500px);
+    min-height: 118px;
+    border-radius: 28px;
   }
 
   .rail {
     display: none;
+  }
+
+  .iconBlob {
+    width: clamp(164px, 32vw, 240px);
+    height: clamp(164px, 32vw, 240px);
+  }
+
+  .iconArt {
+    width: clamp(104px, 20vw, 150px);
+    height: clamp(104px, 20vw, 150px);
   }
 
   .mapCard {
@@ -525,12 +559,25 @@
   }
 
   .callBlock {
+    left: 50%;
+    top: 34%;
+    width: min(78vw, 340px);
+    translate: -50% 0;
     font-size: 22px;
+    line-height: 1.36;
+    text-align: center;
+    color: rgba(46, 45, 45, 0.7);
+  }
+
+  .callBlock h3 {
+    margin-bottom: 10px;
   }
 
   .emailFormWrap {
     width: min(92vw, 460px);
-    right: 4vw;
+    left: 50%;
+    right: auto;
+    translate: -50% 0;
     /* Stays vertically centred on mobile — Motion's `calc(-50% + ...)` y
        animation only works correctly from a top:50% anchor. */
   }
@@ -543,10 +590,185 @@
   .followLabel,
   .reachLabel {
     top: 8vh;
+    font-size: 24px;
+  }
+
+  .followLabel {
+    left: 50%;
+    translate: -50% 0;
+  }
+
+  .reachLabel {
+    right: auto;
+    left: 50%;
+    translate: -50% 0;
+  }
+
+  .footprintAnchor {
+    width: clamp(44px, 9vw, 68px);
   }
 
   .standalone .heroLayer {
-    padding-top: 132px;
+    padding-top: 110px;
+  }
+}
+
+@media (max-width: 640px) {
+  .stage {
+    min-height: 100svh;
+  }
+
+  .stage::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 90px;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(233, 211, 211, 0) 0%, #e9d3d3 46%, #e9d3d3 100%);
+  }
+
+  .mannequin {
+    height: 170vh;
+    width: calc(170vh * 1024 / 1536);
+    max-width: 86vw;
+  }
+
+  .groundShadow {
+    width: 72vw;
+    bottom: -18px;
+  }
+
+  .heroLayer {
+    padding: 78px 16px 0;
+  }
+
+  .standalone .heroLayer {
+    padding-top: 146px;
+  }
+
+  .title {
+    font-size: clamp(34px, 12.4vw, 48px);
+  }
+
+  .glassRow {
+    left: 0;
+    right: 0;
+    top: clamp(272px, 48svh, 330px);
+    bottom: auto;
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  .glassCard {
+    width: min(100%, 380px);
+    min-height: 104px;
+    padding: 18px 16px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.46);
+    color: #bb4f4f;
+    font-size: 15px;
+    line-height: 1.24;
+  }
+
+  .iconBlob {
+    width: 150px;
+    height: 150px;
+  }
+
+  .iconArt {
+    width: 94px;
+    height: 94px;
+  }
+
+  .emailIconBlob,
+  .emailIconArt {
+    display: none;
+  }
+
+  .callBlock {
+    top: 32%;
+    width: min(84vw, 300px);
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .callBlock h3 {
+    margin-bottom: 9px;
+    letter-spacing: 0.03em;
+  }
+
+  .emailFormWrap {
+    width: min(calc(100vw - 28px), 390px);
+  }
+
+  .emailForm {
+    border-radius: 22px;
+  }
+
+  .followLabel,
+  .reachLabel {
+    top: 10vh;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .followLabel {
+    left: 22px;
+    translate: 0 0;
+  }
+
+  .reachLabel {
+    right: 22px;
+    left: auto;
+    translate: 0 0;
+  }
+
+  .footprintAnchor {
+    width: 38px;
+  }
+
+  .footprintAnchor:nth-child(1) {
+    left: 35% !important;
+    top: 86% !important;
+  }
+
+  .footprintAnchor:nth-child(2) {
+    left: 42% !important;
+    top: 75% !important;
+  }
+
+  .footprintAnchor:nth-child(3) {
+    left: 36% !important;
+    top: 64% !important;
+  }
+
+  .footprintAnchor:nth-child(4) {
+    left: 47% !important;
+    top: 53% !important;
+  }
+
+  .footprintAnchor:nth-child(5) {
+    left: 41% !important;
+    top: 43% !important;
+  }
+
+  .footprintAnchor:nth-child(6) {
+    left: 53% !important;
+    top: 34% !important;
+  }
+
+  .footprintAnchor:nth-child(7) {
+    left: 47% !important;
+    top: 25% !important;
+  }
+
+  .footprintAnchor:nth-child(8) {
+    left: 55% !important;
+    top: 18% !important;
   }
 }
 
