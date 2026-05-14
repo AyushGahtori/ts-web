@@ -22,7 +22,7 @@ const cards: PortfolioCard[] = [
     title: "Implementation & Transformation",
     copy:
       "Precision execution across the full ServiceNow ecosystem, powered by pre-configured accelerators that dramatically reduce project timelines and implementation risk.",
-    image: "/ChatGPT%20Image%20May%2010,%202026,%2009_46_05%20PM%201.svg",
+    image: "/ChatGPT%20Image%20May%2010,%202026,%2009_46_05%20PM%201.webp",
     slug: "implementation-transformation",
     tone: "delivery",
   },
@@ -32,7 +32,7 @@ const cards: PortfolioCard[] = [
     title: "AI & GenAI Enablement",
     copy:
       "We move AI from pilot to production at scale, with governance, and without locking you into a single vendor. From multi-model orchestration to GenAI copilots, we operationalize intelligence.",
-    image: "/image%2015.svg",
+    image: "/image%2015.webp",
     slug: "ai-genai-enablement",
     tone: "intelligence",
   },
@@ -42,7 +42,7 @@ const cards: PortfolioCard[] = [
     title: "Managed Services",
     copy:
       "Our managed services are a strategic operational extension of your enterprise - proactive, predictive, and perpetually optimizing your platform.",
-    image: "/image%2016.svg",
+    image: "/image%2016.webp",
     slug: "managed-services",
     tone: "operations",
   },
@@ -52,7 +52,7 @@ const cards: PortfolioCard[] = [
     title: "Strategic Advisory & Consulting",
     copy:
       "We co-create transformation strategies grounded in platform intelligence, industry benchmarks, and your organizational context.",
-    image: "/image%2017.svg",
+    image: "/image%2017.webp",
     slug: "strategic-advisory-consulting",
     tone: "advisory",
   },

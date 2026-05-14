@@ -22,7 +22,7 @@ export function WhyUsSection() {
           <MotionSection className={styles.visualColumn} direction="left">
             <div className={styles.visualStage}>
               <Image
-                src="/image 45.png"
+                src="/image 45.webp"
                 alt=""
                 aria-hidden="true"
                 width={726}

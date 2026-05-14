@@ -7,7 +7,7 @@ export function MascotRow() {
       <div className={styles.mascotGlow} aria-hidden />
       <div className={styles.mascotImageWrap}>
         <Image
-          src="/Footer.png"
+          src="/Footer.webp"
           alt=""
           fill
           sizes="(max-width: 768px) 88vw, (max-width: 1200px) 68vw, 980px"

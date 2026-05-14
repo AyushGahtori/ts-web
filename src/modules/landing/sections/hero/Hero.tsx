@@ -40,7 +40,7 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-01",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_08_40 PM 1.svg",
+    file: "ChatGPT Image May 8, 2026, 01_08_40 PM 1.webp",
     left: 450,
     top: 355,
     width: 138,
@@ -60,7 +60,7 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-02",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_08_49 PM 1.svg",
+    file: "ChatGPT Image May 8, 2026, 01_08_49 PM 1.webp",
     left: 520,
     top: 240,
     width: 132,
@@ -80,11 +80,11 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-03",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_08_55 PM 1.svg",
-    left: 654,
-    top: 192,
-    width: 128,
-    rotate: 24,
+    file: "ChatGPT Image May 14, 2026, 05_18_28 PM 1.webp",
+    left: 666,
+    top: 178,
+    width: 182,
+    rotate: 12,
     layer: 17,
     outX: 350,
     outY: -244,
@@ -100,7 +100,7 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-04",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_09_01 PM 1.svg",
+    file: "ChatGPT Image May 8, 2026, 01_09_01 PM 1.webp",
     left: 780,
     top: 245,
     width: 132,
@@ -120,7 +120,7 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-05",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_09_06 PM 1.svg",
+    file: "ChatGPT Image May 8, 2026, 01_09_06 PM 1.webp",
     left: 688,
     top: 305,
     width: 154,
@@ -139,7 +139,7 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-06",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_09_14 PM 1.svg",
+    file: "ChatGPT Image May 8, 2026, 01_09_14 PM 1.webp",
     left: 784,
     top: 488,
     width: 132,
@@ -158,7 +158,7 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-07",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_09_19 PM 1.svg",
+    file: "ChatGPT Image May 8, 2026, 01_09_19 PM 1.webp",
     left: 654,
     top: 544,
     width: 132,
@@ -177,7 +177,7 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-08",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_09_32 PM 1.svg",
+    file: "ChatGPT Image May 8, 2026, 01_09_32 PM 1.webp",
     left: 518,
     top: 488,
     width: 132,
@@ -197,7 +197,7 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-09",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_09_51 PM 1.svg",
+    file: "ChatGPT Image May 8, 2026, 01_09_51 PM 1.webp",
     left: 570,
     top: 345,
     width: 118,
@@ -216,7 +216,7 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-11",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_10_05 PM 1.svg",
+    file: "ChatGPT Image May 8, 2026, 01_10_05 PM 1.webp",
     left: 740,
     top: 420,
     width: 120,
@@ -235,7 +235,7 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-12",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_10_13 PM 1.svg",
+    file: "ChatGPT Image May 8, 2026, 01_10_13 PM 1.webp",
     left: 608,
     top: 426,
     width: 122,
@@ -255,7 +255,7 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-13",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_10_18 PM 1.svg",
+    file: "ChatGPT Image May 8, 2026, 01_10_18 PM 1.webp",
     left: 636,
     top: 358,
     width: 112,
@@ -274,11 +274,11 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-14",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_10_29 PM 1.svg",
-    left: 848,
-    top: 362,
-    width: 138,
-    rotate: 74,
+    file: "ChatGPT Image May 14, 2026, 05_18_51 PM 1.webp",
+    left: 836,
+    top: 342,
+    width: 154,
+    rotate: 12,
     layer: 18,
     outX: 322,
     outY: 314,

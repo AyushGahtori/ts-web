@@ -7,7 +7,7 @@ export function PortfolioSection() {
     <section className={styles.section} aria-label="Comprehensive Service Portfolio">
       <div className={styles.heroBand}>
         <div className={styles.characterArt} aria-hidden>
-          <Image src="/image%2013.svg" alt="" fill sizes="(max-width: 768px) 96vw, 760px" className={styles.characterImage} loading="eager" />
+          <Image src="/image%2013.webp" alt="" fill sizes="(max-width: 768px) 96vw, 760px" className={styles.characterImage} loading="eager" />
         </div>
         <div className={styles.arrowLeft} aria-hidden />
         <div className={styles.arrowRight} aria-hidden />

@@ -253,7 +253,7 @@ export function Navbar({ hiddenItemIds = ["about", "innovations"] }: NavbarProps
     >
       <div className="premium-nav__logo-wrap">
         <Image
-          src="/techsnitch%20logo.png"
+          src="/techsnitch%20logo.webp"
           alt="TechSnitch logo"
           width={86}
           height={52}

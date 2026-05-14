@@ -17,7 +17,7 @@ export function QualitiesSection() {
       <div className={styles.grid} aria-hidden />
       <div className={styles.wave} aria-hidden />
       <div className={styles.craftWrap} aria-hidden>
-        <Image src="/image%202.svg" alt="" fill sizes="(max-width: 768px) 92vw, 58vw" className={styles.craftImage} />
+        <Image src="/image%202.webp" alt="" fill sizes="(max-width: 768px) 92vw, 58vw" className={styles.craftImage} />
       </div>
 
       <motion.div

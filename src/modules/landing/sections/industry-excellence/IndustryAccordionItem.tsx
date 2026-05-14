@@ -55,7 +55,7 @@ export function IndustryAccordionItem({
           <div className={styles.panelSurface}>
             {decorative && isOpen ? (
               <div className={styles.spiralWrap} aria-hidden>
-                <Image src="/purple%20spiral%202.png" alt="" fill sizes="(max-width: 768px) 75vw, 42vw" className={styles.spiralImage} />
+                <Image src="/purple%20spiral%202.webp" alt="" fill sizes="(max-width: 768px) 75vw, 42vw" className={styles.spiralImage} />
               </div>
             ) : null}
 

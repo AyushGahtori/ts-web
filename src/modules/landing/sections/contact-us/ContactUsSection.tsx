@@ -10,12 +10,12 @@ import {
 } from "framer-motion";
 import styles from "./contactUs.module.css";
 
-const MANNEQUIN_SRC = "/ChatGPT%20Image%20May%208,%202026,%2012_21_54%20PM%201.svg";
+const MANNEQUIN_SRC = "/ChatGPT%20Image%20May%208,%202026,%2012_21_54%20PM%201.webp";
 const PHONE_SRC = "/Ringer%20Volume.svg";
-const EMAIL_SRC = "/image%2010.svg";
+const EMAIL_SRC = "/image%2010.webp";
 const FOOT_SRC = "/image%203.svg";
-const MAP_SRC = "/Screenshot%202026-05-12%20210119.png";
-const NAV_LOGO_SRC = "/techsnitch%20logo.png";
+const MAP_SRC = "/Screenshot%202026-05-12%20210119.webp";
+const NAV_LOGO_SRC = "/techsnitch%20logo.webp";
 
 const CONTACT_ASSETS = [
   MANNEQUIN_SRC,

@@ -26,7 +26,7 @@ export function AboutSection() {
             </div>
           </div>
           <div className="about-dim-logo" style={{ position: "absolute" }} aria-hidden>
-            <Image src="/techsnitch%20logo.png" alt="" fill sizes="(max-width: 768px) 560px, (max-width: 1280px) 1020px, 1260px" className="object-contain" />
+            <Image src="/techsnitch%20logo.webp" alt="" fill sizes="(max-width: 768px) 560px, (max-width: 1280px) 1020px, 1260px" className="object-contain" />
           </div>
         </article>
       </MotionSection>
