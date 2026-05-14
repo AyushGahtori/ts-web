@@ -28,7 +28,7 @@ const cards: ShowcaseCard[] = [
     number: 1,
     title: "Why TechSnitch",
     subtitle: "The Elite Advantage in AI-Agnostic ServiceNow Transformation",
-    imageSrc: "/ai%20agnostic%201.svg",
+    imageSrc: "/why-techsnitch/card-01-ai-agnostic.webp",
     sections: [
       {
         heading: "Key Differentiators",
@@ -55,7 +55,7 @@ const cards: ShowcaseCard[] = [
     number: 2,
     title: "AI-Agnostic Architecture",
     subtitle: "Freedom to Innovate Without Vendor Lock-In",
-    imageSrc: "/ai%20agnostic%201.svg",
+    imageSrc: "/why-techsnitch/card-02-ai-architecture.webp",
     sections: [
       {
         heading: "Supported AI Ecosystems",
@@ -71,7 +71,7 @@ const cards: ShowcaseCard[] = [
     number: 3,
     title: "Solutions",
     subtitle: "Purpose-Built Solutions for Enterprise Transformation",
-    imageSrc: "/solutions%201.svg",
+    imageSrc: "/why-techsnitch/card-03-solutions.webp",
     sections: [
       {
         heading: "Key Solution Offerings",
@@ -87,7 +87,7 @@ const cards: ShowcaseCard[] = [
     number: 4,
     title: "Accelerators",
     subtitle: "Accelerating Time-to-Value with Proven Frameworks",
-    imageSrc: "/acceleratorr%201.svg",
+    imageSrc: "/why-techsnitch/card-04-accelerators.webp",
     sections: [
       {
         heading: "Key Accelerators",
@@ -103,7 +103,7 @@ const cards: ShowcaseCard[] = [
     number: 5,
     title: "Customer Success Stories",
     subtitle: "Proof Through Measurable Business Outcomes",
-    imageSrc: "/employee%201.svg",
+    imageSrc: "/why-techsnitch/card-05-customer-success.webp",
     sections: [
       {
         heading: "Story Themes",
@@ -119,7 +119,7 @@ const cards: ShowcaseCard[] = [
     number: 6,
     title: "Partnerships & Alliances",
     subtitle: "Collaborating with Industry Leaders",
-    imageSrc: "/partnership%20and%20alliance%201.svg",
+    imageSrc: "/why-techsnitch/card-06-partnerships.webp",
     sections: [
       {
         heading: "Strategic Partners",
@@ -135,7 +135,7 @@ const cards: ShowcaseCard[] = [
     number: 7,
     title: "Delivery & Engagement Model",
     subtitle: "From Vision to Value",
-    imageSrc: "/delivery%20guy%201.svg",
+    imageSrc: "/why-techsnitch/card-07-delivery.webp",
     sections: [
       {
         heading: "Delivery Framework",
@@ -151,7 +151,7 @@ const cards: ShowcaseCard[] = [
     number: 8,
     title: "Resource Center",
     subtitle: "Knowledge Hub for Digital Transformation",
-    imageSrc: "/resource%20center%201.svg",
+    imageSrc: "/why-techsnitch/card-08-resource-center.webp",
     sections: [
       {
         heading: "Content Categories",
@@ -167,7 +167,7 @@ const cards: ShowcaseCard[] = [
     number: 9,
     title: "Events & Webinars",
     subtitle: "Engage with TechSnitch Experts",
-    imageSrc: "/events%20and%20webinars%201.svg",
+    imageSrc: "/why-techsnitch/card-09-events.webp",
     sections: [
       {
         heading: "Page Sections",
@@ -183,7 +183,7 @@ const cards: ShowcaseCard[] = [
     number: 10,
     title: "ESG & Corporate Responsibility",
     subtitle: "Driving Sustainable and Responsible Innovation",
-    imageSrc: "/employee%201.svg",
+    imageSrc: "/why-techsnitch/card-10-esg.webp",
     sections: [
       {
         heading: "Responsible Innovation",
@@ -199,7 +199,7 @@ const cards: ShowcaseCard[] = [
     number: 11,
     title: "Leadership Team",
     subtitle: "Visionaries Behind TechSnitch",
-    imageSrc: "/leadership%20team%201.svg",
+    imageSrc: "/why-techsnitch/card-11-leadership.webp",
     sections: [
       {
         heading: "Profile Structure",
@@ -215,7 +215,7 @@ const cards: ShowcaseCard[] = [
     number: 12,
     title: "Technology & Integration Ecosystem",
     subtitle: "Seamless Integration Across the Enterprise",
-    imageSrc: "/pricing%201.svg",
+    imageSrc: "/why-techsnitch/card-12-ecosystem.webp",
     sections: [
       {
         heading: "Integration Capabilities",
@@ -283,10 +283,14 @@ function CardFace({ card, isActive, isPreview }: { card: ShowcaseCard; isActive:
               src={card.imageSrc}
               alt=""
               aria-hidden="true"
-              width={768}
-              height={1024}
+              width={1024}
+              height={1536}
               sizes="(max-width: 768px) 84vw, (max-width: 1260px) 42vw, 520px"
               className={styles.visualImage}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              unoptimized
             />
           </div>
         </div>
@@ -353,12 +357,29 @@ function getCardTransform(signedDistance: number, isPreviewOpen: boolean, isHove
 
 export function WhyCard() {
   const deckRegionRef = useRef<HTMLDivElement | null>(null);
+  const warmedImagesRef = useRef<Map<string, HTMLImageElement>>(new Map());
   const isDeckInView = useInView(deckRegionRef, { amount: 0.28 });
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isAutoPaused, setIsAutoPaused] = useState(false);
   const totalCards = cards.length;
+
+  const warmCardImage = useCallback((src: string, decode = false) => {
+    if (typeof window === "undefined" || warmedImagesRef.current.has(src)) {
+      return;
+    }
+
+    const image = new window.Image();
+    image.decoding = "async";
+    image.loading = "eager";
+    image.src = src;
+    warmedImagesRef.current.set(src, image);
+
+    if (decode && typeof image.decode === "function") {
+      void image.decode().catch(() => undefined);
+    }
+  }, []);
 
   const selectCard = useCallback(
     (index: number) => {
@@ -395,6 +416,18 @@ export function WhyCard() {
     const interval = window.setInterval(advanceCard, CARD_ROTATION_MS);
     return () => window.clearInterval(interval);
   }, [advanceCard, isAutoPaused, isDeckInView, isPreviewOpen]);
+
+  useEffect(() => {
+    if (!isDeckInView) {
+      return;
+    }
+
+    const adjacentCardIndexes = [activeIndex, (activeIndex + 1) % totalCards, (activeIndex - 1 + totalCards) % totalCards];
+    adjacentCardIndexes.forEach((index) => warmCardImage(cards[index].imageSrc, true));
+
+    const timers = cards.map((card, index) => window.setTimeout(() => warmCardImage(card.imageSrc), 360 + index * 70));
+    return () => timers.forEach((timer) => window.clearTimeout(timer));
+  }, [activeIndex, isDeckInView, totalCards, warmCardImage]);
 
   return (
     <div ref={deckRegionRef} className={styles.deckRegion}>
