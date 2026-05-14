@@ -15,6 +15,16 @@ const PHONE_SRC = "/Ringer%20Volume.svg";
 const EMAIL_SRC = "/image%2010.svg";
 const FOOT_SRC = "/image%203.svg";
 const MAP_SRC = "/Screenshot%202026-05-12%20210119.png";
+const NAV_LOGO_SRC = "/techsnitch%20logo.png";
+
+const CONTACT_ASSETS = [
+  MANNEQUIN_SRC,
+  PHONE_SRC,
+  EMAIL_SRC,
+  FOOT_SRC,
+  MAP_SRC,
+  NAV_LOGO_SRC,
+];
 
 const MAP_LINK =
   "https://www.google.com/maps/place/TechSnitch+Private+Limited/@28.5825678,77.3117407,17z/data=!3m2!4b1!5s0x390ce45ec9dda3cd:0xd646b54c41dc923!4m6!3m5!1s0xb90a41971ed5f0f:0xb0c3dcdf8a2869c2!8m2!3d28.5825631!4d77.3143156!16s%2Fg%2F11vy5ncgyw?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D";
@@ -76,10 +86,59 @@ function clamp01(value: number) {
   return Math.min(1, Math.max(0, value));
 }
 
-function useScrollProgress(ref: React.RefObject<HTMLDivElement | null>) {
+function preloadImageAsset(src: string) {
+  return new Promise<void>((resolve) => {
+    const image = new window.Image();
+    let settled = false;
+
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+
+      if (typeof image.decode !== "function") {
+        resolve();
+        return;
+      }
+
+      image.decode().then(resolve).catch(resolve);
+    };
+
+    image.onload = finish;
+    image.onerror = finish;
+    image.src = src;
+
+    if (image.complete) {
+      finish();
+    }
+  });
+}
+
+function useContactAssetsReady() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    Promise.all(CONTACT_ASSETS.map(preloadImageAsset)).then(() => {
+      if (!cancelled) {
+        setReady(true);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  return ready;
+}
+
+function useScrollProgress(ref: React.RefObject<HTMLDivElement | null>, enabled = true) {
   const value = useMotionValue(0);
 
   useEffect(() => {
+    if (!enabled) return undefined;
+
     let frame = 0;
 
     const update = () => {
@@ -105,7 +164,7 @@ function useScrollProgress(ref: React.RefObject<HTMLDivElement | null>) {
       window.removeEventListener("resize", onScroll);
       if (frame !== 0) window.cancelAnimationFrame(frame);
     };
-  }, [ref, value]);
+  }, [enabled, ref, value]);
 
   return value;
 }
@@ -246,7 +305,8 @@ interface ContactUsSectionProps {
 
 export function ContactUsSection({ standalone = false }: ContactUsSectionProps) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
-  const raw = useScrollProgress(scrollRef);
+  const assetsReady = useContactAssetsReady();
+  const raw = useScrollProgress(scrollRef, assetsReady);
   const progress = useSpring(raw, {
     stiffness: 70,
     damping: 24,
@@ -470,6 +530,20 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
     ["none", "none", "auto", "auto"],
   );
 
+  if (!assetsReady) {
+    return (
+      <section
+        className={`${styles.section} ${styles.assetGate} ${standalone ? `${styles.standalone} contact-cinematic-experience` : ""}`}
+        aria-label="Loading contact page"
+      >
+        <div className={styles.assetGateInner} aria-live="polite">
+          <span className={styles.assetGatePulse} aria-hidden />
+          <span className={styles.srOnly}>Loading contact page assets</span>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section
       className={`${styles.section} ${standalone ? `${styles.standalone} contact-cinematic-experience` : ""}`}
@@ -521,7 +595,7 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
               face sits at stage centre, so the blob lives near the face,
               slightly upper-right of dead-centre. */}
           <motion.div
-            className={styles.iconBlob}
+            className={`${styles.iconBlob} ${styles.phoneIconBlob}`}
             style={{
               x: "2vh",
               y: "-2vh",
@@ -531,7 +605,7 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
             aria-hidden
           />
           <motion.div
-            className={styles.iconArt}
+            className={`${styles.iconArt} ${styles.phoneIconArt}`}
             style={{
               x: "2vh",
               y: "-2vh",
