@@ -55,7 +55,7 @@ export function LifeAtPillarsSection() {
               <span className={styles.cloudPuffLarge} />
               <span className={styles.cloudPuffMedium} />
               <span className={styles.cloudPuffSmall} />
-              <Image src="/image 45.png" alt="" width={746} height={1018} className={styles.pillarThinker} />
+              <Image src="/image 45.webp" alt="" width={746} height={1018} className={styles.pillarThinker} />
             </motion.div>
             <motion.div
               className={styles.pillarBand}
@@ -142,7 +142,7 @@ export function LifeAtPillarsSection() {
               transition={{ ...itemTransition, delay: 0.04 }}
               aria-hidden
             >
-              <Image src="/global-person.png" alt="" width={541} height={447} className={styles.pillarGlobeImage} />
+              <Image src="/global-person.webp" alt="" width={541} height={447} className={styles.pillarGlobeImage} />
             </motion.div>
             <motion.div
               className={styles.pillarBand}

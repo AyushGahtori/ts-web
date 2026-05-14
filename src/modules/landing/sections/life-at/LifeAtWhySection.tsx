@@ -89,7 +89,7 @@ export function LifeAtWhySection() {
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.72, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
       >
-        <Image src="/search-person.png" alt="" width={505} height={653} className={styles.whyPersonImage} />
+        <Image src="/search-person.webp" alt="" width={505} height={653} className={styles.whyPersonImage} />
       </motion.div>
     </section>
   );

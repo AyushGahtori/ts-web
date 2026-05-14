@@ -11,7 +11,7 @@ export function AcceleratorsSection() {
             <span />
           </div>
           <div className="accelerators-spiral-bg" aria-hidden>
-            <Image src="/Purple%20spiral%201.png" alt="" fill className="accelerators-spiral-bg-image" />
+            <Image src="/Purple%20spiral%201.webp" alt="" fill className="accelerators-spiral-bg-image" />
           </div>
           <div className="accelerators-content">
             <p className="accelerators-copy">

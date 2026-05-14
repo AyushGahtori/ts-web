@@ -21,7 +21,7 @@ export function FrameworksSection() {
   return (
     <section className="frameworks-section">
       <div className="frameworks-wave-bg" style={{ position: "absolute", inset: 0 }} aria-hidden>
-        <Image src="/Purple%20stream.png" alt="" fill sizes="100vw" loading="eager" className="frameworks-wave-image" />
+        <Image src="/Purple%20stream.webp" alt="" fill sizes="100vw" loading="eager" className="frameworks-wave-image" />
       </div>
 
       <header className="frameworks-title-wrap">
@@ -43,7 +43,7 @@ export function FrameworksSection() {
               aria-label="Open SNADA agent"
               className="frameworks-snada-link"
             >
-              <Image src="/snada.png" alt="" fill sizes="(max-width: 1120px) 88vw, 46vw" className="frameworks-snada-logo-image" />
+              <Image src="/snada.webp" alt="" fill sizes="(max-width: 1120px) 88vw, 46vw" className="frameworks-snada-logo-image" />
             </Link>
           </MotionSection>
 
@@ -92,7 +92,7 @@ export function FrameworksSection() {
             aria-label="Open SNADA agent"
             className="frameworks-saos-link"
           >
-            <Image src="/ChatGPT%20Image%20May%2011,%202026,%2012_26_49%20PM%201.svg" alt="" fill sizes="(max-width: 1120px) 85vw, 41vw" className="frameworks-saos-logo-image" />
+            <Image src="/ChatGPT%20Image%20May%2011,%202026,%2012_26_49%20PM%201.webp" alt="" fill sizes="(max-width: 1120px) 85vw, 41vw" className="frameworks-saos-logo-image" />
           </Link>
         </MotionSection>
       </div>

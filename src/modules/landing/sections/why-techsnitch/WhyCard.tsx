@@ -55,7 +55,7 @@ const cards: ShowcaseCard[] = [
     number: 2,
     title: "AI-Agnostic Architecture",
     subtitle: "Freedom to Innovate Without Vendor Lock-In",
-    imageSrc: "/why-techsnitch/card-02-ai-architecture.webp",
+    imageSrc: "/why-techsnitch/card-07-delivery.webp",
     sections: [
       {
         heading: "Supported AI Ecosystems",
@@ -135,7 +135,7 @@ const cards: ShowcaseCard[] = [
     number: 7,
     title: "Delivery & Engagement Model",
     subtitle: "From Vision to Value",
-    imageSrc: "/why-techsnitch/card-07-delivery.webp",
+    imageSrc: "/why-techsnitch/card-02-ai-architecture.webp",
     sections: [
       {
         heading: "Delivery Framework",

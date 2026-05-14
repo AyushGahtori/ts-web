@@ -13,7 +13,7 @@ export function HeroVisual() {
       transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
     >
       <Image
-        src="/Hands.png"
+        src="/Hands.webp"
         alt=""
         fill
         loading="eager"

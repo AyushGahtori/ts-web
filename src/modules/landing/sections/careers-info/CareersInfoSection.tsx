@@ -32,7 +32,7 @@ export function CareersInfoSection() {
         <div className={styles.topRule} aria-hidden />
         <div className={styles.gradientBlob} aria-hidden>
           <Image
-            src="/Purple%20spiral%201.png"
+            src="/Purple%20spiral%201.webp"
             alt=""
             fill
             sizes="(max-width: 768px) 80vw, 56vw"

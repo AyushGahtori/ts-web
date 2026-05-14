@@ -10,7 +10,7 @@ export function AboutPhonePlaceholder() {
 
       <div className={styles.phoneShell}>
         <Image
-          src="/phone.png"
+          src="/phone.webp"
           alt=""
           fill
           sizes="(max-width: 768px) 320px, (max-width: 1024px) 420px, 504px"

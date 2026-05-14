@@ -7,6 +7,8 @@ interface HomeAssetGateProps {
   assetSources: string[];
 }
 
+const HOME_ASSET_TIMEOUT_MS = 4500;
+
 let homeAssetsKey: string | null = null;
 let homeAssetsPromise: Promise<void> | null = null;
 
@@ -15,30 +17,61 @@ function preloadImage(src: string) {
     const image = new Image();
     image.decoding = "async";
     image.loading = "eager";
+    let settled = false;
+    const timeout = window.setTimeout(finish, HOME_ASSET_TIMEOUT_MS);
 
-    image.onload = () => {
-      if (typeof image.decode !== "function") {
-        resolve();
+    function finish() {
+      if (settled) {
         return;
       }
 
-      image.decode().then(resolve, resolve);
+      settled = true;
+      window.clearTimeout(timeout);
+      image.onload = null;
+      image.onerror = null;
+      resolve();
+    }
+
+    image.onload = () => {
+      if (typeof image.decode !== "function") {
+        finish();
+        return;
+      }
+
+      image.decode().then(finish, finish);
     };
-    image.onerror = () => resolve();
+    image.onerror = finish;
     image.src = src;
   });
 }
 
 function waitForImageElement(image: HTMLImageElement) {
   return new Promise<void>((resolve) => {
-    const finish = () => {
-      if (typeof image.decode !== "function") {
-        resolve();
+    let settled = false;
+    let timeout = 0;
+
+    const complete = () => {
+      if (settled) {
         return;
       }
 
-      image.decode().then(resolve, resolve);
+      settled = true;
+      window.clearTimeout(timeout);
+      image.removeEventListener("load", finish);
+      image.removeEventListener("error", finish);
+      resolve();
     };
+
+    const finish = () => {
+      if (typeof image.decode !== "function") {
+        complete();
+        return;
+      }
+
+      image.decode().then(complete, complete);
+    };
+
+    timeout = window.setTimeout(complete, HOME_ASSET_TIMEOUT_MS);
 
     if (image.complete && image.naturalWidth > 0) {
       finish();
@@ -46,7 +79,7 @@ function waitForImageElement(image: HTMLImageElement) {
     }
 
     image.addEventListener("load", finish, { once: true });
-    image.addEventListener("error", () => resolve(), { once: true });
+    image.addEventListener("error", finish, { once: true });
   });
 }
 

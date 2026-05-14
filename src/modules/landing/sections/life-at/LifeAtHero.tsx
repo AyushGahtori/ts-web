@@ -101,7 +101,7 @@ export function LifeAtHero() {
       </motion.div>
       <div className={styles.peopleWrap} aria-hidden>
         <Image
-          src="/5 persons.png"
+          src="/5 persons.webp"
           alt=""
           width={1410}
           height={768}

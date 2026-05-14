@@ -99,7 +99,7 @@ export function LifeAtCultureSection() {
     <section ref={sectionRef} className={styles.cultureSection} data-paused={!isSectionInView} aria-label="Our culture">
       <div className={styles.cultureArt} aria-hidden>
         <Image
-          src="/coffee-person and-yoga.png"
+          src="/coffee-person and-yoga.webp"
           alt=""
           width={1800}
           height={900}
