@@ -557,7 +557,7 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
               body at the stage middle. Blob/icon hover slightly left+below
               centre, sitting against the right thigh. */}
           <motion.div
-            className={styles.iconBlob}
+            className={`${styles.iconBlob} ${styles.emailIconBlob}`}
             style={{
               x: "-22vh",
               y: "4vh",
@@ -567,7 +567,7 @@ export function ContactUsSection({ standalone = false }: ContactUsSectionProps) 
             aria-hidden
           />
           <motion.div
-            className={styles.iconArt}
+            className={`${styles.iconArt} ${styles.emailIconArt}`}
             style={{
               x: "-22vh",
               y: "4vh",

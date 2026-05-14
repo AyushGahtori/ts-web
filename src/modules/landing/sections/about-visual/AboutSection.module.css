@@ -422,6 +422,28 @@
   }
 
   .verticalRail {
+    position: relative;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    z-index: 3;
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: 0 0 16px;
+  }
+
+  .railText {
+    transform: none;
+    font-size: 2.35rem;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .railBarLongTop,
+  .railBarShortTop,
+  .railBarLongBottom,
+  .railBarShortBottom {
     display: none;
   }
 

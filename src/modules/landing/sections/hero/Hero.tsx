@@ -96,7 +96,6 @@ const homeObjects: HomeObjectAsset[] = [
     floatDuration: 7.8,
     delay: -0.9,
     priority: true,
-    flipY: true,
   },
   {
     id: "home-asset-04",
@@ -136,7 +135,6 @@ const homeObjects: HomeObjectAsset[] = [
     floatRotate: -1.2,
     floatDuration: 9.2,
     delay: -3.8,
-    flipX: true,
   },
   {
     id: "home-asset-06",

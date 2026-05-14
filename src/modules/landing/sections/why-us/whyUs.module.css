@@ -228,6 +228,15 @@
   }
 }
 
+@keyframes statueFloatCentered {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
 .section[data-paused="true"] .visualImage {
   animation-play-state: paused;
 }
@@ -403,14 +412,19 @@
 
   .visualColumn,
   .visualStage {
-    min-height: 360px;
+    min-height: 408px;
+  }
+
+  .visualColumn {
+    margin-top: 24px;
   }
 
   .visualImage {
-    width: min(100%, 420px);
+    width: min(96%, 390px);
     left: 50%;
-    bottom: 0;
+    bottom: 10px;
     transform: translateX(-50%);
+    animation-name: statueFloatCentered;
   }
 
   .metricsBlock {
