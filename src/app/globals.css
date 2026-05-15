@@ -1,6 +1,15 @@
 /*! tailwindcss v4.2.4 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
+@font-face {
+  font-family: "Ethnocentric";
+  src:
+    local("Ethnocentric Rg"),
+    local("Ethnocentric Regular"),
+    local("Ethnocentric");
+  font-display: swap;
+}
+
 @layer theme {
   :root, :host {
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
@@ -321,9 +330,7 @@ body {
 .home-asset-gate {
   width: 100%;
   min-height: 100vh;
-  background:
-    radial-gradient(72% 56% at 51% 42%, rgba(255, 255, 255, .2) 0%, rgba(255, 255, 255, 0) 64%),
-    linear-gradient(180deg, #ead7d8 0%, #dfc8ca 100%);
+  background: #632196;
 }
 
 .home-asset-prepaint {
@@ -3478,17 +3485,17 @@ body::-webkit-scrollbar:horizontal {
 }
 
 .landing-root:has(.home-cinematic-experience) {
-  background: #e5d1d2 !important;
+  background: #632196 !important;
 }
 
 .landing-canvas:has(.home-cinematic-experience) {
-  background: #e5d1d2 !important;
+  background: #632196 !important;
   border-radius: 0 !important;
 }
 
 html:has(.home-cinematic-experience),
 body:has(.home-cinematic-experience) {
-  background: #e5d1d2 !important;
+  background: #632196 !important;
   overflow-x: clip !important;
   overflow-y: visible !important;
   overscroll-behavior: none !important;
@@ -3548,9 +3555,7 @@ body:has(.contact-cinematic-experience) {
   inset: 0;
   overflow: hidden;
   transform-origin: center;
-  background:
-    radial-gradient(72% 56% at 51% 42%, rgba(255, 255, 255, .2) 0%, rgba(255, 255, 255, 0) 64%),
-    linear-gradient(180deg, #ead7d8 0%, #dfc8ca 100%);
+  background: #632196;
   will-change: opacity, transform;
 }
 
@@ -3572,12 +3577,12 @@ body:has(.contact-cinematic-experience) {
   z-index: 132;
   top: 54%;
   left: 50%;
-  width: 100%;
+  width: min(92vw, 1520px);
   color: rgba(255, 255, 255, .98);
-  font-family: var(--font-inter), sans-serif;
-  font-size: clamp(74px, 14vw, 200px);
-  font-weight: 500;
-  line-height: .94;
+  font-family: "Ethnocentric", "Ethnocentric Rg", "Eurostile Extended", "Bank Gothic", var(--font-inter), sans-serif;
+  font-size: clamp(56px, 11.4vw, 164px);
+  font-weight: 400;
+  line-height: .9;
   letter-spacing: 0;
   text-align: center;
   white-space: nowrap;
@@ -3639,9 +3644,10 @@ body:has(.contact-cinematic-experience) {
 .home-intro-copy {
   position: absolute;
   z-index: 140;
-  color: #0c0d0d;
+  color: #fff;
   font-family: var(--font-inter), sans-serif;
   letter-spacing: 0;
+  text-shadow: 0 12px 34px rgba(0, 0, 0, .34);
   transform-style: preserve-3d;
   will-change: opacity, transform;
 }
@@ -3654,7 +3660,7 @@ body:has(.contact-cinematic-experience) {
 
 .home-intro-copy--left p {
   margin: 0 0 7px;
-  color: #1d1b1c;
+  color: rgba(255, 255, 255, .84);
   font-size: clamp(11px, 1.12vw, 16px);
   font-weight: 600;
   line-height: 1.2;
@@ -3663,7 +3669,7 @@ body:has(.contact-cinematic-experience) {
 
 .home-intro-copy--left h1 {
   margin: 0;
-  color: #0c0d0d;
+  color: #fff;
   font-size: clamp(26px, 3.15vw, 46px);
   font-weight: 500;
   line-height: 1.08;
@@ -3675,9 +3681,10 @@ body:has(.contact-cinematic-experience) {
   margin-top: 4px;
   padding: 4px 10px 6px;
   color: #fff;
-  background: #0c0d0d;
+  background: rgba(12, 13, 13, .88);
   font-weight: 800;
   line-height: 1;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, .18);
 }
 
 .home-intro-copy--right {
@@ -3685,7 +3692,7 @@ body:has(.contact-cinematic-experience) {
   bottom: clamp(48px, 7.5vh, 78px);
   width: min(610px, 38vw);
   margin: 0;
-  color: #171414;
+  color: rgba(255, 255, 255, .88);
   font-size: clamp(13px, 1.12vw, 18px);
   font-weight: 500;
   line-height: 1.55;
@@ -3811,7 +3818,7 @@ body:has(.contact-cinematic-experience) {
 
   .home-techsnitch-type {
     top: 46%;
-    font-size: 64px;
+    font-size: clamp(42px, 11vw, 64px);
   }
 
   .cinematic-poster {
@@ -3848,7 +3855,7 @@ body:has(.contact-cinematic-experience) {
   }
 
   .home-techsnitch-type {
-    font-size: 40px;
+    font-size: clamp(30px, 10.4vw, 40px);
   }
 
   .home-cinematic-sticky {
@@ -3873,6 +3880,6 @@ body:has(.contact-cinematic-experience) {
 
 @media (max-width: 360px) {
   .home-techsnitch-type {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
