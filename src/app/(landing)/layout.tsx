@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Monda, Monoton } from "next/font/google";
+import { Madimi_One, Monda, Monoton } from "next/font/google";
 import "../globals.css";
 
 const monoton = Monoton({
@@ -17,6 +17,13 @@ const monda = Monda({
   display: "swap",
 });
 
+const madimiOne = Madimi_One({
+  variable: "--font-madimi-one",
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
 export default function LandingLayout({ children }: Readonly<{ children: ReactNode }>) {
-  return <div className={`${monoton.variable} ${monda.variable}`}>{children}</div>;
+  return <div className={`${monoton.variable} ${monda.variable} ${madimiOne.variable}`}>{children}</div>;
 }
