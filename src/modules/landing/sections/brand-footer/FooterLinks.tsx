@@ -67,6 +67,8 @@ export function FooterLinks() {
           </a>
         </div>
       </div>
+
+      <p className={styles.footerCopyright}>Copyright &copy; 2026 TechSnich</p>
     </div>
   );
 }
