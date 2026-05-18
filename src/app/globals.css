@@ -3531,7 +3531,7 @@ body:has(.contact-cinematic-experience) {
   overflow: hidden;
   isolation: isolate;
   perspective: 1300px;
-  background: var(--home-violet-fade);
+  background: transparent;
   border-radius: 0;
   contain: layout paint;
 }
