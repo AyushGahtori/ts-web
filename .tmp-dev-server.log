@@ -1,0 +1,130 @@
+
+> ts-web@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.29.88:3000
+- Environments: .env.local
+✓ Ready in 751ms
+- Experiments (use with caution):
+  · optimizePackageImports
+
+ GET / 200 in 561ms (next.js: 173ms, application-code: 388ms)
+ GET / 200 in 66ms (next.js: 3ms, application-code: 63ms)
+ GET / 200 in 52ms (next.js: 3ms, application-code: 50ms)
+ GET / 200 in 60ms (next.js: 3ms, application-code: 57ms)
+ GET / 200 in 59ms (next.js: 3ms, application-code: 56ms)
+ GET / 200 in 44ms (next.js: 2ms, application-code: 42ms)
+ GET / 200 in 59ms (next.js: 3ms, application-code: 57ms)
+ GET /whyus 200 in 260ms (next.js: 58ms, application-code: 202ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/whyus" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="inter_1365...">
+                          <body
+-                           data-new-gr-c-s-check-loaded="14.1137.0"
+-                           data-gr-ext-installed=""
+                          >
+                  ...
+ 
+ GET / 200 in 113ms (next.js: 7ms, application-code: 106ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+✓ Compiled in 82ms
+ GET / 200 in 66ms (next.js: 4ms, application-code: 62ms)
+ GET / 200 in 97ms (next.js: 4ms, application-code: 93ms)
+ GET / 200 in 111ms (next.js: 5ms, application-code: 106ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+ GET / 200 in 151ms (next.js: 8ms, application-code: 144ms)
+ GET / 200 in 193ms (next.js: 4ms, application-code: 188ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+ GET / 200 in 149ms (next.js: 7ms, application-code: 142ms)
+ GET / 200 in 198ms (next.js: 5ms, application-code: 193ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+ GET / 200 in 105ms (next.js: 5ms, application-code: 100ms)
+ GET / 200 in 80ms (next.js: 3ms, application-code: 77ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+ GET / 200 in 205ms (next.js: 8ms, application-code: 197ms)
+ GET / 200 in 178ms (next.js: 4ms, application-code: 174ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+✓ Compiled in 93ms
+ GET / 200 in 533ms (next.js: 196ms, application-code: 338ms)
+ GET / 200 in 422ms (next.js: 11ms, application-code: 411ms)
+ GET / 200 in 226ms (next.js: 5ms, application-code: 222ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+✓ Compiled in 39ms
+ GET / 200 in 420ms (next.js: 240ms, application-code: 180ms)
+ GET / 200 in 310ms (next.js: 15ms, application-code: 296ms)
+ GET / 200 in 244ms (next.js: 5ms, application-code: 239ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+✓ Compiled in 93ms
+ GET / 200 in 120ms (next.js: 7ms, application-code: 113ms)
+ GET / 200 in 86ms (next.js: 2ms, application-code: 84ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+✓ Compiled in 74ms
+ GET / 200 in 109ms (next.js: 5ms, application-code: 103ms)
+ GET / 200 in 101ms (next.js: 2ms, application-code: 98ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+✓ Compiled in 645ms
+ GET / 200 in 1482ms (next.js: 280ms, application-code: 1203ms)
+ GET / 200 in 716ms (next.js: 13ms, application-code: 703ms)
+ GET / 200 in 558ms (next.js: 22ms, application-code: 536ms)
+ GET / 200 in 555ms (next.js: 299ms, application-code: 256ms)
+ GET / 200 in 556ms (next.js: 409ms, application-code: 147ms)
+ GET / 200 in 567ms (next.js: 166ms, application-code: 401ms)
+ GET / 200 in 668ms (next.js: 23ms, application-code: 645ms)
+ GET / 200 in 365ms (next.js: 24ms, application-code: 341ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+ GET / 200 in 330ms (next.js: 19ms, application-code: 311ms)
+ GET / 200 in 401ms (next.js: 15ms, application-code: 386ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+✓ Compiled in 252ms
+ GET / 200 in 399ms (next.js: 31ms, application-code: 368ms)
+ GET / 200 in 357ms (next.js: 12ms, application-code: 345ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+✓ Compiled in 181ms
+ GET / 200 in 1658ms (next.js: 342ms, application-code: 1316ms)
+ GET / 200 in 1039ms (next.js: 32ms, application-code: 1006ms)
+ GET / 200 in 741ms (next.js: 26ms, application-code: 715ms)
+ GET / 200 in 742ms (next.js: 206ms, application-code: 536ms)
+ GET / 200 in 743ms (next.js: 364ms, application-code: 378ms)
+ GET / 200 in 743ms (next.js: 513ms, application-code: 230ms)
+ GET / 200 in 529ms (next.js: 16ms, application-code: 513ms)
+ GET / 200 in 558ms (next.js: 25ms, application-code: 533ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+✓ Compiled in 423ms
+ GET / 200 in 1235ms (next.js: 217ms, application-code: 1019ms)
+ GET / 200 in 594ms (next.js: 190ms, application-code: 404ms)
+ GET / 200 in 276ms (next.js: 154ms, application-code: 122ms)
+ GET / 200 in 278ms (next.js: 81ms, application-code: 197ms)
+ GET / 200 in 281ms (next.js: 9ms, application-code: 272ms)
+ GET / 200 in 278ms (next.js: 216ms, application-code: 63ms)
+ GET / 200 in 560ms (next.js: 9ms, application-code: 551ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)

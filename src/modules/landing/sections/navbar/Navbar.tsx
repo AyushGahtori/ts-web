@@ -224,10 +224,8 @@ export function Navbar({ hiddenItemIds = ["about", "innovations"] }: NavbarProps
 
     const revealAfterIntro = () => {
       const hero = document.querySelector<HTMLElement>(".home-cinematic-experience");
-      const sticky = hero?.querySelector<HTMLElement>(".home-cinematic-sticky");
-      const stickyHeight = sticky?.offsetHeight ?? window.innerHeight;
       const revealAt = hero
-        ? hero.getBoundingClientRect().top + window.scrollY + hero.offsetHeight - stickyHeight - 1
+        ? hero.getBoundingClientRect().top + window.scrollY + hero.offsetHeight - 1
         : window.innerHeight * 2.55;
 
       setIntroHidden(window.scrollY < revealAt);
@@ -243,6 +241,10 @@ export function Navbar({ hiddenItemIds = ["about", "innovations"] }: NavbarProps
       window.removeEventListener("resize", revealAfterIntro);
     };
   }, [pathname]);
+
+  if (hideForHomeIntro) {
+    return null;
+  }
 
   return (
     <header
