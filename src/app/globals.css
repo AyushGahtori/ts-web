@@ -301,6 +301,7 @@
   --foreground: #f8f8f8;
   --canvas-radius: 113px;
   --violet-glow: #6e0af1;
+  --home-violet-fade: linear-gradient(180deg, #632196 0%, #632196 46%, #7c43ad 66%, #d9c7ea 86%, #fff 100%);
   --magenta-glow: #ff099d
 }
 
@@ -321,7 +322,7 @@ body {
 .home-asset-gate {
   width: 100%;
   min-height: 100vh;
-  background: #632196;
+  background: var(--home-violet-fade);
 }
 
 .home-asset-prepaint {
@@ -3476,17 +3477,17 @@ body::-webkit-scrollbar:horizontal {
 }
 
 .landing-root:has(.home-cinematic-experience) {
-  background: #632196 !important;
+  background: var(--home-violet-fade) fixed !important;
 }
 
 .landing-canvas:has(.home-cinematic-experience) {
-  background: #632196 !important;
+  background: var(--home-violet-fade) fixed !important;
   border-radius: 0 !important;
 }
 
 html:has(.home-cinematic-experience),
 body:has(.home-cinematic-experience) {
-  background: #632196 !important;
+  background: var(--home-violet-fade) fixed !important;
   overflow-x: clip !important;
   overflow-y: visible !important;
   overscroll-behavior: none !important;
@@ -3530,7 +3531,7 @@ body:has(.contact-cinematic-experience) {
   overflow: hidden;
   isolation: isolate;
   perspective: 1300px;
-  background: transparent;
+  background: var(--home-violet-fade);
   border-radius: 0;
   contain: layout paint;
 }
@@ -3546,7 +3547,7 @@ body:has(.contact-cinematic-experience) {
   inset: 0;
   overflow: hidden;
   transform-origin: center;
-  background: #632196;
+  background: var(--home-violet-fade);
   will-change: opacity, transform;
 }
 
@@ -3641,6 +3642,17 @@ body:has(.contact-cinematic-experience) {
   text-shadow: 0 12px 34px rgba(0, 0, 0, .34);
   transform-style: preserve-3d;
   will-change: opacity, transform;
+}
+
+.home-intro-copy::before {
+  content: "";
+  position: absolute;
+  inset: -18px -20px;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 24px;
+  background: radial-gradient(closest-side, rgba(99, 33, 150, .5), rgba(99, 33, 150, 0));
+  filter: blur(12px);
 }
 
 .home-intro-copy--left {
