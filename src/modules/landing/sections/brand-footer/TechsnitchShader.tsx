@@ -302,6 +302,9 @@ export function TechsnitchShader() {
     const buildMask = () => {
       const container = canvas.parentElement;
       if (!container) return;
+      const wordmark = container.querySelector<HTMLElement>(`.${styles.wordmarkText}`);
+      if (!wordmark) return;
+
       const cw = container.clientWidth;
       const ch = container.clientHeight;
       if (cw <= 0 || ch <= 0) return;
@@ -320,16 +323,25 @@ export function TechsnitchShader() {
       ctx.fillStyle = "#000";
       ctx.fillRect(0, 0, pw, ph);
 
-      const fsPx = Math.min(Math.max(80, window.innerWidth * 0.135), 200) * dpr;
-      ctx.font         = `800 ${fsPx}px Inter, ui-sans-serif, system-ui, sans-serif`;
-      ctx.textAlign    = "center";
+      const containerRect = container.getBoundingClientRect();
+      const wordmarkRect = wordmark.getBoundingClientRect();
+      const computedStyle = window.getComputedStyle(wordmark);
+      const fontSize = Number.parseFloat(computedStyle.fontSize);
+      const fontWeight = computedStyle.fontWeight || "800";
+      const fontFamily = computedStyle.fontFamily || "Inter, ui-sans-serif, system-ui, sans-serif";
+      const letterSpacing = Number.parseFloat(computedStyle.letterSpacing);
+      const centerX = (wordmarkRect.left - containerRect.left + wordmarkRect.width / 2) * dpr;
+      const centerY = (wordmarkRect.top - containerRect.top + wordmarkRect.height / 2) * dpr;
+
+      ctx.font = `${fontWeight} ${fontSize * dpr}px ${fontFamily}`;
+      ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       const ext = ctx as unknown as { letterSpacing?: string };
       if (ext.letterSpacing !== undefined) {
-        ext.letterSpacing = `${Math.round(fsPx * -0.06)}px`;
+        ext.letterSpacing = `${Number.isFinite(letterSpacing) ? letterSpacing * dpr : 0}px`;
       }
       ctx.fillStyle = "#fff";
-      ctx.fillText("TECHSNITCH", pw / 2, ph / 2);
+      ctx.fillText("TECHSNITCH", centerX, centerY);
 
       gl.bindTexture(gl.TEXTURE_2D, tex);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, mc);

@@ -351,13 +351,18 @@
     border-radius: 24px;
   }
 
-  .wordmark {
-    min-height: 92px;
+  .wordmarkContainer {
+    width: min(100%, 402px);
+    min-height: 104px;
+    margin: 0 auto;
+    padding: 8px 0;
+    overflow: hidden;
   }
 
-  .wordmarkAnimatedE,
-  .wordmarkAnimatedC {
-    margin-bottom: -2px;
+  .wordmarkText {
+    font-size: clamp(2.25rem, 13.5vw, 3.6rem);
+    letter-spacing: 0;
+    line-height: 1;
   }
 
   .tagline {
