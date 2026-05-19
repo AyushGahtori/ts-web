@@ -163,8 +163,10 @@ export function Navbar({ hiddenItemIds = ["about", "innovations"] }: NavbarProps
   const headerRef = useRef<HTMLElement | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [introHidden, setIntroHidden] = useState(true);
+  const [scrollHidden, setScrollHidden] = useState(false);
   const [isOverLightBackground, setIsOverLightBackground] = useState(false);
   const hideForHomeIntro = pathname === "/" && introHidden;
+  const hideForScrollDirection = !hideForHomeIntro && !menuOpen && scrollHidden;
   const hiddenItemKey = hiddenItemIds.join("|");
   const visibleNavItems = navItems.filter((item) => !hiddenItemIds.includes(item.id));
 
@@ -244,11 +246,54 @@ export function Navbar({ hiddenItemIds = ["about", "innovations"] }: NavbarProps
     };
   }, [pathname]);
 
+  useEffect(() => {
+    let frame = 0;
+    let resetFrame = 0;
+    let lastScrollY = window.scrollY;
+
+    resetFrame = window.requestAnimationFrame(() => {
+      setScrollHidden(false);
+    });
+
+    const updateScrollVisibility = () => {
+      frame = 0;
+      const nextScrollY = window.scrollY;
+      const delta = nextScrollY - lastScrollY;
+      lastScrollY = nextScrollY;
+
+      if (Math.abs(delta) < 8) {
+        return;
+      }
+
+      if (nextScrollY < 80 || delta < 0) {
+        setScrollHidden(false);
+        return;
+      }
+
+      setScrollHidden(true);
+    };
+
+    const scheduleScrollVisibility = () => {
+      if (frame !== 0) return;
+      frame = window.requestAnimationFrame(updateScrollVisibility);
+    };
+
+    window.addEventListener("scroll", scheduleScrollVisibility, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", scheduleScrollVisibility);
+      if (frame !== 0) window.cancelAnimationFrame(frame);
+      if (resetFrame !== 0) window.cancelAnimationFrame(resetFrame);
+    };
+  }, [pathname]);
+
   return (
     <header
       ref={headerRef}
       className={`premium-nav ${isOverLightBackground ? "premium-nav--on-light" : "premium-nav--on-dark"} ${
         hideForHomeIntro ? "premium-nav--intro-hidden" : ""
+      } ${
+        hideForScrollDirection ? "premium-nav--scroll-hidden" : ""
       }`}
     >
       <div className="premium-nav__logo-wrap">

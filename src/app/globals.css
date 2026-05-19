@@ -3442,7 +3442,8 @@ body::-webkit-scrollbar:horizontal {
   transition: filter .44s cubic-bezier(.22, 1, .36, 1);
 }
 
-.premium-nav--intro-hidden {
+.premium-nav--intro-hidden,
+.premium-nav--scroll-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
