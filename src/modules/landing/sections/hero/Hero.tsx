@@ -80,11 +80,11 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-04",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_09_01 PM 1.webp",
+    file: "/ChatGPT%20Image%20May%208,%202026,%2001_10_29%20PM%202.svg",
     left: 780,
-    top: 245,
-    width: 132,
-    rotate: 50,
+    top: 274,
+    width: 190,
+    rotate: 4,
     layer: 15,
     outX: 430,
     outY: 20,
@@ -275,6 +275,10 @@ const homeObjects: HomeObjectAsset[] = [
 const foregroundHomeObjects = homeObjects.filter((item) => item.layer >= 23);
 
 function assetSrc(file: string) {
+  if (file.startsWith("/")) {
+    return file;
+  }
+
   return `/home/${file.replaceAll(" ", "%20")}`;
 }
 

@@ -68,7 +68,7 @@ export function FooterLinks() {
         </div>
       </div>
 
-      <p className={styles.footerCopyright}>Copyright &copy; 2026 TechSnich</p>
+      <p className={styles.footerCopyright}>Copyright &copy; 2026 TechSnitch</p>
     </div>
   );
 }
