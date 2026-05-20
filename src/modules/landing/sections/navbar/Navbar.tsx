@@ -168,7 +168,7 @@ export function Navbar({ hiddenItemIds = ["about", "innovations"], lockVisibleAf
   const [scrollHidden, setScrollHidden] = useState(false);
   const [isOverLightBackground, setIsOverLightBackground] = useState(false);
   const hideForHomeIntro = pathname === "/" && introHidden;
-  const hideForScrollDirection = !hideForHomeIntro && !menuOpen && scrollHidden;
+  const hideForScrollDirection = !lockVisibleAfterIntro && !hideForHomeIntro && !menuOpen && scrollHidden;
   const hiddenItemKey = hiddenItemIds.join("|");
   const visibleNavItems = navItems.filter((item) => !hiddenItemIds.includes(item.id));
 
@@ -294,9 +294,7 @@ export function Navbar({ hiddenItemIds = ["about", "innovations"], lockVisibleAf
       ref={headerRef}
       className={`premium-nav ${isOverLightBackground ? "premium-nav--on-light" : "premium-nav--on-dark"} ${
         lockVisibleAfterIntro ? "premium-nav--locked-visible" : ""
-      } ${hideForHomeIntro ? "premium-nav--intro-hidden" : ""}`}
-        hideForHomeIntro ? "premium-nav--intro-hidden" : ""
-      } ${
+      } ${hideForHomeIntro ? "premium-nav--intro-hidden" : ""} ${
         hideForScrollDirection ? "premium-nav--scroll-hidden" : ""
       }`}
     >
