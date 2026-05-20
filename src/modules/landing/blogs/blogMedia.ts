@@ -1,0 +1,66 @@
+export interface BlogMedia {
+  thumbnail: string;
+  hero: string;
+  figures: string[];
+}
+
+export const BLOG_IMAGE_SLOTS = {
+  1: "/techsnitch-blog-image-candidates/curated-generated-v2/01_the-ai-agnostic-crm-playbook-for-servicenow-transformation_v2_01.webp",
+  2: "/techsnitch-blog-image-candidates/curated-generated-v2/02_the-ai-agnostic-crm-playbook-for-servicenow-transformation_v2_01.webp",
+  3: "/techsnitch-blog-image-candidates/curated-generated-v2/03_the-ai-agnostic-crm-playbook-for-servicenow-transformation_v2_01.webp",
+  4: "/techsnitch-blog-image-candidates/curated-generated-v2/04_what-is-servicenow-ai-control-tower-the-2026-enterprise-ai-command-cente_v2_01.webp",
+  5: "/techsnitch-blog-image-candidates/curated-generated-v2/05_ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined_v2_01.webp",
+  6: "/techsnitch-blog-image-candidates/curated-generated-v2/06_now-assist-roi-what-enterprises-actually-get-with-real-numbers_v2_01.webp",
+  7: "/techsnitch-blog-image-candidates/curated-generated-v2/07_moveworks-servicenow-what-the-acquisition-actually-means-for-buyers_v2_01.webp",
+  8: "/techsnitch-blog-image-candidates/curated-generated-v2/08_armis-servicenow-autonomous-security-for-the-agentic-enterprise_v2_01.webp",
+  9: "/techsnitch-blog-image-candidates/curated-generated-v2/09_ai-without-workflows-is-just-expensive-advice-advisory-vs-agentic-ai_v2_01.webp",
+  10: "/techsnitch-blog-image-candidates/curated-generated-v2/10_servicenow-action-fabric-and-mcp-governed-execution-for-any-ai-agent_v2_01.webp",
+  11: "/techsnitch-blog-image-candidates/curated-generated-v2/11_why-every-enterprise-now-needs-an-ai-agent-kill-switch_v2_01.webp",
+  12: "/techsnitch-blog-image-candidates/curated-generated-v2/12_eu-ai-act-nist-ai-rmf-on-servicenow-a-compliance-operating-model-not-a-d_v2_01.webp",
+  13: "/techsnitch-blog-image-candidates/curated-generated-v2/13_deploying-agentic-ai-in-bfsi-under-rbi-cscrf-dpdp-and-sr-11-7_v2_01.webp",
+  14: "/techsnitch-blog-image-candidates/curated-generated-v2/14_the-ciso-s-ai-governance-playbook-from-visibility-to-enforcement_v2_01.webp",
+  15: "/techsnitch-blog-image-candidates/curated-generated-v2/15_agentic-ai-in-manufacturing-autonomous-operations-without-losing-control_v2_01.webp",
+  16: "/techsnitch-blog-image-candidates/curated-generated-v2/16_agentic-ai-in-retail-from-customer-service-to-the-pricing-agent-that-got_v2_01.webp",
+  17: "/techsnitch-blog-image-candidates/curated-generated-v2/17_agentic-ai-in-distribution-autonomous-supply-chain-coordination-governed_v2_01.webp",
+  18: "/techsnitch-blog-image-candidates/curated-generated-v2/18_agentic-ai-in-telecom-scaling-network-and-customer-operations-beyond-hea_v2_01.webp",
+  19: "/techsnitch-blog-image-candidates/curated-generated-v2/19_agentic-ai-in-media-and-technology-where-the-builders-become-the-buyers_v2_01.webp",
+  20: "/techsnitch-blog-image-candidates/curated-generated-v2/20_agentic-ai-in-aviation-autonomous-operations-under-a-zero-error-culture_v2_01.webp",
+  21: "/techsnitch-blog-image-candidates/curated-generated-v2/21_agentic-ai-in-banking-the-productivity-case-risk-will-actually-sign_v2_01.webp",
+  22: "/techsnitch-blog-image-candidates/curated-generated-v2/22_agentic-ai-in-insurance-automating-claims-and-underwriting-without-ownin_v2_01.webp",
+  23: "/techsnitch-blog-image-candidates/curated-generated-v2/23_agentic-ai-in-automotive-from-connected-vehicle-data-to-autonomous-opera_v2_01.webp",
+  24: "/techsnitch-blog-image-candidates/curated-generated-v2/24_agentic-ai-in-public-sector-citizen-services-at-scale-accountable-by-def_v2_01.webp",
+  25: "/techsnitch-blog-image-candidates/curated-generated-v2/25_what-is-servicenow-ai-control-tower-the-2026-enterprise-ai-command-cente_v2_01.webp",
+  26: "/techsnitch-blog-image-candidates/curated-generated-v2/26_ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined_v2_01.webp",
+  27: "/techsnitch-blog-image-candidates/curated-generated-v2/27_now-assist-roi-what-enterprises-actually-get-with-real-numbers_v2_01.webp",
+  28: "/techsnitch-blog-image-candidates/curated-generated-v2/28_servicenow-hrsd-across-industries-replace-the-chaos-not-your-hcm_v2_01.webp",
+  29: "/techsnitch-blog-image-candidates/curated-generated-v2/29_servicenow-grc-vs-rsa-archer-when-to-replace-when-to-integrate-irm-vrm-t_v2_01.webp",
+  30: "/techsnitch-blog-image-candidates/curated-generated-v2/30_servicenow-itom-across-industries-replace-the-monitoring-patchwork-or-be_v2_01.webp",
+  31: "/techsnitch-blog-image-candidates/curated-generated-v2/31_servicenow-itam-across-industries-replace-the-spreadsheet-end-the-audit-_v2_01.webp",
+  32: "/techsnitch-blog-image-candidates/curated-generated-v2/32_servicenow-legal-service-delivery-turn-the-legal-black-box-into-a-govern_v2_01.webp",
+  33: "/techsnitch-blog-image-candidates/curated-generated-v2/33_servicenow-csm-vs-salesforce-zendesk-when-connected-workflow-beats-a-bet_v2_01.webp",
+  34: "/techsnitch-blog-image-candidates/curated-generated-v2/34_servicenow-fsm-across-industries-when-field-work-should-run-on-the-same-_v2_01.webp",
+  35: "/techsnitch-blog-image-candidates/curated-generated-v2/35_servicenow-itsm-vs-bmc-ivanti-and-jira-the-classic-replace-and-where-int_v2_01.webp",
+  36: "/techsnitch-blog-image-candidates/curated-generated-v2/36_servicenow-workplace-service-delivery-one-front-door-for-the-physical-wo_v2_01.webp",
+  37: "/techsnitch-blog-image-candidates/curated-generated-v2/37_servicenow-security-operations-from-soc-ticket-chaos-to-governed-asset-a_v2_01.webp",
+  38: "/techsnitch-blog-image-candidates/curated-generated-v2/38_servicenow-autonomous-workforce-ai-specialists-that-finish-the-work-not-_v2_01.webp",
+  39: "/techsnitch-blog-image-candidates/curated-generated-v2/39_now-assist-vs-microsoft-copilot-agents-they-now-interoperate-so-how-do-y_v2_01.webp",
+  40: "/techsnitch-blog-image-candidates/curated-generated-v2/40_agentic-ai-in-healthcare-you-cannot-deploy-what-you-cannot-audit_v2_01.webp",
+  41: "/techsnitch-blog-image-candidates/curated-generated-v2/41_agentic-ai-in-manufacturing-the-it-ot-governance-line-that-decides-succe_v2_01.webp",
+  42: "/techsnitch-blog-image-candidates/curated-generated-v2/42_servicenow-anthropic-what-claude-can-execute-governed-work-actually-chan_v2_01.webp",
+  43: "/techsnitch-blog-image-candidates/curated-generated-v2/43_your-cmdb-is-now-your-ai-governance-foundation-is-it-good-enough_v2_01.webp",
+  44: "/techsnitch-blog-image-candidates/curated-generated-v2/44_agentic-ai-in-energy-and-utilities-autonomous-operations-on-critical-reg_v2_01.webp",
+  45: "/techsnitch-blog-image-candidates/curated-generated-v2/45_india-s-dpdp-act-and-agentic-ai-when-the-agent-acts-on-personal-data_v2_01.webp",
+  46: "/techsnitch-blog-image-candidates/curated-generated-v2/46_deploying-agentic-ai-under-singapore-s-mas-feat-and-southeast-asia-s-ai-_v2_01.webp",
+  47: "/techsnitch-blog-image-candidates/curated-generated-v2/47_the-real-roi-of-agentic-ai-isn-t-the-agent-it-s-platform-consolidation_v2_01.webp",
+  48: "/techsnitch-blog-image-candidates/curated-generated-v2/48_why-a-servicenow-pure-play-partner-beats-a-generalist-for-agentic-ai_v2_01.webp",
+  49: "/techsnitch-blog-image-candidates/curated-generated-v2/49_servicenow-otto-explained-the-single-ai-front-door-and-why-that-concentr_v2_01.webp",
+  50: "/techsnitch-blog-image-candidates/curated-generated-v2/50_nvidia-project-arc-on-servicenow-an-autonomous-desktop-agent-you-can-act_v2_01.webp",
+  51: "/techsnitch-blog-image-candidates/curated-generated-v2/51_now-assist-skill-kit-when-out-of-the-box-skills-aren-t-enough-and-the-go_v2_01.webp",
+  52: "/techsnitch-blog-image-candidates/curated-generated-v2/52_bmc-remedy-to-servicenow-a-migration-playbook-that-doesn-t-pretend-it-s-_v2_01.webp",
+  53: "/techsnitch-blog-image-candidates/curated-generated-v2/53_ai-agent-identity-the-governance-problem-hiding-inside-who-did-this_v2_01.webp",
+  54: "/techsnitch-blog-image-candidates/curated-generated-v2/54_from-itsm-to-enterprise-service-management-the-land-and-expand-that-actu_v2_01.webp",
+} as const;
+
+export function getBlogImageSlot(slot: number) {
+  return BLOG_IMAGE_SLOTS[slot as keyof typeof BLOG_IMAGE_SLOTS];
+}

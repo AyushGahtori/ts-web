@@ -1,0 +1,68 @@
+
+thread 'tokio-runtime-worker' (17772) panicked at turbopack\crates\turbo-tasks-backend\src\backend\operation\mod.rs:966:13:
+Every task must have a task type TaskGuard { task_id: TaskId { id: 2147483721 }, storage: TaskStorage { leaf_distance: LeafDistance { distance: 0, max_distance_in_buffer: 0 }, aggregation_number: AggregationNumber { base: 0, distance: 0, effective: 0 }, output_dependent: {}, output: None, upper: CounterMap({}), persistent_task_type: None, flags: TaskFlags { .0: 24, invalidator: false, immutable: false, current_session_clean: false, meta_restored: true, data_restored: true, meta_modified: false, data_modified: false, meta_snapshot: false, data_snapshot: false, prefetched: false, stateful: false }, lazy: [InProgress(Scheduled { done_event: Event, reason: ActivateInitial })] } }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'tokio-runtime-worker' (1712) panicked at turbopack\crates\turbo-tasks-backend\src\backend\operation\mod.rs:966:13:
+Every task must have a task type TaskGuard { task_id: TaskId { id: 2147483729 }, storage: TaskStorage { leaf_distance: LeafDistance { distance: 0, max_distance_in_buffer: 0 }, aggregation_number: AggregationNumber { base: 0, distance: 0, effective: 0 }, output_dependent: {}, output: None, upper: CounterMap({}), persistent_task_type: None, flags: TaskFlags { .0: 24, invalidator: false, immutable: false, current_session_clean: false, meta_restored: true, data_restored: true, meta_modified: false, data_modified: false, meta_snapshot: false, data_snapshot: false, prefetched: false, stateful: false }, lazy: [InProgress(Scheduled { done_event: Event, reason: ActivateInitial })] } }
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (file://C:/Users/Ayuu/Desktop/ts-web/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (file://C:/Users/Ayuu/Desktop/ts-web/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+⚠ Blocked cross-origin request to Next.js dev resource /_next/webpack-hmr from "127.0.0.1".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['127.0.0.1'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior (file://C:/Users/Ayuu/Desktop/ts-web/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (file://C:/Users/Ayuu/Desktop/ts-web/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+⚠ Server is approaching the used memory threshold, restarting...
+⚠ Turbopack's filesystem cache has been deleted because we previously detected an internal error in Turbopack. Builds or page loads may be slower as a result.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/blogs" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="inter_1365...">
+                          <body
+-                           data-new-gr-c-s-check-loaded="14.1137.0"
+-                           data-gr-ext-installed=""
+                          >
+                  ...
+ 
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
