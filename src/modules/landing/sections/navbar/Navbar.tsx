@@ -13,6 +13,7 @@ const navItems = [
   { id: "services", label: "Services", href: "/services" },
   { id: "join", label: "Join\u00A0Us", href: "/join-us" },
   { id: "hub", label: "Intelligence\u00A0Hub", href: "/intelligencehub" },
+  { id: "blogs", label: "Blogs", href: "/blogs" },
   { id: "innovations", label: "Innovations", href: "/innovations" },
   { id: "contact", label: "Contact\u00A0Us", href: "/contact-us" },
 ];

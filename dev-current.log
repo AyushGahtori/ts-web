@@ -1,0 +1,71 @@
+
+> ts-web@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.29.88:3000
+- Environments: .env.local
+✓ Ready in 626ms
+- Experiments (use with caution):
+  · optimizePackageImports
+
+○ Compiling / ...
+ GET / 200 in 13.6s (next.js: 10.2s, application-code: 3.4s)
+ GET / 200 in 348ms (next.js: 13ms, application-code: 335ms)
+ GET / 200 in 879ms (next.js: 37ms, application-code: 842ms)
+○ Compiling /blogs ...
+ GET /blogs 200 in 6.4s (next.js: 4.5s, application-code: 1884ms)
+ GET /blogs/what-is-servicenow-ai-control-tower-the-2026-enterprise-ai-command-center 200 in 5.1s (next.js: 4.1s, generate-params: 1253ms, application-code: 943ms)
+ GET /blogs/category/product 200 in 4.7s (next.js: 4.1s, generate-params: 1468ms, application-code: 582ms)
+ GET /blogs/category/product 200 in 263ms (next.js: 16ms, generate-params: 10ms, application-code: 247ms)
+ GET /blogs 200 in 159ms (next.js: 6ms, application-code: 153ms)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 185ms (next.js: 30ms, generate-params: 21ms, application-code: 155ms)
+ GET /blogs/category/product 200 in 816ms (next.js: 41ms, generate-params: 25ms, application-code: 776ms)
+ GET /blogs/category/product 200 in 532ms (next.js: 25ms, generate-params: 11ms, application-code: 506ms)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 6.3s (next.js: 941ms, generate-params: 30ms, application-code: 5.4s)
+ GET /blogs/category/product 200 in 1374ms (next.js: 82ms, generate-params: 35ms, application-code: 1292ms)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 6.3s (next.js: 638ms, generate-params: 21ms, application-code: 5.6s)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 409ms (next.js: 18ms, generate-params: 11ms, application-code: 391ms)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 917ms (next.js: 49ms, generate-params: 46ms, application-code: 868ms)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 941ms (next.js: 397ms, generate-params: 9ms, application-code: 544ms)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 950ms (next.js: 498ms, generate-params: 65µs, application-code: 452ms)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 4.4s (next.js: 1886ms, generate-params: 13ms, application-code: 2.5s)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 4.4s (next.js: 2.2s, generate-params: 94µs, application-code: 2.3s)
+ GET /blogs 200 in 171ms (next.js: 52ms, application-code: 119ms)
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.29.88:3000
+- Environments: .env.local
+✓ Ready in 662ms
+- Experiments (use with caution):
+  · optimizePackageImports
+
+○ Compiling /blogs ...
+ GET /blogs 200 in 4.0s (next.js: 3.6s, application-code: 399ms)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 4.3s (next.js: 4.2s, generate-params: 615ms, application-code: 185ms)
+ GET /blogs/category/enterprise 200 in 1426ms (next.js: 1364ms, generate-params: 376ms, application-code: 62ms)
+ GET /blogs/category/inspiration 200 in 58ms (next.js: 14ms, generate-params: 8ms, application-code: 43ms)
+ GET /blogs/category/research 200 in 72ms (next.js: 20ms, generate-params: 12ms, application-code: 52ms)
+ GET /blogs/category/product 200 in 93ms (next.js: 19ms, generate-params: 12ms, application-code: 74ms)
+ GET /blogs/category/culture 200 in 70ms (next.js: 21ms, generate-params: 12ms, application-code: 49ms)
+ GET /blogs/category/ai 200 in 73ms (next.js: 22ms, generate-params: 15ms, application-code: 51ms)
+ GET /blogs/category/innovation 200 in 72ms (next.js: 19ms, generate-params: 12ms, application-code: 54ms)
+ GET /blogs/category/tech 200 in 65ms (next.js: 19ms, generate-params: 11ms, application-code: 46ms)
+ GET /blogs/category/culture 200 in 66ms (next.js: 18ms, generate-params: 11ms, application-code: 48ms)
+ GET /blogs/category/product 200 in 65ms (next.js: 11ms, generate-params: 7ms, application-code: 54ms)
+✓ Compiled in 76ms
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 554ms (next.js: 311ms, generate-params: 8ms, application-code: 243ms)
+ GET /blogs/category/product 200 in 558ms (next.js: 108ms, generate-params: 9ms, application-code: 450ms)
+ GET /blogs/category/product 200 in 600ms (next.js: 7ms, generate-params: 49µs, application-code: 593ms)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 650ms (next.js: 13ms, generate-params: 44µs, application-code: 637ms)
+ GET /blogs/category/product 200 in 559ms (next.js: 17ms, generate-params: 40µs, application-code: 542ms)
+ GET /blogs/category/product 200 in 560ms (next.js: 68ms, generate-params: 41µs, application-code: 491ms)
+ GET /blogs/category/product 200 in 561ms (next.js: 138ms, generate-params: 46µs, application-code: 423ms)
+ GET /blogs/category/product 200 in 561ms (next.js: 186ms, generate-params: 35µs, application-code: 375ms)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 331ms (next.js: 17ms, generate-params: 31µs, application-code: 314ms)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 331ms (next.js: 54ms, generate-params: 34µs, application-code: 277ms)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 331ms (next.js: 101ms, generate-params: 29µs, application-code: 230ms)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 328ms (next.js: 137ms, generate-params: 33µs, application-code: 191ms)
+ GET /blogs/ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined 200 in 143ms (next.js: 18ms, generate-params: 8ms, application-code: 125ms)
+ GET /blogs/category/product 200 in 144ms (next.js: 67ms, generate-params: 8ms, application-code: 78ms)
