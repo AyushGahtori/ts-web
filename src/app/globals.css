@@ -3450,6 +3450,14 @@ body::-webkit-scrollbar:horizontal {
   transform: translate3d(0, -18px, 0);
 }
 
+.premium-nav--locked-visible:not(.premium-nav--intro-hidden) {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 @media (max-width: 980px) {
   .premium-nav::before {
     inset: -10px -12px;

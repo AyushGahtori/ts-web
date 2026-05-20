@@ -1,4 +1,5 @@
 import { docxBlogPosts } from "./docxBlogPosts";
+import { getBlogImageSlot, type BlogMedia } from "./blogMedia";
 
 export const BLOG_CATEGORIES = [
   "AI",
@@ -67,6 +68,7 @@ export interface BlogPost {
   accent: "violet" | "pink" | "ink";
   lead: string[];
   blocks: BlogBlock[];
+  media?: BlogMedia;
 }
 
 const pdfBlogPosts: BlogPost[] = [
@@ -202,7 +204,42 @@ const pdfBlogPosts: BlogPost[] = [
   },
 ];
 
-export const blogPosts: BlogPost[] = [...pdfBlogPosts, ...docxBlogPosts];
+function withMedia(post: BlogPost, media: BlogMedia): BlogPost {
+  return {
+    ...post,
+    media,
+  };
+}
+
+function requiredBlogImageSlot(slot: number) {
+  const image = getBlogImageSlot(slot);
+
+  if (!image) {
+    throw new Error(`Missing blog image slot ${slot}`);
+  }
+
+  return image;
+}
+
+const pdfPostsWithMedia = pdfBlogPosts.map((post) =>
+  withMedia(post, {
+    thumbnail: requiredBlogImageSlot(1),
+    hero: requiredBlogImageSlot(1),
+    figures: [requiredBlogImageSlot(2), requiredBlogImageSlot(3)],
+  }),
+);
+
+const docxPostsWithMedia = docxBlogPosts.map((post, index) => {
+  const image = requiredBlogImageSlot(index + 4);
+
+  return withMedia(post, {
+    thumbnail: image,
+    hero: image,
+    figures: image ? [image] : [],
+  });
+});
+
+export const blogPosts: BlogPost[] = [...pdfPostsWithMedia, ...docxPostsWithMedia];
 
 export function categoryToSlug(category: BlogCategory) {
   return category.toLowerCase().replace(/\s+/g, "-");

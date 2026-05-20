@@ -20,6 +20,7 @@ const navItems = [
 
 interface NavbarProps {
   hiddenItemIds?: string[];
+  lockVisibleAfterIntro?: boolean;
 }
 
 type RgbaColor = {
@@ -151,7 +152,7 @@ function backdropLuminanceAtPoint(x: number, y: number, header: HTMLElement) {
   return null;
 }
 
-export function Navbar({ hiddenItemIds = ["about", "innovations"] }: NavbarProps) {
+export function Navbar({ hiddenItemIds = ["about", "innovations"], lockVisibleAfterIntro = false }: NavbarProps) {
   const pathname = usePathname();
   const normalizedPath =
     pathname === "/why-us"
@@ -249,8 +250,8 @@ export function Navbar({ hiddenItemIds = ["about", "innovations"] }: NavbarProps
     <header
       ref={headerRef}
       className={`premium-nav ${isOverLightBackground ? "premium-nav--on-light" : "premium-nav--on-dark"} ${
-        hideForHomeIntro ? "premium-nav--intro-hidden" : ""
-      }`}
+        lockVisibleAfterIntro ? "premium-nav--locked-visible" : ""
+      } ${hideForHomeIntro ? "premium-nav--intro-hidden" : ""}`}
     >
       <div className="premium-nav__logo-wrap">
         <Image

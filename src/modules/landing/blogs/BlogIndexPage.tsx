@@ -2,6 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -113,9 +114,24 @@ export function BlogIndexPage({ posts, activeCategory }: BlogIndexPageProps) {
             </div>
             {featuredPost ? (
               <Link className={`${styles.featured} ${styles.reveal}`} href={`/blogs/${featuredPost.slug}`}>
-                <div className={`${styles.mediaFrame} ${styles.mediaFrameviolet}`} aria-hidden>
-                  <span />
-                  <span />
+                <div
+                  className={`${styles.mediaFrame} ${styles.mediaFrameviolet} ${featuredPost.media?.thumbnail ? styles.mediaFrameLoaded : ""}`}
+                  aria-hidden
+                >
+                  {featuredPost.media?.thumbnail ? (
+                    <Image
+                      src={featuredPost.media.thumbnail}
+                      alt=""
+                      fill
+                      priority
+                      sizes="(max-width: 980px) 100vw, 42vw"
+                    />
+                  ) : (
+                    <>
+                      <span />
+                      <span />
+                    </>
+                  )}
                 </div>
                 <div>
                   <p>{featuredPost.featuredLabel}</p>

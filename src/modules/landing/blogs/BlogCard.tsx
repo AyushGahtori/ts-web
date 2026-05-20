@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -80,9 +81,23 @@ export function BlogCard({ post, featured = false }: BlogCardProps) {
       onBlur={reset}
     >
       <Link href={`/blogs/${post.slug}`} className={styles.cardLink}>
-        <div className={`${styles.mediaFrame} ${styles[`mediaFrame${post.accent}`]}`} aria-hidden>
-          <span />
-          <span />
+        <div
+          className={`${styles.mediaFrame} ${styles[`mediaFrame${post.accent}`]} ${post.media?.thumbnail ? styles.mediaFrameLoaded : ""}`}
+          aria-hidden
+        >
+          {post.media?.thumbnail ? (
+            <Image
+              src={post.media.thumbnail}
+              alt=""
+              fill
+              sizes={featured ? "(max-width: 760px) 100vw, 44vw" : "(max-width: 760px) 100vw, 32vw"}
+            />
+          ) : (
+            <>
+              <span />
+              <span />
+            </>
+          )}
         </div>
         <div className={styles.cardBody}>
           <svg className={styles.zigZag} viewBox="0 0 360 130" aria-hidden>

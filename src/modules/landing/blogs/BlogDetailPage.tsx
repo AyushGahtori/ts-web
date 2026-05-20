@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import gsap from "gsap";
@@ -20,13 +21,40 @@ interface BlogDetailPageProps {
 const ARTICLE_ZIG_ZAG_PATH =
   "M118 0 C118 230 265 300 428 394 C640 516 612 692 326 790 C118 862 116 1050 338 1168 C564 1288 906 1228 990 1444 C1068 1644 824 1748 570 1846 C296 1950 170 2112 330 2310 C496 2514 870 2456 968 2694 C1050 2896 812 3022 548 3132 C278 3244 156 3432 344 3628 C528 3820 898 3768 984 4008 C1058 4218 800 4330 532 4448 C286 4556 166 4720 328 4920 C428 5042 594 5116 760 5200";
 
-function ArticleFigure({ label, tone }: { label: string; tone: "violet" | "pink" | "ink" }) {
+function ArticleFigure({
+  label,
+  tone,
+  imageSrc,
+  imageAlt,
+  priority = false,
+}: {
+  label: string;
+  tone: "violet" | "pink" | "ink";
+  imageSrc?: string;
+  imageAlt: string;
+  priority?: boolean;
+}) {
   return (
     <figure className={`${styles.articleFigure} ${styles[`articleFigure${tone}`]}`}>
-      <div className={styles.figurePlane} aria-hidden>
-        <span />
-        <span />
-        <span />
+      <div
+        className={`${styles.figurePlane} ${imageSrc ? styles.figurePlaneLoaded : ""}`}
+        aria-hidden={imageSrc ? undefined : true}
+      >
+        {imageSrc ? (
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            priority={priority}
+            sizes="(max-width: 760px) 100vw, 760px"
+          />
+        ) : (
+          <>
+            <span />
+            <span />
+            <span />
+          </>
+        )}
       </div>
       <figcaption>{label}</figcaption>
     </figure>
@@ -81,7 +109,15 @@ function ArticleFlowLine() {
   );
 }
 
-function ArticleBlock({ block }: { block: BlogBlock }) {
+function ArticleBlock({
+  block,
+  imageSrc,
+  imageAlt,
+}: {
+  block: BlogBlock;
+  imageSrc?: string;
+  imageAlt: string;
+}) {
   if (block.type === "heading") {
     return (
       <section className={`${styles.articleSection} ${styles.articleReveal}`}>
@@ -150,13 +186,14 @@ function ArticleBlock({ block }: { block: BlogBlock }) {
 
   return (
     <div className={styles.articleReveal}>
-      <ArticleFigure label={block.label} tone={block.tone} />
+      <ArticleFigure label={block.label} tone={block.tone} imageSrc={imageSrc} imageAlt={imageAlt} />
     </div>
   );
 }
 
 export function BlogDetailPage({ post }: BlogDetailPageProps) {
   const rootRef = useRef<HTMLDivElement | null>(null);
+  let figureIndex = 0;
 
   useGSAP(
     () => {
@@ -222,7 +259,13 @@ export function BlogDetailPage({ post }: BlogDetailPageProps) {
             <h1 className={styles.articleReveal}>{post.title}</h1>
             <p className={`${styles.articleDeck} ${styles.articleReveal}`}>{post.deck}</p>
             <div className={styles.articleReveal}>
-              <ArticleFigure label="Hero media frame" tone={post.accent} />
+              <ArticleFigure
+                label="Hero media frame"
+                tone={post.accent}
+                imageSrc={post.media?.hero}
+                imageAlt={`${post.title} hero image`}
+                priority
+              />
             </div>
           </header>
 
@@ -242,9 +285,18 @@ export function BlogDetailPage({ post }: BlogDetailPageProps) {
                   </p>
                 ))}
               </section>
-              {post.blocks.map((block, index) => (
-                <ArticleBlock key={`${block.type}-${index}`} block={block} />
-              ))}
+              {post.blocks.map((block, index) => {
+                const imageSrc = block.type === "figure" ? post.media?.figures[figureIndex++] : undefined;
+
+                return (
+                  <ArticleBlock
+                    key={`${block.type}-${index}`}
+                    block={block}
+                    imageSrc={imageSrc}
+                    imageAlt={`${post.title} ${block.type === "figure" ? block.label : "article image"}`}
+                  />
+                );
+              })}
             </div>
           </div>
         </article>

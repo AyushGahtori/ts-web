@@ -218,6 +218,23 @@
   border-radius: 999px;
 }
 
+.mediaFrame img,
+.figurePlane img {
+  object-fit: cover;
+  transform: translate3d(0, 0, 0);
+}
+
+.mediaFrameLoaded::before,
+.mediaFrameLoaded::after,
+.figurePlaneLoaded::before,
+.figurePlaneLoaded::after {
+  opacity: 0;
+}
+
+.mediaFrameLoaded {
+  background: #fbfaf8;
+}
+
 .mediaFrameviolet {
   background:
     radial-gradient(50% 60% at 70% 28%, rgba(158, 104, 255, 0.18) 0%, rgba(158, 104, 255, 0) 68%),
@@ -888,6 +905,10 @@
   height: 84px;
   border-radius: 999px;
   border: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.figurePlaneLoaded {
+  background: #fbfaf8;
 }
 
 .articleFigureviolet .figurePlane {

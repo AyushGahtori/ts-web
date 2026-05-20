@@ -26,7 +26,7 @@ export function LandingPage({ initialSectionId }: LandingPageProps) {
         <section className="landing-canvas">
           {initialSectionId ? <RouteSectionScroller sectionId={initialSectionId} /> : null}
           {!initialSectionId ? <RouteSectionScroller /> : null}
-          <Navbar />
+          <Navbar lockVisibleAfterIntro={!initialSectionId} />
           <div id="home">
             <Hero />
           </div>
