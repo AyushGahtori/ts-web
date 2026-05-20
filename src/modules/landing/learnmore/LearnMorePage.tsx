@@ -9,17 +9,29 @@ interface LearnMorePageProps {
   page: LearnMorePageData;
 }
 
+const servicePageSlugs = new Set([
+  "salesforce",
+  "enterprise-erp",
+  "microsoft-dynamics",
+  "ai-customer-development-llm",
+  "devops-cloud-infrastructure",
+  "it-service-management",
+]);
+
 export function LearnMorePage({ page }: LearnMorePageProps) {
   const firstLetter = page.title.charAt(0);
   const restTitle = page.title.slice(1);
+  const isServicePage = servicePageSlugs.has(page.slug);
+  const backHref = isServicePage ? "/services#services-grid" : "/#service-portfolio";
+  const backLabel = isServicePage ? "Services" : "Home";
 
   return (
     <main className={styles.root}>
       <section className={styles.night}>
         <div className={styles.navRow}>
-          <Link href="/#service-portfolio" className={styles.backLink}>
+          <Link href={backHref} className={styles.backLink}>
             <span aria-hidden>‹</span>
-            Home
+            {backLabel}
           </Link>
           <span className={styles.brand}>TechSnitch</span>
         </div>

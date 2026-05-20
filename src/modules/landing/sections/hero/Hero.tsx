@@ -58,31 +58,11 @@ const homeObjects: HomeObjectAsset[] = [
     priority: true,
   },
   {
-    id: "home-asset-02",
-    role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_08_49 PM 1.webp",
-    left: 520,
-    top: 240,
-    width: 132,
-    rotate: 9,
-    layer: 18,
-    outX: 48,
-    outY: -350,
-    spin: -18,
-    exitScale: 0.9,
-    floatX: -5,
-    floatY: 6,
-    floatRotate: 1.6,
-    floatDuration: 9.4,
-    delay: -2.1,
-    priority: true,
-  },
-  {
     id: "home-asset-03",
     role: "home hero object",
     file: "ChatGPT Image May 14, 2026, 05_18_28 PM 1.webp",
     left: 666,
-    top: 178,
+    top: 214,
     width: 182,
     rotate: 12,
     layer: 17,
@@ -100,11 +80,11 @@ const homeObjects: HomeObjectAsset[] = [
   {
     id: "home-asset-04",
     role: "home hero object",
-    file: "ChatGPT Image May 8, 2026, 01_09_01 PM 1.webp",
+    file: "/ChatGPT%20Image%20May%208,%202026,%2001_10_29%20PM%202.svg",
     left: 780,
-    top: 245,
-    width: 132,
-    rotate: 50,
+    top: 274,
+    width: 190,
+    rotate: 4,
     layer: 15,
     outX: 430,
     outY: 20,
@@ -199,7 +179,7 @@ const homeObjects: HomeObjectAsset[] = [
     role: "home hero object",
     file: "ChatGPT Image May 8, 2026, 01_09_51 PM 1.webp",
     left: 570,
-    top: 345,
+    top: 250,
     width: 118,
     rotate: -38,
     layer: 24,
@@ -276,7 +256,7 @@ const homeObjects: HomeObjectAsset[] = [
     role: "home hero object",
     file: "ChatGPT Image May 14, 2026, 05_18_51 PM 1.webp",
     left: 836,
-    top: 342,
+    top: 378,
     width: 154,
     rotate: 12,
     layer: 18,
@@ -295,6 +275,10 @@ const homeObjects: HomeObjectAsset[] = [
 const foregroundHomeObjects = homeObjects.filter((item) => item.layer >= 23);
 
 function assetSrc(file: string) {
+  if (file.startsWith("/")) {
+    return file;
+  }
+
   return `/home/${file.replaceAll(" ", "%20")}`;
 }
 
