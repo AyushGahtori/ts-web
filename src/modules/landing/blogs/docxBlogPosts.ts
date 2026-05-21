@@ -830,10 +830,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: Agentic AI for Manufacturing: Governed Operations 2026 Meta desc: Manufacturers can't deploy AI they can't audit on production-critical systems. How to run agentic workflows on ServiceNow with full traceability. Primary kw: agentic AI manufacturing · Secondary: smart manufacturing AI, OT AI governance, autonomous operations, plant asset intelligence Slug: /agentic-ai-manufacturing"
-      },
-      {
-        "type": "paragraph",
         "text": "But manufacturing spans IT and OT, and that's the governance line most programs miss. ServiceNow's expanded AI Control Tower now detects anything non-human — from AI agents to connected devices — governing physical and smart devices the same way, spanning operational and information technology. That matters because an agent acting on the plant floor touches assets, not just records, and supply-chain depth is being built directly into the platform — ServiceNow is integrating FedEx Dataworks into Source-to-Pay with supplier insights and visibility. Ken YeungDiginomica"
       },
       {
@@ -869,10 +865,6 @@ export const docxBlogPosts: BlogPost[] = [
       "The proof that this scales isn't hypothetical. Now Assist deployments have driven 54% deflection rates and major time-to-resolve reductions across large enterprises — exactly the metrics that decide retail service economics during a holiday surge. Diginomica"
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: Agentic AI for Retail: Customer Ops & Risk 2026 Meta desc: Retail agentic AI scales service and pricing — but ungoverned agents create real exposure. A practical, secure deployment guide for retailers. Primary kw: agentic AI retail · Secondary: retail AI automation, customer service AI agents, retail pricing AI, prompt injection retail Slug: /agentic-ai-retail"
-      },
       {
         "type": "paragraph",
         "text": "But retail also produced the canonical cautionary tale. ServiceNow publicly demonstrated a prompt-injection attack on a pricing agent — malicious instructions hidden inside order payloads — where the platform had to map the blast radius and present a kill switch to disable the compromised agent. A pricing agent that can act is a pricing agent that can be manipulated. That's not a reason not to deploy; it's a reason not to deploy ungoverned. The Register"
@@ -912,10 +904,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: Agentic AI for Distribution & Supply Chain 2026 Meta desc: Distribution runs on cross-system coordination — agentic AI's sweet spot. How to automate supplier, logistics & order workflows without losing control. Primary kw: agentic AI supply chain · Secondary: distribution automation, supplier workflow AI, logistics AI agents, source-to-pay AI Slug: /agentic-ai-distribution-supply-chain"
-      },
-      {
-        "type": "paragraph",
         "text": "The governance angle distribution leaders underestimate: an agent coordinating across suppliers and carriers is acting on external commitments. A bad autonomous action isn't an internal ticket — it's a misplaced PO, a wrong shipment, or a contractual exposure. Least-privilege scoping per agent role and runtime observability aren't compliance overhead here; they're the difference between automation and an outbound mistake at machine speed. Servicenow"
       },
       {
@@ -951,10 +939,6 @@ export const docxBlogPosts: BlogPost[] = [
       "The use cases are dense: network incident triage, service assurance, customer service deflection, order management across fragmented OSS/BSS. ServiceNow's stated direction — turning fragmented operations into coordinated, autonomous workflows across more than 100 billion workflows annually — is a near-exact description of what telecom operations leaders are trying to achieve manually. Diginomica"
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: Agentic AI for Telecom: Network & CX Ops 2026 Meta desc: Telcos face rising AI demand and flat headcount. How agentic AI scales service and network operations on ServiceNow — securely and at carrier scale. Primary kw: agentic AI telecom · Secondary: telco automation, network operations AI, telecom customer service AI, 5G AI operations Slug: /agentic-ai-telecom"
-      },
       {
         "type": "paragraph",
         "text": "Telecom-specific governance reality: telcos run critical national infrastructure and sit under sector-specific cyber and data rules (in India, RBI-adjacent and DPDP obligations; in the Middle East and SEA, national telecom regulators). An autonomous agent touching network or subscriber systems is a privileged actor on regulated infrastructure. Discovery across the full estate plus the ability to detect and shut down an agent operating beyond its permissions in real time isn't optional hardening here — it's a licensing-and-resilience requirement. Ken Yeung"
@@ -994,10 +978,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: Agentic AI for Media & Tech Companies 2026 Meta desc: Tech and media firms ship AI fast — and accumulate agent sprawl faster. How to govern internal agentic AI without slowing the org down. Primary kw: agentic AI technology companies · Secondary: AI agent sprawl, internal AI governance, media operations AI, SaaS AI governance Slug: /agentic-ai-media-technology"
-      },
-      {
-        "type": "paragraph",
         "text": "It doesn't have to be. The relevant shift: ServiceNow's Action Fabric exposes a governed system of action to any agent via an MCP server — others let agents read and write data; this lets them execute governed work, with identity verification and a full audit trail on every action. Anthropic is the first named design partner, connecting Claude Cowork directly into the system of action. For a builder culture, that's the unlock: governance that travels with the action instead of a gate that blocks the build. ReworkedDiginomica"
       },
       {
@@ -1033,10 +1013,6 @@ export const docxBlogPosts: BlogPost[] = [
       "Here the relevant proof point is operational, not theoretical. Rolls-Royce — a 45,000-employee aerospace business across 50 countries — ran Now Assist (internally \"Merlin\") to 12,000 employees and 5,000 hours of efficiency savings, a 54% deflection rate, and mean time to resolve down to two days. That's an aerospace organization deploying agentic AI in production with measurable outcomes — a credible reference for aviation peers, not a tech-industry demo. Diginomica"
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: Agentic AI for Aviation: Safe, Auditable Ops 2026 Meta desc: Aviation can't deploy AI it can't audit. How agentic AI handles ground, MRO and service operations on ServiceNow with full traceability. Primary kw: agentic AI aviation · Secondary: aviation operations AI, MRO automation AI, airline service AI, auditable AI aviation Slug: /agentic-ai-aviation"
-      },
       {
         "type": "paragraph",
         "text": "The governance fit aviation should care about: runtime observability into how agents reason, where they make decisions, and when to course-correct — continuous monitoring replacing periodic audits. In an industry built on audit trails and root-cause discipline, an agent whose reasoning can be reconstructed isn't a nice feature; it's the minimum entry condition. The ability to detect and halt an agent operating beyond its permissions in real time aligns directly with aviation's fail-safe instinct. ServicenowServicenow"
@@ -1076,10 +1052,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: Agentic AI for Banking: Governed Deployment 2026 Meta desc: Banks want autonomous AI; risk can't sign off on what it can't prove. How to deploy agentic AI on ServiceNow under RBI, DPDP & SR 11-7. Primary kw: agentic AI banking · Secondary: BFSI AI governance, RBI CSCRF AI, SR 11-7 model risk, banking automation AI Slug: /agentic-ai-banking-financial-services"
-      },
-      {
-        "type": "paragraph",
         "text": "What makes this signable now: five new risk frameworks aligned to NIST and EU AI Act standards out of the box, AI-driven risk assessment across models, datasets and prompts, and identity-access governance with least-privilege enforcement for every agent, plus runtime observability and real-time shutdown of an off-script agent. That converts \"trust the AI\" into \"here is the inventory, the permissions, the decision trace, and the kill switch\" — which is the language risk functions can actually approve against. ServicenowServicenow"
       },
       {
@@ -1115,10 +1087,6 @@ export const docxBlogPosts: BlogPost[] = [
       "This is where the model-governance line bites. An underwriting-support or claims-triage agent falls under model-risk discipline and data-protection obligations (DPDP in India, plus conduct/fairness expectations regionally). Governance running risk assessment across not just agents but models, datasets and prompts, with NIST/EU AI Act-aligned frameworks matters because in insurance the training data and prompt design are part of the fairness question, not just the agent's output. Servicenow"
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: Agentic AI for Insurance: Claims & Underwriting 2026 Meta desc: Insurance is built for agentic AI — claims, underwriting, servicing. How to automate end-to-end while keeping every decision auditable and fair. Primary kw: agentic AI insurance · Secondary: claims automation AI, underwriting AI governance, insurance AI compliance, auditable AI decisions Slug: /agentic-ai-insurance"
-      },
       {
         "type": "paragraph",
         "text": "The capability that makes this defensible: runtime observability into how an agent reasoned and where it made a decision. \"Why was this claim routed this way / this risk priced this way\" must be answerable on demand — to a regulator, an ombudsman, or a court. Servicenow"
@@ -1158,10 +1126,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: Agentic AI for Automotive: Ops & Governance 2026 Meta desc: Automotive spans IT, OT and connected vehicles. How to deploy agentic AI on ServiceNow across the estate without losing control of any of it. Primary kw: agentic AI automotive · Secondary: connected vehicle AI, automotive operations AI, manufacturing AI governance, OT AI automotive Slug: /agentic-ai-automotive"
-      },
-      {
-        "type": "paragraph",
         "text": "The governance reality automotive must confront: an agent here may touch plant OT, supplier commitments and connected-vehicle/customer data — three different risk regimes (operational safety, contractual, DPDP/data protection) in one workflow. Least-privilege scoping per agent role and the ability to halt an off-script agent in real time is the only way that's manageable; a single over-permissioned agent in automotive can create a safety, contractual and privacy exposure simultaneously. Servicenow"
       },
       {
@@ -1197,10 +1161,6 @@ export const docxBlogPosts: BlogPost[] = [
       "The opportunity is large and proven: AI specialists with defined roles and permissions handling complex service workflows end-to-end maps directly to grants, permits, benefits administration and citizen-request handling — high-volume, rules-driven, perpetually backlogged. Deflection rates above 50% and resolution-time reductions seen in large enterprises translate into materially shorter queues for public services. ServiceNowDiginomica"
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: Agentic AI for Public Sector: Accountable Services 2026 Meta desc: Government can't deploy AI that can't explain its decisions to citizens. How public bodies run agentic AI on ServiceNow — transparent and auditable. Primary kw: agentic AI public sector · Secondary: government AI governance, citizen services AI, accountable AI public sector, transparent AI decisions Slug: /agentic-ai-public-sector"
-      },
       {
         "type": "paragraph",
         "text": "The non-negotiable for government: explainability and fairness are statutory, not aspirational. Runtime observability into how an agent reasoned and where it made a decision, with continuous monitoring replacing periodic audits is precisely what an administrative-law challenge or a public-accounts review demands. NIST/EU AI Act-aligned risk frameworks out of the box and least-privilege enforcement per agent give a defensible baseline — and for public bodies, \"defensible\" is the whole game. ServicenowServicenow"
@@ -1464,10 +1424,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: ServiceNow HRSD: Replace or Integrate Guide 2026 Meta desc: HRSD doesn't replace Workday or SuccessFactors — it replaces the broken layer around them. How HR Service Delivery works across industries. Primary kw: ServiceNow HRSD · Secondary: HR Service Delivery, employee experience platform, HRSD vs Workday, HR case management Slug: /servicenow-hrsd-replace-or-integrate"
-      },
-      {
-        "type": "paragraph",
         "text": "The 2026 amplifier is concrete: ServiceNow introduced EmployeeWorks — Moveworks' conversational AI and enterprise search fused with the ServiceNow portal and autonomous workflows, turning natural-language requests into governed, end-to-end execution for nearly 200 million employees, now pulled with Now Assist into a single experience layer, Otto. \"Seamless employee experience\" stopped being a slogan and became an architecture. MoveworksReworked"
       },
       {
@@ -1503,10 +1459,6 @@ export const docxBlogPosts: BlogPost[] = [
       "The replace question — Archer. RSA's Archer (now Archer) is the legacy IRM incumbent: capable, deeply customized, and for most enterprises, a heavily integrated, expensive-to-change island. The replace argument isn't \"Archer is bad\" — it's that GRC living off-platform from IT, security and operations means risk data is always reconciled, never live. ServiceNow IRM's structural advantage is that the risk is computed where the work happens."
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: ServiceNow GRC vs RSA Archer: 2026 Decision Guide Meta desc: Replace legacy Archer or integrate during migration? How ServiceNow IRM, VRM, TPRM, cyber asset & identity governance actually compare. Primary kw: ServiceNow GRC vs RSA Archer · Secondary: ServiceNow IRM, integrated risk management, TPRM ServiceNow, AI risk governance Slug: /servicenow-grc-vs-rsa-archer"
-      },
       {
         "type": "paragraph",
         "text": "The 2026 differentiator that didn't exist a year ago. AI Control Tower now ships five new risk frameworks aligned to NIST and EU AI Act standards out of the box, with AI-driven risk assessment across models, datasets and prompts. No legacy GRC platform was built for agentic AI as a risk object. This is the wedge no incumbent can match on their current architecture. Servicenow"
@@ -1550,10 +1502,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: ServiceNow ITOM: Replace or Integrate Monitoring 2026 Meta desc: ITOM rarely replaces Datadog or Splunk outright — it becomes the CMDB-anchored correlation brain above them. How ITOM lands by industry. Primary kw: ServiceNow ITOM · Secondary: IT Operations Management, AIOps ServiceNow, ITOM vs Datadog, service mapping CMDB Slug: /servicenow-itom-replace-or-integrate"
-      },
-      {
-        "type": "paragraph",
         "text": "The agentic dimension matters now: AI Control Tower's discovery already spans AWS, Google Cloud, Azure, SAP, Oracle and Workday, detecting agents and connected devices across IT and OT — the CMDB is becoming the asset spine for agent governance too, not just incident management. Ken Yeung"
       },
       {
@@ -1591,10 +1539,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: ServiceNow ITAM (SAM/HAM): Replace Flexera? 2026 Meta desc: ITAM replaces spreadsheet sprawl and often Flexera/Snow — and feeds the CMDB everything else relies on. How SAM & HAM Pro land by industry. Primary kw: ServiceNow ITAM · Secondary: SAM Pro, HAM Pro, ITAM vs Flexera, software asset management, license compliance Slug: /servicenow-itam-replace-or-integrate"
-      },
-      {
-        "type": "paragraph",
         "text": "By industry. BFSI — license true-up and audit defensibility for regulators and vendors. Public sector — spend transparency under budget scrutiny. Telecom/Tech — SaaS sprawl control as the biggest soft-cost leak. Manufacturing — hardware lifecycle across distributed sites."
       },
       {
@@ -1626,10 +1570,6 @@ export const docxBlogPosts: BlogPost[] = [
       "Replace vs integrate. There's rarely a single incumbent to \"replace\" — the incumbent is the chaos: untracked email requests, no triage, no SLA, no visibility into demand. LSD replaces that operating model. It integrates with document management, e-signature and contract-lifecycle tools — LSD orchestrates the request and matter; it doesn't become your DMS or CLM."
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: ServiceNow Legal Service Delivery (LSD) Guide 2026 Meta desc: Legal still runs on email and shared mailboxes. How LSD replaces intake chaos and integrates with DMS/contract tools — by industry. Primary kw: ServiceNow Legal Service Delivery · Secondary: legal operations platform, legal request management, LSD ServiceNow, legal intake automation Slug: /servicenow-legal-service-delivery"
-      },
       {
         "type": "paragraph",
         "text": "The agentic upside is real and well-suited: legal intake is high-volume, repetitive, and judgment-light at the front end. AI specialists with defined roles and permissions handling workflows end-to-end maps cleanly to triage, routing and standard-request handling — freeing counsel for actual legal work. ServiceNow"
@@ -1667,10 +1607,6 @@ export const docxBlogPosts: BlogPost[] = [
       "Replace vs integrate. Salesforce Service Cloud and Zendesk are formidable front-office incumbents. Trying to win on \"better agent desktop\" is a hard, often losing fight. The winning frame is the one ServiceNow itself uses about AI: \"AI without workflows is just expensive advice.\" The same logic applies to CSM — a great case UI that hands off to a disconnected back office still leaves the customer waiting. CSM replaces when the cost of cross-system handoffs (the swivel-chair between CRM and operations) is the real pain. It integrates with Salesforce-as-CRM when sales won't move — CSM owning service workflow, Salesforce owning the relationship. Reworked"
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: ServiceNow CSM vs Salesforce & Zendesk (2026) Meta desc: CSM's edge isn't a prettier agent desktop — it's connecting front-office cases to back-office workflow. When to replace vs integrate. Primary kw: ServiceNow CSM · Secondary: Customer Service Management, CSM vs Salesforce Service Cloud, CSM vs Zendesk, connected customer service Slug: /servicenow-csm-vs-salesforce-zendesk"
-      },
       {
         "type": "list",
         "items": [
@@ -1712,10 +1648,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: ServiceNow FSM: Replace or Integrate Field Ops 2026 Meta desc: FSM's advantage is one platform from customer case to field completion to billing. When to replace SAP FSM/ServiceMax vs integrate. Primary kw: ServiceNow FSM · Secondary: Field Service Management, FSM vs ServiceMax, field service scheduling, connected field operations Slug: /servicenow-fsm-replace-or-integrate"
-      },
-      {
-        "type": "paragraph",
         "text": "The connected-asset angle is now stronger: AI Control Tower's expansion to detect connected devices across IT and OT means the asset a technician services and the asset the platform monitors converge — predictive dispatch instead of reactive. Ken Yeung"
       },
       {
@@ -1751,10 +1683,6 @@ export const docxBlogPosts: BlogPost[] = [
       "Replace vs integrate. Against legacy BMC Remedy/Helix, Ivanti and Cherwell, this is the cleanest replace story in the entire portfolio: aging architectures, costly customization, and a platform-consolidation argument that mostly sells itself. The nuance is Jira: don't try to replace Jira where engineering lives in it. The right model is ITSM as the enterprise service system of record, integrated with Jira for dev work — change and incident flowing to/from engineering, not a turf war you'll lose with developers."
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: ServiceNow ITSM vs BMC, Ivanti, Jira (2026) Meta desc: ITSM is the category-defining replace story — but Jira integration, not replacement, is often the right call for dev teams. Here's the line. Primary kw: ServiceNow ITSM · Secondary: ITSM vs BMC Remedy, ITSM vs Ivanti, ITSM vs Jira Service Management, IT service management platform Slug: /servicenow-itsm-vs-bmc-ivanti-jira"
-      },
       {
         "type": "paragraph",
         "text": "The 2026 reason this matters more: ServiceNow's MCP server is included in every Now Assist and AI Native SKU, with every action carrying identity verification and a full audit trail, and Action Fabric lets any agent execute governed work on the platform. ITSM is becoming the governed execution backbone agents act through — a depth legacy ITSM tools structurally cannot match. The RegisterReworked"
@@ -1794,10 +1722,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: ServiceNow Workplace Service Delivery (WSD) 2026 Meta desc: WSD replaces fragmented facilities tooling and integrates with IWMS — making the physical workplace a clean employee service. By industry. Primary kw: ServiceNow Workplace Service Delivery · Secondary: WSD ServiceNow, workplace experience platform, space reservation, facilities service management Slug: /servicenow-workplace-service-delivery"
-      },
-      {
-        "type": "paragraph",
         "text": "By industry. Tech/financial services — hybrid-work space optimization and hot-desking at scale. Healthcare — facilities and clinical-space requests with priority/safety rules. Manufacturing — site services and visitor/contractor management with compliance. Public sector — facilities request transparency and cost control."
       },
       {
@@ -1829,10 +1753,6 @@ export const docxBlogPosts: BlogPost[] = [
       "Replace vs integrate. SecOps does not replace your SIEM (Splunk, Sentinel, QRadar) — that stays the detection engine. SecOps integrates as the response orchestration above it and replaces the manual layer: spreadsheets, email escalations, and a SOC ticketing process disconnected from IT's actual change/asset systems. Against standalone SOAR (XSOAR, Splunk SOAR), the differentiator is that response runs on the same platform as IT operations and the CMDB — remediation isn't a handoff to another team's tool; it's a governed workflow with the asset context already attached."
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: ServiceNow SecOps: Replace or Integrate SOAR 2026 Meta desc: SecOps rarely replaces your SIEM — it becomes the response workflow above it, now asset-aware via Armis. How SecOps lands by industry. Primary kw: ServiceNow Security Operations · Secondary: SecOps ServiceNow, security incident response, vulnerability response, SecOps vs Splunk SOAR Slug: /servicenow-secops-replace-or-integrate"
-      },
       {
         "type": "paragraph",
         "text": "The 2026 shift is decisive here: ServiceNow closed Armis in April 2026, combining real-time asset discovery and cyber exposure management with AI Control Tower, and launched Autonomous Security & Risk on the back of Armis, Veza and Traceloop. Demonstrated capability: detect a prompt-injection attack on an agent, map the blast radius using access-graph technology, and present a kill switch — without human intervention. Vulnerability prioritization that knows the real asset and its business service — and can contain a compromised agent in real time — is something bolt-on SOAR cannot structurally replicate. sec + 2"
@@ -1872,10 +1792,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: ServiceNow Autonomous Workforce: AI Specialists 2026 Meta desc: AI specialists assigned to roles, with permissions, completing workflows end-to-end. What the Autonomous Workforce means for ops and headcount. Primary kw: ServiceNow Autonomous Workforce · Secondary: ServiceNow AI specialists, digital employees, autonomous AI agents, AI workforce ROI Slug: /servicenow-autonomous-workforce"
-      },
-      {
-        "type": "paragraph",
         "text": "The detail that matters operationally: a specialist has a role, context and permissions. That's not a chatbot with a job title — it's a governed actor. Which is exactly why the Autonomous Workforce and AI Control Tower are the same conversation. In the Microsoft Agent 365 Marketplace, a ServiceNow AI specialist appears in the org chart as a digital employee with defined roles, permissions and accountability — and that accountability is enforced, not assumed."
       },
       {
@@ -1907,10 +1823,6 @@ export const docxBlogPosts: BlogPost[] = [
       "The 2026 reality is that this is no longer purely either/or. ServiceNow expanded its Microsoft partnership so AI Control Tower governs across Azure-backed Microsoft Foundry and Copilot Studio, and ServiceNow AI specialists will be available in the Microsoft Agent 365 Marketplace. They interoperate. So the decision is about role, not rivalry."
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: Now Assist vs Microsoft Copilot Agents (2026) Meta desc: They integrate via Agent 365 but solve different problems. A decision framework for where Now Assist wins and where Copilot does. Primary kw: Now Assist vs Copilot · Secondary: ServiceNow vs Microsoft AI, enterprise AI agents comparison, Agent 365, Copilot Studio Slug: /now-assist-vs-copilot-agents"
-      },
       {
         "type": "paragraph",
         "text": "The clearest differentiator is execution depth. ServiceNow's framing — others let agents read and write data; ServiceNow lets agents execute governed work: flows, playbooks, approvals, catalogs, the full system of action. Copilot excels at the productivity surface — drafting, summarizing, reasoning over Microsoft 365 content where employees already live. Now Assist's strength is the opposite end: turning a request into a completed, governed enterprise workflow with an audit trail."
@@ -1950,10 +1862,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: Agentic AI in Healthcare: Governance-First 2026 Meta desc: Healthcare can't run AI it can't explain. How to deploy agentic workflows on ServiceNow with full traceability and patient-data control. Primary kw: agentic AI healthcare · Secondary: healthcare AI governance, auditable AI clinical ops, patient data AI compliance, ServiceNow healthcare Slug: /agentic-ai-healthcare"
-      },
-      {
-        "type": "paragraph",
         "text": "What makes this defensible now is the governance architecture, not the model. Runtime observability into how an agent reasoned, where it made decisions, and when to course-correct — continuous monitoring replacing periodic audits is exactly the evidentiary standard a clinical-governance or data-protection review demands. Identity-access governance with scoped permissions and least-privilege enforcement for every agent is what makes \"the agent only touched data it was permitted to\" provable rather than asserted — central to patient-data obligations under India's DPDP and equivalent regimes."
       },
       {
@@ -1987,10 +1895,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: Agentic AI Manufacturing: The IT/OT Line 2026 Meta desc: Manufacturing's agentic ROI is real; the risk is OT. Where the IT/OT governance line sits and how to deploy without a downtime incident. Primary kw: agentic AI manufacturing IT OT · Secondary: smart manufacturing AI, OT AI governance, plant asset intelligence, autonomous manufacturing operations Slug: /agentic-ai-manufacturing-it-ot"
-      },
-      {
-        "type": "paragraph",
         "text": "The governance enabler is concrete. AI Control Tower now detects anything non-human — AI agents to connected devices — governing physical and smart devices the same way, spanning operational and information technology. That unified visibility is the precondition, but it does not erase the line; it lets you enforce it. The dependence on accurate CMDB and asset intelligence is acute in manufacturing because the asset graph spans equipment most IT inventories never see."
       },
       {
@@ -2018,10 +1922,6 @@ export const docxBlogPosts: BlogPost[] = [
       "Anthropic is the first named design partner for ServiceNow Action Fabric, connecting Claude Cowork directly into the ServiceNow system of action. Action Fabric exposes ServiceNow's workflows, approvals and business rules to any agent via an MCP server — the open standard Anthropic originally introduced. The architectural meaning: an agent that didn't originate in ServiceNow can trigger a governed ServiceNow workflow — with identity verification, permission scoping and a full audit trail on every action."
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: ServiceNow + Anthropic Claude: What It Means 2026 Meta desc: Claude is the launch partner for ServiceNow Action Fabric. Why an external agent executing governed ServiceNow workflows changes enterprise architecture. Primary kw: ServiceNow Anthropic partnership · Secondary: Claude ServiceNow integration, Claude Cowork enterprise, Action Fabric MCP, governed agent execution Slug: /servicenow-anthropic-claude"
-      },
       {
         "type": "paragraph",
         "text": "The reason this matters to enterprises: it ends the false choice between \"use the best agent\" and \"keep execution governed.\" Agents built on Claude can trigger governed workflows headlessly, without a traditional UI, while the control plane stays consistent."
@@ -2057,10 +1957,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: CMDB for Agentic AI: The Foundation Problem 2026 Meta desc: Agent governance is only as accurate as your CMDB. Why a stale configuration database quietly breaks your entire AI control story. Primary kw: CMDB agentic AI · Secondary: ServiceNow CMDB, AI governance foundation, configuration management database, asset intelligence AI Slug: /cmdb-agentic-ai-foundation"
-      },
-      {
-        "type": "paragraph",
         "text": "This reframes a perennially under-funded program. CMDB hygiene used to be an ITSM nicety. In an agentic enterprise it's a security control. A stale CI relationship isn't a reporting gap anymore — it's an incorrect blast-radius calculation during a live incident."
       },
       {
@@ -2092,10 +1988,6 @@ export const docxBlogPosts: BlogPost[] = [
       "The use cases are dense and distributed — outage and incident orchestration, distributed-asset maintenance, field crew dispatch, regulatory reporting, supply and grid-operations coordination. Turning fragmented operations into coordinated autonomous workflows describes the utilities operating problem almost exactly. The asset dimension is decisive: AI Control Tower's expansion to detect connected devices across IT and OT, governing physical and smart devices the same way is directly relevant to a grid estate full of OT and connected sensors."
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: Agentic AI for Energy & Utilities: Governed Ops 2026 Meta desc: Utilities run critical infrastructure under heavy regulation. How to deploy agentic AI on ServiceNow across distributed assets without losing control. Primary kw: agentic AI energy utilities · Secondary: utilities operations AI, critical infrastructure AI governance, distributed asset management, OT security utilities Slug: /agentic-ai-energy-utilities"
-      },
       {
         "type": "paragraph",
         "text": "The governance reality: a utility's agents may touch OT systems controlling physical infrastructure, plus customer and regulatory data. Least-privilege enforcement per agent and the ability to detect and halt an off-script agent in real time aren't hardening niceties here — they're resilience and compliance requirements for an operator of essential services."
@@ -2131,10 +2023,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: DPDP Act & Agentic AI: India Compliance 2026 Meta desc: Under India's DPDP Act, an autonomous agent acting on personal data raises consent and purpose questions at execution time. How to deploy compliantly. Primary kw: DPDP Act agentic AI · Secondary: DPDP compliance India, personal data AI India, DPDP AI governance, India AI regulation Slug: /dpdp-act-agentic-ai-india"
-      },
-      {
-        "type": "paragraph",
         "text": "What makes compliant deployment achievable: identity-access governance with scoped permissions and least-privilege enforcement for every agent turns \"the agent only used data it was permitted to\" into a provable statement, and runtime observability into agent decisions produces the evidence a Data Protection Board inquiry would expect."
       },
       {
@@ -2168,10 +2056,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: Agentic AI & MAS FEAT: Southeast Asia Guide 2026 Meta desc: Singapore's MAS FEAT principles set the bar for fair, accountable financial AI in SEA. How to deploy agentic AI that meets it. Primary kw: MAS FEAT agentic AI · Secondary: Singapore AI regulation finance, FEAT principles AI, Southeast Asia AI governance, financial services AI SEA Slug: /mas-feat-agentic-ai-southeast-asia"
-      },
-      {
-        "type": "paragraph",
         "text": "The honest call. SEA financial regulators converge on the same expectation: autonomous AI is acceptable when control is demonstrable. The institutions deploying fastest in Singapore and the region aren't the ones interpreting FEAT loosely — they're the ones who made fairness, explainability and accountability provable so they could move with the regulator's confidence. This is positioning, not regulatory advice; your compliance function owns the FEAT interpretation."
       },
       {
@@ -2199,10 +2083,6 @@ export const docxBlogPosts: BlogPost[] = [
       "Two compounding effects. First, automation value — deflection rates above 50% and resolution-time reductions seen in large enterprises on Now Assist. Second, and often larger, consolidation value: every additional point tool is its own license, integration, governance gap and stale data source. When AI Control Tower governance has to span 30+ third-party systems, that sprawl isn't just cost — it's the surface area of your risk."
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: Agentic AI ROI: The Consolidation Economics 2026 Meta desc: The biggest agentic AI return often isn't automation — it's collapsing a tool sprawl into one governed platform. How to model the real TCO. Primary kw: agentic AI ROI consolidation · Secondary: platform consolidation TCO, ServiceNow business case, tool sprawl cost, AI governance economics Slug: /agentic-ai-roi-platform-consolidation"
-      },
       {
         "type": "paragraph",
         "text": "The under-modeled line is the one that's quietly bleeding: the human glue. The people reconciling asset data across Flexera and spreadsheets, the swivel-chair between CRM and operations, the SOC analyst hand-carrying an incident into a change tool. Consolidation doesn't just cut licenses — it deletes labor that exists only because the tools don't talk."
@@ -2242,10 +2122,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: ServiceNow Pure-Play Partner: Why It Matters 2026 Meta desc: Agentic AI on ServiceNow rewards depth, not breadth. Why a pure-play partner de-risks governance, migration and the replace-vs-integrate call. Primary kw: ServiceNow pure-play partner · Secondary: ServiceNow implementation partner, agentic AI delivery, ServiceNow consulting, platform specialist partner Slug: /servicenow-pure-play-partner-agentic-ai"
-      },
-      {
-        "type": "paragraph",
         "text": "The agentic era specifically punishes shallowness: an over-permissioned agent or a governance gap built by a team that didn't deeply understand AI Control Tower isn't a cosmetic defect — it's the failure mode this entire content series is about."
       },
       {
@@ -2277,10 +2153,6 @@ export const docxBlogPosts: BlogPost[] = [
       "Otto is the answer. ServiceNow introduced Otto at Knowledge 2026 to pull EmployeeWorks together with the company's existing Now Assist and AI Experience layers into a single AI experience for the enterprise. EmployeeWorks itself — the conversational interface built on the Moveworks acquisition — launched in February 2026, so Otto is the consolidation of three previously separate experience surfaces into one. ReworkedReworked"
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: ServiceNow Otto: The Unified AI Experience (2026) Meta desc: Otto unifies EmployeeWorks, Now Assist and the AI experience layer into one front door. What it solves — and the governance question it raises. Primary kw: ServiceNow Otto · Secondary: Otto AI experience layer, EmployeeWorks, unified enterprise AI, conversational AI front door Slug: /servicenow-otto-explained"
-      },
       {
         "type": "paragraph",
         "text": "The architectural distinction worth internalizing: Otto is an experience layer, not an execution engine. It's the front door; the governed work still happens through Now Assist, Action Fabric and the underlying workflows. That separation is healthy — but it has an implication leaders miss."
@@ -2320,10 +2192,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: NVIDIA Project Arc + ServiceNow AI Control Tower 2026 Meta desc: Project Arc is an autonomous desktop agent sandboxed by NVIDIA OpenShell and governed by AI Control Tower. Why \"governed autonomy\" is the point. Primary kw: NVIDIA Project Arc · Secondary: autonomous desktop agent, NVIDIA OpenShell, ServiceNow NVIDIA partnership, governed AI agent Slug: /nvidia-project-arc-servicenow"
-      },
-      {
-        "type": "paragraph",
         "text": "The reason this matters: the agent is powered by ServiceNow Action Fabric and grounded in the CMDB, so its actions are informed by how work actually gets done across workflows, systems and operational history. This isn't a generic desktop bot — it's an agent with enterprise context and an enforced control plane. ServiceNow's framing is that the result is an autonomous desktop agent security leaders can fully audit and approve with confidence. There's also a benchmarking angle worth noting: ServiceNow and NVIDIA released NOWAI-Bench, an open agent-evaluation suite including EnterpriseOps-Gym and EVA-Bench. Servicenow + 2"
       },
       {
@@ -2355,10 +2223,6 @@ export const docxBlogPosts: BlogPost[] = [
       "What it is. Now Assist Skill Kit (NASK) is a skill-authoring tool for GenAI app developers, enabling custom skills not available in the standard out-of-the-box catalog. It provides tools — retrievers using a RAG framework, decision nodes, and scripts — to gather relevant data that informs the prompt sent to the LLM. It ships with all Now Assist SKUs — the Now Assist for ITSM/CSM/Creator plugins include NASK, so for most ServiceNow customers this is an entitlement they already have. ServiceNow Store + 2"
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: Now Assist Skill Kit (NASK): Custom Skills Guide 2026 Meta desc: NASK lets you build custom GenAI skills, including with external LLMs. Powerful — and a quiet path to ungoverned AI if you skip the discipline. Primary kw: Now Assist Skill Kit · Secondary: NASK custom skills, ServiceNow custom GenAI, build Now Assist skill, external LLM ServiceNow Slug: /now-assist-skill-kit-custom-skills"
-      },
       {
         "type": "paragraph",
         "text": "The capability that's also the risk. A primary NASK use case is enabling external, non-ServiceNow-managed LLMs — including where an LLM needs domain-specific knowledge or particular data-handling restrictions. That flexibility is genuinely valuable. It's also the exact mechanism by which a well-intentioned developer can route enterprise data to an external model outside your governance baseline. A custom skill is a custom AI behavior — and a custom AI behavior nobody inventoried is agent sprawl by another name. ServiceNow Community"
@@ -2396,10 +2260,6 @@ export const docxBlogPosts: BlogPost[] = [
       "Why it's compelling. Against legacy BMC Remedy/Helix, this is the cleanest replace story in the ServiceNow portfolio — and the 2026 platform shift widens the gap. Action Fabric exposing a governed system of action to any agent via MCP and the MCP server being included in every Now Assist and AI Native SKU mean you're not migrating to a newer ticketing tool — you're migrating to the governed execution backbone agents will act through. That's a strategic argument legacy ITSM structurally can't answer. ReworkedThe Register"
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: BMC Remedy to ServiceNow Migration Playbook 2026 Meta desc: Replacing legacy BMC Remedy/Helix is the cleanest ServiceNow business case — and still a hard program. A realistic phased migration approach. Primary kw: BMC Remedy to ServiceNow migration · Secondary: Remedy migration, BMC Helix replacement, ITSM migration playbook, legacy ITSM modernization Slug: /bmc-remedy-to-servicenow-migration"
-      },
       {
         "type": "paragraph",
         "text": "Why it's still hard. The difficulty was never the tool. It's the customization debt: years of bespoke workflows, undocumented business rules, and integrations whose owners left. A lift-and-shift of accumulated complexity reproduces the mess on a new platform at higher cost — the single most common failure mode."
@@ -2460,10 +2320,6 @@ export const docxBlogPosts: BlogPost[] = [
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Meta title: AI Agent Identity: The Next Enterprise Control 2026 Meta desc: When an agent acts, whose identity did it use, with what permissions? Why agent identity is becoming the core of enterprise AI governance. Primary kw: AI agent identity · Secondary: non-human identity, agent access governance, machine identity AI, least privilege agents Slug: /ai-agent-identity-governance"
-      },
-      {
-        "type": "paragraph",
         "text": "The dynamic detail most teams miss: agent identity is not static. When a vendor pushes a new version of a model or agent, the platform detects the permission changes and automatically triggers a re-scoping workflow. An agent you permissioned and approved last quarter may not be the same agent — same name, different access — running today. Identity governance that's a one-time onboarding step is already stale. The Register"
       },
       {
@@ -2499,10 +2355,6 @@ export const docxBlogPosts: BlogPost[] = [
       "The pattern repeats everywhere. The shared mailbox, the untracked request, the no-SLA black box, the swivel-chair between systems — that's not an IT problem, it's an enterprise problem wearing different department badges. Once ITSM has demonstrated structured intake, routing, knowledge and SLAs in IT, the same model applies to HR (HRSD), legal (LSD), facilities (WSD), security (SecOps) and beyond. The earlier modules in this series are all the same play, run in different functions."
     ],
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Meta title: ITSM to ESM: The Enterprise Expansion Path 2026 Meta desc: ITSM is the entry point; ESM is the value. How the service model expands across HR, legal, facilities and finance — and why it compounds. Primary kw: ITSM to ESM · Secondary: Enterprise Service Management, ESM expansion, ServiceNow platform value, service operating model Slug: /itsm-to-esm-expansion"
-      },
       {
         "type": "paragraph",
         "text": "Why it compounds rather than just adds. Each function added doesn't just bring its own ROI — it shares the platform, the CMDB, the experience layer and now the AI fabric. Otto pulling EmployeeWorks, Now Assist and the AI experience into one front door only delivers a single employee experience if multiple functions are on-platform; one function on ServiceNow and the rest off-platform recreates the fragmentation Otto exists to solve. ESM is what makes the AI investment pay back across the enterprise instead of in one silo. Reworked"
