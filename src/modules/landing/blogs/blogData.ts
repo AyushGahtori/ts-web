@@ -29,6 +29,7 @@ export interface BlogHeadingBlock {
 export interface BlogParagraphBlock {
   type: "paragraph";
   text: string;
+  tableIntro?: boolean;
 }
 
 export interface BlogListBlock {
@@ -221,6 +222,24 @@ function requiredBlogImageSlot(slot: number) {
   return image;
 }
 
+const reusedImageSlotBySlug: Record<string, number> = {
+  "servicenow-ai-digital-assistant-architecture-and-deployment-guide": 1,
+  "servicenow-autonomous-operating-system-the-architectural-framework-that-powers-the-autonomous-en": 38,
+  "governance-observability-and-trust-for-enterprise-ai-at-scale": 4,
+  "why-settle-for-one-ai-when-you-can-orchestrate-the-best-of-all": 10,
+  "from-incident-detection-to-autonomous-resolution-without-human-touch": 30,
+  "business-changes-shouldn-t-require-code-changes": 54,
+  "turn-license-management-from-reactive-cleanup-into-an-intelligent-control-tower": 31,
+  "compliance-that-runs-itself-not-a-quarterly-panic": 12,
+  "from-periodic-assessments-to-continuous-intelligence-driven-risk-monitoring": 29,
+  "not-just-recovery-anticipating-preventing-and-adapting-stronger": 12,
+  "from-ceo-vision-to-developer-timecard-one-connected-operating-model": 47,
+  "lead-to-cash-to-care-no-silos-no-breaks-pure-continuity": 1,
+  "your-workforce-deserves-an-ai-companion-not-a-ticketing-system": 28,
+  "from-reactive-support-to-proactive-customer-success": 33,
+  "100-enterprise-deployments-distilled-into-a-repeatable-accelerated-methodology": 48,
+};
+
 const pdfPostsWithMedia = pdfBlogPosts.map((post) =>
   withMedia(post, {
     thumbnail: requiredBlogImageSlot(1),
@@ -230,7 +249,9 @@ const pdfPostsWithMedia = pdfBlogPosts.map((post) =>
 );
 
 const docxPostsWithMedia = docxBlogPosts.map((post, index) => {
-  const image = requiredBlogImageSlot(index + 4);
+  const sequentialSlot = index + 4;
+  const image =
+    getBlogImageSlot(sequentialSlot) ?? requiredBlogImageSlot(reusedImageSlotBySlug[post.slug]);
 
   return withMedia(post, {
     thumbnail: image,

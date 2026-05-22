@@ -128,8 +128,12 @@ function ArticleBlock({
   }
 
   if (block.type === "paragraph") {
+    const paragraphClassName = block.tableIntro
+      ? `${styles.articleParagraph} ${styles.tableIntroParagraph} ${styles.articleReveal}`
+      : `${styles.articleParagraph} ${styles.articleReveal}`;
+
     return (
-      <p className={`${styles.articleParagraph} ${styles.articleReveal}`}>
+      <p className={paragraphClassName}>
         {block.text}
       </p>
     );
@@ -165,16 +169,16 @@ function ArticleBlock({
         <table>
           <thead>
             <tr>
-              {block.headers.map((header) => (
-                <th key={header}>{header}</th>
+              {block.headers.map((header, headerIndex) => (
+                <th key={`${headerIndex}-${header}`}>{header}</th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {block.rows.map((row) => (
-              <tr key={row.join("|")}>
-                {row.map((cell) => (
-                  <td key={cell}>{cell}</td>
+            {block.rows.map((row, rowIndex) => (
+              <tr key={`${rowIndex}-${row.join("|")}`}>
+                {row.map((cell, cellIndex) => (
+                  <td key={`${rowIndex}-${cellIndex}`}>{cell}</td>
                 ))}
               </tr>
             ))}
