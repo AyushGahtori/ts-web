@@ -1,15 +1,22 @@
 import { docxBlogPosts } from "./docxBlogPosts";
 import { getBlogImageSlot, type BlogMedia } from "./blogMedia";
+import { industryBlogPosts } from "./industryBlogPosts";
 
 export const BLOG_CATEGORIES = [
   "AI",
   "Innovation",
   "Tech",
   "Enterprise",
-  "Inspiration",
-  "Research",
   "Product",
-  "Culture",
+  "ServiceNow",
+  "Telecommunications",
+  "Retail",
+  "Semiconductor",
+  "Manufacturing",
+  "Healthcare & Life Sciences",
+  "Energy & Utilities",
+  "BFSI",
+  "Aviation",
 ] as const;
 
 export type BlogCategory = (typeof BLOG_CATEGORIES)[number];
@@ -44,6 +51,15 @@ export interface BlogCalloutBlock {
   items: string[];
 }
 
+export interface BlogOutcomeBlock {
+  type: "outcomes";
+  items: Array<{
+    value: string;
+    label: string;
+    detail?: string;
+  }>;
+}
+
 export interface BlogFigureBlock {
   type: "figure";
   label: string;
@@ -55,6 +71,7 @@ export type BlogBlock =
   | BlogParagraphBlock
   | BlogListBlock
   | BlogCalloutBlock
+  | BlogOutcomeBlock
   | BlogTableBlock
   | BlogFigureBlock;
 
@@ -70,6 +87,10 @@ export interface BlogPost {
   lead: string[];
   blocks: BlogBlock[];
   media?: BlogMedia;
+  mediaLabel?: {
+    eyebrow: string;
+    title: string;
+  };
 }
 
 const pdfBlogPosts: BlogPost[] = [
@@ -260,14 +281,58 @@ const docxPostsWithMedia = docxBlogPosts.map((post, index) => {
   });
 });
 
-export const blogPosts: BlogPost[] = [...pdfPostsWithMedia, ...docxPostsWithMedia];
+const industryPostsWithMedia = industryBlogPosts.map((post, index) => {
+  const slot = ((index + 17) % 54) + 1;
+  const image = requiredBlogImageSlot(slot);
+
+  return withMedia(
+    {
+      ...post,
+      mediaLabel: {
+        eyebrow: post.category,
+        title: post.description,
+      },
+    },
+    {
+      thumbnail: image,
+      hero: image,
+      figures: [image],
+    },
+  );
+});
+
+export const blogPosts: BlogPost[] = [
+  ...pdfPostsWithMedia,
+  ...docxPostsWithMedia,
+  ...industryPostsWithMedia,
+];
 
 export function categoryToSlug(category: BlogCategory) {
-  return category.toLowerCase().replace(/\s+/g, "-");
+  return category
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function categorySlugAliases(category: BlogCategory) {
+  const legacySlug = category.toLowerCase().replace(/\s+/g, "-");
+
+  return Array.from(new Set([categoryToSlug(category), legacySlug]));
+}
+
+function normalizeCategorySlug(slug: string) {
+  return slug
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 export function getCategoryFromSlug(slug: string) {
-  return BLOG_CATEGORIES.find((category) => categoryToSlug(category) === slug);
+  const normalizedSlug = normalizeCategorySlug(slug);
+
+  return BLOG_CATEGORIES.find((category) => categoryToSlug(category) === normalizedSlug);
 }
 
 export function getBlogPost(slug: string) {

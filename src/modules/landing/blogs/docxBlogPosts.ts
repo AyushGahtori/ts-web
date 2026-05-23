@@ -585,7 +585,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "eu-ai-act-nist-ai-rmf-on-servicenow-a-compliance-operating-model-not-a-document",
-    "category": "Research",
+    "category": "Enterprise",
     "title": "EU AI Act + NIST AI RMF on ServiceNow: A Compliance Operating Model, Not a Document",
     "description": "Most enterprises \"comply\" with AI regulation the way they comply with a new year's resolution — a policy document, good intentions, and no operating mechanism. Under the EU AI Act and NIST AI RMF, that gap is now a finding waiting to happen.",
     "deck": "Most enterprises \"comply\" with AI regulation the way they comply with a new year's resolution — a policy document, good intentions, and no operating mechanism. Under the EU AI Act and NIST AI RMF, that gap is now a finding waiting to happen.",
@@ -662,7 +662,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "deploying-agentic-ai-in-bfsi-under-rbi-cscrf-dpdp-and-sr-11-7",
-    "category": "Research",
+    "category": "Enterprise",
     "title": "Deploying Agentic AI in BFSI Under RBI CSCRF, DPDP & SR 11-7",
     "description": "Every bank board wants the agentic AI productivity story. Every bank's risk function knows it can't be told to a regulator as \"we let the AI handle it.\" Both are right. The job is making them compatible.",
     "deck": "Every bank board wants the agentic AI productivity story. Every bank's risk function knows it can't be told to a regulator as \"we let the AI handle it.\" Both are right. The job is making them compatible.",
@@ -745,7 +745,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "the-ciso-s-ai-governance-playbook-from-visibility-to-enforcement",
-    "category": "Research",
+    "category": "Enterprise",
     "title": "The CISO's AI Governance Playbook: From Visibility to Enforcement",
     "description": "If your AI governance program can describe risk but can't act on it, you don't have governance. You have documentation with a security label. Here's the operating model that closes that gap.",
     "deck": "If your AI governance program can describe risk but can't act on it, you don't have governance. You have documentation with a security label. Here's the operating model that closes that gap.",
@@ -853,7 +853,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "agentic-ai-in-retail-from-customer-service-to-the-pricing-agent-that-got-attacked",
-    "category": "Inspiration",
+    "category": "Enterprise",
     "title": "Agentic AI in Retail: From Customer Service to the Pricing Agent That Got Attacked",
     "description": "Retail is where agentic AI's upside and its risk are most visible in the same workflow. High-volume customer service, returns, order management and dynamic pricing are perfect agentic territory — repetitive, rules-driven, and brutal at peak.",
     "deck": "Retail is where agentic AI's upside and its risk are most visible in the same workflow. High-volume customer service, returns, order management and dynamic pricing are perfect agentic territory — repetitive, rules-driven, and brutal at peak.",
@@ -1327,7 +1327,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "now-assist-roi-what-enterprises-actually-get-with-real-numbers-28",
-    "category": "Inspiration",
+    "category": "Product",
     "title": "Now Assist ROI: What Enterprises Actually Get (With Real Numbers)",
     "description": "Most \"AI ROI\" content is vapor. So let's start with a number a CFO can't argue with.",
     "deck": "Most \"AI ROI\" content is vapor. So let's start with a number a CFO can't argue with.",
@@ -1410,7 +1410,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-hrsd-across-industries-replace-the-chaos-not-your-hcm",
-    "category": "Inspiration",
+    "category": "Product",
     "title": "ServiceNow HRSD Across Industries: Replace the Chaos, Not Your HCM",
     "description": "What it is. HR Service Delivery is the employee-facing service layer over your HR function: case management, knowledge, journeys (onboarding/offboarding/transfers), and a unified portal. The single most common misconception: HRSD is not an HCM. It does not replace your system of record.",
     "deck": "What it is. HR Service Delivery is the employee-facing service layer over your HR function: case management, knowledge, journeys (onboarding/offboarding/transfers), and a unified portal. The single most common misconception: HRSD is not an HCM. It does not replace your system of record.",
@@ -1447,7 +1447,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-grc-vs-rsa-archer-when-to-replace-when-to-integrate-irm-vrm-tprm-cam-iam",
-    "category": "Research",
+    "category": "Enterprise",
     "title": "ServiceNow GRC vs RSA Archer: When to Replace, When to Integrate (IRM, VRM, TPRM, CAM, IAM)",
     "description": "What it is. ServiceNow's Integrated Risk Management family spans Policy & Compliance, Risk Management, Audit, Vendor/Third-Party Risk (VRM/TPRM), and continuous authorization monitoring — all on the same platform as the operational workflows that generate the risk.",
     "deck": "What it is. ServiceNow's Integrated Risk Management family spans Policy & Compliance, Risk Management, Audit, Vendor/Third-Party Risk (VRM/TPRM), and continuous authorization monitoring — all on the same platform as the operational workflows that generate the risk.",
@@ -1558,7 +1558,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-legal-service-delivery-turn-the-legal-black-box-into-a-governed-service",
-    "category": "Inspiration",
+    "category": "Enterprise",
     "title": "ServiceNow Legal Service Delivery: Turn the Legal Black Box Into a Governed Service",
     "description": "What it is. Legal Service Delivery brings structured intake, triage, matter routing, knowledge and SLAs to a function that, in most enterprises, still operates on email, calendar invites and a shared inbox. LSD makes legal a measurable service instead of a black box.",
     "deck": "What it is. Legal Service Delivery brings structured intake, triage, matter routing, knowledge and SLAs to a function that, in most enterprises, still operates on email, calendar invites and a shared inbox. LSD makes legal a measurable service instead of a black box.",
@@ -1595,7 +1595,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-csm-vs-salesforce-zendesk-when-connected-workflow-beats-a-better-inbox",
-    "category": "Culture",
+    "category": "Product",
     "title": "ServiceNow CSM vs Salesforce/Zendesk: When Connected Workflow Beats a Better Inbox",
     "description": "What it is. Customer Service Management handles external customer cases — but its differentiator is structural: it connects the customer-facing case to the back-office workflow that actually resolves it. The complaint doesn't just get logged; it triggers the fulfillment, fix or field dispatch that closes it.",
     "deck": "What it is. Customer Service Management handles external customer cases — but its differentiator is structural: it connects the customer-facing case to the back-office workflow that actually resolves it. The complaint doesn't just get logged; it triggers the fulfillment, fix or field dispatch that closes it.",
@@ -1634,7 +1634,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-fsm-across-industries-when-field-work-should-run-on-the-same-platform-as-everything-else",
-    "category": "Culture",
+    "category": "Tech",
     "title": "ServiceNow FSM Across Industries: When Field Work Should Run on the Same Platform as Everything Else",
     "description": "What it is. Field Service Management handles scheduling, dispatch, mobile technician execution and parts — with one structural advantage: the field job lives on the same platform as the customer case that created it and the asset/CMDB it acts on.",
     "deck": "What it is. Field Service Management handles scheduling, dispatch, mobile technician execution and parts — with one structural advantage: the field job lives on the same platform as the customer case that created it and the asset/CMDB it acts on.",
@@ -1671,7 +1671,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-itsm-vs-bmc-ivanti-and-jira-the-classic-replace-and-where-integration-still-wins",
-    "category": "Culture",
+    "category": "Tech",
     "title": "ServiceNow ITSM vs BMC, Ivanti & Jira: The Classic Replace — and Where Integration Still Wins",
     "description": "What it is. IT Service Management — incident, problem, change, request and knowledge — is ServiceNow's foundational module and the category benchmark most others are measured against.",
     "deck": "What it is. IT Service Management — incident, problem, change, request and knowledge — is ServiceNow's foundational module and the category benchmark most others are measured against.",
@@ -1708,7 +1708,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-workplace-service-delivery-one-front-door-for-the-physical-workplace",
-    "category": "Inspiration",
+    "category": "Product",
     "title": "ServiceNow Workplace Service Delivery: One Front Door for the Physical Workplace",
     "description": "What it is. Workplace Service Delivery covers the physical-workplace experience: space reservation, workplace requests, mapping, visitor and facilities-case management — the building-side counterpart to HRSD's people-side.",
     "deck": "What it is. Workplace Service Delivery covers the physical-workplace experience: space reservation, workplace requests, mapping, visitor and facilities-case management — the building-side counterpart to HRSD's people-side.",
@@ -1741,7 +1741,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-security-operations-from-soc-ticket-chaos-to-governed-asset-aware-response",
-    "category": "Research",
+    "category": "Enterprise",
     "title": "ServiceNow Security Operations: From SOC Ticket Chaos to Governed, Asset-Aware Response",
     "description": "What it is. Security Operations = Security Incident Response, Vulnerability Response and Threat Intelligence — the workflow layer that turns security signal into prioritized, owned, tracked, resolved action with a full audit trail.",
     "deck": "What it is. Security Operations = Security Incident Response, Vulnerability Response and Threat Intelligence — the workflow layer that turns security signal into prioritized, owned, tracked, resolved action with a full audit trail.",
@@ -1848,7 +1848,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "agentic-ai-in-healthcare-you-cannot-deploy-what-you-cannot-audit",
-    "category": "Culture",
+    "category": "Enterprise",
     "title": "Agentic AI in Healthcare: You Cannot Deploy What You Cannot Audit",
     "description": "Healthcare's relationship with agentic AI is defined by a single constraint: an unexplainable automated action that touches a patient or patient data is not an efficiency story — it's a safety and compliance event.",
     "deck": "Healthcare's relationship with agentic AI is defined by a single constraint: an unexplainable automated action that touches a patient or patient data is not an efficiency story — it's a safety and compliance event.",
@@ -1881,7 +1881,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "agentic-ai-in-manufacturing-the-it-ot-governance-line-that-decides-success-or-downtime",
-    "category": "Culture",
+    "category": "Enterprise",
     "title": "Agentic AI in Manufacturing: The IT/OT Governance Line That Decides Success or Downtime",
     "description": "The earlier manufacturing piece made the case. This one draws the line that actually matters in delivery: where IT ends and OT begins, because that's where agentic AI either compounds value or causes downtime.",
     "deck": "The earlier manufacturing piece made the case. This one draws the line that actually matters in delivery: where IT ends and OT begins, because that's where agentic AI either compounds value or causes downtime.",
@@ -2009,7 +2009,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "india-s-dpdp-act-and-agentic-ai-when-the-agent-acts-on-personal-data",
-    "category": "Research",
+    "category": "Enterprise",
     "title": "India's DPDP Act and Agentic AI: When the Agent Acts on Personal Data",
     "description": "Most DPDP readiness work was scoped before agentic AI was real. Agentic AI changes the question — because an agent doesn't just display personal data, it acts on it, autonomously, at machine speed.",
     "deck": "Most DPDP readiness work was scoped before agentic AI was real. Agentic AI changes the question — because an agent doesn't just display personal data, it acts on it, autonomously, at machine speed.",
@@ -2042,7 +2042,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "deploying-agentic-ai-under-singapore-s-mas-feat-and-southeast-asia-s-ai-expectations",
-    "category": "Research",
+    "category": "Enterprise",
     "title": "Deploying Agentic AI Under Singapore's MAS FEAT and Southeast Asia's AI Expectations",
     "description": "Singapore's MAS FEAT principles — fairness, ethics, accountability, transparency — are among the most influential AI-governance reference points in Southeast Asian financial services. Agentic AI tests every one of them, because an autonomous agent making or shaping a financial decision is precisely the actor FEAT was written to keep accountable.",
     "deck": "Singapore's MAS FEAT principles — fairness, ethics, accountability, transparency — are among the most influential AI-governance reference points in Southeast Asian financial services. Agentic AI tests every one of them, because an autonomous agent making or shaping a financial decision is precisely the actor FEAT was written to keep accountable.",
@@ -2108,7 +2108,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "why-a-servicenow-pure-play-partner-beats-a-generalist-for-agentic-ai",
-    "category": "Inspiration",
+    "category": "Product",
     "title": "Why a ServiceNow Pure-Play Partner Beats a Generalist for Agentic AI",
     "description": "In a stable platform era, a generalist SI is a reasonable bet. In a platform changing this fast, breadth becomes a liability — because the gap between \"what the keynote announced\" and \"what is GA and safe to deploy\" is exactly where projects fail.",
     "deck": "In a stable platform era, a generalist SI is a reasonable bet. In a platform changing this fast, breadth becomes a liability — because the gap between \"what the keynote announced\" and \"what is GA and safe to deploy\" is exactly where projects fail.",
@@ -2211,7 +2211,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "now-assist-skill-kit-when-out-of-the-box-skills-aren-t-enough-and-the-governance-trap",
-    "category": "Culture",
+    "category": "Enterprise",
     "title": "Now Assist Skill Kit: When Out-of-the-Box Skills Aren't Enough — and the Governance Trap",
     "description": "Out-of-the-box Now Assist skills cover the common cases. The moment a client's workflow is genuinely organization-specific, the conversation moves to the Skill Kit — and that's where capability and risk both jump.",
     "deck": "Out-of-the-box Now Assist skills cover the common cases. The moment a client's workflow is genuinely organization-specific, the conversation moves to the Skill Kit — and that's where capability and risk both jump.",
@@ -4515,7 +4515,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "compliance-that-runs-itself-not-a-quarterly-panic",
-    "category": "Research",
+    "category": "Enterprise",
     "title": "Compliance That Runs Itself — Not a Quarterly Panic",
     "description": "Compliance is not an event. It is a state of being. But most enterprises treat it like a quarterly fire drill.",
     "deck": "\"Compliance that runs itself — embedded in every workflow.\"",
@@ -5013,7 +5013,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "not-just-recovery-anticipating-preventing-and-adapting-stronger",
-    "category": "Research",
+    "category": "Enterprise",
     "title": "Not Just Recovery — Anticipating, Preventing, and Adapting Stronger",
     "description": "Operational resilience is not about having a disaster recovery plan. It is about being the kind of organization that does not need one.",
     "deck": "critical resilience gaps: dependency visibility, untested plans, manual DORA compliance, rare simulations, manual regulatory reporting",
@@ -5611,7 +5611,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "your-workforce-deserves-an-ai-companion-not-a-ticketing-system",
-    "category": "Culture",
+    "category": "Product",
     "title": "Your Workforce Deserves an AI Companion, Not a Ticketing System",
     "description": "Employees navigate 5 different portals for IT, HR, facilities, and finance. No wonder they open tickets instead of solving problems.",
     "deck": "\"One conversational interface for all employee services.\"",
@@ -5987,7 +5987,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "100-enterprise-deployments-distilled-into-a-repeatable-accelerated-methodology",
-    "category": "Inspiration",
+    "category": "AI",
     "title": "100+ Enterprise Deployments Distilled into a Repeatable, Accelerated Methodology",
     "description": "68% of digital transformation projects fail. Not because of technology. Because of methodology.",
     "deck": "\"100+ enterprise deployments distilled into proven, accelerated methodology.\"",

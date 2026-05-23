@@ -23,6 +23,7 @@ export function BlogCard({ post, featured = false }: BlogCardProps) {
   const cardRef = useRef<HTMLElement | null>(null);
   const pathRef = useRef<SVGPathElement | null>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
+  const frameLabel = post.mediaLabel;
 
   useGSAP(
     () => {
@@ -82,16 +83,27 @@ export function BlogCard({ post, featured = false }: BlogCardProps) {
     >
       <Link href={`/blogs/${post.slug}`} className={styles.cardLink}>
         <div
-          className={`${styles.mediaFrame} ${styles[`mediaFrame${post.accent}`]} ${post.media?.thumbnail ? styles.mediaFrameLoaded : ""}`}
+          className={`${styles.mediaFrame} ${styles[`mediaFrame${post.accent}`]} ${post.media?.thumbnail ? styles.mediaFrameLoaded : ""} ${frameLabel ? styles.mediaFrameScrubbed : ""}`}
           aria-hidden
         >
           {post.media?.thumbnail ? (
-            <Image
-              src={post.media.thumbnail}
-              alt=""
-              fill
-              sizes={featured ? "(max-width: 760px) 100vw, 44vw" : "(max-width: 760px) 100vw, 32vw"}
-            />
+            <>
+              <Image
+                src={post.media.thumbnail}
+                alt=""
+                fill
+                sizes={featured ? "(max-width: 760px) 100vw, 44vw" : "(max-width: 760px) 100vw, 32vw"}
+              />
+              {frameLabel ? (
+                <>
+                  <div className={styles.mediaFrameTitleScrub} />
+                  <div className={styles.mediaFrameLabel}>
+                    <small>{frameLabel.eyebrow}</small>
+                    <strong>{frameLabel.title}</strong>
+                  </div>
+                </>
+              ) : null}
+            </>
           ) : (
             <>
               <span />

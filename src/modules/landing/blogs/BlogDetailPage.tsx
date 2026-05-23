@@ -163,6 +163,23 @@ function ArticleBlock({
     );
   }
 
+  if (block.type === "outcomes") {
+    return (
+      <section className={`${styles.outcomesPanel} ${styles.articleReveal}`} aria-label="Outcomes">
+        <p>Outcomes</p>
+        <div>
+          {block.items.map((item, index) => (
+            <article key={`${index}-${item.value}-${item.label}`}>
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
+              {item.detail ? <small>{item.detail}</small> : null}
+            </article>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
   if (block.type === "table") {
     return (
       <div className={`${styles.tableWrap} ${styles.articleReveal}`}>

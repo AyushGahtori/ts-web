@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { BlogIndexPage } from "@/modules/landing/blogs/BlogIndexPage";
 import {
   BLOG_CATEGORIES,
-  categoryToSlug,
+  categorySlugAliases,
   getCategoryFromSlug,
   getPostsByCategory,
 } from "@/modules/landing/blogs/blogData";
@@ -15,9 +15,11 @@ interface BlogCategoryRouteProps {
 }
 
 export function generateStaticParams() {
-  return BLOG_CATEGORIES.map((category) => ({
-    category: categoryToSlug(category),
-  }));
+  return BLOG_CATEGORIES.flatMap((category) =>
+    categorySlugAliases(category).map((categorySlug) => ({
+      category: categorySlug,
+    })),
+  );
 }
 
 export async function generateMetadata({ params }: BlogCategoryRouteProps): Promise<Metadata> {

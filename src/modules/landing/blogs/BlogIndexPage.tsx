@@ -115,17 +115,28 @@ export function BlogIndexPage({ posts, activeCategory }: BlogIndexPageProps) {
             {featuredPost ? (
               <Link className={`${styles.featured} ${styles.reveal}`} href={`/blogs/${featuredPost.slug}`}>
                 <div
-                  className={`${styles.mediaFrame} ${styles.mediaFrameviolet} ${featuredPost.media?.thumbnail ? styles.mediaFrameLoaded : ""}`}
+                  className={`${styles.mediaFrame} ${styles.mediaFrameviolet} ${featuredPost.media?.thumbnail ? styles.mediaFrameLoaded : ""} ${featuredPost.mediaLabel ? styles.mediaFrameScrubbed : ""}`}
                   aria-hidden
                 >
                   {featuredPost.media?.thumbnail ? (
-                    <Image
-                      src={featuredPost.media.thumbnail}
-                      alt=""
-                      fill
-                      priority
-                      sizes="(max-width: 980px) 100vw, 42vw"
-                    />
+                    <>
+                      <Image
+                        src={featuredPost.media.thumbnail}
+                        alt=""
+                        fill
+                        priority
+                        sizes="(max-width: 980px) 100vw, 42vw"
+                      />
+                      {featuredPost.mediaLabel ? (
+                        <>
+                          <div className={styles.mediaFrameTitleScrub} />
+                          <div className={styles.mediaFrameLabel}>
+                            <small>{featuredPost.mediaLabel.eyebrow}</small>
+                            <strong>{featuredPost.mediaLabel.title}</strong>
+                          </div>
+                        </>
+                      ) : null}
+                    </>
                   ) : (
                     <>
                       <span />
