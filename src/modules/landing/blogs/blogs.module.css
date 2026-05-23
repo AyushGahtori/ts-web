@@ -127,6 +127,26 @@
   line-height: 1.62;
 }
 
+.editorialUnderlineText {
+  background-image: linear-gradient(90deg, #050505, #050505);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 0.075em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition: background-size 1.5s cubic-bezier(0.74, 0, 0.14, 1);
+}
+
+.editorialUnderlineText:hover,
+h1:hover > .editorialUnderlineText,
+h2:hover > .editorialUnderlineText,
+h3:hover > .editorialUnderlineText,
+.featured:hover h2 .editorialUnderlineText,
+.cardLink:hover h2 .editorialUnderlineText,
+.cardLink:focus-visible h2 .editorialUnderlineText {
+  background-size: 100% 0.075em;
+}
+
 .featured,
 .featuredEmpty {
   position: relative;
@@ -1241,7 +1261,8 @@
   .categoryNav a,
   .categoryStrip a,
   .pagination button,
-  .backLink {
+  .backLink,
+  .editorialUnderlineText {
     transition: none;
   }
 }

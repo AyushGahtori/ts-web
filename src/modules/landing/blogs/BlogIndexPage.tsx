@@ -40,7 +40,9 @@ function EmptyCategoryState({ category }: { category: BlogCategory }) {
         </svg>
       </div>
       <p>{category}</p>
-      <h2>Articles coming soon</h2>
+      <h2>
+        <span className={styles.editorialUnderlineText}>Articles coming soon</span>
+      </h2>
       <span>New thinking is being shaped for this signal category.</span>
     </section>
   );
@@ -115,7 +117,9 @@ export function BlogIndexPage({ posts, activeCategory }: BlogIndexPageProps) {
           <section className={styles.hero}>
             <div className={styles.heroCopy}>
               <p className={styles.reveal}>TechSnitch Blogs</p>
-              <h1 className={styles.reveal}>{categoryTitle}</h1>
+              <h1 className={styles.reveal}>
+                <span className={styles.editorialUnderlineText}>{categoryTitle}</span>
+              </h1>
               <span className={styles.reveal}>{categoryDeck}</span>
             </div>
             {featuredPost ? (
@@ -171,7 +175,11 @@ export function BlogIndexPage({ posts, activeCategory }: BlogIndexPageProps) {
             <div className={styles.blogMain}>
               <div className={`${styles.sectionHeader} ${styles.contentReveal}`}>
                 <p>{activeCategory ?? "Latest"}</p>
-                <h2>{posts.length > 0 ? "Editorial briefings" : "Quiet for now"}</h2>
+                <h2>
+                  <span className={styles.editorialUnderlineText}>
+                    {posts.length > 0 ? "Editorial briefings" : "Quiet for now"}
+                  </span>
+                </h2>
               </div>
 
               {posts.length > 0 ? (

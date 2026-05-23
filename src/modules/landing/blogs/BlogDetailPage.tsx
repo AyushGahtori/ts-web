@@ -122,7 +122,9 @@ function ArticleBlock({
     return (
       <section className={`${styles.articleSection} ${styles.articleReveal}`}>
         {block.kicker ? <p className={styles.sectionKicker}>{block.kicker}</p> : null}
-        <h2>{block.title}</h2>
+        <h2>
+          <span className={styles.editorialUnderlineText}>{block.title}</span>
+        </h2>
       </section>
     );
   }
@@ -153,7 +155,9 @@ function ArticleBlock({
     return (
       <aside className={`${styles.articleCallout} ${styles.articleReveal}`}>
         <p>{block.eyebrow}</p>
-        <h3>{block.title}</h3>
+        <h3>
+          <span className={styles.editorialUnderlineText}>{block.title}</span>
+        </h3>
         <div>
           {block.items.map((item) => (
             <span key={item}>{item}</span>
@@ -277,7 +281,9 @@ export function BlogDetailPage({ post }: BlogDetailPageProps) {
               Back to blogs
             </Link>
             <p className={`${styles.articleCategory} ${styles.articleReveal}`}>{post.category}</p>
-            <h1 className={styles.articleReveal}>{post.title}</h1>
+            <h1 className={styles.articleReveal}>
+              <span className={styles.editorialUnderlineText}>{post.title}</span>
+            </h1>
             <p className={`${styles.articleDeck} ${styles.articleReveal}`}>{post.deck}</p>
             <div className={styles.articleReveal}>
               <ArticleFigure
