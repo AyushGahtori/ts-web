@@ -2380,7 +2380,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-ai-digital-assistant-architecture-and-deployment-guide",
-    "category": "AI",
+    "category": "Brewed Logic",
     "title": "ServiceNow AI Digital Assistant — Architecture & Deployment Guide",
     "description": "Single-vendor dependency creates strategic vulnerability for enterprises. When AI operates outside governance frameworks, compliance gaps emerge. One model cannot serve all enterprise needs, and shadow AI proliferates as teams bypass IT-approved tools.",
     "deck": "\"Enterprise-grade, AI-agnostic conversational intelligence\"",
@@ -2771,7 +2771,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-autonomous-operating-system-the-architectural-framework-that-powers-the-autonomous-en",
-    "category": "Innovation",
+    "category": "Brewed Logic",
     "title": "ServiceNow Autonomous Operating System — The Architectural Framework That Powers the Autonomous Enterprise",
     "description": "Traditional enterprises follow a predictable but costly pattern: detect problems too late, react through firefighting, and apply manual fixes prone to human error.",
     "deck": "\"From digitization to true autonomy — systems that think, heal, and optimize themselves.\"",
@@ -3163,7 +3163,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "governance-observability-and-trust-for-enterprise-ai-at-scale",
-    "category": "Product",
+    "category": "Brewed Logic",
     "title": "Governance, Observability, and Trust for Enterprise AI at Scale",
     "description": "The rapid adoption of AI across enterprises has created a governance crisis with three critical dimensions: Shadow AI proliferating outside IT control, bias and ethics concerns damaging reputation, and compliance gaps exposing organizations to regulatory risk.",
     "deck": "\"From AI chaos to trusted business value — one control tower.\"",
@@ -3467,7 +3467,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "why-settle-for-one-ai-when-you-can-orchestrate-the-best-of-all",
-    "category": "AI",
+    "category": "Brewed Logic",
     "title": "Why Settle for One AI When You Can Orchestrate the Best of All?",
     "description": "One AI model is like hiring a single employee to do every job in your company — brilliant at some things, dangerously incompetent at others.",
     "deck": "\"The right AI for the right task — every single time.\"",
@@ -3794,7 +3794,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "from-incident-detection-to-autonomous-resolution-without-human-touch",
-    "category": "Tech",
+    "category": "Brewed Logic",
     "title": "From Incident Detection to Autonomous Resolution — Without Human Touch",
     "description": "IT teams spend 60% of their time on reactive incident management. They are firefighters, not architects.",
     "deck": "\"Systems that detect, diagnose, and resolve — while you sleep.\"",
@@ -4044,7 +4044,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "business-changes-shouldn-t-require-code-changes",
-    "category": "Product",
+    "category": "Brewed Logic",
     "title": "Business Changes Shouldn't Require Code Changes",
     "description": "A simple approval routing change takes 2 weeks because it requires workflow redesign, testing, and deployment.",
     "deck": "\"Business logic as data, not code — configure, don't develop.\"",
@@ -4266,7 +4266,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "turn-license-management-from-reactive-cleanup-into-an-intelligent-control-tower",
-    "category": "Enterprise",
+    "category": "Brewed Logic",
     "title": "Turn License Management from Reactive Cleanup into an Intelligent Control Tower",
     "description": "Unused ITIL licenses are like paying rent on empty offices. And compliance audits? A quarterly panic attack.",
     "deck": "\"From reactive cleanup to proactive, intelligent governance.\"",
@@ -4515,7 +4515,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "compliance-that-runs-itself-not-a-quarterly-panic",
-    "category": "Enterprise",
+    "category": "Brewed Logic",
     "title": "Compliance That Runs Itself — Not a Quarterly Panic",
     "description": "Compliance is not an event. It is a state of being. But most enterprises treat it like a quarterly fire drill.",
     "deck": "\"Compliance that runs itself — embedded in every workflow.\"",
@@ -4791,7 +4791,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "from-periodic-assessments-to-continuous-intelligence-driven-risk-monitoring",
-    "category": "Enterprise",
+    "category": "Brewed Logic",
     "title": "From Periodic Assessments to Continuous, Intelligence-Driven Risk Monitoring",
     "description": "Vendor risk assessments are like annual physicals — they tell you what was wrong last year, not what is happening right now.",
     "deck": "\"Continuous risk intelligence — because threats don't wait for your assessment cycle.\"",
@@ -5013,7 +5013,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "not-just-recovery-anticipating-preventing-and-adapting-stronger",
-    "category": "Enterprise",
+    "category": "Brewed Logic",
     "title": "Not Just Recovery — Anticipating, Preventing, and Adapting Stronger",
     "description": "Operational resilience is not about having a disaster recovery plan. It is about being the kind of organization that does not need one.",
     "deck": "critical resilience gaps: dependency visibility, untested plans, manual DORA compliance, rare simulations, manual regulatory reporting",
@@ -5214,7 +5214,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "from-ceo-vision-to-developer-timecard-one-connected-operating-model",
-    "category": "Enterprise",
+    "category": "Brewed Logic",
     "title": "From CEO Vision to Developer Timecard — One Connected Operating Model",
     "description": "Strategy lives in PowerPoint. Execution lives in spreadsheets. And never the twain shall meet.",
     "deck": "disconnects: strategy silos, no PMO visibility, political resource allocation, disconnected financials, failed initiatives",
@@ -5405,7 +5405,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "lead-to-cash-to-care-no-silos-no-breaks-pure-continuity",
-    "category": "Innovation",
+    "category": "Brewed Logic",
     "title": "Lead-to-Cash-to-Care — No Silos, No Breaks, Pure Continuity",
     "description": "Your customer data lives in 7 different systems. Your customer experience lives in none of them.",
     "deck": "\"Lead-to-Cash-to-Care — unified, AI-powered, continuous.\"",
@@ -5611,7 +5611,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "your-workforce-deserves-an-ai-companion-not-a-ticketing-system",
-    "category": "Product",
+    "category": "Brewed Logic",
     "title": "Your Workforce Deserves an AI Companion, Not a Ticketing System",
     "description": "Employees navigate 5 different portals for IT, HR, facilities, and finance. No wonder they open tickets instead of solving problems.",
     "deck": "\"One conversational interface for all employee services.\"",
@@ -5797,7 +5797,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "from-reactive-support-to-proactive-customer-success",
-    "category": "Product",
+    "category": "Brewed Logic",
     "title": "From Reactive Support to Proactive Customer Success",
     "description": "Customer service waits for problems. Customer success prevents them. Most enterprises are still in the waiting business.",
     "deck": "\"From reactive support to proactive customer success.\"",
@@ -5987,7 +5987,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "100-enterprise-deployments-distilled-into-a-repeatable-accelerated-methodology",
-    "category": "AI",
+    "category": "Brewed Logic",
     "title": "100+ Enterprise Deployments Distilled into a Repeatable, Accelerated Methodology",
     "description": "68% of digital transformation projects fail. Not because of technology. Because of methodology.",
     "deck": "\"100+ enterprise deployments distilled into proven, accelerated methodology.\"",

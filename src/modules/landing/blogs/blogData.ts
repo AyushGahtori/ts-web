@@ -1,6 +1,7 @@
 import { docxBlogPosts } from "./docxBlogPosts";
 import { getBlogImageSlot, type BlogMedia } from "./blogMedia";
 import { industryBlogPosts } from "./industryBlogPosts";
+import { brewedLogicBlogPosts } from "./brewedLogicBlogPosts";
 
 export const BLOG_CATEGORIES = [
   "AI",
@@ -9,6 +10,7 @@ export const BLOG_CATEGORIES = [
   "Enterprise",
   "Product",
   "ServiceNow",
+  "Brewed Logic",
   "Telecommunications",
   "Retail",
   "Semiconductor",
@@ -20,6 +22,21 @@ export const BLOG_CATEGORIES = [
 ] as const;
 
 export type BlogCategory = (typeof BLOG_CATEGORIES)[number];
+
+export const INDUSTRY_CATEGORIES: BlogCategory[] = [
+  "Telecommunications",
+  "Retail",
+  "Semiconductor",
+  "Manufacturing",
+  "Healthcare & Life Sciences",
+  "Energy & Utilities",
+  "BFSI",
+  "Aviation",
+];
+
+export const PRIMARY_BLOG_CATEGORIES = BLOG_CATEGORIES.filter(
+  (category) => !INDUSTRY_CATEGORIES.includes(category),
+);
 
 export interface BlogTableBlock {
   type: "table";
@@ -301,10 +318,31 @@ const industryPostsWithMedia = industryBlogPosts.map((post, index) => {
   );
 });
 
+const brewedLogicPostsWithMedia = brewedLogicBlogPosts.map((post, index) => {
+  const slot = ((index + 42) % 54) + 1;
+  const image = requiredBlogImageSlot(slot);
+
+  return withMedia(
+    {
+      ...post,
+      mediaLabel: {
+        eyebrow: post.category,
+        title: post.description,
+      },
+    },
+    {
+      thumbnail: image,
+      hero: image,
+      figures: [image],
+    },
+  );
+});
+
 export const blogPosts: BlogPost[] = [
   ...pdfPostsWithMedia,
   ...docxPostsWithMedia,
   ...industryPostsWithMedia,
+  ...brewedLogicPostsWithMedia,
 ];
 
 export function categoryToSlug(category: BlogCategory) {

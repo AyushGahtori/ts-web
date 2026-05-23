@@ -343,7 +343,8 @@
   gap: 15px;
 }
 
-.categoryNav a {
+.categoryNav a,
+.industryToggle {
   position: relative;
   width: fit-content;
   color: rgba(17, 17, 17, 0.52);
@@ -356,7 +357,20 @@
     transform 0.18s ease;
 }
 
-.categoryNav a::after {
+.industryToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.categoryNav a::after,
+.industryToggle::after {
   content: "";
   position: absolute;
   left: 0;
@@ -371,6 +385,8 @@
 
 .categoryNav a:hover,
 .categoryNav a:focus-visible,
+.industryToggle:hover,
+.industryToggle:focus-visible,
 .categoryNav .categoryActive {
   color: #111;
   opacity: 1;
@@ -379,8 +395,89 @@
 
 .categoryNav a:hover::after,
 .categoryNav a:focus-visible::after,
+.industryToggle:hover::after,
+.industryToggle:focus-visible::after,
 .categoryNav .categoryActive::after {
   transform: scaleX(1);
+}
+
+.industryGroup {
+  display: grid;
+  gap: 0;
+  margin-top: 1px;
+}
+
+.industryGroupActive .industryToggle {
+  color: #111;
+}
+
+.industryGroupActive .industryToggle::after {
+  transform: scaleX(1);
+}
+
+.industryCaret {
+  display: inline-grid;
+  width: 16px;
+  height: 16px;
+  place-items: center;
+  color: rgba(153, 105, 255, 0.86);
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0;
+  transform: rotate(180deg) translateY(1px);
+  transform-origin: center;
+  transition:
+    opacity 0.18s ease,
+    transform 0.24s ease;
+}
+
+.industryToggle:hover .industryCaret,
+.industryToggle:focus-visible .industryCaret,
+.industryGroupOpen .industryCaret,
+.industryGroupActive .industryCaret {
+  opacity: 1;
+}
+
+.industryGroupOpen .industryCaret {
+  transform: rotate(0deg) translateY(-1px);
+}
+
+.industryTree {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(-3px, -6px, 0);
+  transition:
+    grid-template-rows 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.2s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.industryTree > div {
+  display: grid;
+  gap: 11px;
+  overflow: hidden;
+  padding-left: 17px;
+  border-left: 1px solid rgba(169, 111, 255, 0.24);
+}
+
+.industryGroupOpen .industryTree {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate3d(0, 0, 0);
+}
+
+.industryGroupOpen .industryTree > div {
+  margin-top: 14px;
+  padding-top: 2px;
+}
+
+.industryTree a {
+  font-size: 0.95rem;
+  line-height: 1.26;
 }
 
 .sidebarLine {
@@ -575,6 +672,39 @@
   transform: translate3d(0, -2px, 0);
   border-color: rgba(145, 86, 226, 0.24);
   color: #111;
+}
+
+.categoryStripGroup {
+  display: flex;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 4px;
+  padding: 10px;
+  border: 1px solid rgba(169, 111, 255, 0.13);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.categoryStripGroup > span {
+  margin-right: 4px;
+  color: rgba(17, 17, 17, 0.76);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.categoryStripGroup > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.categoryStripGroup a {
+  padding: 7px 10px;
+  font-size: 0.88rem;
 }
 
 .emptyState {
@@ -1150,6 +1280,17 @@
     gap: 12px 18px;
   }
 
+  .industryGroup {
+    flex-basis: 100%;
+    margin-top: 2px;
+  }
+
+  .industryTree > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+  }
+
   .articleRail {
     display: none;
   }
@@ -1310,7 +1451,8 @@
     gap: 8px;
   }
 
-  .categoryNav a {
+  .categoryNav a,
+  .industryToggle {
     padding: 8px 10px;
     border: 1px solid rgba(17, 17, 17, 0.08);
     border-radius: 999px;
@@ -1318,14 +1460,29 @@
     font-size: 0.93rem;
   }
 
-  .categoryNav a::after {
+  .categoryNav a::after,
+  .industryToggle::after {
     display: none;
   }
 
   .categoryNav a:hover,
   .categoryNav a:focus-visible,
+  .industryToggle:hover,
+  .industryToggle:focus-visible,
   .categoryNav .categoryActive {
     transform: translate3d(0, -1px, 0);
+  }
+
+  .industryGroup {
+    width: 100%;
+  }
+
+  .industryTree > div {
+    padding-left: 12px;
+  }
+
+  .industryGroupOpen .industryTree > div {
+    margin-top: 10px;
   }
 
   .grid {
@@ -1383,6 +1540,14 @@
   .categoryStrip {
     margin-top: 30px;
     padding-top: 20px;
+  }
+
+  .categoryStripGroup {
+    padding: 9px;
+  }
+
+  .categoryStripGroup > span {
+    flex-basis: 100%;
   }
 
   .emptyState {

@@ -8,7 +8,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Navbar } from "@/modules/landing/sections/navbar/Navbar";
 import { BrandFooterSection } from "@/modules/landing/sections/brand-footer/BrandFooterSection";
-import { BLOG_CATEGORIES, categoryToSlug, type BlogCategory, type BlogPost } from "./blogData";
+import {
+  INDUSTRY_CATEGORIES,
+  PRIMARY_BLOG_CATEGORIES,
+  categoryToSlug,
+  type BlogCategory,
+  type BlogPost,
+} from "./blogData";
 import { BlogCard } from "./BlogCard";
 import { BlogSidebar } from "./BlogSidebar";
 import styles from "./blogs.module.css";
@@ -192,11 +198,21 @@ export function BlogIndexPage({ posts, activeCategory }: BlogIndexPageProps) {
 
               {!activeCategory ? (
                 <div className={`${styles.categoryStrip} ${styles.contentReveal}`} aria-label="All category links">
-                  {BLOG_CATEGORIES.map((category) => (
+                  {PRIMARY_BLOG_CATEGORIES.map((category) => (
                     <Link key={category} href={`/blogs/category/${categoryToSlug(category)}`}>
                       {category}
                     </Link>
                   ))}
+                  <div className={styles.categoryStripGroup}>
+                    <span>Industries</span>
+                    <div>
+                      {INDUSTRY_CATEGORIES.map((category) => (
+                        <Link key={category} href={`/blogs/category/${categoryToSlug(category)}`}>
+                          {category}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               ) : null}
             </div>
