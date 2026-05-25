@@ -1,6 +1,7 @@
 import type { BlogPost } from "./blogData";
+import { mergeBlogSections } from "./mergeBlogSections";
 
-export const brewedLogicBlogPosts: BlogPost[] = [
+const brewedLogicBlogPostEntries: BlogPost[] = [
   {
     "slug": "storage-optimization-the-storage-crisis",
     "category": "Brewed Logic",
@@ -7022,3 +7023,46 @@ export const brewedLogicBlogPosts: BlogPost[] = [
     ]
   }
 ];
+
+const matchesStoragePillar = (post: BlogPost) =>
+  /\bstorage-optimization\b/i.test(post.slug) &&
+  /\bpillar\s+\d{1,2}\b/i.test(`${post.slug} ${post.title} ${post.featuredLabel}`);
+
+const matchesFearlessPhase = (post: BlogPost) =>
+  /\bfearless-upgrade\b/i.test(post.slug) &&
+  /\bphase\s+\d{1,2}\b/i.test(`${post.slug} ${post.title} ${post.featuredLabel}`);
+
+const matchesSecOpsLayer = (post: BlogPost) =>
+  /\bsecops\b/i.test(post.slug) &&
+  /\blayer\s+\d{1,2}\b/i.test(`${post.slug} ${post.title} ${post.featuredLabel}`);
+
+const matchesSpmDomain = (post: BlogPost) =>
+  /\bspm\b/i.test(post.slug) &&
+  /\bdomain\s+\d{1,2}\b/i.test(`${post.slug} ${post.title} ${post.featuredLabel}`);
+
+export const brewedLogicBlogPosts: BlogPost[] = mergeBlogSections(brewedLogicBlogPostEntries, [
+  {
+    source: "TechSnitch_ServiceNow_Storage_Optimization - Copy.docx",
+    parentSlug: "storage-optimization-the-techsnitch-approach",
+    sectionHeading: "The four storage optimization pillars",
+    matchChild: matchesStoragePillar,
+  },
+  {
+    source: "TechSnitch_Fearless_Upgrade.docx",
+    parentSlug: "fearless-upgrade-the-techsnitch-upgrade-philosophy",
+    sectionHeading: "The fearless upgrade phases",
+    matchChild: matchesFearlessPhase,
+  },
+  {
+    source: "TechSnitch_SecOps_Blueprint.docx",
+    parentSlug: "secops-executive-summary",
+    sectionHeading: "The seven SecOps architecture layers",
+    matchChild: matchesSecOpsLayer,
+  },
+  {
+    source: "TechSnitch_SPM_Blueprint.docx",
+    parentSlug: "spm-executive-overview",
+    sectionHeading: "The seven SPM operating domains",
+    matchChild: matchesSpmDomain,
+  },
+]);

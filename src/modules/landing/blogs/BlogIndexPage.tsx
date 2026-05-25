@@ -117,7 +117,7 @@ export function BlogIndexPage({ posts, activeCategory }: BlogIndexPageProps) {
           <section className={styles.hero}>
             <div className={styles.heroCopy}>
               <p className={styles.reveal}>TechSnitch Blogs</p>
-              <h1 className={styles.reveal}>
+              <h1 className={`${styles.reveal} ${activeCategory ? styles.categoryHeroTitle : ""}`}>
                 <span className={styles.editorialUnderlineText}>{categoryTitle}</span>
               </h1>
               <span className={styles.reveal}>{categoryDeck}</span>

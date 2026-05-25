@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -18,8 +18,69 @@ interface BlogDetailPageProps {
   post: BlogPost;
 }
 
-const ARTICLE_ZIG_ZAG_PATH =
-  "M118 0 C118 230 265 300 428 394 C640 516 612 692 326 790 C118 862 116 1050 338 1168 C564 1288 906 1228 990 1444 C1068 1644 824 1748 570 1846 C296 1950 170 2112 330 2310 C496 2514 870 2456 968 2694 C1050 2896 812 3022 548 3132 C278 3244 156 3432 344 3628 C528 3820 898 3768 984 4008 C1058 4218 800 4330 532 4448 C286 4556 166 4720 328 4920 C428 5042 594 5116 760 5200";
+const ARTICLE_FLOW_PATTERN_HEIGHT = 5200;
+const ARTICLE_FLOW_REPEAT_HEIGHT = 5980;
+const ARTICLE_FLOW_CURVES: ReadonlyArray<readonly [number, number, number, number, number, number]> = [
+  [118, 230, 265, 300, 428, 394],
+  [640, 516, 612, 692, 326, 790],
+  [118, 862, 116, 1050, 338, 1168],
+  [564, 1288, 906, 1228, 990, 1444],
+  [1068, 1644, 824, 1748, 570, 1846],
+  [296, 1950, 170, 2112, 330, 2310],
+  [496, 2514, 870, 2456, 968, 2694],
+  [1050, 2896, 812, 3022, 548, 3132],
+  [278, 3244, 156, 3432, 344, 3628],
+  [528, 3820, 898, 3768, 984, 4008],
+  [1058, 4218, 800, 4330, 532, 4448],
+  [286, 4556, 166, 4720, 328, 4920],
+  [428, 5042, 594, 5116, 760, 5200],
+];
+const ARTICLE_FLOW_CONNECTOR_CURVES: ReadonlyArray<
+  readonly [number, number, number, number, number, number]
+> = [
+  [1010, 5370, 964, 5690, 650, 5805],
+  [420, 5890, 206, 5872, 118, ARTICLE_FLOW_REPEAT_HEIGHT],
+];
+
+function getArticleFlowSegmentCount(layerHeight: number) {
+  const overflowHeight = Math.max(0, layerHeight - ARTICLE_FLOW_PATTERN_HEIGHT);
+  return Math.max(1, Math.ceil(overflowHeight / ARTICLE_FLOW_REPEAT_HEIGHT) + 1);
+}
+
+function getArticleFlowPathHeight(segmentCount: number) {
+  return ARTICLE_FLOW_PATTERN_HEIGHT + Math.max(0, segmentCount - 1) * ARTICLE_FLOW_REPEAT_HEIGHT;
+}
+
+function offsetCurve(
+  [controlOneX, controlOneY, controlTwoX, controlTwoY, endX, endY]: readonly [
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+  ],
+  offsetY: number,
+) {
+  return `C${controlOneX} ${controlOneY + offsetY} ${controlTwoX} ${
+    controlTwoY + offsetY
+  } ${endX} ${endY + offsetY}`;
+}
+
+function buildArticleFlowPath(segmentCount: number) {
+  const commands = ["M118 0"];
+
+  for (let index = 0; index < segmentCount; index += 1) {
+    const offsetY = index * ARTICLE_FLOW_REPEAT_HEIGHT;
+    ARTICLE_FLOW_CURVES.forEach((curve) => commands.push(offsetCurve(curve, offsetY)));
+
+    if (index < segmentCount - 1) {
+      ARTICLE_FLOW_CONNECTOR_CURVES.forEach((curve) => commands.push(offsetCurve(curve, offsetY)));
+    }
+  }
+
+  return commands.join(" ");
+}
 
 function ArticleFigure({
   label,
@@ -64,6 +125,9 @@ function ArticleFigure({
 function ArticleFlowLine() {
   const shouldReduceMotion = useReducedMotion();
   const layerRef = useRef<HTMLDivElement | null>(null);
+  const [segmentCount, setSegmentCount] = useState(1);
+  const flowPath = useMemo(() => buildArticleFlowPath(segmentCount), [segmentCount]);
+  const flowPathHeight = getArticleFlowPathHeight(segmentCount);
   const { scrollYProgress } = useScroll({
     target: layerRef,
     offset: ["start 112%", "end 10%"],
@@ -80,6 +144,29 @@ function ArticleFlowLine() {
   );
   const lineOpacity = useTransform(lineProgress, [0, 0.025, 1], [0, 1, 1]);
 
+  useEffect(() => {
+    const layer = layerRef.current;
+    if (!layer) {
+      return;
+    }
+
+    const updateSegmentCount = () => {
+      setSegmentCount(getArticleFlowSegmentCount(layer.offsetHeight));
+    };
+
+    updateSegmentCount();
+
+    if (typeof ResizeObserver === "undefined") {
+      window.addEventListener("resize", updateSegmentCount);
+      return () => window.removeEventListener("resize", updateSegmentCount);
+    }
+
+    const observer = new ResizeObserver(updateSegmentCount);
+    observer.observe(layer);
+
+    return () => observer.disconnect();
+  }, []);
+
   if (shouldReduceMotion) {
     return null;
   }
@@ -88,20 +175,21 @@ function ArticleFlowLine() {
     <div ref={layerRef} className={styles.articleFlowLine} aria-hidden>
       <svg
         className={styles.articleFlowSvg}
-        viewBox="0 0 1100 5200"
+        viewBox={`0 0 1100 ${flowPathHeight}`}
         fill="none"
-        preserveAspectRatio="none"
+        preserveAspectRatio="xMidYMin meet"
+        style={{ height: flowPathHeight }}
       >
         <motion.path
           className={`${styles.articleFlowAura} ${styles.articleFlowPath}`}
           pathLength="1"
-          d={ARTICLE_ZIG_ZAG_PATH}
+          d={flowPath}
           style={{ pathLength: lineProgress, opacity: lineOpacity }}
         />
         <motion.path
           className={`${styles.articleFlowCore} ${styles.articleFlowPath}`}
           pathLength="1"
-          d={ARTICLE_ZIG_ZAG_PATH}
+          d={flowPath}
           style={{ pathLength: lineProgress, opacity: lineOpacity }}
         />
       </svg>
@@ -280,19 +368,23 @@ export function BlogDetailPage({ post }: BlogDetailPageProps) {
             <Link className={`${styles.backLink} ${styles.articleReveal}`} href="/blogs">
               Back to blogs
             </Link>
-            <p className={`${styles.articleCategory} ${styles.articleReveal}`}>{post.category}</p>
-            <h1 className={styles.articleReveal}>
-              <span className={styles.editorialUnderlineText}>{post.title}</span>
-            </h1>
-            <p className={`${styles.articleDeck} ${styles.articleReveal}`}>{post.deck}</p>
-            <div className={styles.articleReveal}>
-              <ArticleFigure
-                label="Hero media frame"
-                tone={post.accent}
-                imageSrc={post.media?.hero}
-                imageAlt={`${post.title} hero image`}
-                priority
-              />
+            <div className={styles.articleHeroGrid}>
+              <div className={styles.articleHeroCopy}>
+                <p className={`${styles.articleCategory} ${styles.articleReveal}`}>{post.category}</p>
+                <h1 className={styles.articleReveal}>
+                  <span className={styles.editorialUnderlineText}>{post.title}</span>
+                </h1>
+                <p className={`${styles.articleDeck} ${styles.articleReveal}`}>{post.deck}</p>
+              </div>
+              <div className={`${styles.articleHeroMedia} ${styles.articleReveal}`}>
+                <ArticleFigure
+                  label="Hero media frame"
+                  tone={post.accent}
+                  imageSrc={post.media?.hero}
+                  imageAlt={`${post.title} hero image`}
+                  priority
+                />
+              </div>
             </div>
           </header>
 

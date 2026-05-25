@@ -1,6 +1,7 @@
 import type { BlogPost } from "./blogData";
+import { mergeBlogSections } from "./mergeBlogSections";
 
-export const industryBlogPosts: BlogPost[] = [
+const industryBlogPostEntries: BlogPost[] = [
   {
     "slug": "governing-the-agentic-enterprise-servicenow-agentic-ai-playbook",
     "category": "ServiceNow",
@@ -8446,3 +8447,118 @@ export const industryBlogPosts: BlogPost[] = [
     ]
   }
 ] satisfies BlogPost[];
+
+const matchesIndustrySection = (post: BlogPost) =>
+  /\b(pillar|layer)\s+\d{1,2}\b/i.test(`${post.slug} ${post.title} ${post.featuredLabel}`);
+
+const industryOverviewOverrides: Record<
+  string,
+  Pick<BlogPost, "description" | "deck" | "lead">
+> = {
+  "retail-servicenow-autonomous-industry-operating-model": {
+    description: "Retail",
+    deck:
+      "A ServiceNow operating model for connected retail, e-commerce, quick commerce, and governed autonomous operations.",
+    lead: [
+      "Retail is the most operationally complex industry in consumer commerce.",
+      "ServiceNow connects customer engagement, order orchestration, store operations, workforce, risk, and resolution into one governed operating model.",
+    ],
+  },
+  "manufacturing-servicenow-autonomous-industry-operating-model": {
+    description: "Manufacturing",
+    deck:
+      "A ServiceNow operating model for IT-OT convergence, governed agentic operations, and measurable plant-floor outcomes.",
+    lead: [
+      "Manufacturing has crossed the line where IT-OT convergence stops being a slide and starts being a regulatory and operational requirement.",
+      "ServiceNow becomes the control plane for smart factory, product intelligence, connected supply chain, workforce, CX, maintenance, quality, safety, and compliance.",
+    ],
+  },
+};
+
+const coverTextPatternsBySlug: Record<string, RegExp[]> = {
+  "retail-servicenow-autonomous-industry-operating-model": [
+    /^TECHSNITCH • INDUSTRY VIEW POINT • 2026$/,
+    /^RETAIL • E-COMMERCE • QUICK COMMERCE$/,
+    /^Reimagining the$/,
+    /^Connected Retail Enterprise$/,
+    /^on ServiceNow$/,
+    /^AUTHORED BY/,
+  ],
+  "manufacturing-servicenow-autonomous-industry-operating-model": [
+    /^TECHSNITCH•INDUSTRYVIEWPOINT•2026/,
+    /^MANUFACTURING•IT–OTCONVERGENCE/,
+    /^Engineeringthe$/,
+    /^AutonomousIndustrialEnterprise$/,
+    /^on ServiceNow$/,
+    /^AUTHOREDBY/,
+  ],
+};
+
+const cleanedIndustryBlogPostEntries = industryBlogPostEntries.map((post) => {
+  const override = industryOverviewOverrides[post.slug];
+  const coverTextPatterns = coverTextPatternsBySlug[post.slug];
+  const blocks = coverTextPatterns
+    ? post.blocks.filter(
+        (block) =>
+          block.type !== "paragraph" ||
+          !coverTextPatterns.some((pattern) => pattern.test(block.text)),
+      )
+    : post.blocks;
+
+  return {
+    ...post,
+    ...override,
+    blocks,
+  };
+});
+
+export const industryBlogPosts: BlogPost[] = mergeBlogSections(cleanedIndustryBlogPostEntries, [
+  {
+    source: "TechSnitch_Telecommunications_Solution.docx",
+    parentSlug: "telecommunications-servicenow-autonomous-industry-operating-model",
+    sectionHeading: "Telecommunications solution pillars",
+    matchChild: matchesIndustrySection,
+  },
+  {
+    source: "TechSnitch_Retail_Solution 2.docx",
+    parentSlug: "retail-servicenow-autonomous-industry-operating-model",
+    sectionHeading: "Retail operating layers",
+    matchChild: matchesIndustrySection,
+  },
+  {
+    source: "TechSnitch_Semiconductor_Solution.docx",
+    parentSlug: "semiconductor-servicenow-autonomous-industry-operating-model",
+    sectionHeading: "Semiconductor solution pillars",
+    matchChild: matchesIndustrySection,
+  },
+  {
+    source: "TechSnitch_Manufacturing_Solution.docx",
+    parentSlug: "manufacturing-servicenow-autonomous-industry-operating-model",
+    sectionHeading: "Manufacturing solution pillars",
+    matchChild: matchesIndustrySection,
+  },
+  {
+    source: "TechSnitch_Healthcare_LifeSciences_Solution.docx",
+    parentSlug: "healthcare-and-life-sciences-servicenow-autonomous-industry-operating-model",
+    sectionHeading: "Healthcare and life sciences solution pillars",
+    matchChild: matchesIndustrySection,
+  },
+  {
+    source: "TechSnitch_Energy_Utilities_Solution.docx",
+    parentSlug: "energy-and-utilities-servicenow-autonomous-industry-operating-model",
+    sectionHeading: "Energy and utilities solution pillars",
+    matchChild: matchesIndustrySection,
+  },
+  {
+    source: "TechSnitch_BFSI_Solution.docx",
+    parentSlug: "bfsi-servicenow-autonomous-industry-operating-model",
+    sectionHeading: "BFSI solution pillars",
+    matchChild: matchesIndustrySection,
+  },
+  {
+    source: "TechSnitch_Aviation_Solution.docx",
+    parentSlug: "aviation-servicenow-autonomous-industry-operating-model",
+    sectionHeading: "Aviation solution pillars",
+    matchChild: matchesIndustrySection,
+  },
+]);

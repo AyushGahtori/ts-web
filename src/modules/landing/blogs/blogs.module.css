@@ -119,6 +119,13 @@
   letter-spacing: 0;
 }
 
+.heroCopy h1.categoryHeroTitle {
+  max-width: 640px;
+  font-size: clamp(2.7rem, 4vw, 4.4rem);
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
 .heroCopy > span {
   display: block;
   max-width: 650px;
@@ -178,6 +185,7 @@ h3:hover > .editorialUnderlineText,
   font-size: clamp(1.65rem, 2.65vw, 2.35rem);
   line-height: 1.04;
   letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 .featured span {
@@ -185,6 +193,7 @@ h3:hover > .editorialUnderlineText,
   color: rgba(17, 17, 17, 0.66);
   font-size: 1rem;
   line-height: 1.58;
+  overflow-wrap: anywhere;
 }
 
 .mediaFrame {
@@ -289,6 +298,7 @@ h3:hover > .editorialUnderlineText,
   font-size: clamp(0.72rem, 0.94vw, 1.02rem);
   font-weight: 800;
   line-height: 1.14;
+  overflow-wrap: anywhere;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
@@ -612,6 +622,7 @@ h3:hover > .editorialUnderlineText,
   font-size: clamp(1.45rem, 2.25vw, 2rem);
   line-height: 1.08;
   letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 .cardBody > p:last-child {
@@ -619,6 +630,7 @@ h3:hover > .editorialUnderlineText,
   color: rgba(17, 17, 17, 0.62);
   font-size: 1rem;
   line-height: 1.58;
+  overflow-wrap: anywhere;
 }
 
 .cardFeatured {
@@ -805,26 +817,45 @@ h3:hover > .editorialUnderlineText,
 
 .articleHero {
   position: relative;
-  max-width: 1000px;
+  max-width: 1680px;
   margin: 0 auto clamp(62px, 8vw, 104px);
 }
 
+.articleHeroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(520px, 1fr);
+  gap: clamp(42px, 5vw, 96px);
+  align-items: start;
+}
+
+.articleHeroCopy {
+  min-width: 0;
+}
+
 .articleHero h1 {
-  max-width: 980px;
+  max-width: 900px;
   margin: 16px 0 24px;
   color: #080808;
-  font-size: clamp(3.1rem, 7vw, 7rem);
+  font-size: clamp(3rem, 4.9vw, 5.8rem);
   font-weight: 800;
-  line-height: 0.96;
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
 .articleDeck {
-  max-width: 790px;
-  margin: 0 0 38px;
+  max-width: 690px;
+  margin: 0;
   color: rgba(17, 17, 17, 0.66);
   font-size: clamp(1.16rem, 1.8vw, 1.45rem);
   line-height: 1.62;
+}
+
+.articleHeroMedia {
+  min-width: 0;
+}
+
+.articleHeroMedia .articleFigure {
+  margin: 0;
 }
 
 .articleShell {
@@ -876,8 +907,9 @@ h3:hover > .editorialUnderlineText,
 }
 
 .articleFlowSvg {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: 5200px;
   overflow: visible;
   filter:
     drop-shadow(0 0 12px rgba(40, 218, 255, 0.34))
@@ -1281,6 +1313,14 @@ h3:hover > .editorialUnderlineText,
     grid-template-columns: 1fr;
   }
 
+  .articleHero {
+    max-width: 760px;
+  }
+
+  .articleHeroGrid {
+    grid-template-columns: 1fr;
+  }
+
   .sidebar,
   .articleRail {
     position: relative;
@@ -1594,6 +1634,14 @@ h3:hover > .editorialUnderlineText,
 
   .articleDeck {
     margin-bottom: 26px;
+  }
+
+  .articleHeroGrid {
+    gap: 24px;
+  }
+
+  .articleHeroMedia .articleFigure {
+    margin: 0;
   }
 
   .articleShell {
