@@ -207,12 +207,22 @@ function ArticleBlock({
   imageAlt: string;
 }) {
   if (block.type === "heading") {
+    const headingLevel = block.level ?? 1;
+    const sectionClassName = `${styles.articleSection} ${
+      headingLevel === 2
+        ? styles.articleSectionLevel2
+        : headingLevel === 3
+          ? styles.articleSectionLevel3
+          : ""
+    } ${styles.articleReveal}`;
+    const headingContent = <span className={styles.editorialUnderlineText}>{block.title}</span>;
+
     return (
-      <section className={`${styles.articleSection} ${styles.articleReveal}`}>
+      <section className={sectionClassName}>
         {block.kicker ? <p className={styles.sectionKicker}>{block.kicker}</p> : null}
-        <h2>
-          <span className={styles.editorialUnderlineText}>{block.title}</span>
-        </h2>
+        {headingLevel === 3 ? <h4>{headingContent}</h4> : null}
+        {headingLevel === 2 ? <h3>{headingContent}</h3> : null}
+        {headingLevel === 1 ? <h2>{headingContent}</h2> : null}
       </section>
     );
   }

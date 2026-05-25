@@ -2,6 +2,7 @@ import { docxBlogPosts } from "./docxBlogPosts";
 import { getBlogImageSlot, type BlogMedia } from "./blogMedia";
 import { industryBlogPosts } from "./industryBlogPosts";
 import { brewedLogicBlogPosts } from "./brewedLogicBlogPosts";
+import { solutionBlogPosts } from "./solutionBlogPosts";
 
 export const BLOG_CATEGORIES = [
   "AI",
@@ -48,6 +49,7 @@ export interface BlogHeadingBlock {
   type: "heading";
   title: string;
   kicker?: string;
+  level?: 1 | 2 | 3;
 }
 
 export interface BlogParagraphBlock {
@@ -103,6 +105,7 @@ export interface BlogPost {
   accent: "violet" | "pink" | "ink";
   lead: string[];
   blocks: BlogBlock[];
+  pinPriority?: number;
   media?: BlogMedia;
   mediaLabel?: {
     eyebrow: string;
@@ -298,6 +301,26 @@ const docxPostsWithMedia = docxBlogPosts.map((post, index) => {
   });
 });
 
+const solutionPostsWithMedia = solutionBlogPosts.map((post, index) => {
+  const slot = ((index + 24) % 54) + 1;
+  const image = requiredBlogImageSlot(slot);
+
+  return withMedia(
+    {
+      ...post,
+      mediaLabel: {
+        eyebrow: post.category,
+        title: post.description,
+      },
+    },
+    {
+      thumbnail: image,
+      hero: image,
+      figures: [image],
+    },
+  );
+});
+
 const industryPostsWithMedia = industryBlogPosts.map((post, index) => {
   const slot = ((index + 17) % 54) + 1;
   const image = requiredBlogImageSlot(slot);
@@ -340,6 +363,7 @@ const brewedLogicPostsWithMedia = brewedLogicBlogPosts.map((post, index) => {
 
 export const blogPosts: BlogPost[] = [
   ...pdfPostsWithMedia,
+  ...solutionPostsWithMedia,
   ...docxPostsWithMedia,
   ...industryPostsWithMedia,
   ...brewedLogicPostsWithMedia,
@@ -378,5 +402,11 @@ export function getBlogPost(slug: string) {
 }
 
 export function getPostsByCategory(category: BlogCategory) {
-  return blogPosts.filter((post) => post.category === category);
+  return blogPosts
+    .filter((post) => post.category === category)
+    .sort(
+      (firstPost, secondPost) =>
+        (firstPost.pinPriority ?? Number.MAX_SAFE_INTEGER) -
+        (secondPost.pinPriority ?? Number.MAX_SAFE_INTEGER),
+    );
 }

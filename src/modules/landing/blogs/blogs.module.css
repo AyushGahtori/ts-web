@@ -987,6 +987,36 @@ h3:hover > .editorialUnderlineText,
   letter-spacing: 0;
 }
 
+.articleSection h3,
+.articleSection h4 {
+  max-width: 780px;
+  margin: 8px 0 0;
+  color: #111;
+  letter-spacing: 0;
+}
+
+.articleSection h3 {
+  font-size: clamp(1.42rem, 2.35vw, 2.15rem);
+  line-height: 1.16;
+}
+
+.articleSection h4 {
+  font-size: clamp(1.08rem, 1.55vw, 1.34rem);
+  font-weight: 800;
+  line-height: 1.28;
+}
+
+.articleSectionLevel2 {
+  margin-top: 42px;
+  padding-top: 22px;
+}
+
+.articleSectionLevel3 {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top-color: rgba(17, 17, 17, 0.06);
+}
+
 .articleList {
   display: grid;
   gap: 14px;
@@ -1578,6 +1608,8 @@ h3:hover > .editorialUnderlineText,
   .sectionHeader h2,
   .emptyState h2,
   .articleSection h2,
+  .articleSection h3,
+  .articleSection h4,
   .articleCallout h3,
   .articleLead p,
   .articleParagraph,
@@ -1666,6 +1698,14 @@ h3:hover > .editorialUnderlineText,
 
   .articleSection h2 {
     font-size: clamp(1.72rem, 8.6vw, 2.35rem);
+  }
+
+  .articleSection h3 {
+    font-size: clamp(1.32rem, 6.8vw, 1.78rem);
+  }
+
+  .articleSection h4 {
+    font-size: 1.08rem;
   }
 
   .articleList li {
