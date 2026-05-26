@@ -764,9 +764,8 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
         "title": "Capability 3: Attachment Intelligence"
       },
       {
-        "type": "heading",
-        "kicker": "24",
-        "title": "TechSnitch deploys attachment optimization agents:"
+        "type": "paragraph",
+        "text": "TechSnitch deploys attachment optimization agents:"
       },
       {
         "type": "paragraph",
@@ -1621,7 +1620,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "03",
-        "title": "Phase 1: Intelligence Gathering"
+        "title": "Phase 1: Intelligence Gathering (Week 1)"
       },
       {
         "type": "heading",
@@ -1699,7 +1698,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "04",
-        "title": "Phase 2: Environment Hardening"
+        "title": "Phase 2: Environment Hardening (Week 2)"
       },
       {
         "type": "heading",
@@ -1774,7 +1773,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "05",
-        "title": "Phase 3: Upgrade Dry Run"
+        "title": "Phase 3: Upgrade Dry Run (Week 3)"
       },
       {
         "type": "heading",
@@ -1876,7 +1875,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "06",
-        "title": "Phase 4: Remediation & Optimization"
+        "title": "Phase 4: Remediation & Optimization (Week 4)"
       },
       {
         "type": "heading",
@@ -1950,7 +1949,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "07",
-        "title": "Phase 5: Production Upgrade Execution"
+        "title": "Phase 5: Production Upgrade Execution (Week 5)"
       },
       {
         "type": "heading",
@@ -2072,7 +2071,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "08",
-        "title": "Phase 6: Hypercare & Stabilization"
+        "title": "Phase 6: Hypercare & Stabilization (Weeks 5-6)"
       },
       {
         "type": "heading",
@@ -2147,7 +2146,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "09",
-        "title": "Phase 7: Optimization & Value Capture"
+        "title": "Phase 7: Optimization & Value Capture (Weeks 7-8)"
       },
       {
         "type": "figure",
@@ -5325,9 +5324,8 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
         "text": "ServiceNow Strategic Portfolio Management"
       },
       {
-        "type": "heading",
-        "kicker": "40",
-        "title": "End-to-End Technical Architecture Blueprint"
+        "type": "paragraph",
+        "text": "End-to-End Technical Architecture Blueprint"
       }
     ]
   },
@@ -5546,7 +5544,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "03",
-        "title": "Phase 1: Discovery & Inventory"
+        "title": "Phase 1: Discovery & Inventory (Weeks 1-2)"
       },
       {
         "type": "heading",
@@ -5625,7 +5623,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "04",
-        "title": "Phase 2: Future-State Design"
+        "title": "Phase 2: Future-State Design (Weeks 3-4)"
       },
       {
         "type": "heading",
@@ -5699,7 +5697,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "05",
-        "title": "Phase 3: Data Architecture & Mapping"
+        "title": "Phase 3: Data Architecture & Mapping (Weeks 5-6)"
       },
       {
         "type": "heading",
@@ -5836,7 +5834,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "06",
-        "title": "Phase 4: Extraction & Transformation Engine"
+        "title": "Phase 4: Extraction & Transformation Engine (Weeks 7-8)"
       },
       {
         "type": "figure",
@@ -5915,7 +5913,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "07",
-        "title": "Phase 5: Validation & Reconciliation"
+        "title": "Phase 5: Validation & Reconciliation (Weeks 9-10)"
       },
       {
         "type": "heading",
@@ -6002,7 +6000,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "08",
-        "title": "Phase 6: Parallel Run & Confidence Building"
+        "title": "Phase 6: Parallel Run & Confidence Building (Weeks 11-12)"
       },
       {
         "type": "paragraph",
@@ -6081,7 +6079,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "09",
-        "title": "Phase 7: Cutover & Go-Live"
+        "title": "Phase 7: Cutover & Go-Live (Week 13)"
       },
       {
         "type": "heading",
@@ -6180,7 +6178,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "10",
-        "title": "Phase 8: Hypercare & Legacy Decommission"
+        "title": "Phase 8: Hypercare & Legacy Decommission (Weeks 14-16)"
       },
       {
         "type": "figure",
@@ -7024,45 +7022,30 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
   }
 ];
 
-const matchesStoragePillar = (post: BlogPost) =>
-  /\bstorage-optimization\b/i.test(post.slug) &&
-  /\bpillar\s+\d{1,2}\b/i.test(`${post.slug} ${post.title} ${post.featuredLabel}`);
-
-const matchesFearlessPhase = (post: BlogPost) =>
-  /\bfearless-upgrade\b/i.test(post.slug) &&
-  /\bphase\s+\d{1,2}\b/i.test(`${post.slug} ${post.title} ${post.featuredLabel}`);
-
-const matchesSecOpsLayer = (post: BlogPost) =>
-  /\bsecops\b/i.test(post.slug) &&
-  /\blayer\s+\d{1,2}\b/i.test(`${post.slug} ${post.title} ${post.featuredLabel}`);
-
-const matchesSpmDomain = (post: BlogPost) =>
-  /\bspm\b/i.test(post.slug) &&
-  /\bdomain\s+\d{1,2}\b/i.test(`${post.slug} ${post.title} ${post.featuredLabel}`);
-
 export const brewedLogicBlogPosts: BlogPost[] = mergeBlogSections(brewedLogicBlogPostEntries, [
   {
     source: "TechSnitch_ServiceNow_Storage_Optimization - Copy.docx",
-    parentSlug: "storage-optimization-the-techsnitch-approach",
-    sectionHeading: "The four storage optimization pillars",
-    matchChild: matchesStoragePillar,
+    parentSlug: "storage-optimization-the-storage-crisis",
+    mergeAllFromSource: true,
   },
   {
     source: "TechSnitch_Fearless_Upgrade.docx",
-    parentSlug: "fearless-upgrade-the-techsnitch-upgrade-philosophy",
-    sectionHeading: "The fearless upgrade phases",
-    matchChild: matchesFearlessPhase,
+    parentSlug: "fearless-upgrade-the-upgrade-paradox",
+    mergeAllFromSource: true,
   },
   {
     source: "TechSnitch_SecOps_Blueprint.docx",
     parentSlug: "secops-executive-summary",
-    sectionHeading: "The seven SecOps architecture layers",
-    matchChild: matchesSecOpsLayer,
+    mergeAllFromSource: true,
   },
   {
     source: "TechSnitch_SPM_Blueprint.docx",
     parentSlug: "spm-executive-overview",
-    sectionHeading: "The seven SPM operating domains",
-    matchChild: matchesSpmDomain,
+    mergeAllFromSource: true,
+  },
+  {
+    source: "TechSnitch_Great_Migration.docx",
+    parentSlug: "great-migration-the-migration-imperative",
+    mergeAllFromSource: true,
   },
 ]);
