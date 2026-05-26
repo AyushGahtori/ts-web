@@ -3,8 +3,9 @@ import type { BlogBlock, BlogPost } from "./blogData";
 interface BlogSectionMergeGroup {
   source: string;
   parentSlug: string;
-  sectionHeading: string;
-  matchChild: (post: BlogPost) => boolean;
+  sectionHeading?: string;
+  matchChild?: (post: BlogPost) => boolean;
+  mergeAllFromSource?: boolean;
 }
 
 export function mergeBlogSections(
@@ -24,7 +25,7 @@ export function mergeBlogSections(
       (candidate) =>
         candidate.source === group.source &&
         candidate.slug !== group.parentSlug &&
-        group.matchChild(candidate),
+        (group.mergeAllFromSource || group.matchChild?.(candidate)),
     );
 
     if (childPosts.length === 0) {
@@ -33,17 +34,21 @@ export function mergeBlogSections(
 
     childPosts.forEach((childPost) => hiddenSlugs.add(childPost.slug));
 
-    const sectionIntro: BlogBlock = {
-      type: "heading",
-      kicker: "Deep dive",
-      title: group.sectionHeading,
-    };
+    const sectionIntro: BlogBlock[] = group.sectionHeading
+      ? [
+          {
+            type: "heading",
+            kicker: "Deep dive",
+            title: group.sectionHeading,
+          },
+        ]
+      : [];
 
     return {
       ...post,
       blocks: [
         ...post.blocks,
-        sectionIntro,
+        ...sectionIntro,
         ...childPosts.flatMap((childPost) => childPost.blocks),
       ],
     };

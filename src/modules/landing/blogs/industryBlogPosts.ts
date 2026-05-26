@@ -8448,9 +8448,6 @@ const industryBlogPostEntries: BlogPost[] = [
   }
 ] satisfies BlogPost[];
 
-const matchesIndustrySection = (post: BlogPost) =>
-  /\b(pillar|layer)\s+\d{1,2}\b/i.test(`${post.slug} ${post.title} ${post.featuredLabel}`);
-
 const industryOverviewOverrides: Record<
   string,
   Pick<BlogPost, "description" | "deck" | "lead">
@@ -8516,49 +8513,41 @@ export const industryBlogPosts: BlogPost[] = mergeBlogSections(cleanedIndustryBl
   {
     source: "TechSnitch_Telecommunications_Solution.docx",
     parentSlug: "telecommunications-servicenow-autonomous-industry-operating-model",
-    sectionHeading: "Telecommunications solution pillars",
-    matchChild: matchesIndustrySection,
+    mergeAllFromSource: true,
   },
   {
     source: "TechSnitch_Retail_Solution 2.docx",
     parentSlug: "retail-servicenow-autonomous-industry-operating-model",
-    sectionHeading: "Retail operating layers",
-    matchChild: matchesIndustrySection,
+    mergeAllFromSource: true,
   },
   {
     source: "TechSnitch_Semiconductor_Solution.docx",
     parentSlug: "semiconductor-servicenow-autonomous-industry-operating-model",
-    sectionHeading: "Semiconductor solution pillars",
-    matchChild: matchesIndustrySection,
+    mergeAllFromSource: true,
   },
   {
     source: "TechSnitch_Manufacturing_Solution.docx",
     parentSlug: "manufacturing-servicenow-autonomous-industry-operating-model",
-    sectionHeading: "Manufacturing solution pillars",
-    matchChild: matchesIndustrySection,
+    mergeAllFromSource: true,
   },
   {
     source: "TechSnitch_Healthcare_LifeSciences_Solution.docx",
     parentSlug: "healthcare-and-life-sciences-servicenow-autonomous-industry-operating-model",
-    sectionHeading: "Healthcare and life sciences solution pillars",
-    matchChild: matchesIndustrySection,
+    mergeAllFromSource: true,
   },
   {
     source: "TechSnitch_Energy_Utilities_Solution.docx",
     parentSlug: "energy-and-utilities-servicenow-autonomous-industry-operating-model",
-    sectionHeading: "Energy and utilities solution pillars",
-    matchChild: matchesIndustrySection,
+    mergeAllFromSource: true,
   },
   {
     source: "TechSnitch_BFSI_Solution.docx",
     parentSlug: "bfsi-servicenow-autonomous-industry-operating-model",
-    sectionHeading: "BFSI solution pillars",
-    matchChild: matchesIndustrySection,
+    mergeAllFromSource: true,
   },
   {
     source: "TechSnitch_Aviation_Solution.docx",
     parentSlug: "aviation-servicenow-autonomous-industry-operating-model",
-    sectionHeading: "Aviation solution pillars",
-    matchChild: matchesIndustrySection,
+    mergeAllFromSource: true,
   },
 ]);

@@ -21,9 +21,8 @@ export const docxBlogPosts: BlogPost[] = [
         "title": "The five pillars"
       },
       {
-        "type": "heading",
-        "kicker": "02",
-        "title": "The 2026 release organizes around five capabilities:"
+        "type": "paragraph",
+        "text": "The 2026 release organizes around five capabilities:"
       },
       {
         "type": "figure",
@@ -42,7 +41,7 @@ export const docxBlogPosts: BlogPost[] = [
       },
       {
         "type": "heading",
-        "kicker": "03",
+        "kicker": "02",
         "title": "The capability that changes the conversation"
       },
       {
@@ -51,7 +50,7 @@ export const docxBlogPosts: BlogPost[] = [
       },
       {
         "type": "heading",
-        "kicker": "04",
+        "kicker": "03",
         "title": "What this means for you"
       },
       {
@@ -111,9 +110,8 @@ export const docxBlogPosts: BlogPost[] = [
         "title": "The three outcomes nobody budgets for"
       },
       {
-        "type": "heading",
-        "kicker": "04",
-        "title": "Ungoverned agents don't fail quietly. They get you:"
+        "type": "paragraph",
+        "text": "Ungoverned agents don't fail quietly. They get you:"
       },
       {
         "type": "list",
@@ -255,9 +253,8 @@ export const docxBlogPosts: BlogPost[] = [
         "tone": "violet"
       },
       {
-        "type": "heading",
-        "kicker": "03",
-        "title": "For three buyer profiles:"
+        "type": "paragraph",
+        "text": "For three buyer profiles:"
       },
       {
         "type": "paragraph",
@@ -342,9 +339,8 @@ export const docxBlogPosts: BlogPost[] = [
         "title": "What security and risk leaders should take from this"
       },
       {
-        "type": "heading",
-        "kicker": "05",
-        "title": "Three implications:"
+        "type": "paragraph",
+        "text": "Three implications:"
       },
       {
         "type": "list",
@@ -471,9 +467,8 @@ export const docxBlogPosts: BlogPost[] = [
         "tone": "violet"
       },
       {
-        "type": "heading",
-        "kicker": "03",
-        "title": "Two shifts are happening at once:"
+        "type": "paragraph",
+        "text": "Two shifts are happening at once:"
       },
       {
         "type": "list",
@@ -543,9 +538,8 @@ export const docxBlogPosts: BlogPost[] = [
         "tone": "pink"
       },
       {
-        "type": "heading",
-        "kicker": "03",
-        "title": "Three failure modes make this a control requirement, not a nice-to-have:"
+        "type": "paragraph",
+        "text": "Three failure modes make this a control requirement, not a nice-to-have:"
       },
       {
         "type": "list",
@@ -1204,9 +1198,8 @@ export const docxBlogPosts: BlogPost[] = [
         "title": "The five pillars"
       },
       {
-        "type": "heading",
-        "kicker": "02",
-        "title": "The 2026 release organizes around five capabilities:"
+        "type": "paragraph",
+        "text": "The 2026 release organizes around five capabilities:"
       },
       {
         "type": "figure",
@@ -1225,7 +1218,7 @@ export const docxBlogPosts: BlogPost[] = [
       },
       {
         "type": "heading",
-        "kicker": "03",
+        "kicker": "02",
         "title": "The capability that changes the conversation"
       },
       {
@@ -1234,7 +1227,7 @@ export const docxBlogPosts: BlogPost[] = [
       },
       {
         "type": "heading",
-        "kicker": "04",
+        "kicker": "03",
         "title": "What this means for you"
       },
       {
@@ -1294,9 +1287,8 @@ export const docxBlogPosts: BlogPost[] = [
         "title": "The three outcomes nobody budgets for"
       },
       {
-        "type": "heading",
-        "kicker": "04",
-        "title": "Ungoverned agents don't fail quietly. They get you:"
+        "type": "paragraph",
+        "text": "Ungoverned agents don't fail quietly. They get you:"
       },
       {
         "type": "list",
@@ -2265,9 +2257,8 @@ export const docxBlogPosts: BlogPost[] = [
         "text": "Why it's still hard. The difficulty was never the tool. It's the customization debt: years of bespoke workflows, undocumented business rules, and integrations whose owners left. A lift-and-shift of accumulated complexity reproduces the mess on a new platform at higher cost — the single most common failure mode."
       },
       {
-        "type": "heading",
-        "kicker": "01",
-        "title": "A phased approach that survives contact:"
+        "type": "paragraph",
+        "text": "A phased approach that survives contact:"
       },
       {
         "type": "figure",
