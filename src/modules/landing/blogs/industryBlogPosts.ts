@@ -1,4 +1,4 @@
-import type { BlogPost } from "./blogData";
+import type { BlogBlock, BlogHeadingBlock, BlogPost } from "./blogData";
 import { mergeBlogSections } from "./mergeBlogSections";
 
 const industryBlogPostEntries: BlogPost[] = [
@@ -6,7 +6,7 @@ const industryBlogPostEntries: BlogPost[] = [
     "slug": "governing-the-agentic-enterprise-servicenow-agentic-ai-playbook",
     "category": "ServiceNow",
     "title": "Governing the Agentic Enterprise: A Practitioner's Playbook for ServiceNow Agentic AI",
-    "description": "ServiceNow has moved decisively past the sidecar AI era. With AI Agent Studio, AI Agent Orchestrator, AI Control Tower, Workflow Data Fabric and Now Assist now embedded across every workflow, the platform has become the de facto control plane for agentic business. The conversation has shifted from \"should we deploy AI agents\" to \"how do we deploy them withou",
+    "description": "ServiceNow has moved decisively past the sidecar AI era. With AI Agent Studio, AI Agent Orchestrator, AI Control Tower, Workflow Data Fabric and Now Assist now embedded across every workflow, the platform has become the de facto control plane for agentic business. The conversation has shifted from \"should we deploy AI agents\" to \"how do we deploy them without getting fined, fired or front-paged.\"",
     "deck": "ServiceNow has moved decisively past the sidecar AI era. With AI Agent Studio, AI Agent Orchestrator, AI Control Tower, Workflow Data Fabric and Now Assist now embedded across every workflow, the platform has become the de facto control plane for agentic business. The conversation has shifted from \"should we deploy AI agents\" to \"how do we deploy them without getting fined, fired or front-paged.\"",
     "featuredLabel": "ServiceNow viewpoint",
     "source": "TechSnitch_ServiceNow_Agentic_AI_ViewPoint.docx",
@@ -1714,7 +1714,7 @@ const industryBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "Rajesh Kumar / Industry Veteran • CxO • ServiceNow Practice Leader / Rajesh is an industry veteran with over twenty-five years in enterprise technology, having served in CxO roles across consulting and services organisations. For the last thirteen years he has been deeply embedded in the ServiceNow practice, leading large-scale transformation programmes for clients across BFSI, retail, manufacturing and IT services. He has built and scaled multiple ServiceNow practices from the ground up, advised boards on enterprise platform strategy, and brings a rarecombinationof executive-level commercial fluency with hands-on knowledge of the ServiceNow operating model. His work focuses on turning platform investment into measurable business outcomes — a discipline that anchors every TechSnitch engagement."
+        "text": "Rajesh Kumar / Industry Veteran • CxO • ServiceNow Practice Leader / Rajesh is an industry veteran with over twenty-five years in enterprise technology, having served in CxO roles across consulting and services organisations. For the last thirteen years he has been deeply embedded in the ServiceNow practice, leading large-scale transformation programmes for clients across BFSI, retail, manufacturing and IT services. He has built and scaled multiple ServiceNow practices from the ground up, advised boards on enterprise platform strategy, and brings a rare combination of executive-level commercial fluency with hands-on knowledge of the ServiceNow operating model. His work focuses on turning platform investment into measurable business outcomes — a discipline that anchors every TechSnitch engagement."
       },
       {
         "type": "paragraph",
@@ -3266,31 +3266,31 @@ const industryBlogPostEntries: BlogPost[] = [
     "slug": "manufacturing-servicenow-autonomous-industry-operating-model",
     "category": "Manufacturing",
     "title": "Manufacturing on ServiceNow: Autonomous Industry Operating Model",
-    "description": "TECHSNITCH•INDUSTRYVIEWPOINT•2026TECHSNITCH•INDUSTRYVIEWPOINT•2026",
-    "deck": "TECHSNITCH•INDUSTRYVIEWPOINT•2026TECHSNITCH•INDUSTRYVIEWPOINT•2026",
+    "description": "TechSnitch • Industry View Point • 2026",
+    "deck": "TechSnitch • Industry View Point • 2026",
     "featuredLabel": "Manufacturing overview",
     "source": "TechSnitch_Manufacturing_Solution.docx",
     "accent": "ink",
     "lead": [
-      "TECHSNITCH•INDUSTRYVIEWPOINT•2026TECHSNITCH•INDUSTRYVIEWPOINT•2026",
-      "MANUFACTURING•IT–OTCONVERGENCE• AGENTICOPERATIONS"
+      "TechSnitch • Industry View Point • 2026",
+      "Manufacturing • IT–OT Convergence • Agentic Operations"
     ],
     "blocks": [
       {
         "type": "paragraph",
-        "text": "TECHSNITCH•INDUSTRYVIEWPOINT•2026TECHSNITCH•INDUSTRYVIEWPOINT•2026"
+        "text": "TechSnitch • Industry View Point • 2026"
       },
       {
         "type": "paragraph",
-        "text": "MANUFACTURING•IT–OTCONVERGENCE• AGENTICOPERATIONS"
+        "text": "Manufacturing • IT–OT Convergence • Agentic Operations"
       },
       {
         "type": "paragraph",
-        "text": "Engineeringthe"
+        "text": "Engineering the"
       },
       {
         "type": "paragraph",
-        "text": "AutonomousIndustrialEnterprise"
+        "text": "Autonomous Industrial Enterprise"
       },
       {
         "type": "figure",
@@ -3303,96 +3303,96 @@ const industryBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "A reference architecture for discrete and process manufacturers, life sciences operators and industrialenterprises—builtontheServiceNowmodulesuite,designedbyTechSnitchforIT–OT convergence, governed agentic autonomy and measurable plant-floor outcomes.A reference architecture for discrete and process manufacturers, life sciences operators and industrialenterprises—builtontheServiceNowmodulesuite,designedbyTechSnitchforIT–OT convergence, governed agentic autonomy and measurable plant-floor outcomes."
+        "text": "A reference architecture for discrete and process manufacturers, life sciences operators and industrial enterprises — built on the ServiceNow module suite, designed by TechSnitch for IT–OT convergence, governed agentic autonomy and measurable plant-floor outcomes."
       },
       {
         "type": "paragraph",
-        "text": "AUTHOREDBYRajeshKumar·PrashantSharmaAUTHOREDBYRajeshKumar·PrashantSharma"
+        "text": "Authored by Rajesh Kumar · Prashant Sharma"
       },
       {
         "type": "heading",
         "kicker": "01",
-        "title": "EXECUTIVEOPENING"
+        "title": "Executive Opening"
       },
       {
         "type": "heading",
         "kicker": "02",
-        "title": "Whymanufacturing.WhyServiceNow.Whynow."
+        "title": "Why manufacturing. Why ServiceNow. Why now."
       },
       {
         "type": "paragraph",
-        "text": "Manufacturing has crossed the line where IT–OT convergence stops being a slide and starts being a regulatory and operational requirement. Seventy percent of OT systems are projected to connect to IT networks within the next year, and three-quarters of OT attacks now begin as IT breaches. Deloitte projects agentic AI adoption in manufacturing to quadruple by 2027. Siemens runs 75% of production stepsatAmbergwithouthumanintervention.Schneider'sLeVaudreuilplant—aWEFLighthouseFactory"
+        "text": "Manufacturing has crossed the line where IT–OT convergence stops being a slide and starts being a regulatory and operational requirement. Seventy percent of OT systems are projected to connect to IT networks within the next year, and three-quarters of OT attacks now begin as IT breaches. Deloitte projects agentic AI adoption in manufacturing to quadruple by 2027. Siemens runs 75% of production steps at Amberg without human intervention. Schneider's Le Vaudreuil plant — a WEF Lighthouse Factory"
       },
       {
         "type": "list",
         "items": [
-          "hasAIagentsmanagingenergy,predictivemaintenanceandautonomousschedulingacross50+lines."
+          "has AI agents managing energy, predictive maintenance and autonomous scheduling across 50+ lines."
         ]
       },
       {
         "type": "paragraph",
-        "text": "Mostmanufacturers,however,stillholdtheiroperationstogetherwithdisconnectedMES,ERP,PLMand SCADA stacks, paper-based root-cause analyses, calendar-based maintenance and an OT cybersecurity postureinheritedfromadecadeago.AIprojectsstallatpilotbecausethedatatheagentsneedtoreason overdoesnotexistinausableform.Thefactoryof2030willsense,reason,decideandactautonomously"
+        "text": "Most manufacturers, however, still hold their operations together with disconnected MES, ERP, PLM and SCADA stacks, paper-based root-cause analyses, calendar-based maintenance and an OT cybersecurity posture inherited from a decade ago. AI projects stall at pilot because the data the agents need to reason over does not exist in a usable form. The factory of 2030 will sense, reason, decide and act autonomously"
       },
       {
         "type": "list",
         "items": [
-          "butonlyforthosewhofixthefoundationnow."
+          "but only for those who fix the foundation now."
         ]
       },
       {
         "type": "paragraph",
-        "text": "ServiceNow has positioned itself for exactly this moment. The Armis acquisition gave the platform agentless discovery across IT, OT, IoT, medical devices and industrial controllers. Veza added identity intelligenceacrosshumans,machinesandAIagents.Thenativemodulesuite—ITSM,ITOM,SecOps,IRM, CSM, FSM, App Engine, SPM, Now Assist and AI Agent Studio — is now AI-native, with Workflow Data Fabric, Context Engine, AI Agent Orchestrator, AI Agent Fabric and AI Control Tower binding it together into the control plane for agentic business."
+        "text": "ServiceNow has positioned itself for exactly this moment. The Armis acquisition gave the platform agentless discovery across IT, OT, IoT, medical devices and industrial controllers. Veza added identity intelligence across humans, machines and AI agents. The native module suite — ITSM, ITOM, SecOps, IRM, CSM, FSM, App Engine, SPM, Now Assist and AI Agent Studio — is now AI-native, with Workflow Data Fabric, Context Engine, AI Agent Orchestrator, AI Agent Fabric and AI Control Tower binding it together into the control plane for agentic business."
       },
       {
         "type": "paragraph",
-        "text": "What'sstillmissingformostmanufacturers:anopinionatedimplementationandgovernance partner that turns those modules into a deployable, auditable, plant-ready operating reality. That is precisely where TechSnitch lands.What'sstillmissingformostmanufacturers:anopinionatedimplementationandgovernance partner that turns those modules into a deployable, auditable, plant-ready operating reality. That is precisely where TechSnitch lands."
+        "text": "What's still missing for most manufacturers: an opinionated implementation and governance partner that turns those modules into a deployable, auditable, plant-ready operating reality. That is precisely where TechSnitch lands."
       },
       {
         "type": "heading",
         "kicker": "03",
-        "title": "SOLUTIONARCHITECTURE"
+        "title": "Solution Architecture"
       },
       {
         "type": "heading",
         "kicker": "04",
-        "title": "Sixpillars.Oneplatform."
+        "title": "Six pillars. One platform."
       },
       {
         "type": "paragraph",
-        "text": "The TechSnitch manufacturing solution is built on six pillars that work as a connected system, not as independentinitiatives.Thedatafoundationmakeseverythingelsegovernable.Thesmart-factorylayeris theoperating-floorrealitytheothersdependon.Themaintenance,qualityandsafetypillariswherenear-term ROI lives. Together, the six pillars turn ServiceNow from a service management platform into the agentic operating system for the industrial enterprise."
+        "text": "The TechSnitch manufacturing solution is built on six pillars that work as a connected system, not as independent initiatives. The data foundation makes everything else governable. The smart-factory layer is the operating-floor reality the others depend on. The maintenance, quality and safety pillar is where near-term ROI lives. Together, the six pillars turn ServiceNow from a service management platform into the agentic operating system for the industrial enterprise."
       },
       {
         "type": "outcomes",
         "items": [
           {
             "value": "01",
-            "label": "SmartFactory&OT Transformation",
-            "detail": "Plantfloor·OTassets·ISA-95"
+            "label": "Smart Factory & OT Transformation",
+            "detail": "Plant floor / OT assets / ISA-95"
           },
           {
             "value": "02",
-            "label": "ProductIntelligence& Automation",
-            "detail": "PLM·ECO·DigitalThread"
+            "label": "Product Intelligence & Automation",
+            "detail": "PLM / ECO / Digital Thread"
           },
           {
             "value": "03",
-            "label": "ConnectedSupplyChain& Logistics",
-            "detail": "Supplier·Disruption·Logistics"
+            "label": "Connected Supply Chain & Logistics",
+            "detail": "Supplier / Disruption / Logistics"
           },
           {
             "value": "04",
-            "label": "Data,AI&OT-IT Convergence",
-            "detail": "Foundation·Semantic·Edge"
+            "label": "Data, AI & OT-IT Convergence",
+            "detail": "Foundation / Semantic / Edge"
           },
           {
             "value": "05",
-            "label": "CXTransformation",
-            "detail": "B2B·Akermarket·Channel"
+            "label": "CX Transformation",
+            "detail": "B2B / Aftermarket / Channel"
           },
           {
             "value": "06",
-            "label": "Maintenance,Quality& Safety",
-            "detail": "Predictive·RCA·Compliance"
+            "label": "Maintenance, Quality & Safety",
+            "detail": "Predictive / RCA / Compliance"
           }
         ]
       }
@@ -3402,19 +3402,19 @@ const industryBlogPostEntries: BlogPost[] = [
     "slug": "manufacturing-smart-factory-and-ot-transformation",
     "category": "Manufacturing",
     "title": "Manufacturing: Smart Factory & OT Transformation",
-    "description": "PILLAR01",
-    "deck": "PILLAR01",
+    "description": "Pillar 01",
+    "deck": "Pillar 01",
     "featuredLabel": "Manufacturing pillar 02",
     "source": "TechSnitch_Manufacturing_Solution.docx",
     "accent": "ink",
     "lead": [
-      "SmartFactory&OTTransformation",
-      "Theproblem"
+      "SmartFactory & OT Transformation",
+      "The problem"
     ],
     "blocks": [
       {
         "type": "paragraph",
-        "text": "PILLAR01"
+        "text": "Pillar 01"
       },
       {
         "type": "heading",
@@ -3424,11 +3424,11 @@ const industryBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "02",
-        "title": "Theproblem"
+        "title": "The problem"
       },
       {
         "type": "paragraph",
-        "text": "MostfactoriesstillrunonapatchworkofPLCs,SCADA,DCSandMESsystemsthatweredesignedbefore cybersecurity was a consideration and never expected to talk to enterprise IT. Plant managers cannot answer the simple question: what is running where, who has access, and is it behaving normally? Engineeringteamschaseghostincidentsacrossthreemonitoringtools.Cyberandoperationsargueover ownership every time something breaks."
+        "text": "Most factories still run on a patchwork of PLCs, SCADA, DCS and MES systems that were designed before cybersecurity was a consideration and never expected to talk to enterprise IT. Plant managers cannot answer the simple question: what is running where, who has access, and is it behaving normally? Engineering teams chase ghost incidents across three monitoring tools. Cyber and operations argue over ownership every time something breaks."
       },
       {
         "type": "figure",
@@ -3438,21 +3438,21 @@ const industryBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "03",
-        "title": "Usecases"
+        "title": "Use cases"
       },
       {
         "type": "list",
         "items": [
-          "AutonomousOTassetdiscoveryandclassification. ContinuousdiscoveryofeveryPLC,controller, sensor, HMI and edge device — including shadow OT that procurement never approved. Each asset classified, mapped to its production line, owner and criticality, and tied into the Service Graph.",
-          "Plant-floorincidenttriageandself-healing. Whenalinestops,agentsdiagnoseacrossIT,OTand the MES layer simultaneously. They reconfigure mappings when devices fail, trigger remediation playbookswithingovernedboundaries,andescalatetohumansonlyforgenuinelynovelfailures. ISA-95 layer awareness is built in.",
-          "OTcyber-defenceagents.CorrelateeventsfromITandOTinasinglefabric,prioritiseby exploitability and production impact (not CVSS alone), and contain blast radius before a ransomware variant jumps from the office network to the shop floor.",
-          "Connected-worker support. Now Assist Virtual Agent delivers persona-based assistance to operators,techniciansandengineers—voice-first,multi-language,kiosk-friendly,hands-free where required."
+          "Autonomous OT asset discovery and classification. Continuous discovery of every PLC, controller, sensor, HMI and edge device — including shadow OT that procurement never approved. Each asset classified, mapped to its production line, owner and criticality, and tied into the Service Graph.",
+          "Plant-floor incident triage and self-healing. When a line stops, agents diagnose across IT, OT and the MES layer simultaneously. They reconfigure mappings when devices fail, trigger remediation playbooks within governed boundaries, and escalate to humans only for genuinely novel failures. ISA-95 layer awareness is built in.",
+          "OT cyber-defence agents. Correlate events from IT and OT in a single fabric, prioritise by exploitability and production impact (not CVSS alone), and contain blast radius before a ransomware variant jumps from the office network to the shop floor.",
+          "Connected-worker support. Now Assist Virtual Agent delivers persona-based assistance to operators, technicians and engineers — voice-first, multi-language, kiosk-friendly, hands-free where required."
         ]
       },
       {
         "type": "paragraph",
         "tableIntro": true,
-        "text": "This table translates Usecases into a practical reference, organizing Signal, Context so the section is easier to act on."
+        "text": "This table translates use cases into a practical reference, organizing signal and context so the section is easier to act on."
       },
       {
         "type": "table",
@@ -3462,14 +3462,14 @@ const industryBlogPostEntries: BlogPost[] = [
         ],
         "rows": [
           [
-            "SERVICENOWMODULESATWORK / ▸ITOMVisibility+ServiceGraph—extended with Armis-class agentless OT/IoT discovery for full asset inventory. / ▸ITOMHealth(AIOps)+SecurityOperations / —eventcorrelation,anomalydetectionand OT-aware incident response. / ▸AIAgentStudio+AIAgentOrchestrator— autonomy logic, multi-step playbooks, governed self-healing.",
-            "TECHSNITCHCONTRIBUTION / ▸ISA-95/Purdue-Modelalignmentinthe Service Graph data model. / ▸OT-ITrunbookdesignwithexplicitautonomy tiers and human-in-the-loop gates for safety-critical decisions. / ▸OTvendorstackintegration—Rockwell, Siemens,Schneider,Honeywell,Emerson. / ▸ Continuous audit evidence for every autonomousactionthattouchesaregulated"
+            "ServiceNow Modules at Work ▸ ITOM Visibility + Service Graph — extended with Armis-class agentless OT/IoT discovery for full asset inventory. ▸ ITOM Health (AIOps) + Security Operations — event correlation, anomaly detection and OT-aware incident response. ▸ AI Agent Studio + AI Agent Orchestrator — autonomy logic, multi-step playbooks, governed self-healing.",
+            "TechSnitch Contribution ▸ ISA-95 / Purdue-Model alignment in the Service Graph data model. ▸ OT-IT runbook design with explicit autonomy tiers and human-in-the-loop gates for safety-critical decisions. ▸ OT vendor stack integration — Rockwell, Siemens, Schneider, Honeywell, Emerson. ▸ Continuous audit evidence for every autonomous action that touches a regulated"
           ]
         ]
       },
       {
         "type": "paragraph",
-        "text": "process.▸Plant-readinessassessment—whattofixin the foundation before deploying the agent.▸NowAssistVirtualAgent—operatorand technician conversational surface.▸ Workflow Data Fabric + Context Engine + AI ControlTower—unifiedIT/OTdatasubstrate with full agent visibility and governance.process.▸Plant-readinessassessment—whattofixin the foundation before deploying the agent.▸NowAssistVirtualAgent—operatorand technician conversational surface.▸ Workflow Data Fabric + Context Engine + AI ControlTower—unifiedIT/OTdatasubstrate with full agent visibility and governance."
+        "text": "Process. Plant-readiness assessment — what to fix in the foundation before deploying the agent. Now Assist Virtual Agent — operator and technician conversational surface. Workflow Data Fabric + Context Engine + AI Control Tower — unified IT/OT data substrate with full agent visibility and governance."
       },
       {
         "type": "heading",
@@ -3483,7 +3483,7 @@ const industryBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "reductioninunplanneddowntime on agent-covered lines"
+        "text": "reduction in unplanned downtime on agent-covered lines"
       },
       {
         "type": "heading",
@@ -3492,7 +3492,7 @@ const industryBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "MTTRforplantincidents,downfrom hours"
+        "text": "MTTR for plant incidents, down from hours"
       },
       {
         "type": "heading",
@@ -3501,7 +3501,7 @@ const industryBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "assetvisibilityacrossIT,OT,IoTand shadowOT"
+        "text": "asset visibility across IT, OT, IoT and shadow OT"
       }
     ]
   },
@@ -3509,19 +3509,19 @@ const industryBlogPostEntries: BlogPost[] = [
     "slug": "manufacturing-product-intelligence-and-automation",
     "category": "Manufacturing",
     "title": "Manufacturing: Product Intelligence & Automation",
-    "description": "PILLAR02",
-    "deck": "PILLAR02",
+    "description": "Pillar 02",
+    "deck": "Pillar 02",
     "featuredLabel": "Manufacturing pillar 03",
     "source": "TechSnitch_Manufacturing_Solution.docx",
     "accent": "ink",
     "lead": [
-      "ProductIntelligence&Automation",
-      "Theproblem"
+      "Product Intelligence & Automation",
+      "The problem"
     ],
     "blocks": [
       {
         "type": "paragraph",
-        "text": "PILLAR02"
+        "text": "Pillar 02"
       },
       {
         "type": "heading",
@@ -3531,11 +3531,11 @@ const industryBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "02",
-        "title": "Theproblem"
+        "title": "The problem"
       },
       {
         "type": "paragraph",
-        "text": "Product engineering, manufacturing engineering and aftermarket service still operate as three disconnecteduniverses.Engineeringchangestakeweekstopropagatetotheline.Field-qualityissuestake months to feed back to design. Warranty claims and service data sit in silos that R&D never sees. The result: late changes, late fixes, late learning."
+        "text": "Product engineering, manufacturing engineering and aftermarket service still operate as three disconnected universes. Engineering changes take weeks to propagate to the line. Field-quality issues take months to feed back to design. Warranty claims and service data sit in silos that R&D never sees. The result: late changes, late fixes, late learning."
       },
       {
         "type": "figure",
@@ -3545,21 +3545,21 @@ const industryBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "03",
-        "title": "Usecases"
+        "title": "Use cases"
       },
       {
         "type": "list",
         "items": [
-          "Engineering change orchestration. Agents take an ECO from PLM, propagate it across MES routings,workinstructions,supplierportalsandtheaffectedserviceknowledgebase.Theyflag downstream conflicts, draft impact assessments and route approvals to the right humans — collapsing a three-week cycle into days.",
-          "Closed-loopqualityintelligence.Agentsingestfield-qualitydata,warrantyclaimsandcustomer-service cases, cluster them into emerging defect patterns, and route insights back to design and process engineering with grounded evidence.",
-          "Digital-threadcopilots.ConversationalsurfaceacrossPLM,MES,ERP,CADandqualitysystems. Ask in plain English: “show me every line running revision B of the harness assembly with open NCRs in the last 30 days” — and get an actionable answer with citations.",
-          "Generativework-instructioncreation.AgentsdraftandmaintainSOPs,workinstructionsand quality procedures grounded in the live engineering record, not stale Word documents on a network drive."
+          "Engineering change orchestration. Agents take an ECO from PLM, propagate it across MES routings, work instructions, supplier portals and the affected service knowledge base. They flag downstream conflicts, draft impact assessments and route approvals to the right humans — collapsing a three-week cycle into days.",
+          "Closed-loop quality intelligence. Agents ingest field-quality data, warranty claims and customer-service cases, cluster them into emerging defect patterns, and route insights back to design and process engineering with grounded evidence.",
+          "Digital-thread copilots. Conversational surface across PLM, MES, ERP, CAD and quality systems. Ask in plain English: “show me every line running revision B of the harness assembly with open NCRs in the last 30 days” — and get an actionable answer with citations.",
+          "Generative work-instruction creation. Agents draft and maintain SOPs, work instructions and quality procedures grounded in the live engineering record, not stale Word documents on a network drive."
         ]
       },
       {
         "type": "paragraph",
         "tableIntro": true,
-        "text": "This table translates Usecases into a practical reference, organizing Signal, Context so the section is easier to act on."
+        "text": "This table translates use cases into a practical reference, organizing signal and context so the section is easier to act on."
       },
       {
         "type": "table",
@@ -3569,14 +3569,14 @@ const industryBlogPostEntries: BlogPost[] = [
         ],
         "rows": [
           [
-            "SERVICENOWMODULESATWORK / ▸StrategicPortfolioManagement(SPM)— engineering change demand, capacity and value-stream alignment. / ▸ App Engine + Workflow Studio + Manufacturing Connected Operations — customECOandquality-loopworkflowstied intoPLM,MESandERPviatheindustrydata model. / ▸CSM + FSM — warranty, service-case and field-evidencechannelsfeedingtheclosed loop.",
-            "TECHSNITCHCONTRIBUTION / ▸ PLM, MES and ERP integration patterns — Teamcenter,Windchill,SAP,Oracle,Dassault. / ▸ Closed-loop quality framework design connectingfieldsignaltodesignandprocess engineering. / ▸ Regulated-product audit overlays for medicaldevices,aerospace,automotive functional safety. / ▸Knowledge-graphdesigntyingproduct, process and field data."
+            "ServiceNow Modules at Work ▸ Strategic Portfolio Management (SPM) — engineering change demand, capacity and value-stream alignment. ▸ App Engine + Workflow Studio + Manufacturing Connected Operations — custom ECO and quality-loop workflows tied into PLM, MES and ERP via the industry data model. ▸ CSM + FSM — warranty, service-case and field-evidence channels feeding the closed loop.",
+            "TechSnitch Contribution ▸ PLM, MES and ERP integration patterns — Teamcenter, Windchill, SAP, Oracle, Dassault. ▸ Closed-loop quality framework design connecting field signal to design and process engineering. ▸ Regulated-product audit overlays for medical devices, aerospace, automotive functional safety. ▸ Knowledge-graph design tying product, process and field data."
           ]
         ]
       },
       {
         "type": "paragraph",
-        "text": "▸ Now Assist for Creator + AI Agent Orchestrator—generativeflowandplaybook generation,multi-systemorchestrationacross PLM, MES, ERP, CSM and FSM.▸ Document Intelligence — automated extractionfromdrawings,specs,NCRs, warranty submissions.▸ Now Assist for Creator + AI Agent Orchestrator—generativeflowandplaybook generation,multi-systemorchestrationacross PLM, MES, ERP, CSM and FSM.▸ Document Intelligence — automated extractionfromdrawings,specs,NCRs, warranty submissions."
+        "text": "Now Assist for Creator + AI Agent Orchestrator — generative flow and playbook generation, multi-system orchestration across PLM, MES, ERP, CSM and FSM. Document Intelligence — automated extraction from drawings, specs, NCRs, and warranty submissions."
       },
       {
         "type": "heading",
@@ -3588,15 +3588,15 @@ const industryBlogPostEntries: BlogPost[] = [
         "items": [
           {
             "value": "40–60%",
-            "label": "reductioninengineeringchange cycletime"
+            "label": "reduction in engineering change cycle time"
           },
           {
             "value": "Days",
-            "label": "field-qualitysignaltodesignteams, down from quarters"
+            "label": "field-quality signal to design teams, down from quarters"
           },
           {
             "value": "Sharply",
-            "label": "lowerdocumentationeffortwithfull revisionlineage"
+            "label": "lower documentation effort with full revision lineage"
           }
         ]
       }
@@ -3606,19 +3606,19 @@ const industryBlogPostEntries: BlogPost[] = [
     "slug": "manufacturing-connected-supply-chain-and-logistics",
     "category": "Manufacturing",
     "title": "Manufacturing: Connected Supply Chain & Logistics",
-    "description": "PILLAR03",
-    "deck": "PILLAR03",
+    "description": "Pillar 03",
+    "deck": "Pillar 03",
     "featuredLabel": "Manufacturing pillar 04",
     "source": "TechSnitch_Manufacturing_Solution.docx",
     "accent": "ink",
     "lead": [
-      "ConnectedSupplyChain&Logistics",
-      "Theproblem"
+      "Connected Supply Chain & Logistics",
+      "The problem"
     ],
     "blocks": [
       {
         "type": "paragraph",
-        "text": "PILLAR03"
+        "text": "Pillar 03"
       },
       {
         "type": "heading",
@@ -3628,11 +3628,11 @@ const industryBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "02",
-        "title": "Theproblem"
+        "title": "The problem"
       },
       {
         "type": "paragraph",
-        "text": "Supplychainsarestillmanagedreactively.Disruptionsaredetectedaftertheyimpactproduction.Supplier onboarding is a paperwork exercise. Logistics exceptions are handled by humans copy-pasting between systems.McKinseyfoundthatcompaniesextensivelyusingAIinsupplychainscanimprovelogisticscosts by 15%, inventory levels by 35% and service levels by 65% — but most manufacturers are nowhere near capturing that."
+        "text": "Supply chains are still managed reactively. Disruptions are detected after they impact production. Supplier onboarding is a paperwork exercise. Logistics exceptions are handled by humans copy-pasting between systems. McKinsey found that companies extensively using AI in supply chains can improve logistics costs by 15%, inventory levels by 35% and service levels by 65% — but most manufacturers are nowhere near capturing that."
       },
       {
         "type": "figure",
@@ -3642,21 +3642,21 @@ const industryBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "03",
-        "title": "Usecases"
+        "title": "Use cases"
       },
       {
         "type": "list",
         "items": [
-          "Disruption-sensingagents.Continuouslymonitorweather,geopoliticalsignal,portstatus,supplier financial health and freight indices, correlate against the bill of materials and production plan, and forecast risk to specific lines and SKUs before disruption hits.",
-          "Autonomous supplier qualification and onboarding. Conversational agents guide suppliers through onboarding, run document intelligence across compliance certificates, financial statementsandauditreports,androuteexceptionstohumans.Sixweekscompressestodays.",
-          "Logisticsexceptionorchestration.Whenashipmentslips,agentsanalysecost-versus-delayacross alternatives, initiate contract negotiations through templated playbooks, adjust production schedules and update affected customers — all within explicit autonomy boundaries.",
-          "Spendandcontractintelligence.Agentsreasonacrossprocurementcontracts,surfacesavings opportunities, flag clauses that no longer match commercial reality and draft renegotiation positions with full evidence."
+          "Disruption-sensing agents. Continuously monitor weather, geopolitical signal, port status, supplier financial health and freight indices, correlate against the bill of materials and production plan, and forecast risk to specific lines and SKUs before disruption hits.",
+          "Autonomous supplier qualification and onboarding. Conversational agents guide suppliers through onboarding, run document intelligence across compliance certificates, financial statements and audit reports, and route exceptions to humans. Six weeks compresses to days.",
+          "Logistics exception orchestration. When a shipment slips, agents analyse cost-versus-delay across alternatives, initiate contract negotiations through templated playbooks, adjust production schedules and update affected customers — all within explicit autonomy boundaries.",
+          "Spend and contract intelligence. Agents reason across procurement contracts, surface savings opportunities, flag clauses that no longer match commercial reality and draft renegotiation positions with full evidence."
         ]
       },
       {
         "type": "paragraph",
         "tableIntro": true,
-        "text": "This table translates Usecases into a practical reference, organizing Signal, Context so the section is easier to act on."
+        "text": "This table translates use cases into a practical reference, organizing signal and context so the section is easier to act on."
       },
       {
         "type": "table",
@@ -3666,14 +3666,14 @@ const industryBlogPostEntries: BlogPost[] = [
         ],
         "rows": [
           [
-            "SERVICENOWMODULESATWORK / ▸ Supplier Lifecycle Operations + Sourcing & Procurement—systemofrecordforsupplier onboarding, qualification, sourcing events, contracts and intake-to-procure. / ▸IntegratedRiskManagement(IRM)—third-party risk, continuous-control monitoring, sanctions and export-control posture. / ▸CSMIndustryDataModel(Manufacturing) / —order,shipmentandcustomer-impact orchestration. / ▸AIAgentFabric+AIAgentOrchestrator—",
-            "TECHSNITCHCONTRIBUTION / ▸Supplier-riskpolicylibrary mappedto regionalregulations—exportcontrols, sanctions, modern-slavery acts, ESG disclosure. / ▸ Procurement integration patterns for SAP Ariba,Coupa,OracleProcurementandmajor TMS/WMS systems. / ▸Disruption-responseplaybooklibrarytuned to discrete vs process manufacturing. / ▸Cross-bordercomplianceframeworksfor India, MENA and SE Asia trade flows."
+            "ServiceNow Modules at Work ▸ Supplier Lifecycle Operations + Sourcing & Procurement — system of record for supplier onboarding, qualification, sourcing events, contracts and intake-to-procure. ▸ Integrated Risk Management (IRM) — third-party risk, continuous-control monitoring, sanctions and export-control posture. ▸ CSM Industry Data Model (Manufacturing) — order, shipment and customer-impact orchestration. ▸ AI Agent Fabric + AI Agent Orchestrator —",
+            "TechSnitch Contribution ▸ Supplier-risk policy library mapped to regional regulations — export controls, sanctions, modern-slavery acts, ESG disclosure. ▸ Procurement integration patterns for SAP Ariba, Coupa, Oracle Procurement and major TMS/WMS systems. ▸ Disruption-response playbook library tuned to discrete vs process manufacturing. ▸ Cross-border compliance frameworks for India, MENA and SE Asia trade flows."
           ]
         ]
       },
       {
         "type": "paragraph",
-        "text": "interoperabilitywithlogisticspartners,freight forwarders and 3PL agents via A2A and MCP.▸ Workflow Data Fabric + Now Assist — unifieddatasubstrateconnectingERP,TMS, WMS and external risk feeds, with conversational supplier and buyer surfaces.interoperabilitywithlogisticspartners,freight forwarders and 3PL agents via A2A and MCP.▸ Workflow Data Fabric + Now Assist — unifieddatasubstrateconnectingERP,TMS, WMS and external risk feeds, with conversational supplier and buyer surfaces."
+        "text": "Interoperability with logistics partners, freight forwarders and 3PL agents via A2A and MCP. Workflow Data Fabric + Now Assist — unified data substrate connecting ERP, TMS, WMS and external risk feeds, with conversational supplier and buyer surfaces."
       },
       {
         "type": "heading",
@@ -3687,7 +3687,7 @@ const industryBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "reductioninsupplieronboarding time"
+        "text": "reduction in supplier onboarding time"
       },
       {
         "type": "heading",
@@ -3696,16 +3696,16 @@ const industryBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "logisticscostreductiononagent-managedlanes"
+        "text": "logistics cost reduction on agent-managed lanes"
       },
       {
         "type": "heading",
         "kicker": "07",
-        "title": "Daysearlier"
+        "title": "Days earlier"
       },
       {
         "type": "paragraph",
-        "text": "disruptiondetection—managed mitigation, not crisis response"
+        "text": "disruption detection — managed mitigation, not crisis response"
       }
     ]
   },
@@ -3713,19 +3713,19 @@ const industryBlogPostEntries: BlogPost[] = [
     "slug": "manufacturing-the-foundation-data-ai-and-ot-it-convergence",
     "category": "Manufacturing",
     "title": "Manufacturing: The Foundation: Data, AI & OT-IT Convergence",
-    "description": "PILLAR04·THEFOUNDATION",
-    "deck": "PILLAR04·THEFOUNDATION",
+    "description": "P I L L A R 0 4 · T H E F O U N D A T I O N",
+    "deck": "P I L L A R 0 4 · T H E F O U N D A T I O N",
     "featuredLabel": "Manufacturing pillar 05",
     "source": "TechSnitch_Manufacturing_Solution.docx",
     "accent": "ink",
     "lead": [
-      "Data,AI&OT-ITConvergence",
-      "Theproblem"
+      "Data, AI & OT-IT Convergence",
+      "The problem"
     ],
     "blocks": [
       {
         "type": "paragraph",
-        "text": "PILLAR04·THEFOUNDATION"
+        "text": "P I L L A R 0 4 · T H E F O U N D A T I O N"
       },
       {
         "type": "heading",
@@ -3735,11 +3735,11 @@ const industryBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "02",
-        "title": "Theproblem"
+        "title": "The problem"
       },
       {
         "type": "paragraph",
-        "text": "Thisisthefoundationpillar.Withoutit,theotherfivefail.Mostmanufacturershavedatascatteredacross MES, ERP, PLM, SCADA, historians, cloud data lakes and a graveyard of point tools. There is no shared semantic model. ISA-95 is talked about in slides and ignored in implementation. AI projects fail because the data the agents need to reason over does not exist in a usable form."
+        "text": "This is the foundation pillar. Without it, the other five fail. Most manufacturers have data scattered across MES, ERP, PLM, SCADA, historians, cloud data lakes and a graveyard of point tools. There is no shared semantic model. ISA-95 is talked about in slides and ignored in implementation. AI projects fail because the data the agents need to reason over does not exist in a usable form."
       },
       {
         "type": "figure",
@@ -3749,22 +3749,22 @@ const industryBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "03",
-        "title": "Usecases"
+        "title": "Use cases"
       },
       {
         "type": "list",
         "items": [
-          "SemanticharmonisationacrossITandOT. Agentsmapplant-floortags,MESevents,ERPrecords and PLM data into a unified semantic model aligned with ISA-95 / ISA-95.00.01-2025 ontologies.",
-          "Continuousdata-qualitymonitoring.Agentsdetectdriftintagnaming,missingcontext,broken device mappings and orphan records, and route fixes — without humans needing to scan dashboards.",
-          "MCP-based agent connectivity. Agents access OT data, MES events and ERP records through ModelContextProtocol—replacingthecustom-connectorgraveyardmostmanufacturershave built up over twenty years.",
-          "Identityandaccessfortheagenticfactory.Veza-classpermissionmappingacrosshumans, machines and agents flows into Context Engine and is enforced as policy.",
-          "Edge-native autonomy. Where latency matters — sub-second control loops, safety-critical decisions—agentsrunattheedge,withcentralvisibilitymaintainedthroughAIControlTower."
+          "Semantic harmonisation across IT and OT. Agents map plant-floor tags, MES events, ERP records and PLM data into a unified semantic model aligned with ISA-95 / ISA-95.00.01-2025 ontologies.",
+          "Continuous data-quality monitoring. Agents detect drift in tag naming, missing context, broken device mappings and orphan records, and route fixes — without humans needing to scan dashboards.",
+          "MCP-based agent connectivity. Agents access OT data, MES events and ERP records through Model Context Protocol — replacing the custom-connector graveyard most manufacturers have built up over twenty years.",
+          "Identity and access for the agentic factory. Veza-class permission mapping across humans, machines and agents flows into Context Engine and is enforced as policy.",
+          "Edge-native autonomy. Where latency matters — sub-second control loops, safety-critical decisions — agents run at the edge, with central visibility maintained through AI Control Tower."
         ]
       },
       {
         "type": "paragraph",
         "tableIntro": true,
-        "text": "This table translates Usecases into a practical reference, organizing Signal, Context so the section is easier to act on."
+        "text": "This table translates use cases into a practical reference, organizing signal and context so the section is easier to act on."
       },
       {
         "type": "table",
@@ -3774,14 +3774,14 @@ const industryBlogPostEntries: BlogPost[] = [
         ],
         "rows": [
           [
-            "SERVICENOWMODULESATWORK / ▸ Workflow Data Fabric + Context Engine — real-time substrate connecting internal systems, SaaS sources and external data; Service Graph and Knowledge Graph give everyagentliveaccesstorelationships,policy and decision history. / ▸AIAgentFabric—unifiesthird-partyagents from any platform under one governed registry built on A2A, A2UI and MCP. / ▸AIControlTower—singlepaneofglass across every agent in the enterprise. / ▸Identitygovernance(Veza-powered)—",
-            "TECHSNITCHCONTRIBUTION / ▸ISA-95referencearchitectureandsemantic-model implementation. / ▸ServiceGraphdatamodeldesignfor manufacturing. / ▸Identityandaccessframeworkforagentic environments. / ▸ MCP integration patterns for major MES (RockwellFactoryTalk,SiemensOpcenter,GE Proficy, Aveva), historians (PI System, Aveva Historian) and ERPs."
+            "ServiceNow Modules at Work ▸ Workflow Data Fabric + Context Engine — real-time substrate connecting internal systems, SaaS sources and external data; Service Graph and Knowledge Graph give every agent live access to relationships, policy and decision history. ▸ AI Agent Fabric — unifies third-party agents from any platform under one governed registry built on A2A, A2UI and MCP. ▸ AI Control Tower — single pane of glass across every agent in the enterprise. ▸ Identity governance (Veza-powered) —",
+            "TechSnitch Contribution ▸ ISA-95 reference architecture and semantic-model implementation. ▸ Service Graph data model design for manufacturing. ▸ Identity and access framework for agentic environments. ▸ MCP integration patterns for major MES (Rockwell FactoryTalk, Siemens Opcenter, GE Proficy, Aveva), historians (PI System, Aveva Historian) and ERPs."
           ]
         ]
       },
       {
         "type": "paragraph",
-        "text": "accessmappingacrosshumans,machinesand AI agents.▸ ITOM Discovery + Document Intelligence + Now Assist for Search — automated configurationbaselineandunstructured-data conversion into agent-usable knowledge.accessmappingacrosshumans,machinesand AI agents.▸ ITOM Discovery + Document Intelligence + Now Assist for Search — automated configurationbaselineandunstructured-data conversion into agent-usable knowledge."
+        "text": "Access mapping across humans, machines and AI agents. ITOM Discovery + Document Intelligence + Now Assist for Search — automated configuration baseline and unstructured-data conversion into agent-usable knowledge."
       },
       {
         "type": "heading",
@@ -3795,7 +3795,7 @@ const industryBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "ISA-95-aligneddatamodelacrossIT andOT"
+        "text": "ISA-95-aligned data model across IT and OT"
       },
       {
         "type": "heading",
@@ -3804,7 +3804,7 @@ const industryBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "dataqualityremediation,not quarterlyclean-up"
+        "text": "data quality remediation, not quarterly clean-up"
       },
       {
         "type": "heading",
@@ -3813,7 +3813,7 @@ const industryBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "inplaceforeveryotherpillarto scale, not stall"
+        "text": "in place for every other pillar to scale, not stall"
       }
     ]
   },
@@ -3821,19 +3821,19 @@ const industryBlogPostEntries: BlogPost[] = [
     "slug": "manufacturing-cx-transformation",
     "category": "Manufacturing",
     "title": "Manufacturing: CX Transformation",
-    "description": "PILLAR05",
-    "deck": "PILLAR05",
+    "description": "Pillar 05",
+    "deck": "Pillar 05",
     "featuredLabel": "Manufacturing pillar 06",
     "source": "TechSnitch_Manufacturing_Solution.docx",
     "accent": "ink",
     "lead": [
       "CX Transformation",
-      "Theproblem"
+      "The problem"
     ],
     "blocks": [
       {
         "type": "paragraph",
-        "text": "PILLAR05"
+        "text": "Pillar 05"
       },
       {
         "type": "heading",
@@ -3843,11 +3843,11 @@ const industryBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "02",
-        "title": "Theproblem"
+        "title": "The problem"
       },
       {
         "type": "paragraph",
-        "text": "B2Bmanufacturercustomerexperienceisstillmostlycallcentres,emailqueuesandspreadsheets.Order statustakesaphonecall.Warrantyclaimstakeweeks.ServiceknowledgesitsinPDFsnobodycanfind.The competitor who fixes this owns the relationship for a decade."
+        "text": "B2B manufacturer customer experience is still mostly call centres, email queues and spreadsheets. Order status takes a phone call. Warranty claims take weeks. Service knowledge sits in PDFs nobody can find. The competitor who fixes this owns the relationship for a decade."
       },
       {
         "type": "figure",
@@ -3857,22 +3857,22 @@ const industryBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "03",
-        "title": "Usecases"
+        "title": "Use cases"
       },
       {
         "type": "list",
         "items": [
-          "Conversational order management. Customer-facing agents handle order queries, change requests,statusupdatesandship-datereasoningacrossthejourney.Multi-channel—web,email, voice, partner portal, Microsoft Teams or Slack where the customer is integrated.",
-          "Warrantyandclaimsautomation.Agentsintakewarrantycases,rundocumentintelligenceon submitted evidence, cross-check against product configuration and serial-number history, and resolve straightforward claims autonomously.",
-          "Aftermarket parts and service intelligence. Agents recommend parts, schedule service and surfaceupsellorcross-sellopportunitiesgroundedinactualinstalled-basedata—notgeneric catalogue logic.",
-          "Distributor and channel-partner enablement. Conversational agents trained on product catalogue,pricingrules,configurationlogicandcompliancerequirementsturnchannelpartners into a force multiplier.",
-          "Voice-of-customer signal. Agents synthesise sentiment across calls, cases, surveys and digital touchpoints,androuteemergingissuestoproduct,qualityandserviceteamswithinhours,not quarters."
+          "Conversational order management. Customer-facing agents handle order queries, change requests, status updates and ship-date reasoning across the journey. Multi-channel — web, email, voice, partner portal, Microsoft Teams or Slack where the customer is integrated.",
+          "Warranty and claims automation. Agents intake warranty cases, run document intelligence on submitted evidence, cross-check against product configuration and serial-number history, and resolve straightforward claims autonomously.",
+          "Aftermarket parts and service intelligence. Agents recommend parts, schedule service and surface upsell or cross-sell opportunities grounded in actual installed-base data — not generic catalogue logic.",
+          "Distributor and channel-partner enablement. Conversational agents trained on product catalogue, pricing rules, configuration logic and compliance requirements turn channel partners into a force multiplier.",
+          "Voice-of-customer signal. Agents synthesise sentiment across calls, cases, surveys and digital touchpoints, and route emerging issues to product, quality and service teams within hours, not quarters."
         ]
       },
       {
         "type": "paragraph",
         "tableIntro": true,
-        "text": "This table translates Usecases into a practical reference, organizing Signal, Context so the section is easier to act on."
+        "text": "This table translates use cases into a practical reference, organizing signal and context so the section is easier to act on."
       },
       {
         "type": "table",
@@ -3882,14 +3882,14 @@ const industryBlogPostEntries: BlogPost[] = [
         ],
         "rows": [
           [
-            "SERVICENOWMODULESATWORK / ▸ Customer Service Management (CSM) — case,complaintandcontactbackbonewith the manufacturing industry data model. / ▸ Field Service Management (FSM) — dispatch, technician copilot, parts orchestrationandSLAmanagementonthe aftermarket side. / ▸Sales and Order Management + Logik.ai — ordervisibility,changeorchestration,pricing and configuration logic.",
-            "TECHSNITCHCONTRIBUTION / ▸B2Bservice-processdesign—warranty, RMA, recall, field-service workflows. / ▸Distributorandchannel-partnerportal patterns for industrial equipment, automotive parts and CPG distribution. / ▸ CRM and ERP integration — Salesforce, Dynamics,SAP,Oracle—withoutrip-and-replace. / ▸ Commercial policy governance baked into theagentruntime—whatanagentcanoffer,"
+            "ServiceNow Modules at Work ▸ Customer Service Management (CSM) — case, complaint and contact backbone with the manufacturing industry data model. ▸ Field Service Management (FSM) — dispatch, technician copilot, parts orchestration and SLA management on the aftermarket side. ▸ Sales and Order Management + Logik.ai — order visibility, change orchestration, pricing and configuration logic.",
+            "TechSnitch Contribution ▸ B2B service-process design — warranty, RMA, recall, field-service workflows. ▸ Distributor and channel-partner portal patterns for industrial equipment, automotive parts and CPG distribution. ▸ CRM and ERP integration — Salesforce, Dynamics, SAP, Oracle — without rip-and-replace. ▸ Commercial policy governance baked into the agent runtime — what an agent can offer,"
           ]
         ]
       },
       {
         "type": "paragraph",
-        "text": "underwhatconditions.▸NowAssistforCSM,FSMandVirtualAgent— case summarization, knowledge generation,post-interactionwork,multi-channel conversational surface.▸AIAgentStudio+PredictiveIntelligence— autonomous case resolution, sentiment-aware escalation, churn-risk intervention, CSAT prediction.underwhatconditions.▸NowAssistforCSM,FSMandVirtualAgent— case summarization, knowledge generation,post-interactionwork,multi-channel conversational surface.▸AIAgentStudio+PredictiveIntelligence— autonomous case resolution, sentiment-aware escalation, churn-risk intervention, CSAT prediction."
+        "text": "Under what conditions. Now Assist for CSM, FSM and Virtual Agent — case summarization, knowledge generation, post-interaction work, multi-channel conversational surface. AI Agent Studio + Predictive Intelligence — autonomous case resolution, sentiment-aware escalation, churn-risk intervention, CSAT prediction."
       },
       {
         "type": "heading",
@@ -3903,7 +3903,7 @@ const industryBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "ofB2Bcontactvolumehandledby agents without handoff"
+        "text": "of B2B contact volume handled by agents without handoff"
       },
       {
         "type": "heading",
@@ -3912,7 +3912,7 @@ const industryBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "CSATimprovementonagent-handledchannels"
+        "text": "CSAT improvement on agent-handled channels"
       },
       {
         "type": "heading",
@@ -3921,7 +3921,7 @@ const industryBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "lowerwarrantyclaimcycletime"
+        "text": "lower warranty claim cycle time"
       }
     ]
   },
@@ -3929,19 +3929,19 @@ const industryBlogPostEntries: BlogPost[] = [
     "slug": "manufacturing-maintenance-quality-and-safety-operations",
     "category": "Manufacturing",
     "title": "Manufacturing: Maintenance, Quality & Safety Operations",
-    "description": "PILLAR06",
-    "deck": "PILLAR06",
+    "description": "Pillar 06",
+    "deck": "Pillar 06",
     "featuredLabel": "Manufacturing pillar 07",
     "source": "TechSnitch_Manufacturing_Solution.docx",
     "accent": "ink",
     "lead": [
-      "Maintenance,Quality&SafetyOperations",
-      "Theproblem"
+      "Maintenance, Quality & Safety Operations",
+      "The problem"
     ],
     "blocks": [
       {
         "type": "paragraph",
-        "text": "PILLAR06"
+        "text": "Pillar 06"
       },
       {
         "type": "heading",
@@ -3951,11 +3951,11 @@ const industryBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "02",
-        "title": "Theproblem"
+        "title": "The problem"
       },
       {
         "type": "paragraph",
-        "text": "Maintenance is reactive or calendar-based, not condition-based. Quality issues are caught at end-of-line inspection or — worse — by the customer. Safety incidents are investigated after they happen, with paper-basedroot-causeanalysisthattakesweeks.Eachdomainrunsitsownplaybookinitsowntool.The same root cause shows up three times before anyone connects the dots."
+        "text": "Maintenance is reactive or calendar-based, not condition-based. Quality issues are caught at end-of-line inspection or — worse — by the customer. Safety incidents are investigated after they happen, with paper-based root-cause analysis that takes weeks. Each domain runs its own playbook in its own tool. The same root cause shows up three times before anyone connects the dots."
       },
       {
         "type": "figure",
@@ -3965,46 +3965,46 @@ const industryBlogPostEntries: BlogPost[] = [
       {
         "type": "heading",
         "kicker": "03",
-        "title": "Maintenanceusecases"
+        "title": "Maintenance use cases"
       },
       {
         "type": "list",
         "items": [
-          "Predictive-maintenanceagentsfusevibration,thermal,current-draw,lubricantconditionand historical failure patterns to forecast asset failures before they happen.",
-          "Work-orderorchestrationagentsscheduleinterventionsduringplanneddowntime,pre-stage parts via supply-chain agents, and dispatch the right technician with the right SOP.",
-          "Asset-health twins kept live by continuous telemetry, with autonomy boundaries explicitly definedforwhichactionsagentscantakevswhichrequiremaintenance-engineerapproval."
+          "Predictive-maintenance agents fuse vibration, thermal, current-draw, lubricant condition and historical failure patterns to forecast asset failures before they happen.",
+          "Work-order orchestration agents schedule interventions during planned downtime, pre-stage parts via supply-chain agents, and dispatch the right technician with the right SOP.",
+          "Asset-health twins kept live by continuous telemetry, with autonomy boundaries explicitly defined for which actions agents can take vs which require maintenance-engineer approval."
         ]
       },
       {
         "type": "heading",
         "kicker": "04",
-        "title": "Qualityusecases"
+        "title": "Quality use cases"
       },
       {
         "type": "list",
         "items": [
-          "Qualityagentsdetectanomaliesinrealtime—paintthickness,dimensionaltolerance,weld quality, chemical-bath conditions — and trigger contained remediation within governed boundaries.",
-          "Root-causeagents tracedefectsbackwardsthroughthedigitalthread,correlatingMESevents, raw-materiallots,supplierbatches,ambientconditionsandoperatorshifts.RCAsthattooktwo weeks now take hours.",
-          "Closed-loopquality.SignalsfromthelineflowbackthroughProductIntelligence(Pillar02)into engineering and supplier-quality programmes."
+          "Quality agents detect anomalies in real time — paint thickness, dimensional tolerance, weld quality, chemical-bath conditions — and trigger contained remediation within governed boundaries.",
+          "Root-cause agents trace defects backwards through the digital thread, correlating MES events, raw-material lots, supplier batches, ambient conditions and operator shifts. RCAs that took two weeks now take hours.",
+          "Closed-loop quality. Signals from the line flow back through Product Intelligence (Pillar 02) into engineering and supplier-quality programmes."
         ]
       },
       {
         "type": "heading",
         "kicker": "05",
-        "title": "Safetyusecases"
+        "title": "Safety use cases"
       },
       {
         "type": "list",
         "items": [
-          "Computer-visionandsensor-fusionagents monitorPPEcompliance,exclusionzones,lockout-tagout discipline and high-risk task adherence — flagging deviations in real time.",
-          "Incident-responseagentsrunthefirsthourofanysafetyeventbyplaybook:notifytheright humans, secure the area, initiate evidence capture, draft regulatory notification, surface comparable past incidents.",
-          "Safety-managementagentsdrivecorrectiveactionworkflowsandauditreadinessforOSHA, factory inspectorates and ISO 45001 reviews."
+          "Computer-vision and sensor-fusion agents monitor PPE compliance, exclusion zones, lockout-tagout discipline and high-risk task adherence — flagging deviations in real time.",
+          "Incident-response agents run the first hour of any safety event by playbook: notify the right humans, secure the area, initiate evidence capture, draft regulatory notification, surface comparable past incidents.",
+          "Safety-management agents drive corrective action workflows and audit readiness for OSHA, factory inspectorates and ISO 45001 reviews."
         ]
       },
       {
         "type": "paragraph",
         "tableIntro": true,
-        "text": "This table translates Safetyusecases into a practical reference, organizing Signal, Context so the section is easier to act on."
+        "text": "This table translates safety use cases into a practical reference, organizing Signal, Context so the section is easier to act on."
       },
       {
         "type": "table",
@@ -4014,8 +4014,8 @@ const industryBlogPostEntries: BlogPost[] = [
         ],
         "rows": [
           [
-            "SERVICENOWMODULESATWORK / ▸ Field Service Management + Connected Operations — work-order orchestration, dispatch,technicianmobile,partsandSLA, with asset-twin and OT signal integration. / ▸ITOMHealth+PredictiveAIOps—asset-failure forecasting and event correlation extended to industrial assets. / ▸ App Engine + Workflow Studio + Health & Safety Operations — quality, NCR, CAPA, safety-incident,hazardandcorrective-action workflows on a single platform. / ▸IntegratedRiskManagement+Operational Risk Management — OSHA, ISO 45001, ISO 9001, GxP, IATF 16949 control libraries. / ▸AI Agent Studio + AI Agent Orchestrator + NowAssistVirtualAgent—predictive,self-healing, multi-domain orchestration with technician, inspector and EHS-officer-facing surface.",
-            "TECHSNITCHCONTRIBUTION / ▸Predictive-maintenanceintegrationwith existing CMMS (Maximo, SAP PM) and historian data. / ▸QualityframeworkdesignforIATF16949, AS9100, ISO 13485 and FDA-regulated environments. / ▸Safetyoperating-modeldesignalignedtoISO 45001 and regional safety codes. / ▸Continuous-evidenceoverlayssoauditsstop being a six-week scramble."
+            "ServiceNow Modules at Work ▸ Field Service Management + Connected Operations — work-order orchestration, dispatch, technician mobile, parts and SLA, with asset-twin and OT signal integration. ▸ ITOM Health + Predictive AIOps — asset-failure forecasting and event correlation extended to industrial assets. ▸ App Engine + Workflow Studio + Health & Safety Operations — quality, NCR, CAPA, safety-incident, hazard and corrective-action workflows on a single platform. ▸ Integrated Risk Management + Operational Risk Management — OSHA, ISO 45001, ISO 9001, GxP, IATF 16949 control libraries. ▸ AI Agent Studio + AI Agent Orchestrator + Now Assist Virtual Agent — predictive, self-healing, multi-domain orchestration with technician, inspector and EHS-officer-facing surface.",
+            "TechSnitch Contribution ▸ Predictive-maintenance integration with existing CMMS (Maximo, SAP PM) and historian data. ▸ Quality framework design for IATF 16949, AS9100, ISO 13485 and FDA-regulated environments. ▸ Safety operating-model design aligned to ISO 45001 and regional safety codes. ▸ Continuous-evidence overlays so audits stop being a six-week scramble."
           ]
         ]
       },
@@ -4029,37 +4029,37 @@ const industryBlogPostEntries: BlogPost[] = [
         "items": [
           {
             "value": "20–35%",
-            "label": "unplanneddowntimereductionon agent-coveredassets"
+            "label": "unplanned downtime reduction on agent-covered assets"
           },
           {
             "value": "5–15%",
-            "label": "first-passqualityyieldimprovement",
-            "detail": "—directmargin"
+            "label": "first-pass quality yield improvement",
+            "detail": "— direct margin"
           },
           {
             "value": "Hours",
-            "label": "RCAcycletime,downfromweeks"
+            "label": "RCA cycle time, down from weeks"
           }
         ]
       },
       {
         "type": "heading",
         "kicker": "07",
-        "title": "DELIVERYAPPROACH"
+        "title": "Delivery Approach"
       },
       {
         "type": "heading",
         "kicker": "08",
-        "title": "Implementationroadmap"
+        "title": "Implementation roadmap"
       },
       {
         "type": "paragraph",
-        "text": "AtypicalTechSnitchmanufacturingengagementlandsacrossfivedisciplinedphasesovertwelvetofifteen months.Thephasingrespectstwonon-negotiables:thedatafoundationgoesinfirst,andwenevershipto production during a peak-production window or planned shutdown season."
+        "text": "A typical TechSnitch manufacturing engagement lands across five disciplined phases over twelve to fifteen months. The phasing respects two non-negotiables: the data foundation goes in first, and we never ship to production during a peak-production window or planned shutdown season."
       },
       {
         "type": "paragraph",
         "tableIntro": true,
-        "text": "This table translates Implementationroadmap into a practical reference, organizing Signal, Context so the section is easier to act on."
+        "text": "This table translates Implementation roadmap into a practical reference, organizing Signal, Context so the section is easier to act on."
       },
       {
         "type": "table",
@@ -4069,27 +4069,27 @@ const industryBlogPostEntries: BlogPost[] = [
         ],
         "rows": [
           [
-            "PHASE1 / Months1–3",
-            "Foundation / ISA-95/Purdue-Model-aligneddatamodel.ServiceGraphdesignformanufacturing. CMDB readiness audit and OT asset discovery baseline. Identity framework for humans, machines and agents. Governance charter — autonomy tiers, kill-switch authority, audit requirements."
+            "Phase 1 Months 1–3",
+            "Foundation ISA-95 / Purdue-Model-aligned data model. Service Graph design for manufacturing. CMDB readiness audit and OT asset discovery baseline. Identity framework for humans, machines and agents. Governance charter — autonomy tiers, kill-switch authority, audit requirements."
           ],
           [
-            "PHASE2 / Months3–6",
-            "FirstProductionAgents / Two to four contained agents — typically OT incident triage, work-order orchestration,technicianself-service,supplieronboarding.Eachwithmeasurable success criteria locked before launch. Continuous audit evidence from day one."
+            "Phase 2 Months 3–6",
+            "First Production Agents Two to four contained agents — typically OT incident triage, work-order orchestration, technician self-service, supplier onboarding. Each with measurable success criteria locked before launch. Continuous audit evidence from day one."
           ],
           [
-            "PHASE3 / Months6–9",
-            "Cross-DomainOrchestration / Multi-agentworkflowsspanningmaintenance,quality,supplychainandcustomer service. Predictive AIOps live for critical assets. Closed-loop quality signal flowing from line to design. Now Assist surfaces deployed for engineers and operators."
+            "Phase 3 Months 6–9",
+            "Cross-Domain Orchestration Multi-agent workflows spanning maintenance, quality, supply chain and customer service. Predictive AIOps live for critical assets. Closed-loop quality signal flowing from line to design. Now Assist surfaces deployed for engineers and operators."
           ],
           [
-            "PHASE4 / Months9–12",
-            "Customer&SupplyChain / CSM, FSM and SOM live for B2B service, warranty, aftermarket and order management.SupplierLifecycleOperationsandSourcinglivewithcontinuousrisk monitoring. Disruption-sensing agents in production."
+            "Phase 4 Months 9–12",
+            "Customer & Supply Chain CSM, FSM and SOM live for B2B service, warranty, aftermarket and order management. Supplier Lifecycle Operations and Sourcing live with continuous risk monitoring. Disruption-sensing agents in production."
           ]
         ]
       },
       {
         "type": "paragraph",
         "tableIntro": true,
-        "text": "This table translates Implementationroadmap into a practical reference, organizing Signal, Context so the section is easier to act on."
+        "text": "This table translates Implementation roadmap into a practical reference, organizing Signal, Context so the section is easier to act on."
       },
       {
         "type": "table",
@@ -4099,43 +4099,43 @@ const industryBlogPostEntries: BlogPost[] = [
         ],
         "rows": [
           [
-            "PHASE5 / Months12+",
-            "Scale,Govern,Optimise / AI Control Tower visibility across all production agents. Cross-platform agent interoperabilityviaAIAgentFabric.IRMandESGcontinuouscomplianceposture. Continuous improvement cadence established."
+            "Phase 5 Months 12+",
+            "Scale, Govern, Optimise AI Control Tower visibility across all production agents. Cross-platform agent interoperability via AI Agent Fabric. IRM and ESG continuous compliance posture. Continuous improvement cadence established."
           ]
         ]
       },
       {
         "type": "heading",
         "kicker": "09",
-        "title": "THEPARTNER"
+        "title": "The Partner"
       },
       {
         "type": "heading",
         "kicker": "10",
-        "title": "WhyTechSnitch"
+        "title": "Why TechSnitch"
       },
       {
         "type": "paragraph",
-        "text": "We don't sell sokware. ServiceNow already sold you the plaVorm. We make sure what you build onitgoeslive,stayslive,scalesacrosstheplantnetwork,andsurvivestheregulator,theauditor and the safety inspector.We don't sell sokware. ServiceNow already sold you the plaVorm. We make sure what you build onitgoeslive,stayslive,scalesacrosstheplantnetwork,andsurvivestheregulator,theauditor and the safety inspector."
+        "text": "We don't sell software. ServiceNow already sold you the platform. We make sure what you build on it goes live, stays live, scales across the plant network, and survives the regulator, the auditor, and the safety inspector."
       },
       {
         "type": "list",
         "items": [
-          "Manufacturingoperating-modelfluency.Discreteandprocessmanufacturing,automotive, aerospace, life sciences, industrial equipment and CPG — across India, MENA and SE Asia.",
-          "OTvendorintegrationacceleratorsfortheRockwell,Siemens,Schneider,Honeywell,Emerson and Aveva stacks manufacturing actually runs on.",
-          "ISA-95andPurdueModeldisciplinefromdatamodeltorunbooktoautonomyboundary.",
-          "GovernancedisciplinethatturnsagenticAIfromapilotintoadefensibleproductionsystemin regulated environments — IATF 16949, AS9100, ISO 13485, GxP, FDA, OSHA, ISO 45001.",
-          "Implementationrigourthatrespectsproductionwindows.Wedon'tshiptoproductionduringa planned shutdown."
+          "Manufacturing operating-model fluency. Discrete and process manufacturing, automotive, aerospace, life sciences, industrial equipment and CPG — across India, MENA and SE Asia.",
+          "OT vendor integration accelerators for the Rockwell, Siemens, Schneider, Honeywell, Emerson and Aveva stacks manufacturing actually runs on.",
+          "ISA-95 and Purdue Model discipline from data model to runbook to autonomy boundary.",
+          "Governance discipline that turns agentic AI from a pilot into a defensible production system in regulated environments — IATF 16949, AS9100, ISO 13485, GxP, FDA, OSHA, ISO 45001.",
+          "Implementation rigour that respects production windows. We don't ship to production during a planned shutdown."
         ]
       },
       {
         "type": "heading",
         "kicker": "11",
-        "title": "Movefast.Governfaster."
+        "title": "Move fast. Govern faster."
       },
       {
         "type": "paragraph",
-        "text": "Thatistheentiregame."
+        "text": "That is the entire game."
       },
       {
         "type": "paragraph",
@@ -4143,7 +4143,7 @@ const industryBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "©TechSnitch2026·IndustryViewPoint·Manufacturing"
+        "text": "© TechSnitch 2026 · Industry View Point · Manufacturing"
       }
     ]
   },
@@ -8452,8 +8452,19 @@ const industryOverviewOverrides: Record<
   string,
   Pick<BlogPost, "description" | "deck" | "lead">
 > = {
+  "telecommunications-servicenow-autonomous-industry-operating-model": {
+    description:
+      "A ServiceNow operating model for 5G, OSS/BSS convergence, network operations, customer assurance, IoT, field work, and regulated autonomous telecom operations.",
+    deck:
+      "A reference architecture for telcos, CSPs, MVNOs, tower companies, and network operators built around ServiceNow as the control plane for agentic telecom operations.",
+    lead: [
+      "Telecommunications is at an inflection point. 5G networks promise 100x faster speeds and 10x lower latency, yet 60% of operators struggle to monetise the investment.",
+      "ServiceNow binds Workflow Data Fabric, Context Engine, AI Agent Orchestrator, and AI Control Tower into the control plane for network excellence, customer experience, revenue assurance, and operational resilience.",
+    ],
+  },
   "retail-servicenow-autonomous-industry-operating-model": {
-    description: "Retail",
+    description:
+      "A ServiceNow operating model for connected retail, e-commerce, quick commerce, order orchestration, service resolution, workforce operations, and governed autonomy.",
     deck:
       "A ServiceNow operating model for connected retail, e-commerce, quick commerce, and governed autonomous operations.",
     lead: [
@@ -8461,8 +8472,19 @@ const industryOverviewOverrides: Record<
       "ServiceNow connects customer engagement, order orchestration, store operations, workforce, risk, and resolution into one governed operating model.",
     ],
   },
+  "semiconductor-servicenow-autonomous-industry-operating-model": {
+    description:
+      "A ServiceNow operating model for fabs, foundries, fabless designers, equipment makers, yield operations, IP protection, and governed autonomous semiconductor execution.",
+    deck:
+      "A reference architecture for IDMs, fabless designers, foundries, OSATs, EDA companies, and semiconductor equipment manufacturers.",
+    lead: [
+      "The semiconductor industry has crossed the line where operational excellence stops being a competitive advantage and starts being a survival requirement.",
+      "ServiceNow becomes the control plane for fab convergence, governed agentic autonomy, yield improvement, cycle-time reduction, and IP protection.",
+    ],
+  },
   "manufacturing-servicenow-autonomous-industry-operating-model": {
-    description: "Manufacturing",
+    description:
+      "A ServiceNow operating model for IT-OT convergence, smart factory operations, connected supply chain, maintenance, quality, safety, and governed agentic manufacturing.",
     deck:
       "A ServiceNow operating model for IT-OT convergence, governed agentic operations, and measurable plant-floor outcomes.",
     lead: [
@@ -8470,10 +8492,58 @@ const industryOverviewOverrides: Record<
       "ServiceNow becomes the control plane for smart factory, product intelligence, connected supply chain, workforce, CX, maintenance, quality, safety, and compliance.",
     ],
   },
+  "healthcare-and-life-sciences-servicenow-autonomous-industry-operating-model": {
+    description:
+      "A ServiceNow operating model for clinical operations, patient safety, regulatory quality, workforce, research, and governed agentic healthcare and life sciences operations.",
+    deck:
+      "A reference architecture for providers, payers, medtech, pharma, biotech, diagnostics, and life sciences operators.",
+    lead: [
+      "Healthcare has crossed the line where digital transformation stops being a cost centre and starts being a patient-safety imperative.",
+      "ServiceNow becomes the control plane for care coordination, clinical operations, regulatory readiness, workforce orchestration, and life sciences R&D execution.",
+    ],
+  },
+  "energy-and-utilities-servicenow-autonomous-industry-operating-model": {
+    description:
+      "A ServiceNow operating model for grid operations, smart metering, asset maintenance, workforce, regulatory compliance, ESG, and governed autonomous utility operations.",
+    deck:
+      "A reference architecture for power generators, grid operators, water utilities, renewable energy providers, and oil and gas companies.",
+    lead: [
+      "The energy and utilities industry has crossed the line where grid modernisation stops being a regulatory checkbox and starts being a survival requirement.",
+      "ServiceNow becomes the control plane for grid convergence, governed agentic autonomy, reliability, efficiency, sustainability, and regulator-ready operations.",
+    ],
+  },
+  "bfsi-servicenow-autonomous-industry-operating-model": {
+    description:
+      "A ServiceNow operating model for banking, insurance, payments, fraud resilience, digital customer experience, compliance convergence, and governed autonomous financial operations.",
+    deck:
+      "A reference architecture for banks, insurers, asset managers, payment processors, and financial services operators.",
+    lead: [
+      "Financial services has crossed the line where digital transformation stops being a competitive advantage and starts being a regulatory and survival requirement.",
+      "ServiceNow becomes the control plane for agentic financial operations, customer trust, fraud resilience, risk governance, workforce execution, and audit readiness.",
+    ],
+  },
+  "aviation-servicenow-autonomous-industry-operating-model": {
+    description:
+      "A ServiceNow operating model for airlines, airports, cargo operators, MRO providers, passenger experience, safety, compliance, and governed autonomous aviation operations.",
+    deck:
+      "A reference architecture for airlines, MRO providers, airports, cargo operators, and aviation service companies.",
+    lead: [
+      "The aviation industry has crossed the line where digital transformation stops being a cost centre and starts being an operational necessity.",
+      "ServiceNow becomes the control plane for flight operations, safety, recovery coordination, passenger experience, fleet maintenance, crew operations, and regulatory compliance.",
+    ],
+  },
 };
 
 const coverTextPatternsBySlug: Record<string, RegExp[]> = {
+  "telecommunications-servicenow-autonomous-industry-operating-model": [
+    /^Telecommunications$/,
+    /^on ServiceNow$/,
+    /^Engineering the Autonomous Telecommunications Enterprise on ServiceNow$/,
+    /^Rajesh Kumar/,
+  ],
   "retail-servicenow-autonomous-industry-operating-model": [
+    /^TECHSNITCH\s+.*INDUSTRY VIEW POINT/i,
+    /^RETAIL\s+.*E-COMMERCE/i,
     /^TECHSNITCH • INDUSTRY VIEW POINT • 2026$/,
     /^RETAIL • E-COMMERCE • QUICK COMMERCE$/,
     /^Reimagining the$/,
@@ -8481,26 +8551,153 @@ const coverTextPatternsBySlug: Record<string, RegExp[]> = {
     /^on ServiceNow$/,
     /^AUTHORED BY/,
   ],
+  "semiconductor-servicenow-autonomous-industry-operating-model": [
+    /^Semiconductor$/,
+    /^on ServiceNow$/,
+    /^Engineering the Autonomous Semiconductor Enterprise on ServiceNow$/,
+  ],
   "manufacturing-servicenow-autonomous-industry-operating-model": [
+    /^TechSnitch\s+.*Industry View Point/i,
+    /^Manufacturing\s+.*IT/i,
     /^TECHSNITCH•INDUSTRYVIEWPOINT•2026/,
     /^MANUFACTURING•IT–OTCONVERGENCE/,
-    /^Engineeringthe$/,
-    /^AutonomousIndustrialEnterprise$/,
+    /^Engineering the$/,
+    /^Autonomous Industrial Enterprise$/,
     /^on ServiceNow$/,
     /^AUTHOREDBY/,
   ],
+  "healthcare-and-life-sciences-servicenow-autonomous-industry-operating-model": [
+    /^Healthcare & Life Sciences$/,
+    /^on ServiceNow$/,
+    /^Engineering the Autonomous Healthcare & Life Sciences Enterprise on ServiceNow$/,
+  ],
+  "energy-and-utilities-servicenow-autonomous-industry-operating-model": [
+    /^Energy & Utilities$/,
+    /^on ServiceNow$/,
+    /^Engineering the Autonomous Energy & Utilities Enterprise on ServiceNow$/,
+    /^Rajesh Kumar/,
+  ],
+  "bfsi-servicenow-autonomous-industry-operating-model": [
+    /^BFSI$/,
+    /^on ServiceNow$/,
+    /^Engineering the Autonomous BFSI Enterprise on ServiceNow$/,
+  ],
+  "aviation-servicenow-autonomous-industry-operating-model": [
+    /^Aviation$/,
+    /^on ServiceNow$/,
+    /^Engineering the Autonomous Aviation Enterprise on ServiceNow$/,
+  ],
 };
+
+const outcomeMetricTitles = new Set(["minutes", "hours", "single", "continuous"]);
+
+function isOutcomeMetricHeading(block: BlogBlock | undefined): block is BlogHeadingBlock {
+  if (!block) {
+    return false;
+  }
+
+  if (block.type !== "heading") {
+    return false;
+  }
+
+  return /\d/.test(block.title) || outcomeMetricTitles.has(block.title.toLowerCase());
+}
+
+function coalesceOutcomeMetricBlocks(blocks: BlogBlock[]) {
+  const normalizedBlocks: BlogBlock[] = [];
+
+  for (let index = 0; index < blocks.length; index += 1) {
+    const block = blocks[index];
+
+    if (block.type !== "heading" || block.title.toLowerCase() !== "outcomes") {
+      normalizedBlocks.push(block);
+      continue;
+    }
+
+    const items: Array<{ value: string; label: string; detail?: string }> = [];
+    let cursor = index + 1;
+
+    while (true) {
+      const metricBlock = blocks[cursor];
+      const labelBlock = blocks[cursor + 1];
+
+      if (!isOutcomeMetricHeading(metricBlock) || labelBlock?.type !== "paragraph") {
+        break;
+      }
+
+      items.push({
+        value: metricBlock.title,
+        label: labelBlock.text,
+      });
+      cursor += 2;
+    }
+
+    normalizedBlocks.push(block);
+
+    if (items.length > 0) {
+      normalizedBlocks.push({
+        type: "outcomes",
+        items,
+      });
+      index = cursor - 1;
+    }
+  }
+
+  return normalizedBlocks;
+}
+
+function isIndustryDocumentArtifactBlock(block: BlogBlock) {
+  if (block.type !== "paragraph") {
+    return false;
+  }
+
+  const text = block.text.trim();
+
+  return (
+    text === "." ||
+    text === "on ServiceNow" ||
+    /^www\.techsnitch\.co\b/i.test(text) ||
+    /^AUTHORED BY\b/i.test(text) ||
+    /^Rajesh Kumar\b/i.test(text) ||
+    /TechSnitch 2026$/i.test(text) ||
+    /^(Telecommunications|Retail|Semiconductor|Manufacturing|Healthcare & Life Sciences|Energy & Utilities|BFSI|Aviation) on ServiceNow$/.test(
+      text,
+    )
+  );
+}
+
+function removeRepeatedIndustryFooterCopy(blocks: BlogBlock[]) {
+  let sawMoveFastTagline = false;
+
+  return blocks.filter((block) => {
+    if (
+      block.type !== "paragraph" ||
+      block.text.trim() !== "Move fast. Govern hard. That is the entire point."
+    ) {
+      return true;
+    }
+
+    if (sawMoveFastTagline) {
+      return false;
+    }
+
+    sawMoveFastTagline = true;
+    return true;
+  });
+}
 
 const cleanedIndustryBlogPostEntries = industryBlogPostEntries.map((post) => {
   const override = industryOverviewOverrides[post.slug];
   const coverTextPatterns = coverTextPatternsBySlug[post.slug];
-  const blocks = coverTextPatterns
+  const filteredBlocks = coverTextPatterns
     ? post.blocks.filter(
         (block) =>
           block.type !== "paragraph" ||
-          !coverTextPatterns.some((pattern) => pattern.test(block.text)),
+          (!coverTextPatterns.some((pattern) => pattern.test(block.text)) &&
+            !isIndustryDocumentArtifactBlock(block)),
       )
-    : post.blocks;
+    : post.blocks.filter((block) => !isIndustryDocumentArtifactBlock(block));
+  const blocks = removeRepeatedIndustryFooterCopy(coalesceOutcomeMetricBlocks(filteredBlocks));
 
   return {
     ...post,

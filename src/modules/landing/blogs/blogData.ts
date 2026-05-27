@@ -242,6 +242,26 @@ const pdfBlogPosts: BlogPost[] = [
           "Expand once the operating model is trusted by agents, leaders, and customers.",
         ],
       },
+      {
+        type: "heading",
+        kicker: "06",
+        title: "A closing note",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Most CRM transformation programmes fail not because the platform was wrong but because the operating discipline was missing. The platform was over-customised, the integrations were under-scoped, the governance was an afterthought, and the adoption work was a slide in the steering committee deck rather than a workstream in the plan.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "ServiceNow CRM is a powerful platform. Now Assist is a genuine capability leap. AgentGuard answers a question that boards are starting to ask out loud. None of this matters if the programme that delivers it is run the same way the last one was.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "TechSnitch's promise is straightforward: the platform expertise of a specialist, the operating discipline of a Big Four advisory, and the practitioner honesty of a team that has lived the consequences of cutting corners. We win the right to the next conversation by the quality of the current one.",
+      },
     ],
   },
 ];

@@ -1,4 +1,4 @@
-import type { BlogPost } from "./blogData";
+import type { BlogBlock, BlogPost } from "./blogData";
 import { mergeBlogSections } from "./mergeBlogSections";
 
 const brewedLogicBlogPostEntries: BlogPost[] = [
@@ -9,7 +9,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "description": "When Your ServiceNow Instance Becomes a Data",
     "deck": "When Your ServiceNow Instance Becomes a Data Graveyard ServiceNow instances across enterprises are hitting a silent crisis. The platform that was designed to streamline operations is becoming a data graveyard — bloated, slow, and expensive. Every ServiceNow instance starts with 4TB. Most enterprises hit this within 18-24 months of go-live. Additional storage costs $20,000 per TB annually. A 20TB instance costs $320,000 per year in storage alone.",
     "featuredLabel": "Brewed Logic",
-    "source": "TechSnitch_ServiceNow_Storage_Optimization - Copy.docx",
+    "source": "TechSnitch_ServiceNow_Storage_Optimization.docx",
     "accent": "violet",
     "lead": [
       "When Your ServiceNow Instance Becomes a Data Graveyard",
@@ -140,7 +140,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "description": "TechSnitch's ServiceNow Storage Optimization is not a one-time cleanup. It is a continuous, intelligent, autonomous operating system for your ServiceNow data lifecycle — powered by SAOS (ServiceNow Autonomous Operating",
     "deck": "TechSnitch's ServiceNow Storage Optimization is not a one-time cleanup. It is a continuous, intelligent, autonomous operating system for your ServiceNow data lifecycle — powered by SAOS (ServiceNow Autonomous Operating System). \"From reactive cleanup to proactive, autonomous data governance.\"",
     "featuredLabel": "Brewed Logic",
-    "source": "TechSnitch_ServiceNow_Storage_Optimization - Copy.docx",
+    "source": "TechSnitch_ServiceNow_Storage_Optimization.docx",
     "accent": "violet",
     "lead": [
       "TechSnitch's ServiceNow Storage Optimization is not a one-time cleanup. It is a continuous, intelligent, autonomous operating system for your ServiceNow data lifecycle — powered by SAOS (ServiceNow Autonomous Operating System).",
@@ -210,7 +210,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "description": "Most enterprises do not know what is consuming their ServiceNow storage. The Database Footprint Report from ServiceNow is a snapshot — updated every 4 hours, rounded to the nearest TB, with no trend analysis. It tells you WHERE you are, not WHERE you are",
     "deck": "Most enterprises do not know what is consuming their ServiceNow storage. The Database Footprint Report from ServiceNow is a snapshot — updated every 4 hours, rounded to the nearest TB, with no trend analysis. It tells you WHERE you are, not WHERE you are heading. TechSnitch deploys automated discovery agents that map every table, every record, every attachment and every audit trail across your ServiceNow instance.",
     "featuredLabel": "Brewed Logic",
-    "source": "TechSnitch_ServiceNow_Storage_Optimization - Copy.docx",
+    "source": "TechSnitch_ServiceNow_Storage_Optimization.docx",
     "accent": "violet",
     "lead": [
       "Most enterprises do not know what is consuming their ServiceNow storage. The Database Footprint Report from ServiceNow is a snapshot — updated every 4 hours, rounded to the nearest TB, with no trend analysis. It tells you WHERE you are, not WHERE you are heading.",
@@ -409,7 +409,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "description": "Most enterprises have no documented data retention policy for ServiceNow. When asked \"how long do you keep incident records?\" the answer is \"forever\" — not because of business need, but because nobody decided otherwise. This is not a technology problem. It is",
     "deck": "Most enterprises have no documented data retention policy for ServiceNow. When asked \"how long do you keep incident records?\" the answer is \"forever\" — not because of business need, but because nobody decided otherwise. This is not a technology problem. It is a governance problem. TechSnitch facilitates workshops with Legal, Compliance, HR, IT and Business stakeholders to define retention requirements grounded in actual business and regulatory needs — not fear.",
     "featuredLabel": "Brewed Logic",
-    "source": "TechSnitch_ServiceNow_Storage_Optimization - Copy.docx",
+    "source": "TechSnitch_ServiceNow_Storage_Optimization.docx",
     "accent": "violet",
     "lead": [
       "Most enterprises have no documented data retention policy for ServiceNow. When asked \"how long do you keep incident records?\" the answer is \"forever\" — not because of business need, but because nobody decided otherwise. This is not a technology problem. It is a governance problem.",
@@ -634,7 +634,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "description": "Most storage cleanup efforts fail because they are manual, one-time exercises. A DBA runs a script. A consultant deletes records. Six months later, the problem returns — worse than before. There is no continuous governance, no automation, no",
     "deck": "Most storage cleanup efforts fail because they are manual, one-time exercises. A DBA runs a script. A consultant deletes records. Six months later, the problem returns — worse than before. There is no continuous governance, no automation, no monitoring. TechSnitch implements ServiceNow's native archiving with enhanced governance. Archive rules define source tables, conditions, related record handling, schedules and batch sizes — all with failure notification and restoration procedures documented.",
     "featuredLabel": "Brewed Logic",
-    "source": "TechSnitch_ServiceNow_Storage_Optimization - Copy.docx",
+    "source": "TechSnitch_ServiceNow_Storage_Optimization.docx",
     "accent": "violet",
     "lead": [
       "Most storage cleanup efforts fail because they are manual, one-time exercises. A DBA runs a script. A consultant deletes records. Six months later, the problem returns — worse than before. There is no continuous governance, no automation, no monitoring.",
@@ -756,7 +756,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "CRITICAL:Use indexed fields only. Custom columns without indexes will cause severe performance degradation during cleanup."
+        "text": "CRITICAL: Use indexed fields only. Custom columns without indexes will cause severe performance degradation during cleanup."
       },
       {
         "type": "heading",
@@ -917,7 +917,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "description": "Storage optimization is not a project. It is a capability. Without continuous governance, the gains from any cleanup effort erode within 12-18 months. New tables are created without retention rules. New applications generate audit trails without field",
     "deck": "Storage optimization is not a project. It is a capability. Without continuous governance, the gains from any cleanup effort erode within 12-18 months. New tables are created without retention rules. New applications generate audit trails without field exclusions. New integrations import data without cleanup plans. TechSnitch deploys automated monitoring agents that track storage metrics in real time:",
     "featuredLabel": "Brewed Logic",
-    "source": "TechSnitch_ServiceNow_Storage_Optimization - Copy.docx",
+    "source": "TechSnitch_ServiceNow_Storage_Optimization.docx",
     "accent": "violet",
     "lead": [
       "Storage optimization is not a project. It is a capability. Without continuous governance, the gains from any cleanup effort erode within 12-18 months. New tables are created without retention rules. New applications generate audit trails without field exclusions. New integrations import data without cleanup plans.",
@@ -1107,13 +1107,13 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "slug": "storage-optimization-technical-implementation",
     "category": "Brewed Logic",
     "title": "Storage Optimization: Technical Implementation",
-    "description": "CRITICAL:Table cleaner and table rotation CANNOT run on the same table simultaneously. Choose one strategy per",
-    "deck": "CRITICAL:Table cleaner and table rotation CANNOT run on the same table simultaneously. Choose one strategy per table. Section 2: Archive Rule Best Practices",
+    "description": "CRITICAL: Table cleaner and table rotation CANNOT run on the same table simultaneously. Choose one strategy per",
+    "deck": "CRITICAL: Table cleaner and table rotation CANNOT run on the same table simultaneously. Choose one strategy per table. Section 2: Archive Rule Best Practices",
     "featuredLabel": "Brewed Logic",
-    "source": "TechSnitch_ServiceNow_Storage_Optimization - Copy.docx",
+    "source": "TechSnitch_ServiceNow_Storage_Optimization.docx",
     "accent": "violet",
     "lead": [
-      "CRITICAL:Table cleaner and table rotation CANNOT run on the same table simultaneously. Choose one strategy per table.",
+      "CRITICAL: Table cleaner and table rotation CANNOT run on the same table simultaneously. Choose one strategy per table.",
       "Section 2: Archive Rule Best Practices"
     ],
     "blocks": [
@@ -1159,7 +1159,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "CRITICAL:Table cleaner and table rotation CANNOT run on the same table simultaneously. Choose one strategy per table."
+        "text": "CRITICAL: Table cleaner and table rotation CANNOT run on the same table simultaneously. Choose one strategy per table."
       },
       {
         "type": "figure",
@@ -1176,7 +1176,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "WARNING:Archiving does NOT reduce database footprint. Archive tables exist on-platform. For footprint reduction, use off-platform archiving or table cleaner."
+        "text": "WARNING: Archiving does NOT reduce database footprint. Archive tables exist on-platform. For footprint reduction, use off-platform archiving or table cleaner."
       },
       {
         "type": "paragraph",
@@ -1203,7 +1203,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "description": "Challenge: sys_audit table at 40TB on a 56TB sharded server with only 12TB free remaining, minimal indexing and severe performance degradation. Risk of production outage, data loss and regulatory non-compliance. TechSnitch deployed a multi-pronged strategy",
     "deck": "Challenge: sys_audit table at 40TB on a 56TB sharded server with only 12TB free remaining, minimal indexing and severe performance degradation. Risk of production outage, data loss and regulatory non-compliance. TechSnitch deployed a multi-pronged strategy combining custom cleanup scripts with index optimization, 12 concurrent jobs each targeting one month of data, Table Cleaner as secondary pass, and Azure SQL migration for off-platform archiving. Case Study 2: Financial Services — 8TB to 3TB Optimization",
     "featuredLabel": "Brewed Logic",
-    "source": "TechSnitch_ServiceNow_Storage_Optimization - Copy.docx",
+    "source": "TechSnitch_ServiceNow_Storage_Optimization.docx",
     "accent": "violet",
     "lead": [
       "Challenge: sys_audit table at 40TB on a 56TB sharded server with only 12TB free remaining, minimal indexing and severe performance degradation. Risk of production outage, data loss and regulatory non-compliance. TechSnitch deployed a multi-pronged strategy combining custom cleanup scripts with index optimization, 12 concurrent jobs each targeting one month of data, Table Cleaner as secondary pass, and Azure SQL migration for off-platform archiving.",
@@ -1371,7 +1371,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "description": "A typical TechSnitch Storage Optimization engagement lands across four disciplined phases over 8-12 weeks. The phasing respects two non-negotiables: no production impact, and continuous audit",
     "deck": "A typical TechSnitch Storage Optimization engagement lands across four disciplined phases over 8-12 weeks. The phasing respects two non-negotiables: no production impact, and continuous audit evidence.",
     "featuredLabel": "Brewed Logic",
-    "source": "TechSnitch_ServiceNow_Storage_Optimization - Copy.docx",
+    "source": "TechSnitch_ServiceNow_Storage_Optimization.docx",
     "accent": "violet",
     "lead": [
       "A typical TechSnitch Storage Optimization engagement lands across four disciplined phases over 8-12 weeks. The phasing respects two non-negotiables: no production impact, and continuous audit evidence."
@@ -1435,7 +1435,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "description": "We do not sell software. ServiceNow already sold you the platform. We make sure what you build on it stays lean, stays fast, and stays within",
     "deck": "We do not sell software. ServiceNow already sold you the platform. We make sure what you build on it stays lean, stays fast, and stays within budget. • Storage optimization fluency: 50+ enterprise engagements, 500+ TB reclaimed, $10M+ in storage cost savings delivered.",
     "featuredLabel": "Brewed Logic",
-    "source": "TechSnitch_ServiceNow_Storage_Optimization - Copy.docx",
+    "source": "TechSnitch_ServiceNow_Storage_Optimization.docx",
     "accent": "violet",
     "lead": [
       "We do not sell software. ServiceNow already sold you the platform. We make sure what you build on it stays lean, stays fast, and stays within budget.",
@@ -1516,7 +1516,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "The TechSnitchPOV:Upgrades are not risks to manage. They are competitive advantages to capture. The organizations that upgrade fastest gain the AI edge, the security edge, and the operational edge."
+        "text": "The TechSnitch POV: Upgrades are not risks to manage. They are competitive advantages to capture. The organizations that upgrade fastest gain the AI edge, the security edge, and the operational edge."
       },
       {
         "type": "paragraph",
@@ -1528,13 +1528,13 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "slug": "fearless-upgrade-the-techsnitch-upgrade-philosophy",
     "category": "Brewed Logic",
     "title": "Fearless Upgrade: The TechSnitch Upgrade Philosophy",
-    "description": "Upgrade Success = (Preparation x Automation x Validation) / (Customization x Manual Testing x Communication Gaps)The goal:Maximize the numerator. Minimize the",
-    "deck": "Upgrade Success = (Preparation x Automation x Validation) / (Customization x Manual Testing x Communication Gaps)The goal:Maximize the numerator. Minimize the denominator.",
+    "description": "Upgrade Success = (Preparation x Automation x Validation) / (Customization x Manual Testing x Communication Gaps) The goal: Maximize the numerator. Minimize the",
+    "deck": "Upgrade Success = (Preparation x Automation x Validation) / (Customization x Manual Testing x Communication Gaps) The goal: Maximize the numerator. Minimize the denominator.",
     "featuredLabel": "Brewed Logic",
     "source": "TechSnitch_Fearless_Upgrade.docx",
     "accent": "pink",
     "lead": [
-      "Upgrade Success = (Preparation x Automation x Validation) / (Customization x Manual Testing x Communication Gaps)The goal:Maximize the numerator. Minimize the denominator."
+      "Upgrade Success = (Preparation x Automation x Validation) / (Customization x Manual Testing x Communication Gaps) The goal: Maximize the numerator. Minimize the denominator."
     ],
     "blocks": [
       {
@@ -1594,7 +1594,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "Upgrade Success = (Preparation x Automation x Validation) / (Customization x Manual Testing x Communication Gaps)The goal:Maximize the numerator. Minimize the denominator."
+        "text": "Upgrade Success = (Preparation x Automation x Validation) / (Customization x Manual Testing x Communication Gaps) The goal: Maximize the numerator. Minimize the denominator."
       },
       {
         "type": "figure",
@@ -1686,13 +1686,13 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "slug": "fearless-upgrade-phase-2-environment-hardening",
     "category": "Brewed Logic",
     "title": "Fearless Upgrade Phase 2: Environment Hardening",
-    "description": "CRITICAL RULE:If the Dev instance is not 99.5% identical to production, the upgrade does not proceed.",
-    "deck": "CRITICAL RULE:If the Dev instance is not 99.5% identical to production, the upgrade does not proceed. Period.",
+    "description": "CRITICAL RULE: If the Dev instance is not 99.5% identical to production, the upgrade does not proceed.",
+    "deck": "CRITICAL RULE: If the Dev instance is not 99.5% identical to production, the upgrade does not proceed. Period.",
     "featuredLabel": "Brewed Logic",
     "source": "TechSnitch_Fearless_Upgrade.docx",
     "accent": "pink",
     "lead": [
-      "CRITICAL RULE:If the Dev instance is not 99.5% identical to production, the upgrade does not proceed. Period."
+      "CRITICAL RULE: If the Dev instance is not 99.5% identical to production, the upgrade does not proceed. Period."
     ],
     "blocks": [
       {
@@ -1747,7 +1747,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "CRITICAL RULE:If the Dev instance is not 99.5% identical to production, the upgrade does not proceed. Period."
+        "text": "CRITICAL RULE: If the Dev instance is not 99.5% identical to production, the upgrade does not proceed. Period."
       },
       {
         "type": "figure",
@@ -1863,13 +1863,13 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "slug": "fearless-upgrade-phase-4-remediation-and-optimization",
     "category": "Brewed Logic",
     "title": "Fearless Upgrade Phase 4: Remediation & Optimization",
-    "description": "TechSnitchRule:Every Red item from Phase 1 must become Green before production upgrade. No",
-    "deck": "TechSnitchRule:Every Red item from Phase 1 must become Green before production upgrade. No exceptions.",
+    "description": "TechSnitch Rule: Every Red item from Phase 1 must become Green before production upgrade. No",
+    "deck": "TechSnitch Rule: Every Red item from Phase 1 must become Green before production upgrade. No exceptions.",
     "featuredLabel": "Brewed Logic",
     "source": "TechSnitch_Fearless_Upgrade.docx",
     "accent": "pink",
     "lead": [
-      "TechSnitchRule:Every Red item from Phase 1 must become Green before production upgrade. No exceptions."
+      "TechSnitch Rule: Every Red item from Phase 1 must become Green before production upgrade. No exceptions."
     ],
     "blocks": [
       {
@@ -1924,7 +1924,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "TechSnitchRule:Every Red item from Phase 1 must become Green before production upgrade. No exceptions."
+        "text": "TechSnitch Rule: Every Red item from Phase 1 must become Green before production upgrade. No exceptions."
       },
       {
         "type": "figure",
@@ -1937,13 +1937,13 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "slug": "fearless-upgrade-phase-5-production-upgrade-execution",
     "category": "Brewed Logic",
     "title": "Fearless Upgrade Phase 5: Production Upgrade Execution",
-    "description": "TechSnitchGuarantee:If any validation fails at T+04:00, we execute the rollback protocol — a pre-tested, sub-30-minute reversion to the pre-upgrade state. No data loss. No extended downtime. No",
-    "deck": "TechSnitchGuarantee:If any validation fails at T+04:00, we execute the rollback protocol — a pre-tested, sub-30-minute reversion to the pre-upgrade state. No data loss. No extended downtime. No panic.",
+    "description": "TechSnitch Guarantee: If any validation fails at T+04:00, we execute the rollback protocol — a pre-tested, sub-30-minute reversion to the pre-upgrade state. No data loss. No extended downtime. No",
+    "deck": "TechSnitch Guarantee: If any validation fails at T+04:00, we execute the rollback protocol — a pre-tested, sub-30-minute reversion to the pre-upgrade state. No data loss. No extended downtime. No panic.",
     "featuredLabel": "Brewed Logic",
     "source": "TechSnitch_Fearless_Upgrade.docx",
     "accent": "pink",
     "lead": [
-      "TechSnitchGuarantee:If any validation fails at T+04:00, we execute the rollback protocol — a pre-tested, sub-30-minute reversion to the pre-upgrade state. No data loss. No extended downtime. No panic."
+      "TechSnitch Guarantee: If any validation fails at T+04:00, we execute the rollback protocol — a pre-tested, sub-30-minute reversion to the pre-upgrade state. No data loss. No extended downtime. No panic."
     ],
     "blocks": [
       {
@@ -2046,7 +2046,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "TechSnitchGuarantee:If any validation fails at T+04:00, we execute the rollback protocol — a pre-tested, sub-30-minute reversion to the pre-upgrade state. No data loss. No extended downtime. No panic."
+        "text": "TechSnitch Guarantee: If any validation fails at T+04:00, we execute the rollback protocol — a pre-tested, sub-30-minute reversion to the pre-upgrade state. No data loss. No extended downtime. No panic."
       },
       {
         "type": "figure",
@@ -2412,7 +2412,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "Guarantee:If the upgrade is not production-ready by Week 4, TechSnitch continues at no additional cost until completion."
+        "text": "Guarantee: If the upgrade is not production-ready by Week 4, TechSnitch continues at no additional cost until completion."
       }
     ]
   },
@@ -2741,9 +2741,9 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "list",
         "items": [
-          "1.We do not fear upgrades. We engineer them.",
-          "2.We do not hope for success. We validate it.",
-          "3.We do not recover from failure. We prevent it."
+          "1. We do not fear upgrades. We engineer them.",
+          "2. We do not hope for success. We validate it.",
+          "3. We do not recover from failure. We prevent it."
         ]
       },
       {
@@ -2752,7 +2752,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "Move fast. Lose nothing. Disrupt no one.This is the TechSnitch way."
+        "text": "Move fast. Lose nothing. Disrupt no one. This is the TechSnitch way."
       },
       {
         "type": "paragraph",
@@ -5418,7 +5418,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "The TechSnitchPOV:Migration is not a project. It is a platform strategy. Migrate once, transform forever."
+        "text": "The TechSnitch POV: Migration is not a project. It is a platform strategy. Migrate once, transform forever."
       }
     ]
   },
@@ -5611,13 +5611,13 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "slug": "great-migration-phase-2-future-state-design",
     "category": "Brewed Logic",
     "title": "Great Migration Phase 2: Future-State Design",
-    "description": "TechSnitchRule:If a legacy process cannot be explained in 3 sentences, it is broken. Redesign it. Do not migrate",
-    "deck": "TechSnitchRule:If a legacy process cannot be explained in 3 sentences, it is broken. Redesign it. Do not migrate brokenness.",
+    "description": "TechSnitch Rule: If a legacy process cannot be explained in 3 sentences, it is broken. Redesign it. Do not migrate",
+    "deck": "TechSnitch Rule: If a legacy process cannot be explained in 3 sentences, it is broken. Redesign it. Do not migrate brokenness.",
     "featuredLabel": "Brewed Logic",
     "source": "TechSnitch_Great_Migration.docx",
     "accent": "pink",
     "lead": [
-      "TechSnitchRule:If a legacy process cannot be explained in 3 sentences, it is broken. Redesign it. Do not migrate brokenness."
+      "TechSnitch Rule: If a legacy process cannot be explained in 3 sentences, it is broken. Redesign it. Do not migrate brokenness."
     ],
     "blocks": [
       {
@@ -5672,7 +5672,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "TechSnitchRule:If a legacy process cannot be explained in 3 sentences, it is broken. Redesign it. Do not migrate brokenness."
+        "text": "TechSnitch Rule: If a legacy process cannot be explained in 3 sentences, it is broken. Redesign it. Do not migrate brokenness."
       },
       {
         "type": "figure",
@@ -5988,13 +5988,13 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "category": "Brewed Logic",
     "title": "Great Migration Phase 6: Parallel Run & Confidence Building",
     "description": "Run Both. Trust ServiceNow. Prove",
-    "deck": "Run Both. Trust ServiceNow. Prove It. TechSnitchRule:Parallel run is not optional for enterprise migrations. It is insurance.",
+    "deck": "Run Both. Trust ServiceNow. Prove It. TechSnitch Rule: Parallel run is not optional for enterprise migrations. It is insurance.",
     "featuredLabel": "Brewed Logic",
     "source": "TechSnitch_Great_Migration.docx",
     "accent": "pink",
     "lead": [
       "Run Both. Trust ServiceNow. Prove It.",
-      "TechSnitchRule:Parallel run is not optional for enterprise migrations. It is insurance."
+      "TechSnitch Rule: Parallel run is not optional for enterprise migrations. It is insurance."
     ],
     "blocks": [
       {
@@ -6059,7 +6059,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "TechSnitchRule:Parallel run is not optional for enterprise migrations. It is insurance."
+        "text": "TechSnitch Rule: Parallel run is not optional for enterprise migrations. It is insurance."
       }
     ]
   },
@@ -6067,13 +6067,13 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
     "slug": "great-migration-phase-7-cutover-and-go-live",
     "category": "Brewed Logic",
     "title": "Great Migration Phase 7: Cutover & Go-Live",
-    "description": "TechSnitchGuarantee:If any smoke test fails, legacy read-only mode is reversed and cutover rescheduled. No panic. No pressure. Precision over",
-    "deck": "TechSnitchGuarantee:If any smoke test fails, legacy read-only mode is reversed and cutover rescheduled. No panic. No pressure. Precision over speed.",
+    "description": "TechSnitch Guarantee: If any smoke test fails, legacy read-only mode is reversed and cutover rescheduled. No panic. No pressure. Precision over",
+    "deck": "TechSnitch Guarantee: If any smoke test fails, legacy read-only mode is reversed and cutover rescheduled. No panic. No pressure. Precision over speed.",
     "featuredLabel": "Brewed Logic",
     "source": "TechSnitch_Great_Migration.docx",
     "accent": "pink",
     "lead": [
-      "TechSnitchGuarantee:If any smoke test fails, legacy read-only mode is reversed and cutover rescheduled. No panic. No pressure. Precision over speed."
+      "TechSnitch Guarantee: If any smoke test fails, legacy read-only mode is reversed and cutover rescheduled. No panic. No pressure. Precision over speed."
     ],
     "blocks": [
       {
@@ -6152,7 +6152,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "TechSnitchGuarantee:If any smoke test fails, legacy read-only mode is reversed and cutover rescheduled. No panic. No pressure. Precision over speed."
+        "text": "TechSnitch Guarantee: If any smoke test fails, legacy read-only mode is reversed and cutover rescheduled. No panic. No pressure. Precision over speed."
       },
       {
         "type": "figure",
@@ -6984,9 +6984,9 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       {
         "type": "list",
         "items": [
-          "1.We do not migrate data. We transform operations.",
-          "2.We do not replicate legacy processes. We design future-state workflows.",
-          "3.We do not hope for cutover success. We validate it through parallel execution."
+          "1. We do not migrate data. We transform operations.",
+          "2. We do not replicate legacy processes. We design future-state workflows.",
+          "3. We do not hope for cutover success. We validate it through parallel execution."
         ]
       },
       {
@@ -6995,7 +6995,7 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
       },
       {
         "type": "paragraph",
-        "text": "Migrate fast. Migrate smart. Migrate once.This is the TechSnitch way."
+        "text": "Migrate fast. Migrate smart. Migrate once. This is the TechSnitch way."
       },
       {
         "type": "paragraph",
@@ -7022,9 +7022,43 @@ const brewedLogicBlogPostEntries: BlogPost[] = [
   }
 ];
 
-export const brewedLogicBlogPosts: BlogPost[] = mergeBlogSections(brewedLogicBlogPostEntries, [
+const brewedFooterHeadingTitles = new Set([
+  "The Fearless Upgrade",
+  "The Great Migration",
+]);
+
+const brewedFooterParagraphs = new Set([
+  ".",
+  "TECHSNITCH",
+  "Where ServiceNow Excellence Meets AI Freedom",
+  "Security Operations Architecture",
+  "& Lifecycle Blueprint",
+  "ServiceNow Strategic Portfolio Management",
+  "End-to-End Technical Architecture Blueprint",
+]);
+
+function isBrewedDocumentArtifactBlock(block: BlogBlock) {
+  if (block.type === "heading") {
+    return brewedFooterHeadingTitles.has(block.title.trim());
+  }
+
+  if (block.type !== "paragraph") {
+    return false;
+  }
+
+  const text = block.text.trim();
+
+  return brewedFooterParagraphs.has(text) || /^www\.techsnitch\.co\b/i.test(text);
+}
+
+const cleanedBrewedLogicBlogPostEntries = brewedLogicBlogPostEntries.map((post) => ({
+  ...post,
+  blocks: post.blocks.filter((block) => !isBrewedDocumentArtifactBlock(block)),
+}));
+
+export const brewedLogicBlogPosts: BlogPost[] = mergeBlogSections(cleanedBrewedLogicBlogPostEntries, [
   {
-    source: "TechSnitch_ServiceNow_Storage_Optimization - Copy.docx",
+    source: "TechSnitch_ServiceNow_Storage_Optimization.docx",
     parentSlug: "storage-optimization-the-storage-crisis",
     mergeAllFromSource: true,
   },

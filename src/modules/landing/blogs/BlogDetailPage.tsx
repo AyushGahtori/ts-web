@@ -197,6 +197,10 @@ function ArticleFlowLine() {
   );
 }
 
+function normalizeLeadText(text: string) {
+  return text.replace(/\s+/g, " ").trim().toLowerCase();
+}
+
 function ArticleBlock({
   block,
   imageSrc,
@@ -316,6 +320,21 @@ function ArticleBlock({
 
 export function BlogDetailPage({ post }: BlogDetailPageProps) {
   const rootRef = useRef<HTMLDivElement | null>(null);
+  const articleLead = useMemo(() => {
+    const seen = new Set<string>();
+    const deckText = normalizeLeadText(post.deck);
+
+    return post.lead.filter((paragraph) => {
+      const normalizedParagraph = normalizeLeadText(paragraph);
+
+      if (!normalizedParagraph || normalizedParagraph === deckText || seen.has(normalizedParagraph)) {
+        return false;
+      }
+
+      seen.add(normalizedParagraph);
+      return true;
+    });
+  }, [post.deck, post.lead]);
   let figureIndex = 0;
 
   useGSAP(
@@ -407,13 +426,15 @@ export function BlogDetailPage({ post }: BlogDetailPageProps) {
             </aside>
 
             <div className={styles.articleContent}>
-              <section className={styles.articleLead}>
-                {post.lead.map((paragraph) => (
-                  <p className={styles.articleReveal} key={paragraph}>
-                    {paragraph}
-                  </p>
-                ))}
-              </section>
+              {articleLead.length > 0 ? (
+                <section className={styles.articleLead}>
+                  {articleLead.map((paragraph) => (
+                    <p className={styles.articleReveal} key={paragraph}>
+                      {paragraph}
+                    </p>
+                  ))}
+                </section>
+              ) : null}
               {post.blocks.map((block, index) => {
                 const imageSrc = block.type === "figure" ? post.media?.figures[figureIndex++] : undefined;
 
