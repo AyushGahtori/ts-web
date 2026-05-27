@@ -3,7 +3,7 @@ import type { BlogPost } from "./blogData";
 export const docxBlogPosts: BlogPost[] = [
   {
     "slug": "what-is-servicenow-ai-control-tower-the-2026-enterprise-ai-command-center",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "What Is ServiceNow AI Control Tower? The 2026 Enterprise AI Command Center",
     "description": "Two years ago, \"AI governance\" in most enterprises meant a slide deck and a quarterly audit. That era is over. A year after its launch, ServiceNow's AI Control Tower has evolved from a traffic manager for AI agents into what the company now calls an end-to-end AI command center — and the shift matters far more than the rebrand suggests.",
     "deck": "Two years ago, \"AI governance\" in most enterprises meant a slide deck and a quarterly audit. That era is over. A year after its launch, ServiceNow's AI Control Tower has evolved from a traffic manager for AI agents into what the company now calls an end-to-end AI command center — and the shift matters far more than the rebrand suggests.",
@@ -69,7 +69,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "ai-agent-sprawl-is-the-new-shadow-it-and-it-will-get-you-fined",
-    "category": "AI",
+    "category": "Innovation",
     "title": "AI Agent Sprawl Is the New Shadow IT — And It Will Get You Fined",
     "description": "Every enterprise that lived through the shadow-IT decade promised it wouldn't happen again. It's happening again. The difference is that this time the rogue assets don't just leak data — they take actions, in production, on your behalf, at machine speed.",
     "deck": "Every enterprise that lived through the shadow-IT decade promised it wouldn't happen again. It's happening again. The difference is that this time the rogue assets don't just leak data — they take actions, in production, on your behalf, at machine speed.",
@@ -142,7 +142,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "now-assist-roi-what-enterprises-actually-get-with-real-numbers",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "Now Assist ROI: What Enterprises Actually Get (With Real Numbers)",
     "description": "Most \"AI ROI\" content is vapor. So let's start with a number a CFO can't argue with.",
     "deck": "Most \"AI ROI\" content is vapor. So let's start with a number a CFO can't argue with.",
@@ -221,7 +221,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "moveworks-servicenow-what-the-acquisition-actually-means-for-buyers",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "Moveworks + ServiceNow: What the Acquisition Actually Means for Buyers",
     "description": "If you own a Moveworks deployment, a ServiceNow estate, or both, the December 2025 close changed your roadmap whether you've planned for it or not. Here's the buyer-side read, stripped of vendor gloss.",
     "deck": "If you own a Moveworks deployment, a ServiceNow estate, or both, the December 2025 close changed your roadmap whether you've planned for it or not. Here's the buyer-side read, stripped of vendor gloss.",
@@ -362,7 +362,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "ai-without-workflows-is-just-expensive-advice-advisory-vs-agentic-ai",
-    "category": "AI",
+    "category": "Innovation",
     "title": "\"AI Without Workflows Is Just Expensive Advice\": Advisory vs Agentic AI",
     "description": "There's a single sentence that explains why most enterprise AI budgets aren't producing the returns the board was promised. ServiceNow's Terence Chesire said it plainly: \"AI without workflows is just expensive advice.\"",
     "deck": "There's a single sentence that explains why most enterprise AI budgets aren't producing the returns the board was promised. ServiceNow's Terence Chesire said it plainly: \"AI without workflows is just expensive advice.\"",
@@ -435,7 +435,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-action-fabric-and-mcp-governed-execution-for-any-ai-agent",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "ServiceNow Action Fabric & MCP: Governed Execution for Any AI Agent",
     "description": "The most architecturally significant ServiceNow announcement of 2026 wasn't a new agent. It was a way to let everyone else's agents do governed work inside ServiceNow.",
     "deck": "The most architecturally significant ServiceNow announcement of 2026 wasn't a new agent. It was a way to let everyone else's agents do governed work inside ServiceNow.",
@@ -506,7 +506,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "why-every-enterprise-now-needs-an-ai-agent-kill-switch",
-    "category": "AI",
+    "category": "Innovation",
     "title": "Why Every Enterprise Now Needs an AI Agent Kill Switch",
     "description": "There's a quiet signal in the 2026 enterprise AI market that tells you more than any vendor roadmap: serious platforms are now shipping kill switches. You don't build an emergency stop for a system you're confident won't run away.",
     "deck": "There's a quiet signal in the 2026 enterprise AI market that tells you more than any vendor roadmap: serious platforms are now shipping kill switches. You don't build an emergency stop for a system you're confident won't run away.",
@@ -1319,7 +1319,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "now-assist-roi-what-enterprises-actually-get-with-real-numbers-28",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "Now Assist ROI: What Enterprises Actually Get (With Real Numbers)",
     "description": "Most \"AI ROI\" content is vapor. So let's start with a number a CFO can't argue with.",
     "deck": "Most \"AI ROI\" content is vapor. So let's start with a number a CFO can't argue with.",
@@ -1402,7 +1402,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-hrsd-across-industries-replace-the-chaos-not-your-hcm",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "ServiceNow HRSD Across Industries: Replace the Chaos, Not Your HCM",
     "description": "What it is. HR Service Delivery is the employee-facing service layer over your HR function: case management, knowledge, journeys (onboarding/offboarding/transfers), and a unified portal. The single most common misconception: HRSD is not an HCM. It does not replace your system of record.",
     "deck": "What it is. HR Service Delivery is the employee-facing service layer over your HR function: case management, knowledge, journeys (onboarding/offboarding/transfers), and a unified portal. The single most common misconception: HRSD is not an HCM. It does not replace your system of record.",
@@ -1587,7 +1587,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-csm-vs-salesforce-zendesk-when-connected-workflow-beats-a-better-inbox",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "ServiceNow CSM vs Salesforce/Zendesk: When Connected Workflow Beats a Better Inbox",
     "description": "What it is. Customer Service Management handles external customer cases — but its differentiator is structural: it connects the customer-facing case to the back-office workflow that actually resolves it. The complaint doesn't just get logged; it triggers the fulfillment, fix or field dispatch that closes it.",
     "deck": "What it is. Customer Service Management handles external customer cases — but its differentiator is structural: it connects the customer-facing case to the back-office workflow that actually resolves it. The complaint doesn't just get logged; it triggers the fulfillment, fix or field dispatch that closes it.",
@@ -1700,7 +1700,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-workplace-service-delivery-one-front-door-for-the-physical-workplace",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "ServiceNow Workplace Service Delivery: One Front Door for the Physical Workplace",
     "description": "What it is. Workplace Service Delivery covers the physical-workplace experience: space reservation, workplace requests, mapping, visitor and facilities-case management — the building-side counterpart to HRSD's people-side.",
     "deck": "What it is. Workplace Service Delivery covers the physical-workplace experience: space reservation, workplace requests, mapping, visitor and facilities-case management — the building-side counterpart to HRSD's people-side.",
@@ -1770,7 +1770,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-autonomous-workforce-ai-specialists-that-finish-the-work-not-just-advise",
-    "category": "AI",
+    "category": "Innovation",
     "title": "ServiceNow Autonomous Workforce: AI Specialists That Finish the Work, Not Just Advise",
     "description": "The phrase \"AI workforce\" is usually marketing. ServiceNow's version has a specific, testable definition worth understanding before you buy or build around it.",
     "deck": "The phrase \"AI workforce\" is usually marketing. ServiceNow's version has a specific, testable definition worth understanding before you buy or build around it.",
@@ -1803,7 +1803,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "now-assist-vs-microsoft-copilot-agents-they-now-interoperate-so-how-do-you-actually-choose",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "Now Assist vs Microsoft Copilot Agents: They Now Interoperate — So How Do You Actually Choose?",
     "description": "This is the wrong question framed the popular way. It's not \"which AI assistant is better.\" It's \"which one finishes the work, and where does the other one belong.\"",
     "deck": "This is the wrong question framed the popular way. It's not \"which AI assistant is better.\" It's \"which one finishes the work, and where does the other one belong.\"",
@@ -1902,7 +1902,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-anthropic-what-claude-can-execute-governed-work-actually-changes",
-    "category": "AI",
+    "category": "Innovation",
     "title": "ServiceNow + Anthropic: What \"Claude Can Execute Governed Work\" Actually Changes",
     "description": "The significant detail in this partnership isn't \"another AI integration.\" It's which agent gets to do what, and under whose governance.",
     "deck": "The significant detail in this partnership isn't \"another AI integration.\" It's which agent gets to do what, and under whose governance.",
@@ -2100,7 +2100,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "why-a-servicenow-pure-play-partner-beats-a-generalist-for-agentic-ai",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "Why a ServiceNow Pure-Play Partner Beats a Generalist for Agentic AI",
     "description": "In a stable platform era, a generalist SI is a reasonable bet. In a platform changing this fast, breadth becomes a liability — because the gap between \"what the keynote announced\" and \"what is GA and safe to deploy\" is exactly where projects fail.",
     "deck": "In a stable platform era, a generalist SI is a reasonable bet. In a platform changing this fast, breadth becomes a liability — because the gap between \"what the keynote announced\" and \"what is GA and safe to deploy\" is exactly where projects fail.",
@@ -2133,7 +2133,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "servicenow-otto-explained-the-single-ai-front-door-and-why-that-concentrates-risk",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "ServiceNow Otto Explained: The Single AI Front Door — And Why That Concentrates Risk",
     "description": "The premise behind Otto is the most relatable problem in enterprise software: employees don't know which system handles what. They open the IT portal for a laptop, a different portal for HR, search SharePoint for a document, file a ticket somewhere else for facilities.",
     "deck": "The premise behind Otto is the most relatable problem in enterprise software: employees don't know which system handles what. They open the IT portal for a laptop, a different portal for HR, search SharePoint for a document, file a ticket somewhere else for facilities.",
@@ -2170,7 +2170,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "nvidia-project-arc-on-servicenow-an-autonomous-desktop-agent-you-can-actually-audit",
-    "category": "AI",
+    "category": "Innovation",
     "title": "NVIDIA Project Arc on ServiceNow: An Autonomous Desktop Agent You Can Actually Audit",
     "description": "An autonomous agent living on every employee's desktop, completing real work unsupervised, is either the most useful or the most dangerous thing in your estate. The detail that decides which is governance — and that's the whole point of how Project Arc was built.",
     "deck": "An autonomous agent living on every employee's desktop, completing real work unsupervised, is either the most useful or the most dangerous thing in your estate. The detail that decides which is governance — and that's the whole point of how Project Arc was built.",
@@ -2297,7 +2297,7 @@ export const docxBlogPosts: BlogPost[] = [
   },
   {
     "slug": "ai-agent-identity-the-governance-problem-hiding-inside-who-did-this",
-    "category": "AI",
+    "category": "Innovation",
     "title": "AI Agent Identity: The Governance Problem Hiding Inside \"Who Did This?\"",
     "description": "Every incident review eventually asks the same question: who did this? In an agentic enterprise, that question gets uncomfortable — because the actor wasn't a person, and \"the AI did it\" is not an answer a regulator, an auditor, or a court accepts.",
     "deck": "Every incident review eventually asks the same question: who did this? In an agentic enterprise, that question gets uncomfortable — because the actor wasn't a person, and \"the AI did it\" is not an answer a regulator, an auditor, or a court accepts.",

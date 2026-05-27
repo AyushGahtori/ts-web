@@ -5,11 +5,10 @@ import { brewedLogicBlogPosts } from "./brewedLogicBlogPosts";
 import { solutionBlogPosts } from "./solutionBlogPosts";
 
 export const BLOG_CATEGORIES = [
-  "AI",
   "Innovation",
   "Tech",
   "Enterprise",
-  "Product",
+  "TechSnitch Innovations",
   "ServiceNow",
   "Brewed Logic",
   "Telecommunications",
@@ -399,8 +398,14 @@ export function categoryToSlug(category: BlogCategory) {
 
 export function categorySlugAliases(category: BlogCategory) {
   const legacySlug = category.toLowerCase().replace(/\s+/g, "-");
+  const historicalSlugsByCategory: Partial<Record<BlogCategory, string[]>> = {
+    Innovation: ["ai"],
+    "TechSnitch Innovations": ["product", "products"],
+  };
 
-  return Array.from(new Set([categoryToSlug(category), legacySlug]));
+  return Array.from(
+    new Set([categoryToSlug(category), legacySlug, ...(historicalSlugsByCategory[category] ?? [])]),
+  );
 }
 
 function normalizeCategorySlug(slug: string) {
@@ -414,7 +419,11 @@ function normalizeCategorySlug(slug: string) {
 export function getCategoryFromSlug(slug: string) {
   const normalizedSlug = normalizeCategorySlug(slug);
 
-  return BLOG_CATEGORIES.find((category) => categoryToSlug(category) === normalizedSlug);
+  return BLOG_CATEGORIES.find((category) =>
+    categorySlugAliases(category).some(
+      (categorySlug) => normalizeCategorySlug(categorySlug) === normalizedSlug,
+    ),
+  );
 }
 
 export function getBlogPost(slug: string) {

@@ -3,7 +3,7 @@ import type { BlogPost } from "./blogData";
 export const solutionBlogPosts: BlogPost[] = [
   {
     "slug": "hireo-genai-powered-360-talent-management-experience-centre",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "Hireo: A GenAI-Powered 360 Talent Management Experience Centre",
     "description": "Hireo brings persona-first hiring workflows, GenAI screening, zero-bias review, and ServiceNow-native automation into a unified talent management experience centre.",
     "deck": "Streamlining hiring with AI, inclusive evaluation, explainable candidate matching, and end-to-end talent workflow intelligence.",
@@ -1468,7 +1468,7 @@ export const solutionBlogPosts: BlogPost[] = [
   },
   {
     "slug": "meta-cmdb-credential-less-discovery-solution",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "Meta CMDB: Credential-less Discovery Solution",
     "description": "A credential-less discovery model that classifies unauthenticated devices, closes CMDB blind spots, and turns shadow IT into governed asset intelligence.",
     "deck": "Eliminating shadow IT risk through AI-powered, non-invasive asset visibility without credential dependency.",
@@ -2726,7 +2726,7 @@ export const solutionBlogPosts: BlogPost[] = [
   },
   {
     "slug": "maskly-ai-powered-pii-redaction",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "Maskly: AI-Powered PII Redaction",
     "description": "Maskly combines ML detection, redaction workflows, review consoles, and continuous learning to reduce PII exposure across high-volume document operations.",
     "deck": "Secure document processing with intelligent PII identification, automated redaction, and human-in-the-loop review precision.",
@@ -4523,7 +4523,7 @@ export const solutionBlogPosts: BlogPost[] = [
   },
   {
     "slug": "infinity-desk-autonomous-service-desk",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "Infinity Desk: The Autonomous Service Desk",
     "description": "Infinity Desk blends Moveworks, Azure OpenAI, ServiceNow workflows, and hyperautomation to resolve service requests across IT, HR, facilities, and customer service.",
     "deck": "Integrating Generative AI and Moveworks to deliver contextual intelligence, conversational resolution, and zero human delay.",
@@ -6169,7 +6169,7 @@ export const solutionBlogPosts: BlogPost[] = [
   },
   {
     "slug": "aaip-autonomous-asset-intelligence-platform",
-    "category": "Product",
+    "category": "TechSnitch Innovations",
     "title": "AAIP: Autonomous Asset Intelligence Platform",
     "description": "AAIP uses GenAI to unify asset discovery, SAM entitlement, warranty intelligence, and continuous compliance across software and hardware estates.",
     "deck": "Beyond discovery and compliance: autonomous software and hardware asset intelligence for complete visibility and zero audit risk.",
